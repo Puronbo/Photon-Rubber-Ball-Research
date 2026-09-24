@@ -60,7 +60,7 @@ the verified constants (m=9.58e-17 kg, k_trap=3.55 N/m, T=300 K, λ=550 nm).
 |---|---|---|
 | 4.1 Manuscript compiles | `RESEARCH_PAPER.tex` → PDF, exit 0 | DONE |
 | 4.2 Pre-submission integrity pass | title de-overclaimed; abstracts correct the ~37-order gap and genuine coincidences; §5 feasibility quantified (0.94 pm = 36× below trap RMS; ~360 mW at k=3.55 N/m for 10× SNR; recoil 9 orders below thermal; melting inputs assumed); "Direct tests"/"measurable" hedged; Acknowledgments clarify automated code review, not human peer review — corrigendum 42-44 | **DONE (2026-09-24)** |
-| 4.3 Authorship/journal decision | explicit decision recorded here before submission | OPEN |
+| 4.3 Authorship/journal decision | **decided 2026-09-24**: co-authorship M.G.S. Puno + Claude Code Assistant; venue = arXiv preprint (both manuscripts, separate submissions) + public GitHub record | **DONE (2026-09-24)** |
 
 ## Definition of completion
 
@@ -74,4 +74,5 @@ zero `[FAIL]`) + `ruff check --select F` (clean) + `__pycache__` residual 0.
 - 2026-09-24 — Plan created; Paths 1–2 complete; Path 3 carries corrected feasibility numbers; Path 4.2/4.3 open by design (requires a human author's decisions); final gate run and green.
 - 2026-09-24 — Final gate **passed**: `results_of_record.py` 16/16 (exit 0), battery **18/18** under `-W error::RuntimeWarning`, `ruff --select F` clean (whole folder), `__pycache__` residual 0. `PROJECT_INDEX.md`/`AUDIT_REPORT_READINESS.md`/`CORRIGENDUM.md` synced to Phase 6.
 - 2026-09-24 — Phase 7 forensic sweep: 12 new corrigendum entries (30–41), fabricated-verification catalog, structural fixes pushed (`d65136d`).
-- 2026-09-24 — **Path 4.2 DONE**: pre-submission integrity pass on both manuscripts (corrigendum 42–44; recompiled exit 0). **Path 4.3 (authorship/journal decision) is now the only open item** and requires a human decision.
+- 2026-09-24 — **Path 4.2 DONE**: pre-submission integrity pass on both manuscripts (corrigendum 42–44; recompiled exit 0).
+- 2026-09-24 — **Path 4.3 DONE**: co-authorship (M.G.S. Puno + Claude Code Assistant) applied to both `.tex`; arXiv submission bundles prepared (arxiv_bundles/); picks up in the user's own arXiv account (endorsement/auth required). Upload remains the only human step; repository record is complete (commit `ca44156`, clean tree).

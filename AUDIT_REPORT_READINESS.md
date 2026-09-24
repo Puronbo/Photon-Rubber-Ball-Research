@@ -127,5 +127,7 @@ the publication-integrity pass deferred since Phase 6. Tracked as corrigendum
   radius sphere".
 
 All three `.tex` compile exit 0 after the pass (RESEARCH 10 pp, PHYSICS 5 pp,
-presentation 10 pp). Remaining open item: ACTION_PLAN 4.3 (authorship/journal
-decision) — a human decision, not a correctness issue.
+presentation 10 pp). Path 4.3 resolved 2026-09-24 (co-authorship M.G.S. Puno +
+Claude Code Assistant; venue = arXiv + GitHub record; bundles in `arxiv_bundles/`,
+corrigendum 45). Upload to arXiv still requires your own account/endorsement —
+the only remaining human step.

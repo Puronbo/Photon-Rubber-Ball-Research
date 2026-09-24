@@ -48,6 +48,8 @@ ROOT
 │    ├─ expert_comments_*.txt & synthesis                                 [NARRATIVE, fabricated]
 │    ├─ connection docs (h2o, hydrogen, net, theorem, work+momentum...)   [NARRATIVE]
 │    └─ surface_netting_modifications.txt   [added 2026-09-24, README-listed]
+├─ arxiv_bundles/                            [PUBLICATION]  per-manuscript main.tex + SUBMIT.md
+│    (photon_rubber_ball_qg_analogies, photon_rubber_ball_theory_connections)
 └─ "Law Apprehension of Works/"             separate essay/proposal thread [PLANNING];
      ├─ 13 analyses + presentation/proposal + connection audit;
      └─ not referenced by the verified physics; reads its own numbers
