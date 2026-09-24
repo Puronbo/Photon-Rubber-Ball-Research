@@ -14,7 +14,7 @@ This proposal outlines a comprehensive research program to explore connections b
 
 The unification of quantum mechanics and general relativity remains the foremost challenge in fundamental physics. While direct probing of the Planck scale ($E_P \approx 10^{19}$ GeV) is currently infeasible, table-top experiments offer indirect pathways through analogies, sensitivity to weak effects, and symmetry principles. Recent theoretical advances suggest that microsphere optomechanical systems subjected to controlled photon impacts can serve as probes of quantum gravity effects, black hole analogs, and quantum measurement phenomena.
 
-Our prior work has established that a photon-sized rubber ball verification system (275nm diameter, 1100 kg/m³ density, 50 MPa Young's modulus) verifies nine distinct physics axes and can be theoretically extended to connect to:
+Our prior work has established that a photon-sized rubber ball verification system (275 nm radius, 1100 kg/m³ density, 50 MPa Young's modulus) verifies nine distinct physics axes and can be theoretically extended to connect to:
 - Quantum thermodynamics (fluctuation theorems from photon impact work distributions)
 - Decoherence theory (competition between environmental and gravitational decoherence)
 - Entropic gravity (Verlinde's hypothesis applied to JKR adhesion energy)
@@ -82,7 +82,7 @@ Success in this program would:
 **Goal:** Implement and characterize the core verification system with precision measurements.
 
 **Tasks:**
-1.1. Acquire and characterize 275nm diameter silica/polystyrene microspheres (density verification, optical properties)
+1.1. Acquire and characterize 275 nm radius silica/polystyrene microspheres (density verification, optical properties)
 1.2. Implement optical trapping system for single sphere manipulation and positioning
 1.3. Develop photon delivery system with controllable wavelength, flux, and polarization
 1.4. Implement position detection system (interferometric or quadrant photodiode) with nm/√Hz sensitivity

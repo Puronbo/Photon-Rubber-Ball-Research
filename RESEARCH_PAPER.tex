@@ -12,7 +12,6 @@
 \usepackage{float}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
-\usepackage{lipsum}
 
 \geometry{margin=1in}
 \hypersetup{
@@ -252,6 +251,24 @@ This work establishes a framework for connecting table-top experiments to fundam
 \section*{Acknowledgments}
 This work benefited from expert audit workflow involving code quality, security, performance, and documentation agents whose feedback significantly improved the verification scripts and theoretical extensions. The verification platform integrates concepts from contact mechanics, quantum optics, thermodynamics, and gravitation to create a unique probe of fundamental physics.
 
+\appendix
+\section{The nine verification axes}
+The software platform implements nine independent verification axes, each
+checked against the stated output with explicit energy-balance and tolerance
+criteria.
+
+\begin{enumerate}
+  \item Compliant (same-rubber) plane, $E^{*}=E/(2(1-\nu^2))$: energy balance and closed-form rate checks.
+  \item E-modulus sensitivity across the rubber range ($10^7$--$10^8$ Pa): contact depth scales as $E^{-2/5}$.
+  \item Viscoelastic restitution $e \approx \exp(-\pi\tan\delta/2)$ (Hunt--Crossley model).
+  \item Relativistic impact energy $\mathit{KE}=(\gamma-1)mc^2$: Newtonian limit recovered as $\beta\to 0$; mathematical identity only, not realizable physics at $\beta=0.04$.
+  \item Two-ball symmetric head-on collision: $d_5 = 2\,d_2$ (rigid-plane scaling).
+  \item JKR adhesion during contact: work of separation $W_{\mathrm{sep}}$ and the stick criterion.
+  \item Force ratio, compliant versus rigid plane.
+  \item Mie scattering (spherical-Bessel $a_n$/$b_n$ codes): $Q_e = Q_s = 3.4822$ at $x=\pi$, $m=1.5+0i$.
+  \item Consolidated post-audit numbers: the accepted canonical values reproduced in this paper.
+\end{enumerate}
+
 \bibliographystyle{unsrt}
 \begin{thebibliography}{99}
 \bibitem{Verlinde2011}
@@ -276,52 +293,52 @@ C.~Jarzynski.
 
 \bibitem{Crooks1999}
 G.~E. Crooks.
-\item Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences.
+\newblock Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences.
 \newblock {\em Physical Review E}, 60(3):2721--2726, 1999.
 
 \bibitem{CaldeiraLeggett1983}
 A.~O. Caldeira and A.~J. Leggett.
-\item Quantum tunnelling in a dissipative system.
+\newblock Quantum tunnelling in a dissipative system.
 \newblock {\em Annals of Physics}, 149(2):374--456, 1983.
 
 \bibitem{Hawking1974}
 S.~W. Hawking.
-\item Black hole explosions?
+\newblock Black hole explosions?
 \newblock {\em Nature}, 248(5443):30--31, 1974.
 
 \bibitem{Bekenstein1973}
 J.~D. Bekenstein.
-\item Black holes and entropy.
+\newblock Black holes and entropy.
 \newblock {\em Physical Review D}, 7(8):2333--2346, 1973.
 
 \bibitem{JohnsonNyquist1928}
 J.~B. Johnson.
-\item Thermal agitation of electricity in conductors.
+\newblock Thermal agitation of electricity in conductors.
 \newblock {\em Physical Review}, 32(1):97--109, 1928.
 
 \bibitem{ShotNoise1918}
 W.~Schottky.
-\item Über spontane stromschwankungen in verschiedenen elektrizitätsleitern.
+\newblock Über spontane stromschwankungen in verschiedenen elektrizitätsleitern.
 \newblock {\em Annalen der Physik}, 362(23):23--36, 1918.
 
 \bibitem{HuntCrossley1975}
 J.~D. Hunt and F.~R. E. Crossley.
-\item Coefficient of restitution interpreted as damping in vibroimpact.
+\newblock Coefficient of restitution interpreted as damping in vibroimpact.
 \newblock {\em Journal of Applied Mechanics}, 42(2):440--445, 1975.
 
 \bibitem{Mie1908}
 G.~Mie.
-\item Beiträge zur Optik trüber Medien, speziell kolloidaler Metallösungen.
+\newblock Beiträge zur Optik trüber Medien, speziell kolloidaler Metallösungen.
 \newblock {\em Annalen der Physik}, 330(3):377--445, 1908.
 
 \bibitem{Hertz1882}
 H.~Hertz.
-\item Ueber die Berührung fester elastischer Körper.
+\newblock Ueber die Berührung fester elastischer Körper.
 \newblock {\em Journal für die reine und angewandte Mathematik}, 92:156--171, 1882.
 
 \bibitem{JKR1971}
 K.~L. Johnson, K.~Kendall, and A.~D. Roberts.
-\item Surface energy and the contact of elastic solids.
+\newblock Surface energy and the contact of elastic solids.
 \newblock {\em Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences}, 324(1558):301--313, 1971.
 
 \end{thebibliography}

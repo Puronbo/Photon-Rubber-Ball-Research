@@ -9,7 +9,7 @@
 | Battery (18 Python runs, `-W error::RuntimeWarning`) | 2/11 top-level scripts ran | **18/18 green, 0 `[FAIL]`** |
 | Lint (`ruff --select F`) | F403/F405 + F841/F541/F401 noise | **fully clean** |
 | Manager trio (emoji/noemoji/final) | run path and EOF untested; `select` NameError always crashed a real run | exit 0 on `q`, real `run_script` path, and end-of-input |
-| `.js` workflows (5) | all parse | all `node --check` clean |
+| `.js` workflows (5 on disk; 4 tracked) | all parse | all `node --check` clean (5th = gitignored `.claude/workflows/` copy of `_v2.js`) |
 | README listing (`photon_rubber_ball_research`) | `surface_netting_modifications.txt` missing; 1 orphan | **100% satisfied**; orphan deleted |
 | Hygiene | — | `__pycache__` 0 residual |
 
@@ -44,7 +44,7 @@ m = 9.58e-17 kg, E* = 66.7 MPa, d_max = 5.807 nm, P_max = 20.63 nN; compliant pl
 
 ## Phase 5 — Organize to standard + build up (2026-09-24, fifth pass)
 
-Goal: the corpus was read in full (every one of the 105 files). Two new top-level artifacts codify that reading:
+Goal: the corpus was read in full (every one of the 107 tracked files; 112 on disk). Two new top-level artifacts codify that reading:
 - `PROJECT_INDEX.md` — canonical map tagging every part VERIFIED / NARRATIVE / PLANNING / FIXED, code & results of record, directory map, stewardship rules.
 - `CORRIGENDUM.md` — 29-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
 
@@ -66,3 +66,39 @@ Battery (18) still green; `ruff --select F` still fully clean; `__pycache__` 0 r
 - Addendum: `.tex` compile fixed in place (entry 22/23 corrigendum now fully resolved; both compile under TeX Live 2026).
 
 Final gate run green: `results_of_record.py` exit 0 + full battery 18/18 + `ruff --select F` clean + `__pycache__` 0 residual. Paths 4.2/4.3 (publication integrity pass & authorship decisions) remain open by design — they require a human author.
+
+## Phase 7 — Forensic sweep + post-push fixes (2026-09-24, seventh pass)
+
+Post-push audit (four parallel read-only passes + first-hand verification of every
+quoted finding) searched for numeric contradictions, fabricated evidence, and
+structural defects. Findings and resolutions are cataloged in `CORRIGENDUM.md`
+entries 30-41, with the fabricated-verification evidence cataloged separately. This
+phase also fixed in place:
+
+- `RESEARCH_PAPER.tex` — bibliography `\item`→`\newblock` (10 sites); appended a
+  real **Appendix A** enumerating the nine verification axes (resolves the dangling
+  reference at :61); removed dead `\usepackage{lipsum}`. Recompiles exit 0.
+- `Law Apprehension of Works/` — "275 nm diameter" → "275 nm radius" in
+  `presentation.tex`, `PRESENTATION_OUTLINE.md`, `RESEARCH_PROPOSAL.md`,
+  `WHAT_EVERYTHING_MEANS_CONCRETELY.md` (5 sites, matching corrigendum 22).
+- `PHOTON_RUBBER_BALL_AUDIT_DOCUMENTATION.md`/`.html` — truncated trailing
+  workflow ID now explicitly marked.
+- `research_findings_expansion_summary.html` (root + research copy) — HTML
+  fragment wrapped into a complete document.
+- Corrigendum/index/audit accuracy — "9 passed" misattributed to a smoke stub,
+  stale "105 files", "5 .js", "16-script" docstring, and the `__pycache__` residual
+  all corrected (battery now runs with `-B`).
+- Provenance banner prepended to 10 narrative research-facing `.txt` files
+  (expert comments ×5, synthesis, findings, two engine docs, momentum integrals)
+  marking them as generated narrative superseded by the verified numbers.
+
+New numeric contradictions recorded (tracked, not rewritten): F≈6.6 pN vs F≈8e-25 N
+for the same 1 mW laser (`photon_engine_research_paper.txt:22` vs
+`work_and_momentum_integrals.txt:149-150`); K≈0.1 N/m → RMS 6 nm
+(`research_paper_findings.txt` §5.2) vs verified 0.034/0.028 nm; "hundredth of a
+percent" vs 0.08% contraction (`big_bang_style_scene.txt:13`).
+
+Final gate (Phase 7): battery 18/18 with `-B` under `-W error::RuntimeWarning`,
+`results_of_record.py` 16/16 exit 0, `ruff --select F` clean, all three `.tex`
+compile exit 0 (RESEARCH, PHYSICS, and now Law presentation), `__pycache__`
+0 residual, working tree after commit clean.

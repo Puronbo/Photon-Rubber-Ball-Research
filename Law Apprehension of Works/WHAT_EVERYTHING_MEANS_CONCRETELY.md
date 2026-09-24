@@ -7,7 +7,7 @@ This document provides a concrete, coherent explanation of what the photon rubbe
 
 ### 1.1 Physical Definition
 The photon rubber ball verification system consists of:
-- A dielectric microsphere (diameter ~275nm, density ~1100 kg/m³, Young's modulus ~50 MPa)
+- A dielectric microsphere (radius 275 nm, density ~1100 kg/m³, Young's modulus ~50 MPa)
 - Optically trapped in vacuum or controlled environment
 - Subjected to controlled photon impacts (wavelength, flux, polarization adjustable)
 - Measured via high-resolution position detection (interferometry or quadrant photodiode)

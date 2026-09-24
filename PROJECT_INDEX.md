@@ -14,7 +14,8 @@ corrupted on disk and have been repaired in place (see CORRIGENDUM.md).
 | `script.py` | independent re-verification (same canonical numbers, independent implementation) |
 | `energy_comparability_probe.py` | **new (added 2026-09-24)** — quantitative verdict on the "comparable energies" claim: the abstract claim is false (~37 orders); true coincidences computed (recoil KE ≈ zeropoint, contraction = 6.4x trap thermal RMS) |
 | `results_of_record.py` | **added 2026-09-24** — single-command reproduction gate: 16 checks, asserts every canonical number, exit 0 |
-| `photon_rubber_ball_research/test_expansion_rigorous*.py`, `test.py` | test batteries (37 passed / 9 passed) |
+| `photon_rubber_ball_research/test_expansion_rigorous*.py` | test battery (37 passed) |
+| `photon_rubber_ball_research/test.py`, `scripts/test.py` | smoke-test stubs (print "Hello from test script") |
 | `magnifying_glass_simulation.py`, `magnifying_glass_param_sweep.py` | param sweeps |
 | `PHOTON_RUBBER_BALL_AUDIT_DOCUMENTATION.md/.html` | audit narrative — **[FIXED]** (Mie fix direction and quoted outputs corrected to true runtime values) |
 
@@ -34,7 +35,7 @@ Energy probe: rel KE 6.9 mJ vs kT 4.1e-21 J vs zeropoint 7.7e-40 J → **not com
 ROOT
 ├─ 18 verification/probe/manager .py       [VERIFIED]
 │    (incl. energy_comparability_probe.py, results_of_record.py)
-├─ 5 .js workflows (Claude Code meta-files) [tooling]
+├─ 4 .js workflows tracked (5th = .claude/workflows/, gitignored) [tooling]
 ├─ .claude/settings.local.json              [tooling; rust-based rtk CLI allow-list]
 ├─ README.md                                [manager usage manual]
 ├─ this INDEX · CORRIGENDUM.md · ACTION_PLAN.md · AUDIT_REPORT_READINESS.md

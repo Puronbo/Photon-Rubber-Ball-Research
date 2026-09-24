@@ -14,7 +14,7 @@
 - Our Insight: Microsphere optomechanical systems as probes of fundamental physics
 
 ## Slide 3: The Core Verification System
-- Photon-Sized Rubber Ball: 275nm diameter, 1100 kg/m³ density, 50 MPa Young's modulus
+- Photon-Sized Rubber Ball: 275 nm radius, 1100 kg/m³ density, 50 MPa Young's modulus
 - Nine Verified Physics Axes:
   1. Photon momentum transfer validation
   2. Speed of light consistency
