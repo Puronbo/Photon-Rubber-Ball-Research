@@ -1,0 +1,62 @@
+SURFACE NETTING MODIFICATIONS
+Photon-Sized Rubber Ball Project — Surface Modification Concepts
+================================================================
+
+Purpose
+-------
+This document collects surface modification concepts for the 550 nm photon-sized
+rubber ball. "Surface netting" is the running term for controlling the sphere's
+interfacial forces (optical, hydration, and quantum) by engineered surface
+chemistry and structure. It was referenced by README.md and by other project
+documents; restored to match the listing, grounded in the project's own
+connections documents.
+
+Why surface effects dominate
+----------------------------
+At the nanoscale, surface-to-volume ratio is large: for the 550 nm ball, the
+hydration shell alone (~1-2 nm thick) is only ~0.4% of the radius, yet interfacial
+forces (van der Waals, Casimir-Polder, hydration structuring, adhesion) can
+dominate over bulk behaviour. Anything that modifies the surface therefore has an
+outsized effect on absorption, adhesion, thermal coupling, and photon momentum
+transfer.
+
+Modification channels identified in our documents
+-------------------------------------------------
+1. Hydrophilic/hydrophobic (wettability) engineering
+   - Hydration layers behave as a natural "surface netting" (h2o_and_photon_connections.txt).
+   - Nanoscale curvature already alters water structuring; surface chemistry tunes it further.
+   - Water's dielectric constant drops from ~78 (bulk) to ~2-10 in the first hydration
+     layer because of restricted molecular rotation — a dramatic local field change.
+   - Hydrophilic/hydrophobic patterning therefore directly controls hydration
+     structure, offering a route to engineer surface forces.
+
+2. Photonic "net" confinement
+   - Relates to photon_in_a_net.txt: the sphere's environment acts as a "net"
+     whose parameters include refractive index and geometry.
+   - Water's refractive index modifies the net parameters; hydration layers can be
+     seen as a dynamic, tunable netting around the sphere.
+   - Surface modifications affect local field enhancement and force anisotropy
+     (photon_engine_research_paper.txt).
+
+3. Quantum-vacuum (Casimir-Polder) tuning
+   - Casimir-Polder forces depend on surface geometry and material properties
+     (hydrogen_atom_photon_bath.txt), so surface modifications directly tune
+     vacuum-fluctuation-mediated attraction.
+   - Links to quantum.txt (zero-point energy, confinement) and to the Lamb-shift /
+     blackbody-shift thermometry directions in the hydrogen-photon exploration.
+
+4. Mechanical / adhesion coupling
+   - Surface energy per area enters JKR adhesion (work of adhesion W): modified
+     surfaces change W, hence pull-off force and work of separation in the
+     verification model.
+   - Enables force isotropy/anisotropy engineering relevant to the photon-engine
+     momentum-transfer concept.
+
+Cross-references
+----------------
+- photon_in_a_net.txt          — photon confinement in nanostructured media
+- h2o_and_photon_connections.txt — hydration-layer netting, dielectric drop
+- hydrogen_atom_photon_bath.txt  — Casimir-Polder / surface-geometry dependence
+- photon_engine_research_paper.txt — local field enhancement and force anisotropy
+- expert_comments_*.txt         — domain expert perspectives
+- quantum.txt / thermal.txt / relativity.txt — the three pillar connections

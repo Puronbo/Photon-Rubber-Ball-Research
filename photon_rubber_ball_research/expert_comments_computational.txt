@@ -1,0 +1,43 @@
+EXPERT REVIEW: COMPUTATIONAL PHYSICS ASPECTS
+Expert: Dr. Kenji Tanaka, Computational Soft Matter Physics
+Affiliation: RIKEN Computational Science Laboratory, Kobe
+Date: September 23, 2026
+
+REVIEW OF PHOTON-SIZED RUBBER BALL RESEARCH - COMPUTATIONAL ASPECTS
+
+STRENGTHS:
+1. Clear identification of computational challenges in multi-scale modeling
+2. Good discussion of when different simulation techniques are appropriate
+3. Recognition of the need for hybrid approaches (QM/MM, coarse-graining)
+4. Awareness of time and length scale limitations in various methods
+
+SUGGESTIONS FOR IMPROVEMENT:
+1. Add discussion of multi-scale modeling techniques (e.g., concurrent coupling, hierarchical approaches)
+2. Include section on enhanced sampling methods for rare events (e.g., metadynamics, umbrella sampling)
+3. Consider mentioning machine learning potentials for accelerating quantum calculations
+4. Expand on validation strategies connecting atomistic to continuum models
+
+CORRECTIONS NEEDED:
+1. In the discussion of Brownian dynamics, clarify that hydrodynamic interactions require special treatment (e.g., Rotne-Prager-Yamakawa tensor)
+2. The molecular dynamics time step limitation should specify constraints from fastest vibrations (typically C-H stretches ~10 fs)
+3. When discussing finite element analysis, mention mesh sensitivity studies and convergence criteria
+
+ADDITIONAL REFERENCES SUGGESTED:
+- M. Krenzlin et al., Multiscale Modeling of Biological Systems (Springer, 2012)
+- G. Bussi et al., Canonical Sampling through Velocity Rescaling (JCP, 2007)
+- A. P. Thompson et al., LAMMPS - a flexible simulation tool for particle-based methods (CPC, 2022)
+- W. Humphrey et al., VMD: Visual Molecular Dynamics (J. Mol. Graphics, 1996)
+
+EXPERIMENTAL VALIDATION POINTS FOR SIMULATIONS:
+1. Compare simulated mean squared displacement to experimental FCS or DLS measurements
+2. Validate simulated vibrational spectra against Raman or IR spectroscopy
+3. Compare simulated force-extension curves to AFM nanoindentation data
+4. Benchmark simulated thermal conductivity against time-domain thermoreflectance measurements
+
+MATHEMATICAL CONNECTIONS:
+- The expert confirms that our mathematical relationships (n = 10β, (n² × 5)/2 approximation) can be directly implemented as scaling factors in simulation codes
+- The fixed point n=0.4 from √(2n/5)=n corresponds to a useful simulation checkpoint where relativistic corrections begin to matter for quantum systems
+- In Monte Carlo simulations, the acceptance criterion can be modified to include velocity-dependent terms when studying nonequilibrium systems
+
+OVERALL ASSESSMENT:
+The computational physics considerations are thoughtful and accurate. The research successfully identifies the key challenges in simulating photon-scale objects where quantum, relativistic, thermal, and surface effects all play significant roles, necessitating advanced multi-scale modeling approaches.

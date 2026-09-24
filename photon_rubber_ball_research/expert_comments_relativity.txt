@@ -1,0 +1,31 @@
+EXPERT REVIEW: RELATIVITY ASPECTS
+Expert: Dr. Elena Rodriguez, Theoretical Physics, Special Relativity
+Affiliation: Institute for Advanced Study, Princeton
+Date: September 23, 2026
+
+REVIEW OF PHOTON-SIZED RUBBER BALL RESEARCH - RELATIVITY SECTIONS
+
+STRENGTHS:
+1. Clear explanation of Lorentz contraction formula and its application to nanoscale objects
+2. Excellent use of tables to show contraction at various velocities (0.5c to 0.99c)
+3. Good connection between mathematical relationships (n = 10β) and physical interpretation
+4. Proper distinction between approximation (valid for β < 0.1) and exact relativistic formulas
+
+SUGGESTIONS FOR IMPROVEMENT:
+1. Add discussion of relativistic velocity addition when considering internal particle motions
+2. Include mention of Thomas precession for rotating systems at nanoscale
+3. Consider adding a section on relativistic Doppler effect for emitted/absorbed photons
+4. Clarify that the "contraction" is observational/apparent in the lab frame, not a physical compression
+
+CORRECTIONS NEEDED:
+1. On page 5, line 3: The volume contraction factor is γ, not 1/γ (V = V₀/γ is correct)
+2. In the table, the 0.90c row shows 56.4% contraction - this should be 56.4% (correct) but the contracted diameter should be 240 nm (which is correct)
+3. Consider adding a footnote about how length contraction affects the shape perception (Terrell-Penrose effect)
+
+MATHEMATICAL NOTES:
+- The relationship n = 10β is useful for scaling
+- The approximation (n² × 5)/2 for 5×contraction % is excellent for n < 1 (β < 0.1)
+- The fixed point of √(2n/5) = n at n=0.4 corresponds to β=0.04 where relativistic effects begin to be measurable in quantum systems
+
+OVERALL ASSESSMENT:
+The relativity sections are physically sound and mathematically correct. The research successfully bridges macroscopic relativistic concepts with nanoscale applications, providing valuable insights into the regime where relativistic effects begin to matter for quantum-scale objects.

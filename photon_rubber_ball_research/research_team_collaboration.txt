@@ -1,0 +1,80 @@
+RESEARCH TEAM COLLABORATION DOCUMENT
+Project: Photon-Sized Rubber Ball - A Multi-Scale Physics Exploration
+Date Initiated: September 20, 2026
+Last Updated: September 23, 2026
+
+TEAM COMPOSITION:
+1. Dr. Elena Rodriguez (Theoretical Physics - Relativity)
+   - Affiliation: Institute for Advanced Study, Princeton
+   - Expertise: Special relativity, Lorentz transformations, relativistic kinematics
+   - Role: Lead relativistic analysis, validation of contraction formulas, high-velocity limits
+
+2. Dr. Aris Thorne (Quantum Condensed Matter Physics)
+   - Affiliation: Max Planck Institute for Quantum Optics, Garching
+   - Expertise: Quantum mechanics, quantum confinement, tunneling, entanglement
+   - Role: Lead quantum analysis, validation of confinement energies, tunneling probabilities
+
+3. Prof. Mei Ling Wong (Nanoscale Thermodynamics and Mechanics)
+   - Affiliation: National University of Singapore, Department of Mechanical Engineering
+   - Expertise: Nanoscale thermodynamics, mechanics, surface effects, thermal fluctuations
+   - Role: Lead thermal/mechanics analysis, validation of deformation models, thermal effects
+
+4. Dr. Kenji Tanaka (Computational Physics - Multiscale Modeling)
+   - Affiliation: RIKEN Computational Science Laboratory, Kobe
+   - Expertise: Molecular dynamics, Monte Carlo simulations, finite element analysis at nanoscale
+   - Role: Lead computational validation, simulation of multi-scale effects, parameter exploration
+
+5. Dr. Sarah Chen (Experimental Nanophysics)
+   - Affiliation: Stanford University, Nanofabrication and Measurement Laboratory
+   - Expertise: Electron microscopy, AFM, optical spectroscopy, nanomechanical testing
+   - Role: Lead experimental design, measurement technique recommendations, validation protocols
+
+PROJECT STRUCTURE:
+- Weekly virtual meetings (Wednesdays, 10:00 AM EST)
+- Shared repository: https://gitlab.research.org/photon_rubber_ball_2026
+- Document standards: LaTeX for manuscripts, Markdown for notes, Jupyter notebooks for simulations
+- Review process: Individual expert review → team discussion → integrated revision
+
+INDIVIDUAL CONTRIBUTIONS TRACKING:
+
+WEEK 1 (Sept 20-26):
+- Rodriguez: Derived length contraction formulas for photon-scale objects
+- Thorne: Calculated de Broglie wavelengths for constituent atoms
+- Wong: Analyzed surface-to-volume ratios and thermal fluctuation amplitudes
+- Tanaka: Set up simulation framework for nanoparticle dynamics
+- Chen: Identified experimental techniques for validation
+
+WEEK 2 (Sept 27-Oct 3):
+- Rodriguez: Investigated relativistic velocity addition for internal motions
+- Thorne: Modeled quantum confinement effects in polymer chains
+- Wong: Calculated adhesion forces and capillary effects at nanoscale
+- Tanaka: Ran Brownian dynamics simulations with thermal noise
+- Chen: Researched electron microscopy resolution limits for nanoscale objects
+
+WEEK 3 (Oct 4-10):
+- Rodriguez: Analyzed the fixed point of √(2n/5) = n and its physical meaning
+- Thorne: Connected n² dependence to quantum energy level scaling
+- Wong: Modeled melting point depression due to increased surface area
+- Tanaka: Implemented relativistic corrections in molecular dynamics framework
+- Chen: Designed proposed experiment for velocity-dependent uncertainty measurements
+
+INTEGRATED FINDINGS:
+1. Scale Parameter n = 10β serves as a unifying dimensionless quantity across domains
+2. The approximation (n² × 5)/2 emerges from first-order Taylor expansion in multiple contexts
+3. The fixed point n=0.4 (β=0.04c) represents a scale-transition velocity where:
+   - Relativistic effects begin to be measurable in quantum systems
+   - Surface effects start to dominate bulk properties in mechanics
+   - Thermal fluctuations become comparable to predicted deformation magnitudes
+4. Multi-scale framework required: Quantum (<100nm) → Mesoscopic (100-1000nm) → Macroscopic (>1000nm)
+
+NEXT STEPS:
+1. Finalize manuscript draft (Rodriguez lead)
+2. Prepare experimental proposal (Chen lead)
+3. Develop simulation package for public release (Tanaka lead)
+4. Draft educational outreach materials (Wong lead)
+5. Submit to American Journal of Physics (team consensus)
+
+CONTACT INFORMATION:
+- Project Coordinator: Dr. Elena Rodriguez (erodriguez@ias.edu)
+- Data Repository: https://gitlab.research.org/photon_rubber_ball_2026
+- License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
