@@ -19,7 +19,7 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=cyan,
-    pdftitle={Discovering Quantum Gravity Analogies in Table-Top Experiments},
+    pdftitle={Physics Connections and Quantum-Gravity Analogies from a Photon-Sized Rubber Ball Verification System},
     pdfauthor={Claude Code Assistant},
     pdfsubject={Physics Connections in Photon Rubber Ball Verification System},
     pdfkeywords={quantum gravity, black hole analogy, fluctuation theorems, decoherence, entropic gravity}
@@ -35,11 +35,10 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\thepage}
-\lhead{Discovering Quantum Gravity Analogies in Table-Top Experiments}
+\lhead{Physics Connections and QG Analogies: Photon-Sized Rubber Ball}
 \rfoot{}
 
-\title{Discovering Quantum Gravity Analogies in Table-Top Experiments:\\
-Connections Between Photon-Sized Rubber Ball Verification and Fundamental Physics}
+\title{Physics Connections and Quantum-Gravity Analogies from a Photon-Sized Rubber Ball Verification System}
 \author{Claude Code Assistant\thanks{Correspondence: claude@anthropic.com}}
 \date{September 23, 2026}
 \newcommand{\keywords}[1]{\par\noindent\textbf{Keywords:} #1}
@@ -49,7 +48,7 @@ Connections Between Photon-Sized Rubber Ball Verification and Fundamental Physic
 \maketitle
 
 \begin{abstract}
-We establish connections between a photon-sized rubber ball verification system and frontier theories in physics through theoretical extension and expert audit refinement. The verification platform, comprising a 275 nm radius microsphere, enables testing of nine distinct physics axes spanning contact mechanics, viscoelasticity, relativity, and light scattering. We develop five theoretical extensions that connect this system to quantum thermodynamics (fluctuation theorems), decoherence theory (gravitational and environmental models), entropic gravity (Verlinde's hypothesis), black hole analogies (scattering and thermodynamics), and fluctuation-dissipation relations. These connections provide experimental access to quantum gravity phenomenology, black hole information paradox, holographic principle, and quantum measurement problem—all controllable through photon impact parameters. The verification system serves as a versatile platform for interdisciplinary physics exploration bridging condensed matter, quantum optics, gravitation, and quantum information science.
+We document connections between a photon-sized rubber ball verification system and frontier theories in physics through theoretical extension and an automated code-review workflow. The verification platform, a 275 nm radius microsphere with $E=50$ MPa and $\nu=0.5$, verifies nine physics axes spanning contact mechanics, viscoelasticity, relativity, and Mie scattering; every number reported here is reproduced by an independent 18-script battery. We develop five theory extensions connecting this system to quantum thermodynamics (fluctuation theorems), decoherence theory (gravitational and environmental models), entropic gravity (Verlinde's hypothesis), black hole analogies (scattering and thermodynamics), and fluctuation-dissipation relations. The extensions propose parameter-tunable, photon-impact-controlled tests of these connections (Section~\ref{sec:experimental}). One claim of the earlier narrative is corrected: at the system's nominal fixed point the relativistic kinetic energy ($\sim$6.9 mJ), thermal energy ($4.1\times10^{-21}$ J), and zero-point energy ($7.7\times10^{-40}$ J) are $\sim$37 orders of magnitude apart and are \emph{not} comparable; the genuine coincidences are per-photon recoil kinetic energy near the ball's zero-point energy and JKR adhesion work far above $k_BT$.
 \end{abstract}
 
 \keywords{Quantum gravity \and Black hole analogies \and Fluctuation theorems \and Decoherence \and Entropic gravity \and Microsphere optomechanics}
@@ -106,7 +105,7 @@ We analyze competing decoherence mechanisms in the photon rubber ball system to 
 
 \textbf{Connections to Unsolved Theories:}
 \begin{itemize}
-\item \textit{Quantum gravity phenomenology:} Direct tests of Penrose, Diosi, and spacetime foam models through decoherence rate comparisons
+\item \textit{Quantum gravity phenomenology:} Proposed direct tests of Penrose, Diósi, and spacetime-foam models via computed decoherence-rate comparisons
 \item \textit{Spacetime discreteness:} Sensitivity to Planck-scale structure through predicted decoherence rates
 \item \textit{Measurement problem in QM:} Discrimination between photon scattering decoherence and hypothetical gravity-induced collapse
 \item \textit{Black hole information and entropy:} Connection through gravitational self-energy $E_G \propto M^2/R$ analogous to black hole thermodynamics
@@ -124,7 +123,7 @@ We explore whether the JKR adhesion energy (Axis 6) admits an entropic interpret
 
 \textbf{Connections to Unsolved Theories:}
 \begin{itemize}
-\item \textit{Entropic gravity (Verlinde):} Direct test of $F = T \Delta S/\Delta x$ for adhesion forces
+\item \textit{Entropic gravity (Verlinde):} Proposed test of $F = T\,\Delta S/\Delta x$ against computed adhesion forces
 \item \textit{ER=EPR conjecture:} Potential entanglement entropy between photon field and sphere motion
 \item \textit{Holographic principle:} Entropy scaling with surface area ($R^2$) vs. volume ($R^3$)
 \item \textit{Black hole analogies:} Scaling relationships and thermodynamic analogs
@@ -172,22 +171,24 @@ We connect the viscoelastic restitution model (Axis 3) to fluctuation-dissipatio
 \item \textit{Measurement problem and continuous spontaneous localization:} Dissipative collapse models (Diósi-Penrose) and gravitational decoherence estimates
 \end{itemize}
 
-\section{Experimental Access to Fundamental Physics}
-The photon rubber ball verification system provides controllable access to fundamental physics through adjustable experimental parameters:
+\section{Experimental Access to Fundamental Physics}\label{sec:experimental}
+The photon rubber ball verification system exposes controllable parameters that in principle tune the regimes below. The regimes themselves are theory-level targets of the extensions, not yet realized measurements; the quantitative feasibility bounds make that distinction explicit.
 
-\subsection{Control Parameters}
+At the verified parameters the constraints are: a 1 mW beam exerts 3.33 pN (absorbed) and deflects the ball by $F/k = 0.94$ pm — 36$\times$ below the 0.034 nm trap thermal RMS — so order-10 SNR radiation-force measurement requires $\sim$360 mW at $k = 3.55$ N/m or a softer trap; per-photon recoil is $1.26\times10^{-11}$ m/s, nine orders below the 11.4 mm/s thermal speed; and the 0.661 K melting shift rests on assumed material inputs. These bounds frame the control parameters and regimes below.
+
+\subsection{Control Parameters}\label{sec:control}
 \begin{itemize}
 \item \textit{Photon flux ($\Phi$):} Tunes environmental decoherence rate and measurement strength
-\item \textit{Impact velocity ($v$):}$\Delta$Controls energy scale and relativistic factors ($\gamma = 1/\sqrt{1-v^2/c^2}$)
+\item \textit{Impact velocity ($v$):} Controls the energy scale and relativistic factors ($\gamma = 1/\sqrt{1-v^2/c^2}$)
 \item \textit{Material properties ($E$, $\nu$, $W$):} Adjust contact mechanics and adhesion scales
 \item \textit{Wavelength ($\lambda$):} Changes size parameter $x = 2\pi R/\lambda$ for Mie scattering resonances
 \item \textit{Temperature ($T$):} Controls thermal fluctuations and quantum statistical factors
 \end{itemize}
 
-\subsection{Accessible Physics Regimes}
+\subsection{Accessible Physics Regimes}\label{sec:regimes}
 \begin{itemize}
 \item \textit{Quantum thermodynamics regime:} Low impact rates where work fluctuations dominate and fluctuation theorems apply
-\item \textit{Decoherence competition regime:} Tunable photon flux allows crossing between environmental and gravitational decoherence dominance
+\item \textit{Decoherence competition regime:} Tunable photon flux allows, in principle, crossing between environmental and gravitational decoherence dominance
 \item \textit{Entropic gravity regime:} Adhesion forces compared to entropic force predictions
 \item \textit{Black hole analogy regime:} Size parameter and material properties tuned for scattering and thermodynamic analogs
 \item \textit{Fluctuation-dissipation regime:} Impact frequency and material loss tangent tuned for dissipation-fluctuation balance
@@ -218,7 +219,7 @@ Axis & Primary Physics Verified & Theory Connections \\
 \end{table}
 
 \section{Discussion}
-The photon rubber ball verification system represents a rare convergence of metrology precision, theoretical accessibility, and fundamental physics relevance. By refining the verification platform through expert audit and extending it with theoretical connections, we create a table-top experimental platform for exploring quantum gravity and related frontier theories.
+The photon rubber ball verification system represents a convergence of metrology precision, theoretical accessibility, and fundamental-physics relevance. By refining the verification platform through an automated code-review workflow and extending it with theory connections, we produce a framework that states parameter conditions under which its qualitative predictions could be tested (Section~\ref{sec:experimental}).
 
 \subsection{Advantages of the Platform}
 \begin{itemize}
@@ -237,19 +238,18 @@ The photon rubber ball verification system represents a rare convergence of metr
 \item \textit{Specificity:} Distinguishing between competing theories requires multiple complementary measurements
 \item \textit{Extension:} Current work focuses on five theoretical connections; numerous additional extensions possible
 \item \textit{Validation:} Direct experimental verification of some connections requires specialized measurement capabilities
+\item \textit{Feasibility:} radiation-pressure displacement is 36$\times$ below trap thermal RMS at 1 mW; per-photon recoil is negligible against thermal velocities; melting-shift inputs are assumed. Driving the claimed regimes requires $\sim$360 mW at $k=3.55$ N/m or trap softening (quantified in Section~\ref{sec:experimental})
 \end{itemize}
 
 Future work includes experimental implementation of the theoretical extensions, development of measurement protocols for specific connections, and expansion to additional physics domains such as topological effects, supersymmetry analogs, or cosmological inflation scenarios.
 
 \section{Conclusion}
-We have demonstrated that a photon-sized rubber ball verification system, when refined through expert audit and extended with theoretical connections, provides unprecedented access to fundamental physics theories. Five theoretical extensions connect the system to quantum thermodynamics, decoherence theory, entropic gravity, black hole analogies, and fluctuation-dissipation relations—each with direct links to unsolved problems in quantum gravity, black hole physics, holography, and quantum measurement.
+We have shown how a photon-sized rubber ball verification system, whose nine axes are independently re-verified, supports five analogy-based theory extensions — quantum thermodynamics, decoherence theory, entropic gravity, black hole analogies, and fluctuation-dissipation relations — each with testable predictions when the feasibility conditions of Section~\ref{sec:experimental} are met.
 
-The verification system transforms from a specialized metrology tool into a versatile platform for interdisciplinary physics exploration. Through controllable photon impacts on a dielectric microsphere, experimentalists can probe quantum gravity phenomenology, test black hole information paradox conjectures, examine holographic entropy bounds, and investigate the quantum-to-classical transition—all within a table-top experimental setup.
-
-This work establishes a framework for connecting table-top experiments to fundamental physics, demonstrating how careful theoretical extension and expert validation can reveal profound connections between seemingly disparate areas of physics. The photon rubber ball verification system stands as a promising platform for future discoveries at the intersection of quantum mechanics, gravity, and thermodynamics.
+The system thereby provides a controlled, mesoscopic test bed for designing quantum-gravity, holographic, and measurement-theory analog experiments, subject to the quantitative bounds stated above. The central claim of the original narrative — that the relativistic, thermal, and zero-point energy scales coincide at the fixed point — is corrected in favor of the verified coincidences (per-photon recoil $\approx$ zero-point energy; JKR adhesion $\gg k_BT$).
 
 \section*{Acknowledgments}
-This work benefited from expert audit workflow involving code quality, security, performance, and documentation agents whose feedback significantly improved the verification scripts and theoretical extensions. The verification platform integrates concepts from contact mechanics, quantum optics, thermodynamics, and gravitation to create a unique probe of fundamental physics.
+This work benefited from an automated code-review workflow (Claude Code agents auditing code quality, security, performance, and documentation) whose feedback improved the verification scripts. No human domain-expert peer review has been performed. The physics connections are analogical; numeric claims in this project's supporting narrative documents are machine-generated and cataloged against the verified numbers in CORRIGENDUM.md. All quantitative results here are reproduced by the independent battery in results\_of\_record.py.
 
 \appendix
 \section{The nine verification axes}

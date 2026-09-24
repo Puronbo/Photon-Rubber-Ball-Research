@@ -102,3 +102,30 @@ Final gate (Phase 7): battery 18/18 with `-B` under `-W error::RuntimeWarning`,
 `results_of_record.py` 16/16 exit 0, `ruff --select F` clean, all three `.tex`
 compile exit 0 (RESEARCH, PHYSICS, and now Law presentation), `__pycache__`
 0 residual, working tree after commit clean.
+
+## Phase 8 — Pre-submission integrity pass, Path 4.2 (2026-09-24, eighth pass)
+
+Both manuscripts (`RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`) received
+the publication-integrity pass deferred since Phase 6. Tracked as corrigendum
+42-44. Changes:
+
+- Titles/de-overclaim: "Discovering Quantum Gravity Analogies in Table-Top
+  Experiments" → "Physics Connections and Quantum-Gravity Analogies from a
+  Photon-Sized Rubber Ball Verification System" (no experiment has been run).
+- Abstracts: state that the relativistic/thermal/zero-point scales are ~37 orders
+  apart and not comparable, name the genuine coincidences (recoil ≈ ZPE, JKR ≫
+  kT), and cite the 18-script independent re-verification.
+- §5 "Experimental Access" gains a feasibility paragraph: 1 mW → 3.33 pN →
+  0.94 pm deflection (36× below the 0.034 nm trap thermal RMS), so 10× SNR
+  requires ~360 mW at k = 3.55 N/m or trap softening; per-photon recoil
+  1.26e-11 m/s is nine orders below the 11.4 mm/s thermal speed; melting shift
+  0.661 K rests on assumed inputs.
+- "Direct tests"→"Proposed", "measurable effects"→"predicted effects";
+  Acknowledgments rewritten to state that "expert audit" = automated Claude Code
+  code-review workflow and that no human domain-expert peer review occurred.
+- Typos: `$\Delta$Controls` → "Controls the energy scale"; "275nm sphere" → "275 nm
+  radius sphere".
+
+All three `.tex` compile exit 0 after the pass (RESEARCH 10 pp, PHYSICS 5 pp,
+presentation 10 pp). Remaining open item: ACTION_PLAN 4.3 (authorship/journal
+decision) — a human decision, not a correctness issue.

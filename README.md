@@ -103,7 +103,9 @@ pdflatex -halt-on-error RESEARCH_PAPER.tex
 
 ## Publication status
 
-Both `.tex` manuscripts compile (TeX Live 2026). The pre-submission integrity
-pass (replace the false abstract claim, remove fabricated-expert framing) and
-authorship/journal decisions are ACTION_PLAN Path 4 — open, requiring human
-decisions.
+Both `.tex` manuscripts compile under TeX Live 2026 and have passed the Phase-8
+pre-submission integrity pass (corrigendum 42-44): titles/abstracts no longer claim
+an experiment was done or that energy scales are comparable (~37 orders apart,
+corrected); experimental feasibility is quantified in §5; "expert audit" is stated to
+mean automated code review, not human peer review. The only remaining open item is
+the authorship/journal decision (ACTION_PLAN Path 4.3), which requires a human author.

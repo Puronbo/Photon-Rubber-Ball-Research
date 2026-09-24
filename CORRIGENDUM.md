@@ -83,6 +83,17 @@ through the thermal fog"), `expert_comments_experimental.txt:63-69,71-72`
 six to ten orders too slow — then certified "highly practical and accurate").
 None of these correspond to any experiment.
 
+## Path 4.2 pre-submission integrity pass (2026-09-24, eighth pass)
+
+Integrity pass on both manuscripts (RESEARCH_PAPER.tex, PHYSICS_CONNECTIONS_REVIEW.tex),
+closing ACTION_PLAN 4.2. No experiment has been performed; the documents now say so.
+
+| # | Doc / site | As written | Resolution | Status |
+|---|---|---|---|---|
+| 42 | RESEARCH_PAPER title / \lhead / pdftitle | "Discovering Quantum Gravity Analogies in Table-Top Experiments" | de-overclaimed (no experiment performed): "Physics Connections and Quantum-Gravity Analogies from a Photon-Sized Rubber Ball Verification System" | **[FIXED]** |
+| 43 | both abstracts, §5, Discussion, Conclusions, Acknowledgments | "table-top experimental access to quantum gravity", "unprecedented access", "Direct tests", "measurable effects", "expert audit refinement" | abstracts state the ~37-order gap and the genuine coincidences (recoil≈ZPE, JKR≫kT); §5 quantifies feasibility (1 mW→3.33 pN→0.94 pm = 36× below trap RMS → ~360 mW at k=3.55 N/m for 10× SNR; recoil 1.26e-11 m/s, nine orders below 11.4 mm/s; melting inputs assumed); "Direct tests"→"Proposed", "measurable"→"predicted"; Acknowledgments explain "expert audit" = automated Claude Code code-review, no human peer review | **[FIXED]** |
+| 44 | RESEARCH_PAPER § "$\Delta$Controls"; PHYSICS "for the 275nm sphere" | typos/ambiguity (diameter re-read) | "Controls the energy scale"; "the 275 nm radius sphere" | **[FIXED]** |
+
 ## Verified values a reader may rely on
 
 m=9.583e-17 kg · E*=66.7 MPa · d_max=5.807 nm @20.63 nN · compliant d=7.662 nm P=15.63 nN ·
