@@ -49,7 +49,7 @@
 \maketitle
 
 \begin{abstract}
-We document connections between a photon-sized rubber ball verification system and frontier theories in physics through theoretical extension and an automated code-review workflow. The verification platform, a 275 nm radius microsphere with $E=50$ MPa and $\nu=0.5$, verifies nine physics axes spanning contact mechanics, viscoelasticity, relativity, and Mie scattering; every number reported here is reproduced by an independent 18-script battery. We develop five theory extensions connecting this system to quantum thermodynamics (fluctuation theorems), decoherence theory (gravitational and environmental models), entropic gravity (Verlinde's hypothesis), black hole analogies (scattering and thermodynamics), and fluctuation-dissipation relations. The extensions propose parameter-tunable, photon-impact-controlled tests of these connections (Section~\ref{sec:experimental}). One claim of the earlier narrative is corrected: at the system's nominal fixed point the relativistic kinetic energy ($\sim$6.9 mJ), thermal energy ($4.1\times10^{-21}$ J), and zero-point energy ($7.7\times10^{-40}$ J) are $\sim$37 orders of magnitude apart and are \emph{not} comparable; the genuine coincidences are per-photon recoil kinetic energy near the ball's zero-point energy and JKR adhesion work far above $k_BT$.
+We document connections between a photon-sized rubber ball verification system and frontier theories in physics through theoretical extension and an automated code-review workflow. The verification platform, a 275 nm radius microsphere with $E=50$ MPa and $\nu=0.5$, verifies nine physics axes spanning contact mechanics, viscoelasticity, relativity, and Mie scattering; every number reported here is reproduced by an independent 19-script battery. We develop five theory extensions connecting this system to quantum thermodynamics (fluctuation theorems), decoherence theory (gravitational and environmental models), entropic gravity (Verlinde's hypothesis), black hole analogies (scattering and thermodynamics), and fluctuation-dissipation relations. The extensions propose parameter-tunable, photon-impact-controlled tests of these connections (Section~\ref{sec:experimental}). One claim of the earlier narrative is corrected: at the system's nominal fixed point the relativistic kinetic energy ($\sim$6.9 mJ), thermal energy ($4.1\times10^{-21}$ J), and zero-point energy ($7.7\times10^{-40}$ J) are $\sim$37 orders of magnitude apart and are \emph{not} comparable; the genuine coincidences are per-photon recoil kinetic energy near the ball's zero-point energy and JKR adhesion work far above $k_BT$.
 \end{abstract}
 
 \keywords{Quantum gravity \and Black hole analogies \and Fluctuation theorems \and Decoherence \and Entropic gravity \and Microsphere optomechanics}
@@ -176,6 +176,27 @@ We connect the viscoelastic restitution model (Axis 3) to fluctuation-dissipatio
 The photon rubber ball verification system exposes controllable parameters that in principle tune the regimes below. The regimes themselves are theory-level targets of the extensions, not yet realized measurements; the quantitative feasibility bounds make that distinction explicit.
 
 At the verified parameters the constraints are: a 1 mW beam exerts 3.33 pN (absorbed) and deflects the ball by $F/k = 0.94$ pm — 36$\times$ below the 0.034 nm trap thermal RMS — so order-10 SNR radiation-force measurement requires $\sim$360 mW at $k = 3.55$ N/m or a softer trap; per-photon recoil is $1.26\times10^{-11}$ m/s, nine orders below the 11.4 mm/s thermal speed; and the 0.661 K melting shift rests on assumed material inputs. These bounds frame the control parameters and regimes below.
+
+\subsection{Probe-Particle Type Dimension}\label{sec:probetype}
+The model uses a massless photon (550 nm, $E=2.25$ eV) as its probe. For a probe of rest-mass energy $mc^2$ incident at the same quantum energy $E$, the absorbed momentum flux is $F=(p/E)P$ with $p/E=v/c^2$ and $v/c=\sqrt{1-(mc^2/E)^2}$, so $F=(v/c)(P/c)$ saturates at the massless ceiling $F=P/c=3.34$ pN at 1 mW. Massless and low-mass probes are observationally identical while $(mc^2/E)^2\ll10^{-6}$ (any real photon: $(mc^2/E)^2\approx2\times10^{-37}$); deviations reach percent level only for $mc^2$ within $\sim$10$\times$ of $E=2.25$ eV, where a 1 eV rest-mass boson would give $v/c=0.90$, a 10.4\% force loss, and a 0.21 fs transit-delay across the 550 nm diameter ball (Table~\ref{tab:probetype}). Other Standard-Model bosons cannot be used as beams in this model's scattering language at all: gluons are confined ($\sim$1 fm), $W^\pm$/$Z^0$ self-decay in $\sim$$10^{-25}$ s ($c\tau\sim$0.1 fm), and the Higgs requires $\geq$125 GeV production. A slow, low-mass (hidden/dark-photon) boson would exhibit coherent whole-ball absorption instead of scattering --- a proposed direction, not asserted numerically here.
+
+\begin{table}[h!]
+\centering
+\caption{Massless vs low-mass probe at $E=2.25$ eV and 1 mW ($F_{max}=P/c=3.34$ pN). Computed by \texttt{boson\_scaling\_probe.py} (19-script battery).}
+\label{tab:probetype}
+\begin{tabular}{lcccl}
+\toprule
+$mc^2$ [eV] & $(mc^2/E)^2$ & $v/c$ & $F$ [pN] & transit delay [fs] \\
+\midrule
+0 (massless)      & 0                  & 1.000 & 3.336 & 0 \\
+$10^{-18}$ (bound) & $2.0\times10^{-37}$ & 1.000 & 3.336 & 0 \\
+$10^{-3}$         & $2.0\times10^{-7}$  & 1.000 & 3.336 & $<10^{-6}$ \\
+$10^{-1}$         & $2.0\times10^{-3}$  & 0.999 & 3.332 & 0.002 \\
+1                 & 0.197               & 0.896 & 2.990 & 0.212 \\
+$\geq E$          & $\geq 1$            & --    & --     & no ultra-relativistic beam \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Control Parameters}\label{sec:control}
 \begin{itemize}

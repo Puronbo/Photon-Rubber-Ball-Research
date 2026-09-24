@@ -14,12 +14,13 @@ corrupted on disk and have been repaired in place (see CORRIGENDUM.md).
 | `script.py` | independent re-verification (same canonical numbers, independent implementation) |
 | `energy_comparability_probe.py` | **new (added 2026-09-24)** — quantitative verdict on the "comparable energies" claim: the abstract claim is false (~37 orders); true coincidences computed (recoil KE ≈ zeropoint, contraction = 6.4x trap thermal RMS) |
 | `results_of_record.py` | **added 2026-09-24** — single-command reproduction gate: 16 checks, asserts every canonical number, exit 0 |
+| `boson_scaling_probe.py` | **added 2026-09-24** — massless-vs-low-mass probe-particle scaling at 550 nm (19th battery member): F = (v/c)(P/c) ceiling, (mc²/E)² distinguishability criterion, wavelength/TOF/longitudinal-mode ladder |
 | `photon_rubber_ball_research/test_expansion_rigorous*.py` | test battery (37 passed) |
 | `photon_rubber_ball_research/test.py`, `scripts/test.py` | smoke-test stubs (print "Hello from test script") |
 | `magnifying_glass_simulation.py`, `magnifying_glass_param_sweep.py` | param sweeps |
 | `PHOTON_RUBBER_BALL_AUDIT_DOCUMENTATION.md/.html` | audit narrative — **[FIXED]** (Mie fix direction and quoted outputs corrected to true runtime values) |
 
-Battery: 18 Python scripts run under `python -W error::RuntimeWarning`, all exit 0, zero `[FAIL]`. Lint: `ruff --select F` clean.
+Battery: 19 Python scripts run under `python -W error::RuntimeWarning`, all exit 0, zero `[FAIL]`. Lint: `ruff --select F` clean.
 
 ## Canonical results (all cross-verified)
 
@@ -28,13 +29,14 @@ Hertz d_max = 5.807 nm @ P_max = 20.63 nN · compliant plane d = 7.662 nm, P = 1
 Mie Qe = Qs = 3.4822 at x = π (m = 1.5+0i) · fixed point algebra β = 0.04 (n = 0.4 via √(2n/5)=n)
 melting shift 0.661 K (assumed melting inputs) · thermal drift 11.4 mm/s · W_sep = 2.62e-15 J, v_stick = 7.4 m/s
 Energy probe: rel KE 6.9 mJ vs kT 4.1e-21 J vs zeropoint 7.7e-40 J → **not comparable**; recoil KE (7.6e-39 J) ≈ zeropoint (9.9x); contraction 0.22 nm = 6.4x trap thermal RMS.
+Probe cap (boson_scaling_probe.py): F ≤ P/c = 3.34 pN @ 1 mW; massless vs low-mass distinguishable only when (mc²/E)² ≳ 1e-6, i.e. mc² within ~10× of the 2.25 eV probe energy.
 
 ## Directory map
 
 ```
 ROOT
-├─ 18 verification/probe/manager .py       [VERIFIED]
-│    (incl. energy_comparability_probe.py, results_of_record.py)
+├─ 19 verification/probe/manager .py       [VERIFIED]
+│    (incl. energy_comparability_probe.py, results_of_record.py, boson_scaling_probe.py)
 ├─ 4 .js workflows tracked (5th = .claude/workflows/, gitignored) [tooling]
 ├─ .claude/settings.local.json              [tooling; rust-based rtk CLI allow-list]
 ├─ README.md                                [manager usage manual]
@@ -71,5 +73,5 @@ copies are canonical.
 
 1. Prefer the research-folder copies for `photon_rubber_ball_research/`-indexed files.
 2. Never "fix" narrative numbers silently; add to `CORRIGENDUM.md` (historical integrity).
-3. The 18-script battery + `ruff --select F` clean is the green bar for any change that touches code.
+3. The 19-script battery + `ruff --select F` clean is the green bar for any change that touches code.
 4. Any new doc that repeats the comparability claim must cite the probe's verdict.

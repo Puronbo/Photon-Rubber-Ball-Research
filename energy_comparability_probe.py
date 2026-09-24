@@ -12,7 +12,7 @@ true energy ratios at the fixed point, plus the honest comparisons that DO hold:
 - JKR adhesion energy vs the trap's quantum and thermal scales
 
 Numbers computed here are ground truth from the same constants used by the
-18-script verification battery; doc-side claims that disagree with this table
+19-script verification battery; doc-side claims that disagree with this table
 are cataloged in CORRIGENDUM.md.
 """
 

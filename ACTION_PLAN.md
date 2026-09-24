@@ -4,7 +4,7 @@ Grounding: everything tagged **[VERIFIED]** in `PROJECT_INDEX.md` is trusted;
 everything else is narrative and is tracked in `CORRIGENDUM.md` (never silently
 rewritten). This document is the actionable layer: each goal path lists concrete
 tasks with a **Done** criterion and current status. A closing gate runs
-`results_of_record.py` + the 18-script battery + `ruff check --select F`.
+`results_of_record.py` + the 19-script battery + `ruff check --select F`.
 
 ## Verified foundations (fast facts)
 
@@ -20,7 +20,7 @@ tasks with a **Done** criterion and current status. A closing gate runs
 | Task | Done criterion | Status |
 |---|---|---|
 | 1.1 `results_of_record.py` reproduces + asserts the canonical table | 16/16 checks, exit 0 | DONE |
-| 1.2 Added to the reproducible battery (16 → 17 → 18 runs) | full battery exit 0 | DONE |
+| 1.2 Added to the reproducible battery (16 → 17 → 18 → 19 runs) | full battery exit 0 | DONE |
 | 1.3 The false abstract claim has a code-of-record replacement | `energy_comparability_probe.py` verdict | DONE |
 
 ## Path 2 — Text/document integrity  (STATUS: DONE)
@@ -67,7 +67,7 @@ the verified constants (m=9.58e-17 kg, k_trap=3.55 N/m, T=300 K, λ=550 nm).
 Closed when: Paths 1–2 done (already); Path 3 designs carry verified feasibility
 numbers; Path 4.2/4.3 explicitly decided; final gate below is green.
 
-Final gate: `python results_of_record.py` (exit 0) + 18-script battery (all exit 0,
+Final gate: `python results_of_record.py` (exit 0) + 19-script battery (all exit 0,
 zero `[FAIL]`) + `ruff check --select F` (clean) + `__pycache__` residual 0.
 
 ## Status log
@@ -75,4 +75,5 @@ zero `[FAIL]`) + `ruff check --select F` (clean) + `__pycache__` residual 0.
 - 2026-09-24 — Final gate **passed**: `results_of_record.py` 16/16 (exit 0), battery **18/18** under `-W error::RuntimeWarning`, `ruff --select F` clean (whole folder), `__pycache__` residual 0. `PROJECT_INDEX.md`/`AUDIT_REPORT_READINESS.md`/`CORRIGENDUM.md` synced to Phase 6.
 - 2026-09-24 — Phase 7 forensic sweep: 12 new corrigendum entries (30–41), fabricated-verification catalog, structural fixes pushed (`d65136d`).
 - 2026-09-24 — **Path 4.2 DONE**: pre-submission integrity pass on both manuscripts (corrigendum 42–44; recompiled exit 0).
-- 2026-09-24 — **Path 4.3 DONE**: co-authorship (M.G.S. Puno + Claude Code Assistant) applied to both `.tex`; arXiv submission bundles prepared (arxiv_bundles/); picks up in the user's own arXiv account (endorsement/auth required). Upload remains the only human step; repository record is complete (commit `ca44156`, clean tree).
+- 2026-09-24 — **Path 4.3 DONE**: co-authorship (M.G.S. Puno + Claude Code Assistant) applied to both `.tex`; arXiv submission bundles prepared (arxiv_bundles/); picks up in the user's own arXiv account (endorsement/auth required). Upload remains the only human step; repository record is complete (commit `445b46e`, clean tree).
+- 2026-09-24 — **Probe-particle-type dimension added (Phase 8.2)**: `boson_scaling_probe.py` (19th battery member, exit 0, ruff F clean) quantifies massless-vs-low-mass probe scaling — F = (v/c)(P/c) ceiling, (mc²/E)² distinguishability, gluon/W/Z/H beam-inapplicability; RESEARCH §5 subsection + abstracts updated (19-script), corrigendum 46-47, commit follows.

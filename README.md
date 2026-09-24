@@ -24,7 +24,7 @@ The "comparable energies" abstract claim is **false** (~37 orders of magnitude
 apart; see `CORRIGENDUM.md` entry 1 and `energy_comparability_probe.py`). What
 survives as genuinely coincident: per-photon recoil KE ~ ball zeropoint (9.9x),
 JKR adhesion >> kT (6.3e5x), and the trap contraction 0.22 nm = 6.4x the trap
-thermal RMS. The 18-script battery runs green under
+thermal RMS. The 19-script battery runs green under
 `python -W error::RuntimeWarning`; the lint standard is `ruff --select F` clean.
 
 | Quantity | Value |
@@ -81,7 +81,7 @@ thermal RMS. The 18-script battery runs green under
 # single-command reproduction gate
 python results_of_record.py
 
-# the full 18-script battery (all should exit 0 under -W error::RuntimeWarning)
+# the full 19-script battery (all should exit 0 under -W error::RuntimeWarning)
 python photon_rubber_ball_verification_improved.py
 python script.py
 python energy_comparability_probe.py
@@ -98,7 +98,7 @@ pdflatex -halt-on-error RESEARCH_PAPER.tex
 
 1. `photon_rubber_ball_research/` copies are canonical; the root copies mirror them.
 2. Never silently rewrite narrative numbers — only `CORRIGENDUM.md` records changes.
-3. The 18-script battery + `ruff --select F` clean is the green bar for any code change.
+3. The 19-script battery + `ruff --select F` clean is the green bar for any code change.
 4. Path to completion and open publication tasks: `ACTION_PLAN.md` (Paths 1-4).
 
 ## Publication status
@@ -110,4 +110,7 @@ corrected); experimental feasibility is quantified in §5; "expert audit" is sta
 mean automated code review, not human peer review. Co-authorship is recorded
 (M.G.S. Puno + Claude Code Assistant, corrigendum 45) and arXiv submission bundles
 are staged in `arxiv_bundles/` — uploading them still requires your own arXiv
-account/endorsement (see each bundle's `SUBMIT.md`).
+account/endorsement (see each bundle's `SUBMIT.md`). A probe-particle-type
+dimension (massless vs low-mass bosons, `boson_scaling_probe.py`, corrigendum
+46-47) is developed in RESEARCH_PAPER §5 and both bundles reflect the 19-script
+battery count.

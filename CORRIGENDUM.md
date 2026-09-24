@@ -1,7 +1,7 @@
 # Corrigendum — Documented discrepancies vs the verified numbers
 
 Compiled 2026-09-24 after reading the entire corpus. "Verified" = computed by the
-18-script code battery (see PROJECT_INDEX.md). Entries marked **[FIXED]** were
+19-script code battery (see PROJECT_INDEX.md). Entries marked **[FIXED]** were
 repaired in place the same day; all others are tracked here without silent rewriting
 (historical integrity). The single most important correction is entry 1.
 
@@ -93,6 +93,9 @@ closing ACTION_PLAN 4.2. No experiment has been performed; the documents now say
 | 42 | RESEARCH_PAPER title / \lhead / pdftitle | "Discovering Quantum Gravity Analogies in Table-Top Experiments" | de-overclaimed (no experiment performed): "Physics Connections and Quantum-Gravity Analogies from a Photon-Sized Rubber Ball Verification System" | **[FIXED]** |
 | 43 | both abstracts, §5, Discussion, Conclusions, Acknowledgments | "table-top experimental access to quantum gravity", "unprecedented access", "Direct tests", "measurable effects", "expert audit refinement" | abstracts state the ~37-order gap and the genuine coincidences (recoil≈ZPE, JKR≫kT); §5 quantifies feasibility (1 mW→3.33 pN→0.94 pm = 36× below trap RMS → ~360 mW at k=3.55 N/m for 10× SNR; recoil 1.26e-11 m/s, nine orders below 11.4 mm/s; melting inputs assumed); "Direct tests"→"Proposed", "measurable"→"predicted"; Acknowledgments explain "expert audit" = automated Claude Code code-review, no human peer review | **[FIXED]** |
 | 44 | RESEARCH_PAPER § "$\Delta$Controls"; PHYSICS "for the 275nm sphere" | typos/ambiguity (diameter re-read) | "Controls the energy scale"; "the 275 nm radius sphere" | **[FIXED]** |
+| 45 | both manuscripts, author block | "Claude Code Assistant" sole author; RESEARCH \thanks held a fake correspondence email | co-authorship M.G.S. Puno + Claude Code Assistant (\thanks: lead author / automated drafting+review); fake email removed; pdfauthor metadata updated; arXiv bundles prepared (arxiv_bundles/, main.tex per manuscript) | **[FIXED]** |
+| 46 | corpus | probe dimension limited to a massless photon at 550 nm; no low-mass distinction anywhere | `boson_scaling_probe.py` added (19th battery member): exact F=(v/c)(P/c) ceiling, (mc²/E)² criterion, wavelength/TOF/longitudinal ladder — all verified outputs | added |
+| 47 | RESEARCH_PAPER §5, PHYSICS abstract; both arXiv bundles | no massless-vs-low-mass treatment; abstracts said "18-script battery" | new §"Probe-particle type dimension" (massless ceiling, distinguishability, gluon/W/Z/H beam-inapplicability); abstracts now "19-script battery"; bundle main.tex + PDFs regenerated | **[FIXED]** |
 | 45 | both manuscripts, author block | "Claude Code Assistant" sole author; RESEARCH \thanks held a fake correspondence email | co-authorship M.G.S. Puno + Claude Code Assistant (\thanks: lead author / automated drafting+review); fake email removed; pdfauthor metadata updated; arXiv bundles prepared (arxiv_bundles/, main.tex per manuscript) | **[FIXED]** |
 
 ## Verified values a reader may rely on

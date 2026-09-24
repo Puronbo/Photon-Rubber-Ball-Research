@@ -6,7 +6,7 @@
 
 | Check | Before | After |
 |---|---|---|
-| Battery (18 Python runs, `-W error::RuntimeWarning`) | 2/11 top-level scripts ran | **18/18 green, 0 `[FAIL]`** |
+| Battery (19 Python runs, `-W error::RuntimeWarning`) | 2/11 top-level scripts ran | **19/19 green, 0 `[FAIL]`** |
 | Lint (`ruff --select F`) | F403/F405 + F841/F541/F401 noise | **fully clean** |
 | Manager trio (emoji/noemoji/final) | run path and EOF untested; `select` NameError always crashed a real run | exit 0 on `q`, real `run_script` path, and end-of-input |
 | `.js` workflows (5 on disk; 4 tracked) | all parse | all `node --check` clean (5th = gitignored `.claude/workflows/` copy of `_v2.js`) |
@@ -57,7 +57,7 @@ Documentation integrity, repaired in place (assert-verified bulk edit):
 Build-up deliverable — `energy_comparability_probe.py` (new, 17th battery member, `ruff F` clean):
 Computes the actual energy scales at β=0.04 with the verified constants. Verdict: **the corpus's central abstract claim is false** — rel KE 6.9 mJ vs kT 4.1e-21 J vs ball zeropoint 7.7e-40 J is ~37 orders of magnitude apart, exactly the gap `CORRIGENDUM.md` entry 1 tracks. The probe instead reports the coincidences that genuinely hold: per-photon recoil KE (7.6e-39 J) ≈ zeropoint (9.9×), JKR adhesion ≫ kT (6.3e5×), contraction 0.22 nm = 6.4× the trap thermal RMS but below imaging resolution. The false claim now has a code-of-record replacement.
 
-Battery (18) still green; `ruff --select F` still fully clean; `__pycache__` 0 residual.
+Battery (19) still green; `ruff --select F` still fully clean; `__pycache__` 0 residual.
 
 ## Phase 6 — Goal-path plan + reproduction gate (2026-09-24, sixth pass)
 
@@ -65,7 +65,7 @@ Battery (18) still green; `ruff --select F` still fully clean; `__pycache__` 0 r
 - `results_of_record.py` — new 18th battery member: reproduces and asserts the canonical table in one command (16 checks: M, E*, E*_two, d_max/P_max, compliant d/P, thermal speed, Qe=Qs=3.4822, fixed-point algebra, contraction, and the corrected energy verdicts). Output: "RESULTS OF RECORD: 16 checks reproduced.", exit 0. Guards the documented numbers against future drift.
 - Addendum: `.tex` compile fixed in place (entry 22/23 corrigendum now fully resolved; both compile under TeX Live 2026).
 
-Final gate run green: `results_of_record.py` exit 0 + full battery 18/18 + `ruff --select F` clean + `__pycache__` 0 residual. Paths 4.2/4.3 (publication integrity pass & authorship decisions) remain open by design — they require a human author.
+Final gate run green: `results_of_record.py` exit 0 + full battery 19/19 + `ruff --select F` clean + `__pycache__` 0 residual. Paths 4.2/4.3 (publication integrity pass & authorship decisions) remain open by design — they require a human author.
 
 ## Phase 7 — Forensic sweep + post-push fixes (2026-09-24, seventh pass)
 
@@ -98,7 +98,7 @@ for the same 1 mW laser (`photon_engine_research_paper.txt:22` vs
 (`research_paper_findings.txt` §5.2) vs verified 0.034/0.028 nm; "hundredth of a
 percent" vs 0.08% contraction (`big_bang_style_scene.txt:13`).
 
-Final gate (Phase 7): battery 18/18 with `-B` under `-W error::RuntimeWarning`,
+Final gate (Phase 7): battery 19/19 with `-B` under `-W error::RuntimeWarning`,
 `results_of_record.py` 16/16 exit 0, `ruff --select F` clean, all three `.tex`
 compile exit 0 (RESEARCH, PHYSICS, and now Law presentation), `__pycache__`
 0 residual, working tree after commit clean.
@@ -114,7 +114,7 @@ the publication-integrity pass deferred since Phase 6. Tracked as corrigendum
   Photon-Sized Rubber Ball Verification System" (no experiment has been run).
 - Abstracts: state that the relativistic/thermal/zero-point scales are ~37 orders
   apart and not comparable, name the genuine coincidences (recoil ≈ ZPE, JKR ≫
-  kT), and cite the 18-script independent re-verification.
+  kT), and cite the 19-script independent re-verification.
 - §5 "Experimental Access" gains a feasibility paragraph: 1 mW → 3.33 pN →
   0.94 pm deflection (36× below the 0.034 nm trap thermal RMS), so 10× SNR
   requires ~360 mW at k = 3.55 N/m or trap softening; per-photon recoil
@@ -131,3 +131,21 @@ presentation 10 pp). Path 4.3 resolved 2026-09-24 (co-authorship M.G.S. Puno +
 Claude Code Assistant; venue = arXiv + GitHub record; bundles in `arxiv_bundles/`,
 corrigendum 45). Upload to arXiv still requires your own account/endorsement —
 the only remaining human step.
+
+## Phase 8.2 — Probe-particle-type dimension (2026-09-24, eighth-pass addendum)
+
+New code (19th battery member): `boson_scaling_probe.py` — exact massless-vs-low-
+mass probe scaling at the canonical 550 nm / 2.25 eV / 1 mW operating point:
+F = (p/E)P with p/E = v/c² and v/c = √(1 − (mc²/E)²), so F = (v/c)(P/c), saturating
+at the massless ceiling F = P/c = 3.3356 pN. Runs exit 0, `ruff F` clean. Key
+results recorded in PROJECT_INDEX "Canonical results": (mc²/E)² is the
+distinguishability number; 1 eV rest mass → v/c = 0.896, 10.4% force loss,
+0.21 fs TOF delay across the 550 nm ball; below ~0.1 eV the probe is
+interchangeable with a photon to ≤0.1%; mc² ≥ E means no ultra-relativistic beam
+(gluon confinement, W/Z self-decay, Higgs at ≥125 GeV → the model's Mie/scattering
+language stops applying). The dark/hidden-photon slow-boson absorption direction
+is framework-level only and NOT asserted numerically.
+
+Documentation: RESEARCH_PAPER.tex gained §"Probe-particle type dimension";
+abstracts now cite a 19-script battery across both manuscripts and the arXiv
+bundles (main.tex + PDFs regenerated).
