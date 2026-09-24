@@ -1,6 +1,6 @@
 # arXiv submission — Photon Rubber Ball: Quantum-Gravity Analogies
 
-Bundle contents: `main.tex` (self-contained, no figures, no external packages beyond standard).
+Bundle contents: `main.tex` (self-contained, no figures, no external packages beyond standard) + `Photon_Rubber_Ball_Quantum_Gravity_Analogies.pdf` (compiled proof).
 
 ## Metadata
 

@@ -1,6 +1,6 @@
 # arXiv submission — Photon Rubber Ball: Theory Connections
 
-Bundle contents: `main.tex` (self-contained, no figures, no external packages beyond standard).
+Bundle contents: `main.tex` (self-contained, no figures, no external packages beyond standard) + `Photon_Rubber_Ball_Theory_Connections.pdf` (compiled proof).
 
 ## Metadata
 
