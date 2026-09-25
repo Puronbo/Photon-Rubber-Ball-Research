@@ -112,8 +112,8 @@ L4 THE TORNADO PRIORITY. All rotation reads one handedness class set at t = 0
     cell        10 um             0.055 -> point      entry-70 boundary (verified)
     Earth       6.378e6 m         8.62e-14            point (entry 70, verified)
     Galaxy      30 kpc            5.9e-28             point
-    Laniakea    160 Mpc           1.1e-31             point
     GA          50 Mpc            3.56e-31            point (entry 70, verified)
+    Laniakea    160 Mpc           1.1e-31             point (row order galaxy -> GA -> Laniakea, ascending tick u; values from RANKS_AND_DEGREES)
 
    Reading of the table with the law: the ball's "height" is cell-level (L2);
    at every rung above it is point-material; the GA stands at the bottom (P1)
