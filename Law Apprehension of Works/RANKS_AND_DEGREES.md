@@ -70,9 +70,12 @@ changes, so nothing stops it (L1).
 For an object in dimension d at rank r:
 
     extent    ~ s(r)^1
-    area      ~ s(r)^2          (surface physics: JKR spot ~ s^2, Mie cross-section)
+    cross-sec ~ s(r)^2          (geometric only: Mie C = Q*pi*R^2, Q = 3.4822)
     volume    ~ s(r)^3          (mass: rho*s^3; ball 8.71e-20 m^3 verified)
     Mie x     ~ s(r)^1          (x = pi exactly at ball rung; Qe = Qs = 3.4822)
+    CONTACT spot is NOT ~ s^2: JKR zero-load a = (6*pi*w*R^2/E*)^{1/3}
+        -> a ~ s^(2/3), spot area ~ s^(4/3); Hertz loaded a ~ s^(1/3)
+        [corrected in place, corrigendum 76: draft said "JKR spot ~ s^2"]
 
 Degrees beyond 3 are algebraic only (1,2,4,8); spatial physics caps at 3+1
 (entry-70 and Bott-periodicity discipline, node C2).
