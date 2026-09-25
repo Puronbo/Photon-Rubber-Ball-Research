@@ -67,7 +67,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
 │  ├─ COGNITIVE_UNIVERSE_MODEL.py · magnifying_glass_*.py · boson_scaling_probe.py
 │  └─ photon_rubber_ball_research/         twin canonical copies + 37 tests
 ├─ verification & honesty                  PROJECT_INDEX.md (canonical map: start here)
-│  │                                      CORRIGENDUM.md (86-entry catalog, 1 [FALSE], n [FIXED])
+│  │                                      CORRIGENDUM.md (87-entry catalog, 1 [FALSE], n [FIXED])
 │  │                                      AUDIT_REPORT_READINESS.md (Phase 1-8.3 gate results)
 │  │                                      ACTION_PLAN.md (Paths 1-4 to completion)
 │  │                                      CLAIM_REGISTER.md (every claim + every NOT-claim, verdict-coded)
@@ -83,6 +83,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
 └─ Law Apprehension of Works/              planning thread (informational, NOT physics):
        VERIFIED_COMPONENT_LINKAGE.md (nodes A0-F1; theorem/conjecture linkage)
        LAW_OF_CENTER_ASCENT.md (law-craft, postulates flagged REAL vs POSTULATE)
+       LAW_OF_OBJECT_ZEROS.md (law-craft: object zeros = coordinate pattern, NOT dynamics)
        RANKS_AND_DEGREES.md (rank-degree coordinates; verified ladder table)
        COMPOSITE_MAJORITY.md (composite-vs-prime counting theorem, battery check 24)
        REAL_AND_CLAIMABLE.md (framing-correction pass: claimable cores, rung-16 naming)

@@ -428,3 +428,22 @@ Gate (Phase 18): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 19): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 20 — Law of Object Zeros (2026-09-25)
+
+- User named the pattern: "law of object zeros." A law-thread formalization of
+  machinery already in the register.
+- The law-vs-physics boundary: what is CLAIMABLE is the coordinate pattern —
+  every object is the datum (r=0, d=0) of its own frame (self-gauge A0,
+  n(u)=s/u, [VERIFIED]); its own radius of visibility (L03/L2, [PROVEN],
+  checks 17-18); its own observable ball (L10/E15); and there is no shared
+  zero (E05, [ESTABLISHED]). "As many local centers as observers; none
+  privileged."
+- What is NOT claimable: the object-zero pattern as dynamics (force/cause on
+  expansion or fabric) — X22; the law as physics — F16 [FRAMING].
+- New `LAW_OF_OBJECT_ZEROS.md` added to the thread. Register: L12 [PROVEN],
+  F16, X22. Register 95→98 numbered, 21→22 NOT-claims; Law list 22→23
+  tracked; 86→87 entries. Corrigendum 87.
+
+Gate (Phase 20): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

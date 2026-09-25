@@ -9,7 +9,7 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
   `python -W error::RuntimeWarning`; lint `ruff --select F` clean.
 - 2 LaTeX manuscripts: `RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`
   (both compile exit 0 under TeX Live). Compiled head: `Photon_Rubber_Ball_PAPER.pdf`.
-- 6 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (86 entries),
+- 6 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (87 entries),
   `AUDIT_REPORT_READINESS.md`, `ACTION_PLAN.md`, `CLAIM_REGISTER.md`, `README.md`.
 
 ## Staging
@@ -39,7 +39,7 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 - html/pdf twins for scenes, engines, infosets, visualizations, summaries.
 
 ## Planning thread (`Law Apprehension of Works/`, informational only)
-- 22 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
+- 23 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
   LIGHT_AS_DERIVATIVE, LIGHT_STEP_ACCELERATION, PHOTON_GEOMETRY, PHOTON_TO_PHONON,
   REAL_IMAGINARY_NUMBERS), 4 framework/summary (UNIFIED_CONNECTIONS_FRAMEWORK,
   SYNTHESIS_OF_ALL_WORK, WHAT_EVERYTHING_MEANS_CONCRETELY, RESEARCH_PROPOSAL),
@@ -48,7 +48,8 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
   RANKS_AND_DEGREES, STATE_OF_THE_SCIENCE_2026 (external reference, dated sources)
   + its Chinese translation twin `.zh.md` (canonical = English),
   COMPOSITE_MAJORITY (internal counting theorem, gated by check 24),
-  REAL_AND_CLAIMABLE (framing-correction pass: claimable cores + rung-16 naming).
+  REAL_AND_CLAIMABLE (framing-correction pass: claimable cores + rung-16 naming),
+  LAW_OF_OBJECT_ZEROS (object zeros = coordinate pattern, NOT dynamics).
 
 ## Not tracked (local only)
 - `deterministic_simulation.py`, `investigation_example.py`,
