@@ -16,7 +16,7 @@ in `CORRIGENDUM.md` (never silently fixed), and the numbers are tracked.
 - `PHYSICS_CONNECTIONS_REVIEW.tex` — the connections review companion paper.
 
 **Verified and mathematically backed.** Every number in the paper is reproduced
-by the 19-script battery (`results_of_record.py` = 18 assert-style checks, exit
+by the 19-script battery (`results_of_record.py` = 21 assert-style checks, exit
 0; full battery green under `-W error::RuntimeWarning`). The mathematical backing
 is explicit: the verified results fall on proven theorems — the prime-number
 distribution (PNT), dimension-cap theorems (Frobenius, Hurwitz), Euler's
@@ -31,7 +31,7 @@ twin primes, Hardy-Littlewood quadratics) are cited as open, not used as proof.
 The canonical numbers are reproducible with a single command:
 
 ```bash
-python results_of_record.py      # 18 checks, exit 0
+python results_of_record.py      # 21 checks, exit 0
 ```
 
 The "comparable energies" abstract claim is **false** (~37 orders of magnitude

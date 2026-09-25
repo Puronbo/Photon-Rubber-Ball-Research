@@ -236,3 +236,24 @@ attractor growth.
 Gate (Phase 9): battery 19/19 green, `results_of_record.py` 18/18 exit 0,
 `ruff --select F` clean on tracked corpus, working tree contains only intended
 changes.
+
+## Phase 10 — algebraic-half gate asserts + linkage thread (same day)
+
+- `results_of_record.py` checks 18 -> **21** (no battery-count change; still 19
+  scripts). New checks 19-21 gate-assert the algebraic half the thread relies
+  on: Cayley-Dickson doubling dims 1,2,4,8 (`[1,2,4,8]`, and that the next
+  doubling 16 is the first non-normed/split dim - Hurwitz cap), i period 4
+  (i^2 = -1, i^4 = 1, four distinct cycle values), and Euler n^2+n+41 prime for
+  every n = 0..39 failing at n = 40 (= 41^2 = 1681). Output now:
+  "RESULTS OF RECORD: 21 checks reproduced.", exit 0.
+- `VERIFIED_COMPONENT_LINKAGE.md` — inserted points: A2 node now carries the
+  rank-degree pointer; new "Ranks and degrees (formal coordinates)" section
+  interleaving A2 (rank positions) -> B1 (primes substrate) and C2 (degree
+  caps), with the collapse (n(u) < 1 -> degree 0) and datum invariance (rank 0,
+  degree 0 = Law L1) restated; closed-loop line updated; theorem labels cite
+  the gate asserts (checks 19-21). No renumbering: the chain A0-F1 stands.
+- Count resync: README "18 assert-style checks"/"18 checks" -> 21, MANIFEST
+  "18 asserts" -> 21, CORRIGENDUM entry 73 reconciles entry 72's cited 18.
+
+Gate (Phase 10): battery 19/19 green, `results_of_record.py` 21/21 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

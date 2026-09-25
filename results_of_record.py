@@ -8,9 +8,10 @@ the battery verifies. Exits nonzero if any documented number is not reproduced.
 
 Backed by: photon_rubber_ball_verification_improved.py (9-axis battery),
 script.py (independent re-verification), test_expansion_rigorous*.py (37 tests),
-energy_comparability_probe.py (energy-scale verdict). Checks 17-18 assert the
-rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings and the
-irregular (prime-gap-like) log10 spacing, D = 550 nm source.
+energy_comparability_probe.py (energy-scale verdict). Checks 17-21 assert the
+rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings, the
+irregular (prime-gap-like) log10 spacing (D = 550 nm source), and the algebraic
+half the thread relies on — doubling dims 1,2,4,8, i period 4, Euler n^2+n+41.
 """
 
 import math
@@ -118,9 +119,36 @@ def main():
                  "; ".join(f"{l10[i]:.2f}" for i in range(len(l10))),
                  "differs rung-to-rung (gaps %s, not uniform)" % "; ".join(map(str, gaps)))
 
+    seq = [1]
+    while seq[-1] < 8:
+        seq.append(seq[-1]*2)
+    ok &= expect(seq == [1, 2, 4, 8], "Cayley-Dickson doubling dims 1,2,4,8",
+                 str(seq), "[1, 2, 4, 8] (next, 16, is the first non-normed/split dim)")
+
+    i2 = complex(0, 1)
+    cyc = [i2**k for k in range(4)]
+    ok &= expect(i2**2 == -1 and i2**4 == 1 and len(set(cyc)) == 4,
+                 "i period 4 (i^2=-1, i^4=1)", "period 4 distinct", "i^4 = 1")
+
+    def _isprime(n):
+        if n < 2:
+            return False
+        d = 2
+        while d*d <= n:
+            if n % d == 0:
+                return False
+            d += 1
+        return True
+
+    euler_ok = all(_isprime(n*n + n + 41) for n in range(40))
+    n40 = 40*40 + 40 + 41
+    euler_ok &= (not _isprime(n40)) and n40 == 41*41
+    ok &= expect(euler_ok, "Euler n^2+n+41 prime for n=0..39, fails at n=40 (=41^2)",
+                 f"primes n=0..39, n=40 -> {n40}", "1681 = 41^2 composite")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 18 checks reproduced.")
+        print("RESULTS OF RECORD: 21 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
