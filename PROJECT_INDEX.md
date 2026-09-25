@@ -13,7 +13,7 @@ corrupted on disk and have been repaired in place (see CORRIGENDUM.md).
 | `photon_rubber_ball_verification_improved.py` | canonical shared core + 9-axis verification (UTF-8 guard, guarded core, fixed Mie `Qe=Qs=3.4822`) |
 | `script.py` | independent re-verification (same canonical numbers, independent implementation) |
 | `energy_comparability_probe.py` | **new (added 2026-09-24)** — quantitative verdict on the "comparable energies" claim: the abstract claim is false (~37 orders); true coincidences computed (recoil KE ≈ zeropoint, contraction = 6.4x trap thermal RMS) |
-| `results_of_record.py` | **added 2026-09-24** — single-command reproduction gate: 16 checks, asserts every canonical number, exit 0 |
+| `results_of_record.py` | **added 2026-09-24** — single-command reproduction gate: 23 asserts (checks 17-23 add the rank-degree ladder, counting substrate π(10⁷)/twins, doubling 1,2,4,8, i-period, Euler), exit 0 |
 | `boson_scaling_probe.py` | **added 2026-09-24** — massless-vs-low-mass probe-particle scaling at 550 nm (19th battery member): F = (v/c)(P/c) ceiling, (mc²/E)² distinguishability criterion, wavelength/TOF/longitudinal-mode ladder |
 | `photon_rubber_ball_research/test_expansion_rigorous*.py` | test battery (37 passed) |
 | `photon_rubber_ball_research/test.py`, `scripts/test.py` | smoke-test stubs (print "Hello from test script") |
