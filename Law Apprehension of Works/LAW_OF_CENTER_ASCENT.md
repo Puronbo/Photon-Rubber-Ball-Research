@@ -61,9 +61,10 @@ P4 THE LOCK. Galaxies lock to galaxies: matter binds pair-to-pair up the ladder.
 P5 THE TORNADO. At the very start there is a tornado of creation - the primal
    spiral, the pi/2 turn-walk (node C1), opened at t = 0.
    Consequence: handedness is set once at the start; every later rotation inherits
-   its direction. The spiral is open (radius^2 = sum of squares of the turn
-   lengths; nested rings were removed by test, see linkage note) - so the
-   creation is not closed loops but one growing spiral.
+its direction. The spiral is open - r^2 = (sum E-W)^2 + (sum N-S)^2 of the
+    turn lengths, NOT the sum of their squares (corrected in place,
+    corrigendum 74; nested rings were removed by test, see linkage note) - so
+    the creation is not closed loops but one growing spiral.
    [REAL anchor: rotation is pervasive (galaxy spins, vortex structures). The
    PRIMAL tornado at the origin of structure: POSTULATE - no primordial vortex is
    observed. Direction inheritance: POSTULATE.]

@@ -81,13 +81,13 @@ A2 size-at-scale ladder (CORRIGENDUM entry 70)           [VERIFIED]
        physical space = 3+1 real signature; dims DO NOT
        climb like primes (caps at 4 for physics)
        |
-| correction: prime turn-walk is an OPEN SPIRAL,
-        | not nested square rings. Verified vertices (steps
-        | 0,1,2,3,5,7,11,13 | through L=11 | through 0..7):
-        | endpoint (9,11) r^2=202; (-8,5) r^2=89; (3,5) r^2=34.
-        | r^2 is (sum E-W)^2 + (sum N-S)^2, NOT sum of squares
-        | of ladder terms (the earlier draft claim was false from
-        | step 3 on; corrigendum 74).
+        | correction: prime turn-walk is an OPEN SPIRAL,
+        | not nested square rings. Verified vertices: endpoint
+        | after steps 0..19 = (9,11), r^2 = 202; (-8,5) at step 6,
+        | r^2 = 89; (3,5) after the 6 steps 0,1,2,3,5,7, r^2 = 34.
+        | r^2 = (sum of E-W steps)^2 + (sum of N-S steps)^2 and
+        | is NOT the sum of squares of ladder terms (the earlier
+        | draft claim was false from step 3 on; corrigendum 74).
        v
     D1 constants meter the axes; h->0 deletes quantum sizes  [VERIFIED mapping]
        ZPE->0, L_P->0, lambda_C->0, dx*dp->0

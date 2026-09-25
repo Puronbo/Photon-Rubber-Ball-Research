@@ -102,7 +102,8 @@ SPIRAL (the turn-walk, node C2; corrected in place 2026-09-25, corrigendum 74):
     ladder terms" is FALSE (fails from step 3 on). Verified vertices:
         steps 0,1,2,3,5,7,11,13,17,19 -> endpoint (9,11), r^2 = 202;
         step 6 (through L=11) -> vertex (-8, 5), r^2 = 89   (sum L^2 = 209);
-        after steps 0..7 -> (3,5), r^2 = 34 (sum L^2 = 88).
+        the 6 steps 0,1,2,3,5,7 -> (3,5), r^2 = 34 (sum L^2 = 88);
+        steps 0..7 (through L=13) -> (-8,-8), r^2 = 128.
     Exact identity (holds for any turn-walk with period-4 turns):
         r^2 = (sum of E-W contributions)^2 + (sum of N-S contributions)^2,
         x = L0 + L4 + ... - L2 - ...;  y = L1 + L5 + ... - L3 - ...
