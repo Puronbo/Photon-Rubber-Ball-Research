@@ -22,5 +22,5 @@ We document connections between a photon-sized rubber ball verification system a
 
 ## Provenance
 
-- Verified numbers: `C:\Users\Me\Desktop\j\PROJECT_INDEX.md` "Canonical results"; discrepancy log: `CORRIGENDUM.md` (entries 42-71).
+- Verified numbers: `C:\Users\Me\Desktop\j\PROJECT_INDEX.md` "Canonical results"; discrepancy log: `CORRIGENDUM.md` (entries 42-72).
 - Feasibility bounds (Section 5 of the paper) are the quantitative limits; do not strengthen them on submission.

@@ -46,7 +46,7 @@ m = 9.58e-17 kg, E* = 66.7 MPa, d_max = 5.807 nm, P_max = 20.63 nN; compliant pl
 
 Goal: the corpus was read in full (every one of the 107 tracked files; 112 on disk). Two new top-level artifacts codify that reading:
 - `PROJECT_INDEX.md` — canonical map tagging every part VERIFIED / NARRATIVE / PLANNING / FIXED, code & results of record, directory map, stewardship rules.
-- `CORRIGENDUM.md` — 71-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
+- `CORRIGENDUM.md` — 72-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
 
 Documentation integrity, repaired in place (assert-verified bulk edit):
 - `PHYSICS_CONNECTIONS_REVIEW.tex` + `RESEARCH_PAPER.tex` — removed the literal `\\`-escapes (would not compile); corrected "275 nm diameter" → "275 nm radius". Compile-verified with TeX Live 2026 (`pdflatex`, exit 0, PDF produced): restored tabular row separators `\\` (RESEARCH 11, PHYSICS 10), removed 5 orphan `\\` after `\end{itemize}` (PHYSICS), defined the missing `\keywords` (RESEARCH).
@@ -211,3 +211,28 @@ planning thread; recomputed this date, PASS/FAIL vs measured references:
 Not testable now (stay FRAMING/OPEN, not reality): QG grain, causal-set
 discreteness, consciousness any flavor, primordial tornado, ascent sign-flip,
 attractor growth.
+
+## Phase 9 — rank-degree expansion + results_of_record extension (2026-09-25)
+
+- `Law Apprehension of Works/RANKS_AND_DEGREES.md` — formalizes the thread's
+  ladder as (rank, degree) coordinates: rank = ladder position (primes-indexed,
+  node B1), degree = 0/1/2/3 dimensionality (doubling tail 1,2,4,8 as algebraic
+  only, node C2). Verified ladder table for D = 550 nm: every log10 and n(u)
+  recomputed by script this pass; **Laniakea log10 corrected to +24.69 in place
+  (was 24.2)** before first commit, tail re-ordered galaxy -> GA -> Laniakea.
+  Degree-collapse corollary: n(u) < 1 above the object's own rung (Earth
+  8.62e-14, GA 3.56e-31, Laniakea 1.11e-31) - the ball observes as a 0D point
+  from the cell rung up; the datum (rank 0, degree 0) never changes degree
+  (Law-L1).
+- `results_of_record.py` checks 16 -> **18** (no battery-count change; battery
+  remains 19 scripts, so the papers' "19-script battery" stays exact). New
+  checks 17-18 assert the rank-degree ladder: n(u) profile and the irregular
+  (prime-gap-like) log10 spacing that is what makes uniform growth only the PNT
+  mean. Output: "RESULTS OF RECORD: 18 checks reproduced.", exit 0.
+- Count resync: README current-state "16 assert-style checks / 16 checks" ->
+  18 (historical gate recaps above keep their then-true 16). Verified by full
+  run: `results_of_record.py` 18/18 exit 0.
+
+Gate (Phase 9): battery 19/19 green, `results_of_record.py` 18/18 exit 0,
+`ruff --select F` clean on tracked corpus, working tree contains only intended
+changes.

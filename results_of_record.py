@@ -8,7 +8,9 @@ the battery verifies. Exits nonzero if any documented number is not reproduced.
 
 Backed by: photon_rubber_ball_verification_improved.py (9-axis battery),
 script.py (independent re-verification), test_expansion_rigorous*.py (37 tests),
-energy_comparability_probe.py (energy-scale verdict).
+energy_comparability_probe.py (energy-scale verdict). Checks 17-18 assert the
+rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings and the
+irregular (prime-gap-like) log10 spacing, D = 550 nm source.
 """
 
 import math
@@ -22,6 +24,7 @@ if hasattr(sys.stdout, "reconfigure"):
 KB = 1.380649e-23
 HBAR = 1.054571817e-34
 C0 = 299792458.0
+D = 2*core.R
 
 TOL_PCT = 0.01
 
@@ -89,9 +92,35 @@ def main():
                  "per-photon recoil KE ~ zeropoint (true coincidence)",
                  f"{rec/zpe:.2f}", "5-15")
 
+    rungs = [("atom", 1e-10), ("molecule", 1e-9), ("virus", 1e-7),
+             ("ball", 5.5e-7), ("cell", 1e-5),
+             ("Earth", 6.378e6), ("galaxy", 30e3*3.0857e16),
+             ("GA", 50e6*3.0857e16), ("Laniakea", 160e6*3.0857e16)]
+    want_n = {"ball": 1.0, "cell": 0.055, "Earth": 8.62e-14,
+              "GA": 3.56e-31, "Laniakea": 1.11e-31}
+    nline = "; ".join(f"{k}={D/s:.3g}" for k, s in rungs)
+    nl_ok = all(D/s > 0 for _, s in rungs)
+    for name, want in want_n.items():
+        s = dict(rungs)[name]
+        nl_ok &= abs((D/s) - want)/want < 0.01
+    ok &= expect(nl_ok, "rank-degree ladder n(u)=D/s (ball=1, cell<1 point-read collapse, Earth/GA/Laniakea)",
+                 nline, "; ".join(f"{k}={v:g}" for k, v in want_n.items()))
+
+    l10 = [math.log10(s) for _, s in rungs]
+    want_l10 = {"atom": -10.0, "molecule": -9.0, "virus": -7.0, "ball": -6.26,
+                "cell": -5.0, "Earth": 6.80, "galaxy": 20.97, "GA": 24.19,
+                "Laniakea": 24.69}
+    lo_ok = all(abs(l10[i] - want_l10[rungs[i][0]]) < 0.02 for i in range(len(rungs)))
+    gaps = [round(l10[i+1] - l10[i], 2) for i in range(len(l10) - 1)]
+    irregular = len(set(gaps)) > 1
+    lo_ok &= irregular
+    ok &= expect(lo_ok, "ladder log10 profile + irregular (prime-gap-like) spacing",
+                 "; ".join(f"{l10[i]:.2f}" for i in range(len(l10))),
+                 "differs rung-to-rung (gaps %s, not uniform)" % "; ".join(map(str, gaps)))
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 16 checks reproduced.")
+        print("RESULTS OF RECORD: 18 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
