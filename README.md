@@ -82,6 +82,8 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
 └─ Law Apprehension of Works/              planning thread (informational, NOT physics):
        VERIFIED_COMPONENT_LINKAGE.md (nodes A0-F1; theorem/conjecture linkage)
        LAW_OF_CENTER_ASCENT.md (law-craft, postulates flagged REAL vs POSTULATE)
+       RANKS_AND_DEGREES.md (rank-degree coordinates; verified ladder table)
+       AUDIT_OF_THE_UNIVERSE.md · POSSIBILITIES_AND_RELEVANCY.md (verdict-coded)
        + GREAT_ATTRACTOR_REACTOR_ANALYSIS.md · SYNTHESIS_OF_ALL_WORK.md · ...
 ```
 
