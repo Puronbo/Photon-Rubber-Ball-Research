@@ -131,10 +131,12 @@ Coherence with the chain:
     datum invariance is A0 (rank 0, degree 0 never changes - Law L1's rest).
     OPEN-SPIRAL correction (C2): the pi/2 turn-walk is a spiral, not rings.
 
-Verified numbers (results_of_record checks 17-23): n(u) profile D=550 nm;
+Verified numbers (results_of_record checks 17-24): n(u) profile D=550 nm;
 log10 ladder -34.79,...,+26.64 with irregular gaps; pi(1e7)=664579;
-twins <1e7 = 58980; doubling 1,2,4,8; i period 4; Euler n^2+n+41 primes
-n=0..39 failing at n=40 (=41^2).
+twins <1e7 = 58980; composite-majority theorem (S(n) = n-1-2*pi(n) >= 0 for
+n >= 9, first strict majority n=10, ties {1,9,11,13}, S(1e7)=8670841);
+doubling 1,2,4,8; i period 4; Euler n^2+n+41 primes n=0..39 failing at
+n=40 (=41^2).
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

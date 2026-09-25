@@ -8,12 +8,14 @@ the battery verifies. Exits nonzero if any documented number is not reproduced.
 
 Backed by: photon_rubber_ball_verification_improved.py (9-axis battery),
 script.py (independent re-verification), test_expansion_rigorous*.py (37 tests),
-energy_comparability_probe.py (energy-scale verdict). Checks 17-23 assert the
+energy_comparability_probe.py (energy-scale verdict). Checks 17-24 assert the
 rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings, the
 irregular (prime-gap-like) log10 spacing (Planck-to-Hubble, D = 550 nm source),
-the counting substrate (pi(1e7) = 664579; twins < 1e7 = 58980 exact), and the
+the counting substrate (pi(1e7) = 664579; twins < 1e7 = 58980 exact), the
 algebraic half the thread relies on — doubling dims 1,2,4,8, i period 4,
-Euler n^2+n+41.
+Euler n^2+n+41 — and the composite-majority theorem (C(n) = n-1-pi(n):
+S=C-pi < 0 only for n = 2..8, ties at {1, 9, 11, 13}, first strict composite
+majority at n = 10, S >= 0 for every n in [9, 1e7], S(1e7) = 8670841).
 """
 
 import math
@@ -161,9 +163,35 @@ def main():
     ok &= expect(twins == 58980, "twin-pair count < 1e7 (exact; HL ~ 2*C2*x/ln^2x is conjecture, 14% off)",
                  str(twins), "58980 (computed; formula CONJECTURE)")
 
+    ties = [1]
+    neg = 0
+    first_majority = None
+    min_s9 = None
+    s_N = None
+    pi_run = 0
+    for n in range(2, nmax + 1):
+        pi_run += sv[n]
+        s = (n - 1) - 2*pi_run
+        if s < 0:
+            neg += 1
+        elif s == 0:
+            ties.append(n)
+        if first_majority is None and s > 0:
+            first_majority = n
+        if n >= 9 and (min_s9 is None or s < min_s9):
+            min_s9 = s
+        if n == nmax:
+            s_N = s
+    cm_ok = (neg == 7) and (ties == [1, 9, 11, 13]) and (first_majority == 10) \
+        and (min_s9 == 0) and (s_N == 8670841)
+    ok &= expect(cm_ok,
+                 "composite-majority theorem: C=n-1-pi, S=C-pi; S<0 only for n=2..8; ties {1,9,11,13}; first strict majority n=10; S>=0 for all n in [9,1e7]; S(1e7)",
+                 f"neg-range={neg} ties={ties} first-maj={first_majority} min-S(9..1e7)={min_s9} S(1e7)={s_N}",
+                 "S<0 count 7, ties [1, 9, 11, 13], first-maj 10, min-S 0, S(1e7)=8670841")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 23 checks reproduced.")
+        print("RESULTS OF RECORD: 24 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

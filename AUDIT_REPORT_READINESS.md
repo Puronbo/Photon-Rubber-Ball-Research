@@ -296,3 +296,22 @@ Gate (Phase 11): battery 19/19 green, `results_of_record.py` 23/23 exit 0,
 
 Gate (Phase 12): battery 19/19 green, `results_of_record.py` 23/23 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 13 — composite-majority counting substrate (2026-09-25)
+
+- User idea: "more composites than primes, because composites consist of primes;
+  primes are bounded only by themselves" — made exact, proven, and gated instead
+  of left as intuition.
+- New `COMPOSITE_MAJORITY.md` (informational): C(n) = n−1−π(n); margin
+  S(n) = C−π = n−1−2π(n); first strict composite majority at n = 10; ties
+  exactly {1, 9, 11, 13} up to 10⁷ (PNT ⇒ finitely many); permanence theorem
+  S(n) ≥ 0 for all n ≥ 9 (elementary proof: a drop to −1 would require n prime
+  and n = 2π(n−1)+2 even — contradiction); PNT asymptotics S(n) ~ n − 2n/ln n;
+  structural note: FTA fixes the FORM of composites, the sieve produces their
+  ABUNDANCE; honesty boundary: no Law-thread mirror claim licensed.
+- `results_of_record.py` extended 23 → 24 checks (check 24 asserts the full
+  theorem: S<0 only for n=2..8, ties {1,9,11,13}, first-majority 10, min S over
+  [9,1e7] = 0, S(1e7) = 8670841). Counts resynced everywhere; corrigendum 80.
+
+Gate (Phase 13): battery 19/19 green, `results_of_record.py` 24/24 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
