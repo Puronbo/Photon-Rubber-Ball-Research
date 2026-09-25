@@ -9,8 +9,8 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
   `python -W error::RuntimeWarning`; lint `ruff --select F` clean.
 - 2 LaTeX manuscripts: `RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`
   (both compile exit 0 under TeX Live). Compiled head: `Photon_Rubber_Ball_PAPER.pdf`.
-- 5 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (81 entries),
-  `AUDIT_REPORT_READINESS.md`, `ACTION_PLAN.md`, `README.md`.
+- 6 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (82 entries),
+  `AUDIT_REPORT_READINESS.md`, `ACTION_PLAN.md`, `CLAIM_REGISTER.md`, `README.md`.
 
 ## Staging
 - `arxiv_bundles/`: 2 bundles (qg_analogies, theory_connections), each with

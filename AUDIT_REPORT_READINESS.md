@@ -333,3 +333,18 @@ Gate (Phase 13): battery 19/19 green, `results_of_record.py` 24/24 exit 0,
 
 Gate (Phase 14): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 15 — whole-corpus claim register (2026-09-25)
+
+- Demand: "not just those — everything": every claim the corpus makes OR
+  refuses, in one verdict-coded inventory.
+- Deliverable: `CLAIM_REGISTER.md` (root, governance): 86 numbered claims
+  (B ball 18, L ladder 9, N counting 7, E external-2026 13, A universe-audit
+  11, F law-craft 12, P possibilities 7, G governance 9) each with status code
+  and verification site, + 17 explicit NOT-claims (X01-X17) + the add-before-use
+  rule + pointer to the 27-slot composite claim tree (N07).
+- Governance doc count 5 → 6; corrigendum 82. No battery numbers changed
+  (gate stays 26/26); register references existing checks only.
+
+Gate (Phase 15): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

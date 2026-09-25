@@ -41,6 +41,7 @@ ROOT
 ├─ .claude/settings.local.json              [tooling; rust-based rtk CLI allow-list]
 ├─ README.md                                [manager usage manual]
 ├─ this INDEX · CORRIGENDUM.md · ACTION_PLAN.md · AUDIT_REPORT_READINESS.md
+│   · CLAIM_REGISTER.md
 ├─ *.md / *.tex theory cluster              [NARRATIVE/PLANNING - see corrigendum for numeric errors]
 │    BASE_THEORY_FRAMEWORK · THEORY_CONNECTIONS_SUMMARY · PHYSICS_CATEGORIZATION ·
 │    GODEL_CONNECTIONS · PHYSICS_CONNECTIONS_REVIEW.tex [FIXED] · RESEARCH_PAPER.tex [FIXED]
