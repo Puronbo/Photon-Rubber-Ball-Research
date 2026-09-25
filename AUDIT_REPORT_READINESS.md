@@ -46,7 +46,7 @@ m = 9.58e-17 kg, E* = 66.7 MPa, d_max = 5.807 nm, P_max = 20.63 nN; compliant pl
 
 Goal: the corpus was read in full (every one of the 107 tracked files; 112 on disk). Two new top-level artifacts codify that reading:
 - `PROJECT_INDEX.md` — canonical map tagging every part VERIFIED / NARRATIVE / PLANNING / FIXED, code & results of record, directory map, stewardship rules.
-- `CORRIGENDUM.md` — 29-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
+- `CORRIGENDUM.md` — 70-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
 
 Documentation integrity, repaired in place (assert-verified bulk edit):
 - `PHYSICS_CONNECTIONS_REVIEW.tex` + `RESEARCH_PAPER.tex` — removed the literal `\\`-escapes (would not compile); corrected "275 nm diameter" → "275 nm radius". Compile-verified with TeX Live 2026 (`pdflatex`, exit 0, PDF produced): restored tabular row separators `\\` (RESEARCH 11, PHYSICS 10), removed 5 orphan `\\` after `\end{itemize}` (PHYSICS), defined the missing `\keywords` (RESEARCH).
