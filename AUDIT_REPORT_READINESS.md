@@ -521,3 +521,29 @@ Gate (Phase 22): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 23): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 24 — what is mass (2026-09-25)
+
+- User question: "what is mass? is it the position of the object given by its
+  volume?"
+- Answer (A15, [ESTABLISHED]-external): mass is not position or volume —
+  those are a gauged coordinate and a frame-dependent geometry, respectively;
+  mass is the Lorentz-invariant scalar m = E₀/c² (norm of the four-momentum).
+  It is inertial resistance (F=ma) and gravitational charge (F=GMm/r²) with
+  the equivalence principle tested to ~1e-13 (Eötvös, MICROSCOPE, lunar laser
+  ranging); ~99% of ordinary baryonic mass is QCD binding energy; mass-energy
+  is the source of spacetime curvature in GR.
+- The only volume bridge is density: m = ρV. The corpus's own M is defined
+  exactly that way (ρ·(4/3)πR³ = 9.583e-17 kg) and is gate-asserted by check
+  2 — so NO battery change this round, gate stays 27/27. Energy changes mass
+  at fixed volume (heated bodies, springs, nuclei).
+- A16: mass as the gauge-invariant residue — position gauges to zero per
+  object (A0/L12), mass survives every gauge (the 4-momentum norm is
+  Poincaré-invariant). So the user's intuition "the object's footprint" is
+  real in precisely this sense, never via location (F20; X26 kills
+  volume-alone-determines-mass).
+- Register 102→105 numbered (A15, A16, F20), 25→26 NOT-claims; 90→91 entries.
+  Corrigendum 91.
+
+Gate (Phase 24): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
