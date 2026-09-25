@@ -54,6 +54,7 @@ NOT-claim (section X).
 | L08 | prime turn-walk is an OPEN spiral: r² = (ΣE−W)² + (ΣN−S)², vertices (9,11) r²=202, (−8,5) r²=89, (3,5) r²=34; NOT Σsquares | [PROVEN] corrected | corrigendum 74 |
 | L09 | spatial physics caps at 3(+1); dims > 3 algebraic only | [PROVEN] empirical cap | RANKS ALGEBRA |
 | L10 | the filled light-cone is the observable 3-ball: radius = top particle-horizon rung 16 (4.4e26 m ≈ 46.5 Gly comoving; NOT the Hubble radius c/H0 ≈ 1.4e26 m — rung-16 naming corrected, corrigendum 85), volume (4/3)πR³ = 3.568e80 m³, which holds ~4.10e99 canonical 550 nm balls | [PROVEN] | check 27 |
+| L11 | the zero-to-horizon window is recursive: every object's own zero is its self-gauge (A0) and its radius of visibility = the last rank where its degree survives — above that it transitions to a point (degree-0 collapse, L03/L2; ball→point above cell, verified by checks 17-18); the observable universe sits at the top rung and would read as a single point from any rung above (same rule); "the next zero-to-horizon" beyond ANY horizon is the Copernican extrapolation (E16), not an observation — whole-universe topology [OPEN] | [PROVEN] machinery recursion (checks 17-18, L03) + [OPEN]/extrapolation beyond any horizon | checks 17-18; L09 |
 
 ## N — Counting substrate (checks 22-26) + full claim tree
 
@@ -122,6 +123,7 @@ NOT-claim (section X).
 | F12 | "the law is a solution" | [FRAMING] as SHAPE only, not verified |
 | F13 | "the edges of the universe are the same [as the center]": the boundary is self-referential — the only observable boundary is the horizon the universe draws with its own constants (c × cosmic age), a light-cone artifact, not a wall; a true edge would single out a location exactly as a center would, so by the cosmological principle an edge is as unestablished as a center | [FRAMING] corollary of the cosmological principle; REAL anchor: no edge observed, horizon = c·t artifact (E14); topology [OPEN] |
 | F14 | "fill the space with the light-cone to create a sphere or ball" — the ball is real AS the observable causal region (3.568e80 m³, L10/E15); the step from "observable ball" to "the universe is a ball" is the overreach | L10/E15 [PROVEN]/[ESTABLISHED]; the universal claim [FRAMING] |
+| F15 | "the zero-to-horizon recursion is the same all the way up — each ball nests inside the next zero-to-horizon ball, and the chain continues" | the recursion of the READING machinery is real (L11); nested OBSERVABLE balls are real in intent (E16); anything claiming what sits beyond our horizon (a real "next" window) is overreach — the horizon is a causal boundary, no observation crosses it | REAL anchors: A0, L03/L2, L10, L11, E16; the chain-beyond-horizon [FRAMING] |
 
 ## P — Possibility relevancy claims (POSSIBILITIES_AND_RELEVANCY.md)
 
@@ -142,7 +144,7 @@ NOT-claim (section X).
 | G01 | battery = 19 Python scripts, all exit 0 under `-W error::RuntimeWarning` | [VERIFIED] |
 | G02 | `results_of_record.py` = 27 checks, exit 0 | [VERIFIED] |
 | G03 | `ruff --select F` clean on tracked corpus | [VERIFIED] |
-| G04 | CORRIGENDUM.md = 85 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
+| G04 | CORRIGENDUM.md = 86 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
 | G05 | Law thread = 22 tracked .md + zh twin + PRESENTATION.tex; informational only | [VERIFIED] |
 | G06 | no experiment was performed; all narrative twin files banner-marked (PROVENANCE/FICTION) | [VERIFIED] |
 | G07 | arXiv bundles staged; upload requires the author's own arXiv account/endorsement | [VERIFIED] |
@@ -173,7 +175,8 @@ NOT-claim (section X).
 | X18 | there is a physical edge/wall of the universe | no evidence; a boundary would violate isotropy; the cosmic horizon is a light-cone artifact, not a wall (E14); "edges are the same as the center" is [FRAMING] (F13) |
 | X19 | the universe itself is finite and shaped like the observable ball | observable-ball volume is a lower bound + our visible region (L10/E15); whole-universe topology finite-without-boundary vs infinite is [OPEN]; "the universe is a ball" is [FRAMING] (F14) |
 | X20 | beyond the observed horizon the universe is the same everywhere | isotropy/homogeneity are measured only within the horizon (E16); sameness beyond it is the Copernican extrapolation, not evidence |
+| X21 | beyond the observed horizon there is a "next zero-to-horizon" that is real and in principle observable | the recursion (L11) describes the READING machinery of the verified ladder; what exists beyond ANY horizon is the Copernican extrapolation (E16) at best, and topology [OPEN] — no experiment crosses the causal boundary |
 
-Count: this register currently carries 92 numbered claims (B18, L10, N7, E16,
-A11, F14, P7, G9) + 20 NOT-claims, plus pointer to the 27-slot composite tree
+Count: this register currently carries 95 numbered claims (B18, L11, N7, E16,
+A11, F15, P7, G9) + 21 NOT-claims, plus pointer to the 27-slot composite tree
 (N07).

@@ -406,3 +406,25 @@ Gate (Phase 17): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 18): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 19 — zero-to-horizon recursion (2026-09-25)
+
+- User claim: "scale of zero to horizon being the radius of visibility before a
+  transition to the next zero to horizon."
+- Claimable core (verified): the recursion is real AS a statement about the
+  READING machinery of the ladder — every object's zero is its self-gauge (A0),
+  its radius of visibility is the last rank where its degree survives, and
+  above that it transitions to a point (degree-0 collapse, L03/L2 asserted by
+  checks 17-18). The observable universe is the top rung; by the same rule it
+  would read as a single point from any rung above. No new arithmetic was
+  introduced — the gate stays 27/27.
+- Boundaries: "the next zero-to-horizon" beyond ANY horizon is the Copernican
+  extrapolation (E16), not an observation; whole-universe topology [OPEN].
+  Registered: L11 [PROVEN machinery + OPEN beyond], F15 [FRAMING chain-beyond-
+  horizon], X21 (real-observable next window = NOT-claim). Correction key
+  (REAL_AND_CLAIMABLE) gains the recursion row.
+- Counts: register 92→95 numbered, 20→21 NOT-claims; 85→86 entries.
+  Corrigendum 86.
+
+Gate (Phase 19): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

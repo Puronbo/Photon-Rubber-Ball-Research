@@ -18,6 +18,7 @@ for every [FRAMING] row in the register, here is the claimable statement.
 | "the edges of the universe are the same [as the center]" | no edge or boundary is observed; the cosmic horizon is a light-cone artifact of c × age (≈46.5 Gly comoving), not a wall ([ESTABLISHED]-external, E14); a real edge would single out a location exactly as a center would | "the edge and center are the same thing" (F13 [FRAMING]) | E14, F13 |
 | "fill the space with the light-cone to create a sphere or ball" | the OBSERVABLE region is a topological 3-ball: radius = top particle-horizon rung 16 (4.4e26 m ≈ 46.5 Gly comoving), volume (4/3)πR³ = 3.568e80 m³, ~4.10e99 canonical balls pack inside ([PROVEN], check 27); causal past of an event = ball of 2-sphere sections ([ESTABLISHED]-external topology, E15) | "the universe IS a ball" (F14 overreach; X19) | L10, E15, F14, X19 |
 | "everywhere else must be the same" (homology) | within the horizon, isotropy/homogeneity are measured; every observer's own observable ball is isotropic with the same kind of horizon ([ESTABLISHED]-external, E16) | beyond the horizon, "same everywhere" is extrapolation, not measurement (X20) | E16, X20 |
+| "zero to horizon = radius of visibility, then transition to the next zero to horizon" | recursion of the READING machinery: every object's zero is its own gauge (A0, [VERIFIED]); its radius of visibility = the last rank its degree survives — above it, it reads as a point (L03/L2, [PROVEN], checks 17-18); the observable universe is the top rung and would read as a point from any rung above, by the same rule (L11) | "the chain of zero-to-horizon balls continues beyond every horizon" = [FRAMING] (F15); any claim that the "next window" beyond ours is real/observable = X21 (only the E16 extrapolation stands; topology [OPEN]) | L11, F15, X21 |
 | Law P1-P5 / L1-L4 as a system | real anchors only: ladder readings (L01-L04, L08), self-gauge invariance (A0), bound hierarchies — Local Group bound, M31 approaching ~110 km/s ([REAL], F04/F08); two + one + one honest signatures (F10) | the law as cosmology; tornado; center growth; ascent as physics; handedness inheritance | F01-F12 |
 
 ## 2. Master list — what is CLAIMABLE now
@@ -28,7 +29,8 @@ external dated source; full rows in CLAIM_REGISTER.md):
 1. Ball mechanics and coincidences: B01-B14 (checks 1-16), probe caps B15,
    point-likeness boundary B16/B18, solid-below-rung B17.
 2. Ladder: n(u) readings L01, irregular log10 profile L02, degree collapse L03,
-   contact-scaling L04, filled observable 3-ball L10 (checks 17-18, 27).
+   contact-scaling L04, filled observable 3-ball L10, zero-to-horizon recursion
+   L11 (machinery only) (checks 17-18, 27).
 3. Algebra theorems: doubling caps L05, i period-4 L06, Euler 41 L07
    (checks 19-21).
 4. Counting substrate: π(10⁷) L01..N01-N06 (checks 22-26) + every [PROVEN]
@@ -36,7 +38,7 @@ external dated source; full rows in CLAIM_REGISTER.md):
 5. Universe observations (external, dated): A01-A03; E01-E16 with their codes
    (no center E05, no edge E14, observable ball E15, in-horizon homogeneity
    E16, plus H0/vacuum/bulk-flow/QG/DM/gap/prime records E01-E13).
-6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 85
+6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 86
    entries, 22 tracked law .md, no experiment, sibling-repo independence).
 
 Explicitly NOT claimable (X01-X20): every [FRAMING]/[POSTULATE] row (F01-F14
