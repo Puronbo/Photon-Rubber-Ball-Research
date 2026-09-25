@@ -5,12 +5,14 @@ every entry in the framework is a point (rank, degree). All numbers below are
 verified readings from the canonical corpus (corrigendum 70; battery; script
 expansion pass 2026-09-25); the vocabulary itself is machinery, not physics.
 Supersedes the draft table of the same day (atom was r=1 there; renumbered to
-a full Planck-to-Hubble ladder — see corrigendum 74).
+a full Planck-to-observable-universe ladder — see corrigendum 74).
 
 ## Definitions
 
 - RANK r: the position of a scale rung on the ladder. r = 0 is the datum (the
-  point); r = 1..16 are the rungs from the Planck floor to the Hubble sphere,
+  point); r = 1..16 are the rungs from the Planck floor to the observable-universe
+  particle horizon (46.5 Gly comoving = 4.4e26 m; NOT the Hubble radius c/H0 ~
+  1.4e26 m — naming correction, corrigendum 85),
   in size order. Rank is the "how high" axis. The primes indexed these: the
   counting sense of the ladder is 0,1,primes (node B1).
 - DEGREE d: the dimensionality of the embedding structure at that rung.
@@ -23,7 +25,7 @@ a full Planck-to-Hubble ladder — see corrigendum 74).
 - READING: n(u) = s/u (self-gauge lemma; n ~ 1/u, unit-invariant). This is how
   rank and degree interact observationally.
 
-## The (rank, degree) table — full ladder, Planck to Hubble, ball = 550 nm source
+## The (rank, degree) table — full ladder, Planck to observable universe, ball = 550 nm source
 
 | r | rung | size s (m) | log10(s/m) | gap | ball n(u) = D/s | ball degree here |
 |---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ a full Planck-to-Hubble ladder — see corrigendum 74).
 | 13 | galaxy (30 kpc) | 9.257e20 | +20.97 | 8.09 | 5.94e-28 | 0 |
 | 14 | Great Attractor (50 Mpc) | 1.543e24 | +24.19 | 3.22 | 3.56e-31 | 0 |
 | 15 | Laniakea (160 Mpc) | 4.937e24 | +24.69 | 0.51 | 1.11e-31 | 0 |
-| 16 | Hubble sphere | 4.4e26 | +26.64 | 1.95 | 1.25e-33 | 0 |
+| 16 | observable universe (particle horizon) | 4.4e26 | +26.64 | 1.95 | 1.25e-33 | 0 |
 
 Gaps: 15.79, 3.92, 5.08, 1.00, 2.00, 0.74, 1.26, 5.24, 6.56, 2.34, 3.73,
 8.09, 3.22, 0.51, 1.95 — none equal; rank positions are irregular everywhere,
@@ -58,7 +60,7 @@ OBSERVABLE only as a degree-0 point:
 
     ball r=7, d=3  ->  at r>=8 (cell) effective degree becomes 0.
     Verified: 1 um tick -> n = 0.55 (< 1); Earth n = 8.62e-14; GA 3.56e-31;
-    Laniakea 1.11e-31; Hubble sphere 1.25e-33 (corrigendum 70 ladder).
+    Laniakea 1.11e-31; observable universe 1.25e-33 (corrigendum 70 ladder).
 
 This is the Law of Center Ascent's L2 (resolution bound) restated in degrees:
 "as high as it can go" = the last rank where its degree survives. The datum
@@ -90,10 +92,10 @@ DOWN (rungs below the ball, all degree-3 readings with huge tick counts):
 
 UP (rungs above, all degree-0 collapsed readings):
     human 3.14e-07; Earth 8.62e-14; Sun 3.95e-16; Solar-system 7.35e-20;
-    galaxy 5.94e-28; GA 3.56e-31; Laniakea 1.11e-31; Hubble 1.25e-33.
+    galaxy 5.94e-28; GA 3.56e-31; Laniakea 1.11e-31; observable universe 1.25e-33.
     The reading keeps shrinking 33+ orders past the datum — this is the measured
     content of "as high as it can go" (L2).
-    FILLED: the Hubble rung IS the observable 3-ball — V = 4/3*pi*R^3 =
+    FILLED: the top (particle-horizon) rung IS the observable 3-ball — V = 4/3*pi*R^3 =
     3.568e80 m^3 at R = 4.4e26 m (check 27); ~4.10e99 canonical balls pack
     inside the light-cone intersection. The geometry claim is about the
     OBSERVED ball only, never the whole universe (register L10/E15/F14).

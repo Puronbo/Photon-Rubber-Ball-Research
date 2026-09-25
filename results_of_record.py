@@ -19,7 +19,7 @@ majority at n = 10, S >= 0 for every n in [9, 1e7], S(1e7) = 8670841).
 Checks 25-26 add the two sieve consequences: unbounded prime-free runs
 (witness 201!+2..201!+201, j | (201!+j) exact) and small-factor dominance
 of the integers n <= 1e7. Check 27 fills the light-cone: the observable causal
-3-ball at the Hubble rung 16 radius (4.4e26 m) has volume (4/3)pi R^3 =
+3-ball at the top particle-horizon rung 16 radius (4.4e26 m) has volume (4/3)pi R^3 =
 3.568e80 m^3, holding 4.10e99 canonical 550 nm balls.
 """
 
@@ -221,7 +221,7 @@ def main():
     fill = v_univ/v_ball_fill
     fill_ok = abs(v_univ - 3.568e80)/3.568e80 < 0.01 and 4.0e99 < fill < 4.2e99
     ok &= expect(fill_ok,
-                 "filled light-cone = observable 3-ball (Hubble rung 16, R=4.4e26 m): V=(4/3)pi*R^3; canonical-ball fill count",
+                 "filled light-cone = observable 3-ball (top particle-horizon rung 16, R=4.4e26 m): V=(4/3)pi*R^3; canonical-ball fill count",
                  f"V={v_univ:.3e} m^3  fill-count={fill:.3e}",
                  "V=3.568e80 m^3, ~4.10e99 canonical balls (R ratio 1.6e33, cubed)")
 

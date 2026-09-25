@@ -261,7 +261,8 @@ Gate (Phase 10): battery 19/19 green, `results_of_record.py` 21/21 exit 0,
 ## Phase 11 — expand all directions (2026-09-25)
 
 - Expansion pass computed the ladder to its full vertical span: Planck floor
-  (log10 -34.79, n = 3.4e28) through Hubble sphere (+26.64, n = 1.25e-33),
+  (log10 -34.79, n = 3.4e28) through observable-universe particle horizon
+  (+26.64, n = 1.25e-33),
   16 rungs. `RANKS_AND_DEGREES.md` rewritten as the full (rank, degree) matrix
   plus four OTHER directions: DOWN (solid readings, ball is never point below
   ~um), UP (33+ orders of collapsed reading), ALGEBRA (1,2,4,8 + i-period-4 +
@@ -370,7 +371,7 @@ Gate (Phase 16): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
 
 - User claim: "fill the space with the light-cone to create a sphere or ball."
 - Verified core (new battery check 27): the observable ball at the ladder's
-  Hubble rung 16 (R = 4.4e26 m ≈ 46.5 Gly comoving) has volume
+  top particle-horizon rung 16 (R = 4.4e26 m ≈ 46.5 Gly comoving) has volume
   (4/3)πR³ = 3.568e80 m³ and packs ~4.10e99 canonical 550 nm balls —
   closed-form arithmetic of the canonical ladder, now gated.
 - Registered (add-before-use): L10 [PROVEN] filled-ball volume/fill-count;
@@ -384,4 +385,24 @@ Gate (Phase 16): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
   NOT-claims. Corrigendum 84.
 
 Gate (Phase 17): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 18 — framing correction: real vs claimable (2026-09-25)
+
+- User directive: "correct the framing and see what is real and claimable."
+- Naming correction: rung 16 was labeled "Hubble sphere, 4.4e26 m", but that
+  radius is the comoving particle horizon (46.5 Gly); c/H0 ≈ 1.36e26 m ≈
+  14.4 Gly is the actual Hubble radius. Value correct, name conflated two
+  radii → renamed "observable universe (particle horizon)" (RANKS table + UP,
+  gate label, register L10, this report). No numeric value changed.
+- New `REAL_AND_CLAIMABLE.md`: every [FRAMING] claim of the session chain is
+  split into its claimable core (with verdict + check/cite) vs its decoration;
+  a master list of what is claimable now; the adjacency rule (framing may
+  appear only attached to its core). Register additions: E16 (in-horizon
+  homogeneity [ESTABLISHED]-external; beyond-horizon sameness [OPEN]) and X20
+  (beyond-horizon sameness = NOT-claim via Copernican extrapolation).
+- Counts resynced: register 91→92 numbered, 19→20 NOT-claims; Law list 21→22
+  tracked; 84→85 entries. Corrigendum 85.
+
+Gate (Phase 18): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
