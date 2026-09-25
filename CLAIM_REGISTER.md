@@ -53,6 +53,7 @@ NOT-claim (section X).
 | L07 | Euler n²+n+41 prime for n = 0..39, fails at n = 40 = 41² | [PROVEN] | check 21 |
 | L08 | prime turn-walk is an OPEN spiral: r² = (ΣE−W)² + (ΣN−S)², vertices (9,11) r²=202, (−8,5) r²=89, (3,5) r²=34; NOT Σsquares | [PROVEN] corrected | corrigendum 74 |
 | L09 | spatial physics caps at 3(+1); dims > 3 algebraic only | [PROVEN] empirical cap | RANKS ALGEBRA |
+| L10 | the filled light-cone is the observable 3-ball: radius = Hubble rung 16 (4.4e26 m ≈ 46.5 Gly comoving), volume (4/3)πR³ = 3.568e80 m³, which holds ~4.10e99 canonical 550 nm balls | [PROVEN] | check 27 |
 
 ## N — Counting substrate (checks 22-26) + full claim tree
 
@@ -84,6 +85,7 @@ NOT-claim (section X).
 | E12 | 1,2,4,8 = Hurwitz/Frobenius/Adams + Bott 8; Euler 41 = Rabinowitsch/Heegner 163 | [ESTABLISHED]-theorem | §1.4 |
 | E13 | octonion/E8 unification physics: speculative; Distler-Garibaldi no-go | [CONJECTURE] | §1.5 |
 | E14 | no physical edge/boundary is observed; the cosmic horizon is a light-cone artifact (c × 13.8 Gyr ≈ 46.5 Gly comoving), not a wall; large-scale isotropy/homogeneity tested; whether spacetime is finite-without-boundary or infinite is unknown | [ESTABLISHED]-external (no edge) + [OPEN] (topology) | §3.2 |
+| E15 | the causal past of an observation event is topologically a 3-ball: spatial sections of the past light cone are 2-spheres of radius c·t, filled interior = the observable ball (region we can see, NOT evidence the whole universe is finite) | [ESTABLISHED]-external topology + [OPEN] whole-universe | §1/§3.2 |
 
 ## A — Audit verdicts on "what the universe is" (AUDIT_OF_THE_UNIVERSE.md)
 
@@ -118,6 +120,7 @@ NOT-claim (section X).
 | F11 | closure cycle "low center, high matter, one-handed spin, quantization of standing" | [FRAMING] structure |
 | F12 | "the law is a solution" | [FRAMING] as SHAPE only, not verified |
 | F13 | "the edges of the universe are the same [as the center]": the boundary is self-referential — the only observable boundary is the horizon the universe draws with its own constants (c × cosmic age), a light-cone artifact, not a wall; a true edge would single out a location exactly as a center would, so by the cosmological principle an edge is as unestablished as a center | [FRAMING] corollary of the cosmological principle; REAL anchor: no edge observed, horizon = c·t artifact (E14); topology [OPEN] |
+| F14 | "fill the space with the light-cone to create a sphere or ball" — the ball is real AS the observable causal region (3.568e80 m³, L10/E15); the step from "observable ball" to "the universe is a ball" is the overreach | L10/E15 [PROVEN]/[ESTABLISHED]; the universal claim [FRAMING] |
 
 ## P — Possibility relevancy claims (POSSIBILITIES_AND_RELEVANCY.md)
 
@@ -136,9 +139,9 @@ NOT-claim (section X).
 | ID | claim | verdict |
 |---|---|---|
 | G01 | battery = 19 Python scripts, all exit 0 under `-W error::RuntimeWarning` | [VERIFIED] |
-| G02 | `results_of_record.py` = 26 checks, exit 0 | [VERIFIED] |
+| G02 | `results_of_record.py` = 27 checks, exit 0 | [VERIFIED] |
 | G03 | `ruff --select F` clean on tracked corpus | [VERIFIED] |
-| G04 | CORRIGENDUM.md = 82 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
+| G04 | CORRIGENDUM.md = 84 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
 | G05 | Law thread = 21 tracked .md + zh twin + PRESENTATION.tex; informational only | [VERIFIED] |
 | G06 | no experiment was performed; all narrative twin files banner-marked (PROVENANCE/FICTION) | [VERIFIED] |
 | G07 | arXiv bundles staged; upload requires the author's own arXiv account/endorsement | [VERIFIED] |
@@ -167,7 +170,8 @@ NOT-claim (section X).
 | X16 | "more composites because products of primes" (mechanism) | C15 FALSE-as-mechanism |
 | X17 | any interval has composite majority | C20 FALSE (window [2,3]) |
 | X18 | there is a physical edge/wall of the universe | no evidence; a boundary would violate isotropy; the cosmic horizon is a light-cone artifact, not a wall (E14); "edges are the same as the center" is [FRAMING] (F13) |
+| X19 | the universe itself is finite and shaped like the observable ball | observable-ball volume is a lower bound + our visible region (L10/E15); whole-universe topology finite-without-boundary vs infinite is [OPEN]; "the universe is a ball" is [FRAMING] (F14) |
 
-Count: this register currently carries 88 numbered claims (B18, L9, N7, E14,
-A11, F13, P7, G9) + 18 NOT-claims, plus pointer to the 27-slot composite tree
+Count: this register currently carries 91 numbered claims (B18, L10, N7, E15,
+A11, F14, P7, G9) + 19 NOT-claims, plus pointer to the 27-slot composite tree
 (N07).

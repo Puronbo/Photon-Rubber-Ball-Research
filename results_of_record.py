@@ -8,7 +8,7 @@ the battery verifies. Exits nonzero if any documented number is not reproduced.
 
 Backed by: photon_rubber_ball_verification_improved.py (9-axis battery),
 script.py (independent re-verification), test_expansion_rigorous*.py (37 tests),
-energy_comparability_probe.py (energy-scale verdict). Checks 17-26 assert the
+energy_comparability_probe.py (energy-scale verdict). Checks 17-27 assert the
 rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings, the
 irregular (prime-gap-like) log10 spacing (Planck-to-Hubble, D = 550 nm source),
 the counting substrate (pi(1e7) = 664579; twins < 1e7 = 58980 exact), the
@@ -18,8 +18,9 @@ S=C-pi < 0 only for n = 2..8, ties at {1, 9, 11, 13}, first strict composite
 majority at n = 10, S >= 0 for every n in [9, 1e7], S(1e7) = 8670841).
 Checks 25-26 add the two sieve consequences: unbounded prime-free runs
 (witness 201!+2..201!+201, j | (201!+j) exact) and small-factor dominance
-(# <= 1e7 divisible by one of 2,3,5,7 = 7,714,287; exactly 2,285,713 are
-coprime to 210, so 1 - phi(210)/210 ~ 77.1%).
+of the integers n <= 1e7. Check 27 fills the light-cone: the observable causal
+3-ball at the Hubble rung 16 radius (4.4e26 m) has volume (4/3)pi R^3 =
+3.568e80 m^3, holding 4.10e99 canonical 550 nm balls.
 """
 
 import math
@@ -214,9 +215,19 @@ def main():
                  f"count={with_factor} coprime-to-210={coprime} frac={with_factor/nmax:.4f}",
                  "count=7714287, coprime=2285713 (Mertens: prod(1-1/p)->0 in the window limit)")
 
+    r_obs = 4.4e26
+    v_univ = (4/3)*math.pi*r_obs**3
+    v_ball_fill = (4/3)*math.pi*core.R**3
+    fill = v_univ/v_ball_fill
+    fill_ok = abs(v_univ - 3.568e80)/3.568e80 < 0.01 and 4.0e99 < fill < 4.2e99
+    ok &= expect(fill_ok,
+                 "filled light-cone = observable 3-ball (Hubble rung 16, R=4.4e26 m): V=(4/3)pi*R^3; canonical-ball fill count",
+                 f"V={v_univ:.3e} m^3  fill-count={fill:.3e}",
+                 "V=3.568e80 m^3, ~4.10e99 canonical balls (R ratio 1.6e33, cubed)")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 26 checks reproduced.")
+        print("RESULTS OF RECORD: 27 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

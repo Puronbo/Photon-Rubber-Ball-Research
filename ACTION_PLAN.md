@@ -8,7 +8,7 @@ tasks with a **Done** criterion and current status. A closing gate runs
 
 ## Verified foundations (fast facts)
 
-- Canonical numbers are reproducible with one command: `python results_of_record.py` (26 checks, exit 0).
+- Canonical numbers are reproducible with one command: `python results_of_record.py` (27 checks, exit 0).
 - Central abstract claim ("relativistic/quantum/thermal comparable at β=0.04") is **false** (~37 orders apart); true coincidences: per-photon recoil KE ≈ ball zeropoint (9.9×), JKR adhesion ≫ kT (6.3e5×), contraction 0.22 nm = 6.4× the trap thermal RMS.
 - 19 Python scripts = code of record (all green under `-W error::RuntimeWarning`); `ruff --select F` clean.
 - The `.md/.html/.txt` corpus is generated narrative; the expert comments are generative, not reviewers.
@@ -19,7 +19,7 @@ tasks with a **Done** criterion and current status. A closing gate runs
 
 | Task | Done criterion | Status |
 |---|---|---|
-| 1.1 `results_of_record.py` reproduces + asserts the canonical table | 26/26 checks, exit 0 | DONE |
+| 1.1 `results_of_record.py` reproduces + asserts the canonical table | 27/27 checks, exit 0 | DONE |
 | 1.2 Added to the reproducible battery (16 → 17 → 18 → 19 runs) | full battery exit 0 | DONE |
 | 1.3 The false abstract claim has a code-of-record replacement | `energy_comparability_probe.py` verdict | DONE |
 

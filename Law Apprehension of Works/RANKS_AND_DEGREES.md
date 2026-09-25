@@ -93,6 +93,10 @@ UP (rungs above, all degree-0 collapsed readings):
     galaxy 5.94e-28; GA 3.56e-31; Laniakea 1.11e-31; Hubble 1.25e-33.
     The reading keeps shrinking 33+ orders past the datum — this is the measured
     content of "as high as it can go" (L2).
+    FILLED: the Hubble rung IS the observable 3-ball — V = 4/3*pi*R^3 =
+    3.568e80 m^3 at R = 4.4e26 m (check 27); ~4.10e99 canonical balls pack
+    inside the light-cone intersection. The geometry claim is about the
+    OBSERVED ball only, never the whole universe (register L10/E15/F14).
 
 ALGEBRA (the degree cap, theorem-proven): the doubling chain 1,2,4,8 stops at
 Hurwitz; Cl(0,8) Bott period-8 repeats the table. i period 4 (i^2 = -1, i^4 = 1)

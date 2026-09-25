@@ -365,3 +365,23 @@ Gate (Phase 15): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
 
 Gate (Phase 16): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 17 — filling the light-cone (2026-09-25)
+
+- User claim: "fill the space with the light-cone to create a sphere or ball."
+- Verified core (new battery check 27): the observable ball at the ladder's
+  Hubble rung 16 (R = 4.4e26 m ≈ 46.5 Gly comoving) has volume
+  (4/3)πR³ = 3.568e80 m³ and packs ~4.10e99 canonical 550 nm balls —
+  closed-form arithmetic of the canonical ladder, now gated.
+- Registered (add-before-use): L10 [PROVEN] filled-ball volume/fill-count;
+  E15 [ESTABLISHED]-external topology (causal past is a 3-ball; spatial
+  sections of the past light cone are 2-spheres of radius c·t; whole-universe
+  topology [OPEN]); F14 [FRAMING] — "the universe IS a ball" overreaches, the
+  ball is real as the OBSERVED region; X19 NOT-claim (universe finite-and-
+  ball-shaped).
+- RANKS UP gains the FILLED line; LINKAGE list → checks 17-27. Counts
+  resynced 26→27 checks, 83→84 entries; register 88→91 numbered, 18→19
+  NOT-claims. Corrigendum 84.
+
+Gate (Phase 17): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
