@@ -257,3 +257,25 @@ changes.
 
 Gate (Phase 10): battery 19/19 green, `results_of_record.py` 21/21 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 11 — expand all directions (2026-09-25)
+
+- Expansion pass computed the ladder to its full vertical span: Planck floor
+  (log10 -34.79, n = 3.4e28) through Hubble sphere (+26.64, n = 1.25e-33),
+  16 rungs. `RANKS_AND_DEGREES.md` rewritten as the full (rank, degree) matrix
+  plus four OTHER directions: DOWN (solid readings, ball is never point below
+  ~um), UP (33+ orders of collapsed reading), ALGEBRA (1,2,4,8 + i-period-4 +
+  Bott-8, theorem-capped), SPIRAL (corrected turn-walk), COUNTING (pi(1e7),
+  twins).
+- The expansion pass CAUGHT a false claim in the committed linkage draft:
+  "radius^2 = sum of squares of ladder terms" for the turn-walk is FALSE (fails
+  from step 3 on: steps 0..7 endpoint (3,5), r^2 = 34 vs sum squares 88; step 6
+  (-8,5), r^2 = 89 vs 209). Corrected in place in `VERIFIED_COMPONENT_LINKAGE.md`
+  to the exact identity r^2 = (sum E-W)^2 + (sum N-S)^2 (corrigendum 74).
+- `results_of_record.py` 21 -> **23** checks: 22 = pi(1e7) = 664579 (sieve,
+  6.6% off n/ln n, asymptotic); 23 = twin pairs < 1e7 = 58980 exact (HL formula
+  ~ 2*C2*x/ln^2 x = 50822, 14% off — CONJECTURE label kept). Battery still 19
+  scripts. README/MANIFEST -> 23; corrigendum 75 reconciles entry 73's 21.
+
+Gate (Phase 11): battery 19/19 green, `results_of_record.py` 23/23 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

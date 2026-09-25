@@ -81,10 +81,13 @@ A2 size-at-scale ladder (CORRIGENDUM entry 70)           [VERIFIED]
        physical space = 3+1 real signature; dims DO NOT
        climb like primes (caps at 4 for physics)
        |
-       | correction: prime turn-walk is an OPEN SPIRAL,
-       | not nested square rings; radius^2 = sum of squares
-       | of ladder terms (e.g. 0..7 -> 209; vertex (-8,5)
-       | has |.|^2 = 89 after steps summing squares to 88)
+| correction: prime turn-walk is an OPEN SPIRAL,
+        | not nested square rings. Verified vertices (steps
+        | 0,1,2,3,5,7,11,13 | through L=11 | through 0..7):
+        | endpoint (9,11) r^2=202; (-8,5) r^2=89; (3,5) r^2=34.
+        | r^2 is (sum E-W)^2 + (sum N-S)^2, NOT sum of squares
+        | of ladder terms (the earlier draft claim was false from
+        | step 3 on; corrigendum 74).
        v
     D1 constants meter the axes; h->0 deletes quantum sizes  [VERIFIED mapping]
        ZPE->0, L_P->0, lambda_C->0, dx*dp->0
@@ -128,9 +131,10 @@ Coherence with the chain:
     datum invariance is A0 (rank 0, degree 0 never changes - Law L1's rest).
     OPEN-SPIRAL correction (C2): the pi/2 turn-walk is a spiral, not rings.
 
-Verified numbers (results_of_record checks 17-21): n(u) profile D=550 nm;
-log10 ladder -10.0,...,+24.69 with irregular gaps; doubling 1,2,4,8; i period
-4; Euler n^2+n+41 primes n=0..39 failing at n=40 (=41^2).
+Verified numbers (results_of_record checks 17-23): n(u) profile D=550 nm;
+log10 ladder -34.79,...,+26.64 with irregular gaps; pi(1e7)=664579;
+twins <1e7 = 58980; doubling 1,2,4,8; i period 4; Euler n^2+n+41 primes
+n=0..39 failing at n=40 (=41^2).
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

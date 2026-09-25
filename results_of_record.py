@@ -8,10 +8,12 @@ the battery verifies. Exits nonzero if any documented number is not reproduced.
 
 Backed by: photon_rubber_ball_verification_improved.py (9-axis battery),
 script.py (independent re-verification), test_expansion_rigorous*.py (37 tests),
-energy_comparability_probe.py (energy-scale verdict). Checks 17-21 assert the
+energy_comparability_probe.py (energy-scale verdict). Checks 17-23 assert the
 rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings, the
-irregular (prime-gap-like) log10 spacing (D = 550 nm source), and the algebraic
-half the thread relies on — doubling dims 1,2,4,8, i period 4, Euler n^2+n+41.
+irregular (prime-gap-like) log10 spacing (Planck-to-Hubble, D = 550 nm source),
+the counting substrate (pi(1e7) = 664579; twins < 1e7 = 58980 exact), and the
+algebraic half the thread relies on — doubling dims 1,2,4,8, i period 4,
+Euler n^2+n+41.
 """
 
 import math
@@ -146,9 +148,22 @@ def main():
     ok &= expect(euler_ok, "Euler n^2+n+41 prime for n=0..39, fails at n=40 (=41^2)",
                  f"primes n=0..39, n=40 -> {n40}", "1681 = 41^2 composite")
 
+    nmax = 10**7
+    sv = bytearray([1])*(nmax+1)
+    sv[0] = sv[1] = 0
+    for p in range(2, int(nmax**0.5)+1):
+        if sv[p]:
+            sv[p*p::p] = bytearray(len(range(p*p, nmax+1, p)))
+    pix7 = sum(sv)
+    twins = sum(1 for i in range(3, nmax-2) if sv[i] and sv[i+2])
+    ok &= expect(pix7 == 664579, "pi(1e7) sieve count",
+                 str(pix7), "664579 (n/ln n is 6.6% off, asymptotic)")
+    ok &= expect(twins == 58980, "twin-pair count < 1e7 (exact; HL ~ 2*C2*x/ln^2x is conjecture, 14% off)",
+                 str(twins), "58980 (computed; formula CONJECTURE)")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 21 checks reproduced.")
+        print("RESULTS OF RECORD: 23 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

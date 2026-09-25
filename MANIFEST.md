@@ -4,7 +4,7 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 
 ## Verified core (reproducible)
 - 19 Python scripts: 18 at repo root + 1 in `photon_rubber_ball_research/` (`test_expansion_rigorous.py`).
-  Entry points: `results_of_record.py` (21 asserts, exit 0) and
+  Entry points: `results_of_record.py` (23 asserts, exit 0) and
   `photon_rubber_ball_verification_improved.py`. Gate: all exit 0 under
   `python -W error::RuntimeWarning`; lint `ruff --select F` clean.
 - 2 LaTeX manuscripts: `RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`
