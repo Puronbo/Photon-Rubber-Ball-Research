@@ -42,7 +42,7 @@ thermal RMS. The 19-script battery runs green under
 ```
 ├─ README.md                          <-- this front door
 ├─ PROJECT_INDEX.md                   canonical map: verified vs narrative. Start here.
-├─ CORRIGENDUM.md                     68-entry discrepancy catalog (1 [FALSE], n [FIXED])
+├─ CORRIGENDUM.md                     70-entry discrepancy catalog (1 [FALSE], n [FIXED])
 ├─ ACTION_PLAN.md                     goal paths to completion, with Done criteria
 ├─ AUDIT_REPORT_READINESS.md          audit history, Phase 1-8.3, battery results
 │

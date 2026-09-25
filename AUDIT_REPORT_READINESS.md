@@ -167,8 +167,8 @@ fixed in place:
   explicit `[FICTION 2026-09-25]` markers prepended to the four scene files
   (`fictional_lab_scene.txt/.html`, `big_bang_style_scene.txt/.html`).
 - Stale counts corrected: SUBMIT.md (×2) "18-script battery"/"entries 42-45" →
-  "19-script"/"42-68"; ACTION_PLAN "18 Python scripts" → 19; README "29-entry" →
-  "68-entry", "Phase 1-6" → "Phase 1-8.3", "18 .py" → "19 .py"; CORRIGENDUM
+  "19-script"/"42-70"; ACTION_PLAN "18 Python scripts" → 19; README "29-entry" →
+  "70-entry", "Phase 1-6" → "Phase 1-8.3", "18 .py" → "19 .py"; CORRIGENDUM
   duplicate row 45 removed and the process-layer table header normalized.
 - Verified-negative findings recorded so they do not get re-flagged: the Law
   thread's "275 nm diameter" sites are already fixed (entry 35); 
