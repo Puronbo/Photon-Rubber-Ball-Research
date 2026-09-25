@@ -89,6 +89,21 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
        + GREAT_ATTRACTOR_REACTOR_ANALYSIS.md · SYNTHESIS_OF_ALL_WORK.md · ...
 ```
 
+## Related repositories
+
+Sibling "Puno Calculus" projects by the same author (independent codebases; no
+cross-verification claimed between them and this repo):
+
+- [`Puronbo/Law-Of-Repulsive-Emanation`](https://github.com/Puronbo/Law-Of-Repulsive-Emanation)
+  — 0/0 singularity framework: asymptotic safety, Millennium-problem honest
+  audits (all NOT SETTLED), certified ECA-soliton suite + Lean 4 twin proofs.
+- [`Puronbo/Folding-Calculus`](https://github.com/Puronbo/Folding-Calculus)
+  — 90-degree complex manifold / crease-density framework: Nijenhuis-tensor
+  crease, cusp catastrophe, folding engine (verified ReLU + continuous sim).
+
+Git remotes: `lore` and `folding` (fetch/push) are configured alongside
+`origin`.
+
 ## Quickstart
 
 ```bash
