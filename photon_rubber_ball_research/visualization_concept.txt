@@ -1,3 +1,4 @@
+[PROVENANCE 2026-09-25] Generated narrative/analysis prose, not a measured result; numeric claims inside are superseded or unverified. See PROJECT_INDEX.md and CORRIGENDUM.md.
 VISUALIZING THE PHOTON-SIZED RUBBER BALL INTERACTION
 A Conceptual Model for Understanding Light-Matter Engagement at the Nanoscale
 

@@ -1,3 +1,4 @@
+[PROVENANCE 2026-09-25] Generated narrative/analysis prose, not a measured result; numeric claims inside are superseded or unverified. See PROJECT_INDEX.md and CORRIGENDUM.md.
 H2O AND PHOTON CONNECTIONS
 Exploring Interactions Between Water Molecules and Photons
 in the Context of Photon-Sized Rubber Ball Research

@@ -46,7 +46,7 @@ m = 9.58e-17 kg, E* = 66.7 MPa, d_max = 5.807 nm, P_max = 20.63 nN; compliant pl
 
 Goal: the corpus was read in full (every one of the 107 tracked files; 112 on disk). Two new top-level artifacts codify that reading:
 - `PROJECT_INDEX.md` — canonical map tagging every part VERIFIED / NARRATIVE / PLANNING / FIXED, code & results of record, directory map, stewardship rules.
-- `CORRIGENDUM.md` — 70-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
+- `CORRIGENDUM.md` — 71-entry catalog of every documented discrepancy vs the verified numbers (the abstract "comparable energies" claim is entry 1; see below), with either a fix-in-place or a tracked status.
 
 Documentation integrity, repaired in place (assert-verified bulk edit):
 - `PHYSICS_CONNECTIONS_REVIEW.tex` + `RESEARCH_PAPER.tex` — removed the literal `\\`-escapes (would not compile); corrected "275 nm diameter" → "275 nm radius". Compile-verified with TeX Live 2026 (`pdflatex`, exit 0, PDF produced): restored tabular row separators `\\` (RESEARCH 11, PHYSICS 10), removed 5 orphan `\\` after `\end{itemize}` (PHYSICS), defined the missing `\keywords` (RESEARCH).
@@ -167,8 +167,8 @@ fixed in place:
   explicit `[FICTION 2026-09-25]` markers prepended to the four scene files
   (`fictional_lab_scene.txt/.html`, `big_bang_style_scene.txt/.html`).
 - Stale counts corrected: SUBMIT.md (×2) "18-script battery"/"entries 42-45" →
-  "19-script"/"42-70"; ACTION_PLAN "18 Python scripts" → 19; README "29-entry" →
-  "70-entry", "Phase 1-6" → "Phase 1-8.3", "18 .py" → "19 .py"; CORRIGENDUM
+  "19-script"/"42-71"; ACTION_PLAN "18 Python scripts" → 19; README "29-entry" →
+  "71-entry", "Phase 1-6" → "Phase 1-8.3", "18 .py" → "19 .py"; CORRIGENDUM
   duplicate row 45 removed and the process-layer table header normalized.
 - Verified-negative findings recorded so they do not get re-flagged: the Law
   thread's "275 nm diameter" sites are already fixed (entry 35); 
@@ -189,3 +189,25 @@ tracked corpus (untracked user WIP in `deterministic_simulation.py`,
 `investigation_example.py`, `investigation_fixed.py`, `organized_work/` is not
 part of the corpus and does not yet lint clean); `__pycache__` 0 residual;
 working tree clean after the commit (114 tracked files).
+
+## Applied-reality anchors (2026-09-25, computed from measured values)
+
+Live reality check of the cosmology/cosmology-adjacent numbers discussed in the
+planning thread; recomputed this date, PASS/FAIL vs measured references:
+
+- vacuum catastrophe gap: rho_pl = 4.6e113 J/m^3 vs observed rho_de = 6e-10 J/m^3
+  -> ~123 orders (claim "~120" PASS). This is the same error class as the project's
+  corrected 37-order "comparable energies" claim (corrigendum 1), not an endorsement.
+- Hubble tension: Planck 67.4 ± 0.5 vs SH0ES 73.04 ± 1.04 km/s/Mpc -> 4.9 sigma.
+- composition: baryon/dark-matter/dark-energy 5/26/69 %; age 13.787 Gyr;
+  Omega_K ~ 0.001 ± 0.002 (flat ~1%).
+- Local Group / GA: MW-M31 relative radial ~ -110 km/s (approach); GA ~ 50 Mpc
+  toward Norma, mass ~ 1e15-1e16 M_sun; LG bulk flow a few hundred km/s toward it.
+- structure reach: smallest probed length ~ 1e-18 m (LHC); Planck length
+  1.6e-35 m -> gap ~ 17 orders, so LQG/causal-set discreteness stays untestable.
+- entry-70 ladder: ball D = 550 nm -> 550 nm-ticks (n=1), 1 nm (n=550),
+  1 um (n=0.55 point), Earth (8.62e-14), 50 Mpc (3.56e-31).
+
+Not testable now (stay FRAMING/OPEN, not reality): QG grain, causal-set
+discreteness, consciousness any flavor, primordial tornado, ascent sign-flip,
+attractor growth.
