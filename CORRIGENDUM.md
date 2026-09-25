@@ -40,10 +40,10 @@ repaired in place the same day; all others are tracked here without silent rewri
 
 ## Process-layer notes (not numeric)
 
-| # | Doc / site | Note |
-|---|---|---|
-| 24 | `expert_comments_*.txt` (5), `synthesis_of_expert_perspectives.txt` | generative role-play "expert" reviews; synthesis misattributes quotes (e.g., "Multi-scale framework required" appears in no individual file) and drops the thermal expert's hedges. `infosheet_corrected.md` disavows the expert layer outright. Treat as narrative. |
-| 25 | `Law Apprehension of Works/` | `REAL_IMAGINARY_NUMBERS_ANALYSIS.md` §3.1 and `WHAT_EVERYTHING_MEANS_CONCRETELY.md` flip the real=viral/dissipative convention; `CONNECTION_AUDIT.md` rates Orch-OR/IIT/Gödelian "NOT CONNECTABLE" and entropic gravity "SPECULATIVE" while the presentation foregrounds them; axis numbering differs between SYNTHESIS and presentation/proposal; "pN/√N" should be "pN/√Hz"; `RESEARCH_PROPOSAL.md` budget lines sum ≈$2.7M vs stated $2.45M. Essay/planning thread — no data. |
+| # | Doc / site | Note | Status |
+|---|---|---|---|
+| 24 | `expert_comments_*.txt` (5), `synthesis_of_expert_perspectives.txt` | generative role-play "expert" reviews; synthesis misattributes quotes (e.g., "Multi-scale framework required" appears in no individual file) and drops the thermal expert's hedges. `infosheet_corrected.md` disavows the expert layer outright. Treat as narrative. | — |
+| 25 | `Law Apprehension of Works/` | `REAL_IMAGINARY_NUMBERS_ANALYSIS.md` §3.1 and `WHAT_EVERYTHING_MEANS_CONCRETELY.md` flip the real=viral/dissipative convention; `CONNECTION_AUDIT.md` rates Orch-OR/IIT/Gödelian "NOT CONNECTABLE" and entropic gravity "SPECULATIVE" while the presentation foregrounds them; axis numbering differs between SYNTHESIS and presentation/proposal; "pN/√N" should be "pN/√Hz"; `RESEARCH_PROPOSAL.md` budget lines sum ≈$2.7M vs stated $2.45M. Essay/planning thread — no data. (Extended by entry 57.) | — |
 | 26 | `UNIFIED_CONNECTIONS_FRAMEWORK.md`:339,372 | truncated fragments "forconsistency", "symmeinformation theory" | **[FIXED]** |
 | 27 | `big_bang_style_scene.txt:31` / `.html:32`, `fictional_lab_scene.txt:5` / `.html:6` | "fifty-five nanometers" (55 nm) | **[FIXED]** to 550 nm |
 | 28 | `logs/test_20260923_061950.log` | empty log, kept (benign named-empty) | — |
@@ -96,7 +96,40 @@ closing ACTION_PLAN 4.2. No experiment has been performed; the documents now say
 | 45 | both manuscripts, author block | "Claude Code Assistant" sole author; RESEARCH \thanks held a fake correspondence email | co-authorship M.G.S. Puno + Claude Code Assistant (\thanks: lead author / automated drafting+review); fake email removed; pdfauthor metadata updated; arXiv bundles prepared (arxiv_bundles/, main.tex per manuscript) | **[FIXED]** |
 | 46 | corpus | probe dimension limited to a massless photon at 550 nm; no low-mass distinction anywhere | `boson_scaling_probe.py` added (19th battery member): exact F=(v/c)(P/c) ceiling, (mc²/E)² criterion, wavelength/TOF/longitudinal ladder — all verified outputs | added |
 | 47 | RESEARCH_PAPER §5, PHYSICS abstract; both arXiv bundles | no massless-vs-low-mass treatment; abstracts said "18-script battery" | new §"Probe-particle type dimension" (massless ceiling, distinguishability, gluon/W/Z/H beam-inapplicability); abstracts now "19-script battery"; bundle main.tex + PDFs regenerated | **[FIXED]** |
-| 45 | both manuscripts, author block | "Claude Code Assistant" sole author; RESEARCH \thanks held a fake correspondence email | co-authorship M.G.S. Puno + Claude Code Assistant (\thanks: lead author / automated drafting+review); fake email removed; pdfauthor metadata updated; arXiv bundles prepared (arxiv_bundles/, main.tex per manuscript) | **[FIXED]** |
+
+## Path 8.3 — Coverage sweep (2026-09-25, third full pass)
+
+"Probe indefinitely until all bases have been covered": three parallel read-only
+agents (numerics / fabrication-honesty / structure-QA), then first-hand
+verification of every quoted line before any change. Entries 48-57 are
+narrative-layer numerics (tracked, not rewritten, per the historical-integrity
+rule); 58-67 are structural fixes done in place this pass; 68 is a verified-
+negative finding.
+
+| # | Doc / site | As written | Verified / resolution | Status |
+|---|---|---|---|---|
+| 48 | `work_and_momentum_integrals.txt:148-151` | "I=10⁶ W/m²" for 1 mW focused to 1 μm²; "flux 2.8e15 photons/(m²·s)" | 1 mW/1 μm² = 10⁹ W/m² (×10³ too small); the named "flux" equals the beam rate 2.77e15/s, not an areal flux — the line feeds the F≈8e-25 N read already tracked as entries 2/30 | tracked |
+| 49 | `research_paper_findings.txt:113` | D ≈ 4e-13 m²/s for the 550 nm ball in water (η=0.001 Pa·s) | D=kT/(6πηr) = 8.0e-13 for r=275 nm; 4e-13 is what you get using r=550 nm (radius read from the diameter) | tracked |
+| 50 | `research_paper_findings.txt:155-156` | "V = V₀/γ" with "volume reduction ≈ 0.24%" | γ=1.0008 gives 1−1/γ = 0.08% but 1−1/γ³ = 0.24%; the quoted 0.24% is right only if the formula is V₀/γ³ — internal self-contradiction (same file's §2.2 already carries this pattern, entry 13) | tracked |
+| 51 | `research_paper_findings.txt:163-164` | Δp ≥ 0.05 eV/c at Δx=1 nm; thermal electron p ≈ 0.02 eV/c | Heisenberg: ħ/(2Δx) = 5.27e-26 kg·m/s ≈ 99 eV/c (×2e3 off); thermal p = √(3k_BTm_e) ≈ 163 eV/c (×8e3 off) — power-of-ten slips in both | tracked |
+| 52 | `research_paper_findings.txt:191,205,226` | thermal amplitude "RMS ~1-10 nm", "comparable to object size" | verified trap/contact RMS 0.034/0.028 nm — new sites of the entry-31 "6 nm" family | tracked |
+| 53 | `research_paper_findings.txt:220`; `hydrogen_atom_photon_bath.txt:42-43` | zero-point "~0.01-0.1 eV"/"~0.01 eV" comparable to rel KE | ball ZPE 7.7e-40 J ≈ 4.8e-21 eV; the wording re-asserts the comparability already corrected in entries 1/5 | tracked |
+| 54 | `research_paper_for_novel.txt:59-60`; `fictional_lab_scene.txt:23` | "the ball's diameter shrinks by a hundredth of a percent" (0.01%) | 0.08% length contraction (research_paper_findings.txt:148 is correct) — new sites of entry 32 | tracked |
+| 55 | `fictional_lab_scene.txt:13,23` | ZPE "comparable to the relativistic kinetic energy"; "zero-point, rel KE, and kT all hover near the same scale" | the ~37-order-gap correction, entry-1 family, new sites | tracked |
+| 56 | `Law Apprehension of Works/WHAT_EVERYTHING_MEANS_CONCRETELY.md:191` | "2h/λ = 1.246e-24 kg·m/s" (1064 nm) | the same-line formula gives 1.3252e-33 / 1.064e-6 = 1.246e-27 (×10³ exponent slip) | **[FIXED]** |
+| 57 | `Law Apprehension of Works/` | `GREAT_ATTRACTOR_REACTOR_ANALYSIS.md:132` "~10¹⁸ erg per nuclear reaction (fusion/fission)"; `RESEARCH_PROPOSAL.md` budget headers vs item sums (Equipment $900K vs $1,000K; Supplies $150K vs $170K; indirect-cap note $250K vs $562,500; total $2.45M vs ~$2.64M) | per-event nuclear energy is ~1.6e-6 erg (fusion) to ~3e-4 erg (fission) — ≈10¹⁰ too high; proposal figures are placeholder planning sums. [Law thread: planning doc, no data; extends entry 25] | tracked |
+| 58 | `photon_engine_research_paper.html` | html twin of the banner'd .txt carried no provenance banner | banner added matching its .txt | **[FIXED]** |
+| 59 | `work_and_momentum_integrals.html` | same | banner added | **[FIXED]** |
+| 60 | `fictional_lab_scene.txt/.html`, `big_bang_style_scene.txt/.html` | fiction scenes in evidentiary tone; only the filename labels them as fiction | explicit `[FICTION 2026-09-25]` markers prepended to all four | **[FIXED]** |
+| 61 | both `arxiv_bundles/*/SUBMIT.md` | abstract paste still said "18-script battery"; provenance line cited "entries 42-45" | "19-script battery"; "entries 42-68" | **[FIXED]** |
+| 62 | `ACTION_PLAN.md:13` | "18 Python scripts = code of record" | 19 (incl. `boson_scaling_probe.py`) | **[FIXED]** |
+| 63 | `README.md:45,47,49` | "29-entry discrepancy catalog"; "audit history, Phase 1-6"; "(18 .py)" | "68-entry"; "Phase 1-8.3"; "(19 .py)" | **[FIXED]** |
+| 64 | `PHYSICS_CONNECTIONS_REVIEW.tex:41,57,76,94,114` (pre-edit numbering) | five orphan `\\` lines, one after each `\textbf{File:}` block | removed; the 10 tabular row separators kept | **[FIXED]** |
+| 65 | both `.tex` preambles | dead packages: graphicx, multicol, color (RESEARCH also subcaption) never used | removed; caption + float kept (RESEARCH tables use them) | **[FIXED]** |
+| 66 | `AUDIT_REPORT_READINESS.md:37` | garbled path string "C?UsersMeDesktopj...fictional_lab_scene.html" | readable description of the 18-B name-splinter | **[FIXED]** |
+| 67 | `CORRIGENDUM.md` (this file) | Path 4.2 table carried a duplicate row 45; process-layer table header had 3 columns vs 4-column rows | duplicate removed; header normalized (`Status` column added) | **[FIXED]** |
+| 68 | `photon_engine_research_paper`/`photon_engine_concept` html twins | a sweep agent reported `photon_engine_concept.html` as another un-bannered twin | **verified: `photon_engine_concept.html` does not exist** (only the .txt) — no banner needed; negative finding recorded to prevent re-flagging | — |
+| 69 | `boson_scaling_probe.py` (battery member 19) | the committed member had been replaced on disk by a "dialectic engine" rewrite whose `__main__` loops forever waiting for keypresses (Space/`q`) and wrote `experiment_logs/` on every cycle — the gate hung on the 19th member (gate-breaker, caught by this pass's battery run) | one-shot deterministic `main()` restored as the default; interactive engine now opt-in via `--interactive`; log directory created lazily only when logging is enabled; `experiment_logs/` gitignored + removed; 3 new ruff-F errors fixed | **[FIXED]** |
 
 ## Verified values a reader may rely on
 

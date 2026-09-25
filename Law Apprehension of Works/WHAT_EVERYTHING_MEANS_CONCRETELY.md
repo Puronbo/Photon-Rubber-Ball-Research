@@ -188,7 +188,7 @@ Consider position measurement via photon scattering:
 3. **Expected Proof**:
    - Histogram shows peaks at p = 0, ±2h/λ, ±4h/λ, ... (for reflection)
    - Peak heights follow Poisson distribution: P(n) = μⁿe⁻μ/n!
-   - Peak spacing = 2h/λ = 2 × (6.626×10⁻³⁴ J·s) / (1064×10⁻⁹ m) = 1.246×10⁻²⁴ kg·m/s
+   - Peak spacing = 2h/λ = 2 × (6.626×10⁻³⁴ J·s) / (1064×10⁻⁹ m) = 1.246×10⁻²⁷ kg·m/s
 4. **Quantitative Verification**:
    - Fit histogram to sum of Gaussians at expected peak positions
    - Extract peak spacing and compare to theoretical value

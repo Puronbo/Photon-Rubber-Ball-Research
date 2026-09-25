@@ -42,11 +42,11 @@ thermal RMS. The 19-script battery runs green under
 ```
 ├─ README.md                          <-- this front door
 ├─ PROJECT_INDEX.md                   canonical map: verified vs narrative. Start here.
-├─ CORRIGENDUM.md                     29-entry discrepancy catalog (1 [FALSE], n [FIXED])
+├─ CORRIGENDUM.md                     68-entry discrepancy catalog (1 [FALSE], n [FIXED])
 ├─ ACTION_PLAN.md                     goal paths to completion, with Done criteria
-├─ AUDIT_REPORT_READINESS.md          audit history, Phase 1-6, battery results
+├─ AUDIT_REPORT_READINESS.md          audit history, Phase 1-8.3, battery results
 │
-├─ the verified science (18 .py)      -- runnable; the code of record
+├─ the verified science (19 .py)      -- runnable; the code of record
 │  ├─ photon_rubber_ball_verification_improved.py   9-axis battery (canonical core)
 │  ├─ results_of_record.py                           reproduction gate: asserts the table
 │  ├─ energy_comparability_probe.py                  quantitative verdict on the core claim

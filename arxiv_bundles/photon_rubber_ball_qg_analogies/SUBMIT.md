@@ -11,7 +11,7 @@ Bundle contents: `main.tex` (self-contained, no figures, no external packages be
 
 ## Abstract (paste)
 
-We document connections between a photon-sized rubber ball verification system and frontier theories in physics through theoretical extension and an automated code-review workflow. The verification platform, a 275 nm radius microsphere with E=50 MPa and nu=0.5, verifies nine physics axes spanning contact mechanics, viscoelasticity, relativity, and Mie scattering; every number reported here is reproduced by an independent 18-script battery. We develop five theory extensions connecting this system to quantum thermodynamics (fluctuation theorems), decoherence theory (gravitational and environmental models), entropic gravity (Verlinde's hypothesis), black hole analogies (scattering and thermodynamics), and fluctuation-dissipation relations. The extensions propose parameter-tunable, photon-impact-controlled tests of these connections. One claim of the earlier narrative is corrected: at the system's nominal fixed point the relativistic kinetic energy (6.9 mJ), thermal energy (4.1e-21 J), and zero-point energy (7.7e-40 J) are ~37 orders of magnitude apart and are not comparable; the genuine coincidences are per-photon recoil kinetic energy near the ball's zero-point energy and JKR adhesion work far above k_BT.
+We document connections between a photon-sized rubber ball verification system and frontier theories in physics through theoretical extension and an automated code-review workflow. The verification platform, a 275 nm radius microsphere with E=50 MPa and nu=0.5, verifies nine physics axes spanning contact mechanics, viscoelasticity, relativity, and Mie scattering; every number reported here is reproduced by an independent 19-script battery. We develop five theory extensions connecting this system to quantum thermodynamics (fluctuation theorems), decoherence theory (gravitational and environmental models), entropic gravity (Verlinde's hypothesis), black hole analogies (scattering and thermodynamics), and fluctuation-dissipation relations. The extensions propose parameter-tunable, photon-impact-controlled tests of these connections. One claim of the earlier narrative is corrected: at the system's nominal fixed point the relativistic kinetic energy (6.9 mJ), thermal energy (4.1e-21 J), and zero-point energy (7.7e-40 J) are ~37 orders of magnitude apart and are not comparable; the genuine coincidences are per-photon recoil kinetic energy near the ball's zero-point energy and JKR adhesion work far above k_BT.
 
 ## Verify before upload
 
@@ -22,5 +22,5 @@ We document connections between a photon-sized rubber ball verification system a
 
 ## Provenance
 
-- Verified numbers: `C:\Users\Me\Desktop\j\PROJECT_INDEX.md` "Canonical results"; discrepancy log: `CORRIGENDUM.md` (entries 42-45).
+- Verified numbers: `C:\Users\Me\Desktop\j\PROJECT_INDEX.md` "Canonical results"; discrepancy log: `CORRIGENDUM.md` (entries 42-68).
 - Feasibility bounds (Section 5 of the paper) are the quantitative limits; do not strengthen them on submission.

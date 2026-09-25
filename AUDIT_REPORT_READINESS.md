@@ -34,7 +34,7 @@ m = 9.58e-17 kg, E* = 66.7 MPa, d_max = 5.807 nm, P_max = 20.63 nN; compliant pl
 
 ## Deferred items — resolved
 1. `surface_netting_modifications.txt` — created, grounded in the project's own cross-refs (hydration-net dielectric drop 78→2-10, photonic-net confinement, Casimir-Polder surface geometry).
-2. Orphan `C?UsersMeDesktopj...fictional_lab_scene.html` (18-B name-splinter) — deleted.
+2. Orphan `…fictional_lab_scene.html` (18-B name-splinter: an on-disk copy whose filename had been corrupted into a path fragment during an earlier bulk copy) — deleted.
 3. Empty `logs/test_20260923_061950.log` — kept (benign named-empty log).
 4. `expert_audit_develop_v3.js` — documented: Claude Code workflow meta (runtime provides `agent`/`parallel`/`phase`/`args`), not standalone Node; lineage v1→v3 stated.
 
@@ -149,3 +149,43 @@ is framework-level only and NOT asserted numerically.
 Documentation: RESEARCH_PAPER.tex gained §"Probe-particle type dimension";
 abstracts now cite a 19-script battery across both manuscripts and the arXiv
 bundles (main.tex + PDFs regenerated).
+
+## Phase 8.3 — Coverage sweep (2026-09-25, third full pass)
+
+"Probe indefinitely until all bases have been covered": three parallel read-only
+agents (numerics / fabrication-honesty / structure-QA), every claim verified
+first-hand before any change was made. New corrigendum entries 48-68; this phase
+fixed in place:
+
+- `PHYSICS_CONNECTIONS_REVIEW.tex` — five orphan `\\` lines (one after each
+  `\textbf{File:}` block) removed; dead usepackages (graphicx, multicolor, color;
+  RESEARCH: also subcaption) dropped from both manuscripts. caption + float kept
+  (RESEARCH tables use them). All four `.tex` recompile exit 0; bundle `main.tex`
+  re-copied byte-for-byte from the edited originals and PDFs regenerated.
+- Provenance banner added to the two html twins that had missed the Phase-7 pass
+  (`photon_engine_research_paper.html`, `work_and_momentum_integrals.html`);
+  explicit `[FICTION 2026-09-25]` markers prepended to the four scene files
+  (`fictional_lab_scene.txt/.html`, `big_bang_style_scene.txt/.html`).
+- Stale counts corrected: SUBMIT.md (×2) "18-script battery"/"entries 42-45" →
+  "19-script"/"42-68"; ACTION_PLAN "18 Python scripts" → 19; README "29-entry" →
+  "68-entry", "Phase 1-6" → "Phase 1-8.3", "18 .py" → "19 .py"; CORRIGENDUM
+  duplicate row 45 removed and the process-layer table header normalized.
+- Verified-negative findings recorded so they do not get re-flagged: the Law
+  thread's "275 nm diameter" sites are already fixed (entry 35); 
+  `photon_engine_concept.html` does not exist, so it needs no banner.
+- Narrative numerics tracked without rewriting (entries 48-57): I/flux slip in
+  momentum-integrals, D radius confusion, V=V₀/γ internal contradiction, eV/c
+  power-of-ten slips, thermal 1-10 nm family, ZPE eV overclaims, 0.01%-contraction
+  and comparability re-assertions in the scenes/novel, Law-thread planning numbers.
+
+Gate (Phase 8.3, run as part of the pass): 19-script battery green — the battery's
+19th member (`boson_scaling_probe.py`) had regressed into a non-terminating
+interactive "dialectic engine" loop that also wrote `experiment_logs/` on every
+cycle; one-shot deterministic mode restored (engine opt-in via `--interactive`),
+log directory creation made lazy, `experiment_logs/` gitignored + removed, and
+3 new ruff-F findings fixed (corrigendum 69). `results_of_record.py` 16/16
+exit 0; `test_expansion_rigorous.py` exit 0; `ruff --select F` clean on the
+tracked corpus (untracked user WIP in `deterministic_simulation.py`,
+`investigation_example.py`, `investigation_fixed.py`, `organized_work/` is not
+part of the corpus and does not yet lint clean); `__pycache__` 0 residual;
+working tree clean after the commit (114 tracked files).

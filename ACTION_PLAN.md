@@ -10,7 +10,7 @@ tasks with a **Done** criterion and current status. A closing gate runs
 
 - Canonical numbers are reproducible with one command: `python results_of_record.py` (16 checks, exit 0).
 - Central abstract claim ("relativistic/quantum/thermal comparable at β=0.04") is **false** (~37 orders apart); true coincidences: per-photon recoil KE ≈ ball zeropoint (9.9×), JKR adhesion ≫ kT (6.3e5×), contraction 0.22 nm = 6.4× the trap thermal RMS.
-- 18 Python scripts = code of record (all green under `-W error::RuntimeWarning`); `ruff --select F` clean.
+- 19 Python scripts = code of record (all green under `-W error::RuntimeWarning`); `ruff --select F` clean.
 - The `.md/.html/.txt` corpus is generated narrative; the expert comments are generative, not reviewers.
 
 ---

@@ -11,7 +11,7 @@ Bundle contents: `main.tex` (self-contained, no figures, no external packages be
 
 ## Abstract (paste)
 
-This report develops connections between a photon-sized rubber ball verification system and frontier theories in physics: quantum thermodynamics, decoherence theory, entropic gravity, black hole analogies, and fluctuation-dissipation theorems. The connections are analogical and propose parameter-tunable tests through photon-impact control. All reported numbers are independently re-verified by an 18-script battery; an earlier claim that the system's relativistic, thermal, and zero-point energies coincide is corrected — they are ~37 orders of magnitude apart, while the genuine coincidences are per-photon recoil kinetic energy near the zero-point energy and JKR adhesion work far above k_BT. Quantitative experimental feasibility is bounded in the accompanying report (radiative deflection 0.94 pm is 36x below the 0.034 nm trap thermal RMS at 1 mW).
+This report develops connections between a photon-sized rubber ball verification system and frontier theories in physics: quantum thermodynamics, decoherence theory, entropic gravity, black hole analogies, and fluctuation-dissipation theorems. The connections are analogical and propose parameter-tunable tests through photon-impact control. All reported numbers are independently re-verified by a 19-script battery; an earlier claim that the system's relativistic, thermal, and zero-point energies coincide is corrected — they are ~37 orders of magnitude apart, while the genuine coincidences are per-photon recoil kinetic energy near the zero-point energy and JKR adhesion work far above k_BT. Quantitative experimental feasibility is bounded in the accompanying report (radiative deflection 0.94 pm is 36x below the 0.034 nm trap thermal RMS at 1 mW).
 
 ## Verify before upload
 
@@ -22,5 +22,5 @@ This report develops connections between a photon-sized rubber ball verification
 
 ## Provenance
 
-- Verified numbers: `C:\Users\Me\Desktop\j\PROJECT_INDEX.md` "Canonical results"; discrepancy log: `CORRIGENDUM.md` (entries 42-45).
+- Verified numbers: `C:\Users\Me\Desktop\j\PROJECT_INDEX.md` "Canonical results"; discrepancy log: `CORRIGENDUM.md` (entries 42-68).
 - Feasibility bounds are the quantitative limits; do not strengthen them on submission.
