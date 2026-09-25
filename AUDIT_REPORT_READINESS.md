@@ -315,3 +315,21 @@ Gate (Phase 12): battery 19/19 green, `results_of_record.py` 23/23 exit 0,
 
 Gate (Phase 13): battery 19/19 green, `results_of_record.py` 24/24 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 14 — claim tree for the composite-majority idea (2026-09-25)
+
+- Demand: "all possible claims to be made" from the primes-vs-composites idea.
+- Deliverable: `COMPOSITE_MAJORITY.md` §8 claim tree — every claim the idea can
+  carry, verdict-coded: A counting (C1-C10), B structural (C11-C19), C window
+  traps (C20-C21 rejected), D Law-thread mirror claims (C22-C25 rejected as
+  FALSE/FRAMING), E meta (C26-C27).
+- Two catalog rows were new verifiable numbers, so the gate grew 24 → 26 checks:
+  - check 25 — unbounded prime-free runs: 201!+2..201!+201 (200 consecutive
+    composites), j | (201!+j) exact.
+  - check 26 — small-factor dominance: of the integers ≤ 1e7 exactly 7,714,287
+    divisible by one of 2,3,5,7; 2,285,713 coprime to 210 (≈77.14% = 1−φ(210)/210).
+- Counts resynced 24→26 checks, 80→81 entries, Law list unchanged at 21 tracked.
+  Corrigendum 81.
+
+Gate (Phase 14): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

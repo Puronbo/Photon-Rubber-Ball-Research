@@ -4,12 +4,12 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 
 ## Verified core (reproducible)
 - 19 Python scripts: 18 at repo root + 1 in `photon_rubber_ball_research/` (`test_expansion_rigorous.py`).
-  Entry points: `results_of_record.py` (24 asserts, exit 0) and
+  Entry points: `results_of_record.py` (26 asserts, exit 0) and
   `photon_rubber_ball_verification_improved.py`. Gate: all exit 0 under
   `python -W error::RuntimeWarning`; lint `ruff --select F` clean.
 - 2 LaTeX manuscripts: `RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`
   (both compile exit 0 under TeX Live). Compiled head: `Photon_Rubber_Ball_PAPER.pdf`.
-- 5 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (80 entries),
+- 5 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (81 entries),
   `AUDIT_REPORT_READINESS.md`, `ACTION_PLAN.md`, `README.md`.
 
 ## Staging

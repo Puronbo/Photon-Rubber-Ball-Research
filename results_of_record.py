@@ -8,7 +8,7 @@ the battery verifies. Exits nonzero if any documented number is not reproduced.
 
 Backed by: photon_rubber_ball_verification_improved.py (9-axis battery),
 script.py (independent re-verification), test_expansion_rigorous*.py (37 tests),
-energy_comparability_probe.py (energy-scale verdict). Checks 17-24 assert the
+energy_comparability_probe.py (energy-scale verdict). Checks 17-26 assert the
 rank-degree ladder (RANKS_AND_DEGREES.md): entry-70 scale readings, the
 irregular (prime-gap-like) log10 spacing (Planck-to-Hubble, D = 550 nm source),
 the counting substrate (pi(1e7) = 664579; twins < 1e7 = 58980 exact), the
@@ -16,6 +16,10 @@ algebraic half the thread relies on — doubling dims 1,2,4,8, i period 4,
 Euler n^2+n+41 — and the composite-majority theorem (C(n) = n-1-pi(n):
 S=C-pi < 0 only for n = 2..8, ties at {1, 9, 11, 13}, first strict composite
 majority at n = 10, S >= 0 for every n in [9, 1e7], S(1e7) = 8670841).
+Checks 25-26 add the two sieve consequences: unbounded prime-free runs
+(witness 201!+2..201!+201, j | (201!+j) exact) and small-factor dominance
+(# <= 1e7 divisible by one of 2,3,5,7 = 7,714,287; exactly 2,285,713 are
+coprime to 210, so 1 - phi(210)/210 ~ 77.1%).
 """
 
 import math
@@ -189,9 +193,30 @@ def main():
                  f"neg-range={neg} ties={ties} first-maj={first_majority} min-S(9..1e7)={min_s9} S(1e7)={s_N}",
                  "S<0 count 7, ties [1, 9, 11, 13], first-maj 10, min-S 0, S(1e7)=8670841")
 
+    run_ok = True
+    f201 = math.factorial(201)
+    for j in range(2, 202):
+        if (f201 + j) % j != 0:
+            run_ok = False
+            break
+    ok &= expect(run_ok,
+                 "unbounded prime-free runs (witness 201!+2..201!+201 = 200 consecutive composites)",
+                 "200 consecutive composites" if run_ok else "divisibility failed",
+                 "each j satisfies j | (201!+j); any run length n via (n+1)!+2..(n+1)!+n+1")
+
+    phi210, block, rem = 48, nmax // 210, nmax % 210
+    r = sum(1 for k in range(1, rem + 1) if math.gcd(k, 210) == 1)
+    coprime = phi210*block + r
+    with_factor = nmax - coprime
+    small_ok = (with_factor == 7714287) and (with_factor > nmax*0.77)
+    ok &= expect(small_ok,
+                 "small-factor dominance: #<=1e7 divisible by 2,3,5,7 (>77%: 1-phi(210)/210 ~ 0.7714)",
+                 f"count={with_factor} coprime-to-210={coprime} frac={with_factor/nmax:.4f}",
+                 "count=7714287, coprime=2285713 (Mertens: prod(1-1/p)->0 in the window limit)")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 24 checks reproduced.")
+        print("RESULTS OF RECORD: 26 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

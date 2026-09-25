@@ -69,7 +69,7 @@ refuses to blend them:
 
 ## C. Audit of THIS PROJECT's claims about reality (against A/B verdicts)
 
-- [ESTABLISHED] ball physics numbers (battery, 19 scripts, results_of_record 24
+- [ESTABLISHED] ball physics numbers (battery, 19 scripts, results_of_record 26
    checks exit 0); the corrected "37 orders apart" hierarchy; recoil KE ~= ZPE
    9.9x; JKR >> k_BT 6.3e5x; point-likeness above ~um (corrigendum 70).
 - [ESTABLISHED] the math backing these numbers: PNT (π(1e6)=78498), the

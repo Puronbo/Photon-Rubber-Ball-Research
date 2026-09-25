@@ -116,6 +116,70 @@ At 10⁷ the margin has grown to ≈13× pi(10⁷): primes are ≈6.65% of the n
 
 ## 7. Gate
 
-`results_of_record.py` check 24 asserts, verbatim: S(n) < 0 only for the seven
-values n = 2..8; ties == [1, 9, 11, 13]; first strict composite majority n = 10;
-min(S(n) for n in [9, 10⁷]) == 0; S(10⁷) == 8670841.
+`results_of_record.py` checks 24-26 assert, verbatim:
+
+- check 24 (composite-majority): S(n) < 0 only for n = 2..8; ties == [1, 9,
+  11, 13]; first strict composite majority n = 10; min(S(n) for n in
+  [9, 10⁷]) == 0; S(10⁷) == 8670841.
+- check 25 (runs): 201!+2..201!+201 is a run of 200 consecutive composites,
+  divisibility j | (201!+j) exact — witness the unboundedness of prime-free
+  runs (any length n from (n+1)!+2, classical construction).
+- check 26 (small-factor dominance): among the integers ≤ 10⁷, exactly
+  7,714,287 are divisible by one of 2,3,5,7 (2,285,713 are coprime to 210).
+
+## 8. The claim tree — every claim this idea can carry, verdict-coded
+
+All verdicts as of 2026-09-25. PROVEN(gate) = asserted by `results_of_record.py`
+(26 checks). PROVEN(cls) = elementary/classical theorem, quoted. CONJECTURE =
+open or empirically-suggested only. FALSE = tested and rejected. FRAMING =
+coherent in the Law thread's vocabulary, but not a science claim.
+
+### A. Counting claims (the core)
+| # | claim | verdict | witness |
+|---|---|---|---|
+| C1 | There are more composites than primes (in prefix [1, n]) for every n ≥ 10 | PROVEN(gate) | C(10)=5 > π(10)=4; permanence S(n) ≥ 0 for n ≥ 9 |
+| C2 | The margin S(n)=C−π is never negative from n = 9 on | PROVEN(cls) | elementary parity/odd-prime proof |
+| C3 | n = 10 is the first n with strict composite majority; n = 8 the last with prime majority | PROVEN(gate) | exact table 1..14 |
+| C4 | Ties (C=π) in [1, 10⁷] are exactly {1, 9, 11, 13} | PROVEN(gate,finite) | battery sieve; unconditional: p_k ≥ 2k+1 ⇒ none for n ≥ 15 |
+| C5 | Ties are finite in total | PROVEN(cls) | PNT: S(n) ~ n → +∞ |
+| C6 | Composite fraction C(n)/n → 1 | PROVEN(cls) | PNT |
+| C7 | Ratio C(n)/π(n) ~ ln n − 1 → +∞ | PROVEN(cls) | PNT |
+| C8 | Margin S(n) ~ n − 2n/ln n → +∞ | PROVEN(cls) | PNT |
+| C9 | At 10⁷ the margin is 8,670,841 (≈13× the prime count) | PROVEN(gate) | check 24 |
+| C10 | Most numbers carry a small prime factor: exactly 77.14287% of n ≤ 10⁷ divide by one of 2,3,5,7 | PROVEN(gate) | check 26 |
+
+### B. Structural claims
+| # | claim | verdict | witness |
+|---|---|---|---|
+| C11 | Every composite m has a prime witness p ≤ √m | PROVEN(cls) | least prime divisor bound |
+| C12 | Every composite is a product of primes (FTA) | PROVEN(cls) | FTA |
+| C13 | Primes are self-bounded: divisor set exactly {1, p} | PROVEN(cls) | definition |
+| C14 | C composites are prime-bounded: their divisor set contains a prime | PROVEN(cls) | C11 |
+| C15 | "Composites are more numerous BECAUSE they are prime products" | FALSE-as-mechanism | FTA fixes form; the sieve produces abundance; the causal deduction is invalid though the conclusion survives |
+| C16 | Unbounded prime-free runs exist (gaps are arbitrarily long) | PROVEN(gate) | check 25: 201!+2..+201; classical (n+1)! construction |
+| C17 | The sieve "wins" the counting race (removals beat additions) | PROVEN(framed) | lifetime removals per new prime; PNT restates it as π/n → 0 |
+| C18 | Almost all numbers have exactly ~ln ln n prime factors (Erdős–Kac) | PROVEN(cls) | Erdős–Kac |
+| C19 | ∫ Mertens: ∏_{p≤z}(1−1/p) ~ e^−γ/ln z → 0 (fresh candidates are fewer) | PROVEN(cls) | Mertens |
+
+### C. Window claims (traps)
+| # | claim | verdict | witness |
+|---|---|---|---|
+| C20 | "Any interval of the integers has more composites than primes" | FALSE | window [2,3]: 1 prime, 0 composites |
+| C21 | "The composite majority proves the twin-prime or k-tuple conjectures" | FALSE/conflation | twins=58980 < 10⁷ is exact but finite; 2·C₂·x/ln²x = 50822 is 14% off — CONJECTURE (gate note, check 23) |
+
+### D. Ladder / Law-thread mirror claims (honesty boundary)
+| # | claim | verdict | witness |
+|---|---|---|---|
+| C22 | "Prime-gap-like irregular ladder spacing is EXPLAINED by composite majority" | FALSE-as-derivation | ladder spacing is check-18-verified and independent; correlation ≠ mechanism |
+| C23 | "Self-bounded things are rare ⇒ the self-gauged center is rare" | FALSE | no mapping integers→objects; and self-bounded primes are the RARE object, the exact mirror of any 'abundance' claim |
+| C24 | "Composites' abundance confirms the center is common/naturally supported" | FRAMING | vocabulary-level only; no science content |
+| C25 | "The sieve validates the law of thinning/multiplication as physics" | FRAMING | sieve is arithmetic; do not cite as experiment |
+
+### E. Meta-claims
+| # | claim | verdict | witness |
+|---|---|---|---|
+| C26 | Every numeric claim above is reproducible by the 26-check gate | PROVEN | `python results_of_record.py` exit 0 |
+| C27 | The catalog above is exhaustive within this idea-family | PROVEN(modest) | pruning rule: any further claim is a restatement, an instance of C1-C26, or a window-trap of class C20 |
+
+Not claimed, ever (explicit): any physics, any experimental citation, any
+"center" consequence — those all die at C22-C25.
