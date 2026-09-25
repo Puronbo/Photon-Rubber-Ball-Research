@@ -67,7 +67,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
 │  ├─ COGNITIVE_UNIVERSE_MODEL.py · magnifying_glass_*.py · boson_scaling_probe.py
 │  └─ photon_rubber_ball_research/         twin canonical copies + 37 tests
 ├─ verification & honesty                  PROJECT_INDEX.md (canonical map: start here)
-│  │                                      CORRIGENDUM.md (72-entry catalog, 1 [FALSE], n [FIXED])
+│  │                                      CORRIGENDUM.md (78-entry catalog, 1 [FALSE], n [FIXED])
 │  │                                      AUDIT_REPORT_READINESS.md (Phase 1-8.3 gate results)
 │  │                                      ACTION_PLAN.md (Paths 1-4 to completion)
 ├─ the generated corpus (narrative)        .md / .html / .pdf / .txt twin documents
@@ -84,6 +84,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
        LAW_OF_CENTER_ASCENT.md (law-craft, postulates flagged REAL vs POSTULATE)
        RANKS_AND_DEGREES.md (rank-degree coordinates; verified ladder table)
        AUDIT_OF_THE_UNIVERSE.md · POSSIBILITIES_AND_RELEVANCY.md (verdict-coded)
+       STATE_OF_THE_SCIENCE_2026.md (external 2026 literature baseline, dated sources)
        + GREAT_ATTRACTOR_REACTOR_ANALYSIS.md · SYNTHESIS_OF_ALL_WORK.md · ...
 ```
 

@@ -9,7 +9,7 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
   `python -W error::RuntimeWarning`; lint `ruff --select F` clean.
 - 2 LaTeX manuscripts: `RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`
   (both compile exit 0 under TeX Live). Compiled head: `Photon_Rubber_Ball_PAPER.pdf`.
-- 5 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (71 entries),
+- 5 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (78 entries),
   `AUDIT_REPORT_READINESS.md`, `ACTION_PLAN.md`, `README.md`.
 
 ## Staging
@@ -39,12 +39,13 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 - html/pdf twins for scenes, engines, infosets, visualizations, summaries.
 
 ## Planning thread (`Law Apprehension of Works/`, informational only)
-- 15 tracked: analyses (CONNECTION_AUDIT, FDT, HEAT, LIGHT_AS_DERIVATIVE,
-  LIGHT_STEP_ACCELERATION, PHOTON_GEOMETRY, PHOTON_TO_PHONON, REAL_IMAGINARY_NUMBERS),
-  framework docs (UNIFIED_CONNECTIONS_FRAMEWORK, SYNTHESIS_OF_ALL_WORK,
-  WHAT_EVERYTHING_MEANS_CONCRETELY, RESEARCH_PROPOSAL + PRESENTATION outline/tex),
-  and the 2026-09-25 additions: VERIFIED_COMPONENT_LINKAGE, LAW_OF_CENTER_ASCENT,
-  AUDIT_OF_THE_UNIVERSE, POSSIBILITIES_AND_RELEVANCY.
+- 19 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
+  LIGHT_AS_DERIVATIVE, LIGHT_STEP_ACCELERATION, PHOTON_GEOMETRY, PHOTON_TO_PHONON,
+  REAL_IMAGINARY_NUMBERS), 4 framework/summary (UNIFIED_CONNECTIONS_FRAMEWORK,
+  SYNTHESIS_OF_ALL_WORK, WHAT_EVERYTHING_MEANS_CONCRETELY, RESEARCH_PROPOSAL),
+  PRESENTATION_OUTLINE.md, and the 2026-09-25 additions: VERIFIED_COMPONENT_LINKAGE,
+  LAW_OF_CENTER_ASCENT, AUDIT_OF_THE_UNIVERSE, POSSIBILITIES_AND_RELEVANCY,
+  RANKS_AND_DEGREES, STATE_OF_THE_SCIENCE_2026 (external reference, dated sources).
 
 ## Not tracked (local only)
 - `deterministic_simulation.py`, `investigation_example.py`,
