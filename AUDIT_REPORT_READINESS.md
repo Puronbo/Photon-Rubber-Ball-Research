@@ -348,3 +348,20 @@ Gate (Phase 14): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
 
 Gate (Phase 15): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 16 — the "edges are the same" claim (2026-09-25)
+
+- User claim: "the edges of the universe are the same" → read as:
+  edges are bounded only by the universe itself, same as the center.
+- Registered per the add-before-use rule: E14 (no edge observed — cosmic
+  horizon is a light-cone artifact of c × age ≈ 46.5 Gly comoving, not a wall;
+  topology [OPEN]), F13 ("edges same as center" = [FRAMING] corollary of the
+  cosmological principle — a true edge would single out a location as a center
+  would), X18 (physical edge/wall = NOT-claim).
+- AUDIT A.2 gains the symmetric no-edge sentence. Not battery-verifiable
+  (horizon distance is ΛCDM-model-dependent, not closed-form arithmetic of the
+  canonical constants) — register-only. Counts resynced 82→83 entries; register
+  86→88 numbered, 17→18 NOT-claims. Corrigendum 83.
+
+Gate (Phase 16): battery 19/19 green, `results_of_record.py` 26/26 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

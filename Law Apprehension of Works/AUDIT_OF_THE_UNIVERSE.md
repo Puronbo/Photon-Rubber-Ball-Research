@@ -29,7 +29,10 @@ refuses to blend them:
    Attractor is now understood as the Shapley-supercluster overdensity acting
    with the antipodal Dipole Repeller void as a dipole; local bulk flow drifts
    toward it (~130-600 km/s). It is the largest nearby structure, NOT a
-   universal center (cosmological principle intact).
+   universal center (cosmological principle intact). Symmetrically, no edge or
+   boundary is observed: the cosmic horizon is a light-cone artifact of c × age,
+   not a wall — a real edge would single out a location the way a "center" would
+   (STATE_OF_THE_SCIENCE_2026 §3.2; register E14/F13).
 7. Entropy/thermodynamics: the universe had low initial entropy, expands and
    cools toward heat death; fluctuation-dissipation & thermodynamic laws hold
    locally (Jarzynski/Crooks/FDT tested).

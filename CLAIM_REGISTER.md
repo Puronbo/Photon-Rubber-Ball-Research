@@ -83,6 +83,7 @@ NOT-claim (section X).
 | E11 | Aug-2026 "GPT-5.6 Sol" preprint: improved large-gap lower bound, Lean-formalized, NOT peer-reviewed | informational | §1.2 |
 | E12 | 1,2,4,8 = Hurwitz/Frobenius/Adams + Bott 8; Euler 41 = Rabinowitsch/Heegner 163 | [ESTABLISHED]-theorem | §1.4 |
 | E13 | octonion/E8 unification physics: speculative; Distler-Garibaldi no-go | [CONJECTURE] | §1.5 |
+| E14 | no physical edge/boundary is observed; the cosmic horizon is a light-cone artifact (c × 13.8 Gyr ≈ 46.5 Gly comoving), not a wall; large-scale isotropy/homogeneity tested; whether spacetime is finite-without-boundary or infinite is unknown | [ESTABLISHED]-external (no edge) + [OPEN] (topology) | §3.2 |
 
 ## A — Audit verdicts on "what the universe is" (AUDIT_OF_THE_UNIVERSE.md)
 
@@ -116,6 +117,7 @@ NOT-claim (section X).
 | F10 | Part V signatures: two NEGATIVE, one OPEN, one real-but-compatible | honest self-status |
 | F11 | closure cycle "low center, high matter, one-handed spin, quantization of standing" | [FRAMING] structure |
 | F12 | "the law is a solution" | [FRAMING] as SHAPE only, not verified |
+| F13 | "the edges of the universe are the same [as the center]": the boundary is self-referential — the only observable boundary is the horizon the universe draws with its own constants (c × cosmic age), a light-cone artifact, not a wall; a true edge would single out a location exactly as a center would, so by the cosmological principle an edge is as unestablished as a center | [FRAMING] corollary of the cosmological principle; REAL anchor: no edge observed, horizon = c·t artifact (E14); topology [OPEN] |
 
 ## P — Possibility relevancy claims (POSSIBILITIES_AND_RELEVANCY.md)
 
@@ -164,7 +166,8 @@ NOT-claim (section X).
 | X15 | self-bounded ⇒ rare (mirror of N03) | COMPOSITE_MAJORITY C23 FALSE |
 | X16 | "more composites because products of primes" (mechanism) | C15 FALSE-as-mechanism |
 | X17 | any interval has composite majority | C20 FALSE (window [2,3]) |
+| X18 | there is a physical edge/wall of the universe | no evidence; a boundary would violate isotropy; the cosmic horizon is a light-cone artifact, not a wall (E14); "edges are the same as the center" is [FRAMING] (F13) |
 
-Count: this register currently carries 86 numbered claims (B18, L9, N7, E13,
-A11, F12, P7, G9) + 17 NOT-claims, plus pointer to the 27-slot composite tree
+Count: this register currently carries 88 numbered claims (B18, L9, N7, E14,
+A11, F13, P7, G9) + 18 NOT-claims, plus pointer to the 27-slot composite tree
 (N07).
