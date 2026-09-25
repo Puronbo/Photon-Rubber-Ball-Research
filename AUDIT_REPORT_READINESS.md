@@ -497,3 +497,27 @@ Gate (Phase 21): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 22): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 23 — nothing as a mirror (2026-09-25)
+
+- User probe: "could nothing be a mirror?" The mirror question splits into
+  three senses, each answered separately (A14, [ESTABLISHED]-external):
+  1. Coordinate fact — YES: a mirror is an isometric involution x ↦ −x; a
+     reflection always fixes its origin, so every object's zero is the fixed
+     center of its own orientation-mirror. No new physics; the self-gauge
+     already carried it.
+  2. Physics content — the universe's inversions are C, P, T: parity alone is
+     VIOLATED by the weak interaction; the combined CPT is established in
+     Lorentz-invariant QFT. "The universe is mirror-symmetric" is false for P,
+     true for CPT.
+  3. Boundary/ontology — NO: a mirror needs a mirror-plane and an outside to
+     reflect into; the whole has none (A13), the horizon is a causal boundary
+     and nothing is observed reflecting. Mirror/twin universes are [CONJECTURE].
+- Boundaries: "nothingness at the edge mirrors everything back" = F19
+  [FRAMING] involution metaphor (REAL anchors A13/A14); reflecting-edge or
+  mirror-twin universe outside ours = X25.
+- Register 100→102 numbered (A14, F19), 24→25 NOT-claims; 89→90 entries.
+  Corrigendum 90. Gate unchanged 27/27.
+
+Gate (Phase 23): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

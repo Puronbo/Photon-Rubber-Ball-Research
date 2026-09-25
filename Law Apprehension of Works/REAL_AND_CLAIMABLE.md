@@ -22,6 +22,7 @@ for every [FRAMING] row in the register, here is the claimable statement.
 | "law of object zeros" | the coordinate pattern is REAL: every object is the datum (r=0, degree 0) of its own frame — self-gauge A0 (n = s/u, [VERIFIED]), own radius of visibility L03/L11 ([PROVEN]), own observable ball L10/E15, no shared zero E05 ([ESTABLISHED]) = "as many local centers as observers; none privileged" | "a law governing the universe" (dynamics) = [FRAMING] (F16); object-zero as force/cause = X22 | L12, F16, X22 |
 | "if position is always zero and distance/speed are built on it, what construct is in everything?" | the gauged-manifold construct (A12, [ESTABLISHED]-external): pseudo-Riemannian manifold + metric + connection with coordinate freedom — Riemann normal coordinates put every observer at the origin locally (GR's equivalence principle, [PROVEN] by precision tests: Mercury, GPS, LIGO, Shapiro, frame-dragging); distance = invariant arc length; speed = tangent-vector norm ds/dτ (proper time/affine parameter, NOT position) | "everything reduces to this one construct" = [FRAMING] (F17); "speed per position" as a new rate = X23 (it is only reparametrization of the same speed) | A12, F17, X23 |
 | "if every zero is a position making up the entire universe, what would the position be?" | nothing is the position of the whole — it is a category error (A13, [ESTABLISHED]): position is a relation between objects under gauge, and no external frame exists by definition, so the universe has no position, velocity, or center-of-mass resting frame; relational content is REAL: positions ARE the coordination of object-zeros (relations are what's real); the whole "reads as a point from above" is the top-rung machinery with no probe (L11) | "the universe is itself the zero / has its own center at the top" = [FRAMING] (F18); any vantage point of the whole, a universal observer, or a god's-eye frame = X24 | A13, F18, X24 |
+| "could nothing be a mirror?" | three claimable senses (A14, [ESTABLISHED]-external): (1) coordinate — reflection x ↦ −x always fixes its origin, so every object's zero is the fixed center of its own orientation-mirror; (2) physics — the universe's inversions are C/P/T, parity violated by weak interactions, CPT established in Lorentz-invariant QFT; (3) boundary — a mirror needs a plane and an outside, the whole has none (A13), the horizon reflects nothing back | "the nothingness at the edge mirrors everything back" = [FRAMING] involution metaphor (F19); mirror/twin-universe outside = X25 [CONJECTURE], no observation | A14, F19, X25 |
 | Law P1-P5 / L1-L4 as a system | real anchors only: ladder readings (L01-L04, L08), self-gauge invariance (A0), bound hierarchies — Local Group bound, M31 approaching ~110 km/s ([REAL], F04/F08); two + one + one honest signatures (F10) | the law as cosmology; tornado; center growth; ascent as physics; handedness inheritance | F01-F12 |
 
 ## 2. Master list — what is CLAIMABLE now
@@ -42,10 +43,12 @@ external dated source; full rows in CLAIM_REGISTER.md):
    construct: metric + connection + coordinate freedom, [ESTABLISHED],
    SR/GR precision tests); A13 (the universe has no position/velocity/rest
    frame — "position of the whole" is a category error, [ESTABLISHED]-
-   external); E01-E16 with their codes (no center E05, no edge E14, observable
-   ball E15, in-horizon homogeneity E16, plus H0/vacuum/bulk-flow/QG/DM/gap/
-   prime records E01-E13).
-6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 89
+   external); A14 (mirror anatomy: reflection fixes its origin; the universe's
+   C/P/T inversions, parity violation, CPT established; no boundary mirror,
+   [ESTABLISHED]-external); E01-E16 with their codes (no center E05, no edge
+   E14, observable ball E15, in-horizon homogeneity E16, plus H0/vacuum/bulk-
+   flow/QG/DM/gap/prime records E01-E13).
+6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 90
    entries, 23 tracked law .md, no experiment, sibling-repo independence).
 
 Explicitly NOT claimable (X01-X20): every [FRAMING]/[POSTULATE] row (F01-F14
