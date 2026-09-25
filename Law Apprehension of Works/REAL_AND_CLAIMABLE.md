@@ -20,6 +20,7 @@ for every [FRAMING] row in the register, here is the claimable statement.
 | "everywhere else must be the same" (homology) | within the horizon, isotropy/homogeneity are measured; every observer's own observable ball is isotropic with the same kind of horizon ([ESTABLISHED]-external, E16) | beyond the horizon, "same everywhere" is extrapolation, not measurement (X20) | E16, X20 |
 | "zero to horizon = radius of visibility, then transition to the next zero to horizon" | recursion of the READING machinery: every object's zero is its own gauge (A0, [VERIFIED]); its radius of visibility = the last rank its degree survives — above it, it reads as a point (L03/L2, [PROVEN], checks 17-18); the observable universe is the top rung and would read as a point from any rung above, by the same rule (L11) | "the chain of zero-to-horizon balls continues beyond every horizon" = [FRAMING] (F15); any claim that the "next window" beyond ours is real/observable = X21 (only the E16 extrapolation stands; topology [OPEN]) | L11, F15, X21 |
 | "law of object zeros" | the coordinate pattern is REAL: every object is the datum (r=0, degree 0) of its own frame — self-gauge A0 (n = s/u, [VERIFIED]), own radius of visibility L03/L11 ([PROVEN]), own observable ball L10/E15, no shared zero E05 ([ESTABLISHED]) = "as many local centers as observers; none privileged" | "a law governing the universe" (dynamics) = [FRAMING] (F16); object-zero as force/cause = X22 | L12, F16, X22 |
+| "if position is always zero and distance/speed are built on it, what construct is in everything?" | the gauged-manifold construct (A12, [ESTABLISHED]-external): pseudo-Riemannian manifold + metric + connection with coordinate freedom — Riemann normal coordinates put every observer at the origin locally (GR's equivalence principle, [PROVEN] by precision tests: Mercury, GPS, LIGO, Shapiro, frame-dragging); distance = invariant arc length; speed = tangent-vector norm ds/dτ (proper time/affine parameter, NOT position) | "everything reduces to this one construct" = [FRAMING] (F17); "speed per position" as a new rate = X23 (it is only reparametrization of the same speed) | A12, F17, X23 |
 | Law P1-P5 / L1-L4 as a system | real anchors only: ladder readings (L01-L04, L08), self-gauge invariance (A0), bound hierarchies — Local Group bound, M31 approaching ~110 km/s ([REAL], F04/F08); two + one + one honest signatures (F10) | the law as cosmology; tornado; center growth; ascent as physics; handedness inheritance | F01-F12 |
 
 ## 2. Master list — what is CLAIMABLE now
@@ -36,10 +37,12 @@ external dated source; full rows in CLAIM_REGISTER.md):
    (checks 19-21).
 4. Counting substrate: π(10⁷) L01..N01-N06 (checks 22-26) + every [PROVEN]
    slot of the composite tree (C1-C19).
-5. Universe observations (external, dated): A01-A03; E01-E16 with their codes
-   (no center E05, no edge E14, observable ball E15, in-horizon homogeneity
-   E16, plus H0/vacuum/bulk-flow/QG/DM/gap/prime records E01-E13).
-6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 87
+5. Universe observations (external, dated): A01-A03; A12 (the gauged-manifold
+   construct: metric + connection + coordinate freedom, [ESTABLISHED],
+   SR/GR precision tests); E01-E16 with their codes (no center E05, no edge
+   E14, observable ball E15, in-horizon homogeneity E16, plus H0/vacuum/bulk-
+   flow/QG/DM/gap/prime records E01-E13).
+6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 88
    entries, 23 tracked law .md, no experiment, sibling-repo independence).
 
 Explicitly NOT claimable (X01-X20): every [FRAMING]/[POSTULATE] row (F01-F14

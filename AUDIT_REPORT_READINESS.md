@@ -447,3 +447,30 @@ Gate (Phase 19): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 20): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 21 — the construct in everything (2026-09-25)
+
+- User question: "if position is always zero and distance changes the position
+  while the amount of position it took to cover that distance is its speed per
+  position — what would the underlying mathematical construct be completely in
+  everything?"
+- Answer (registered A12, [ESTABLISHED]-external, not corpus-invented): the
+  construct is a pseudo-Riemannian manifold with a metric and affine connection
+  and GAUGED coordinates — exactly general relativity's machinery. "Position is
+  always zero" is precisely the local gauge statement: at every event there
+  exist Riemann normal coordinates putting the observer at the origin with a
+  locally flat metric (equivalence principle), tested by Mercury perihelion,
+  GPS, LIGO, Shapiro delay, frame-dragging, EHT. Distance = invariant geodesic
+  arc length. Speed = norm of the tangent vector ds/dτ; the parameter is proper
+  time/affine, NOT position, so "speed per position" is a misnomer (X23; it is
+  only reparametrization of the same speed).
+- Boundaries: "construct-completely-in-everything as the one law" = F17
+  [FRAMING]; DM/DE/QG rows A04/A06 remain [OPEN].
+- Count-drift correction: register count line had over-counted by 2 (95 → 94,
+  98 → 96 per-row); recomputed per-row and fixed. With A12+F17 this round the
+  honest total is 98 numbered, 23 NOT-claims.
+- Counts: 87→88 entries. Corrigendum 88. Gate unchanged 27/27 (no new
+  arithmetic — external established math).
+
+Gate (Phase 21): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

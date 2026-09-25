@@ -105,6 +105,7 @@ NOT-claim (section X).
 | A09 | this project's verified ball/ladder/counting numbers (B, L, N tables) | [ESTABLISHED] |
 | A10 | theory-extension layer: entropic gravity, QG-induced decoherence at ball scales, mini black-hole analogies | [CONJECTURE] |
 | A11 | "size = 0 at all scales"; "prime-ladder is the structure of everything"; "consciousness = the action in space" | [FRAMING] |
+| A12 | the mathematical construct underlying "position is zero + distance + speed", present in every tested corner of physics: a pseudo-Riemannian manifold with metric + connection and GAUGED coordinates — at every event Riemann normal coordinates put the observer at the origin with locally flat metric (the equivalence principle: "position is always zero" is local gauge freedom, a theorem of GR); distance = invariant geodesic arc length; speed = norm of the tangent vector ds/dτ (parameter is proper time/affine, NOT position — "speed per position" is a misnomer: ds/dλ is reparametrization-invariant old speed, and "position per position" is a dimensionless tautology) | [ESTABLISHED]-external (differential geometry + GR: Mercury perihelion, GPS, LIGO, Shapiro delay, frame-dragging, EHT) | SR/GR precision tests; consistent with A0/L12 |
 
 ## F — Law-craft claims (LAW_OF_CENTER_ASCENT.md; invented axiom system)
 
@@ -126,6 +127,7 @@ NOT-claim (section X).
 | F14 | "fill the space with the light-cone to create a sphere or ball" — the ball is real AS the observable causal region (3.568e80 m³, L10/E15); the step from "observable ball" to "the universe is a ball" is the overreach | L10/E15 [PROVEN]/[ESTABLISHED]; the universal claim [FRAMING] |
 | F15 | "the zero-to-horizon recursion is the same all the way up — each ball nests inside the next zero-to-horizon ball, and the chain continues" | the recursion of the READING machinery is real (L11); nested OBSERVABLE balls are real in intent (E16); anything claiming what sits beyond our horizon (a real "next" window) is overreach — the horizon is a causal boundary, no observation crosses it | REAL anchors: A0, L03/L2, L10, L11, E16; the chain-beyond-horizon [FRAMING] |
 | F16 | "LAW OF OBJECT ZEROS": every object is a zero of its own frame, and the pattern of object-zeros is a law governing the universe | the coordinate/gauge pattern is REAL (L12: A0 self-gauge, L03 degree collapse, L11 recursion, L10/E15 own ball, E05 no shared zero); "a law governing dynamics" = overreach — it is a statement about coordinates and resolvability, not a force or cause (X22) | REAL anchors A0/L03/L10/L11/L12/E05; the law-as-dynamics [FRAMING] |
+| F17 | "the differential-gauge construct is COMPLETELY in everything — the single underlying mathematics of the universe" | the construct IS the tested description of spacetime (A12, [ESTABLISHED]): gauge freedom + metric + connection, universal in measured physics; the union/simplification ("everything reduces to it", including DM/DE/QG) = overreach — open rows A04/A06 stay [OPEN] | A12 [ESTABLISHED]; the everything-law reading [FRAMING] |
 
 ## P — Possibility relevancy claims (POSSIBILITIES_AND_RELEVANCY.md)
 
@@ -146,7 +148,7 @@ NOT-claim (section X).
 | G01 | battery = 19 Python scripts, all exit 0 under `-W error::RuntimeWarning` | [VERIFIED] |
 | G02 | `results_of_record.py` = 27 checks, exit 0 | [VERIFIED] |
 | G03 | `ruff --select F` clean on tracked corpus | [VERIFIED] |
-| G04 | CORRIGENDUM.md = 87 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
+| G04 | CORRIGENDUM.md = 88 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
 | G05 | Law thread = 23 tracked .md + zh twin + PRESENTATION.tex; informational only | [VERIFIED] |
 | G06 | no experiment was performed; all narrative twin files banner-marked (PROVENANCE/FICTION) | [VERIFIED] |
 | G07 | arXiv bundles staged; upload requires the author's own arXiv account/endorsement | [VERIFIED] |
@@ -179,7 +181,9 @@ NOT-claim (section X).
 | X20 | beyond the observed horizon the universe is the same everywhere | isotropy/homogeneity are measured only within the horizon (E16); sameness beyond it is the Copernican extrapolation, not evidence |
 | X21 | beyond the observed horizon there is a "next zero-to-horizon" that is real and in principle observable | the recursion (L11) describes the READING machinery of the verified ladder; what exists beyond ANY horizon is the Copernican extrapolation (E16) at best, and topology [OPEN] — no experiment crosses the causal boundary |
 | X22 | the object-zero pattern is physical dynamics — object zeros govern forces, expansion, or the fabric of the universe | self-gauge A0 is a coordinate-invariance statement ([VERIFIED]); resolvability L03/L11 is the reading rule of the verified ladder; nothing in the corpus turns these into dynamics — no force, no cause |
+| X23 | speed is a rate "per position" — position is the parameter of speed | speed's parameter is time/proper time (or any affine parameter): v = ds/dτ; "per position" is a reparametrization of the SAME tangent-vector norm, not a new physical rate; "position per position" is dimensionless tautology |
 
 Count: this register currently carries 98 numbered claims (B18, L12, N7, E16,
-A11, F16, P7, G9) + 22 NOT-claims, plus pointer to the 27-slot composite tree
-(N07).
+A12, F17, P7, G9) + 23 NOT-claims, plus pointer to the 27-slot composite tree
+(N07). Counts are per-row arithmetic (the 95/98 statements after the recursion
+and LOZ rounds were +2 over-counted; recomputed and corrected, corrigendum 88).
