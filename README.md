@@ -85,6 +85,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
        RANKS_AND_DEGREES.md (rank-degree coordinates; verified ladder table)
        AUDIT_OF_THE_UNIVERSE.md · POSSIBILITIES_AND_RELEVANCY.md (verdict-coded)
        STATE_OF_THE_SCIENCE_2026.md (external 2026 literature baseline, dated sources)
+       STATE_OF_THE_SCIENCE_2026.zh.md (Chinese translation twin; canonical = English)
        + GREAT_ATTRACTOR_REACTOR_ANALYSIS.md · SYNTHESIS_OF_ALL_WORK.md · ...
 ```
 

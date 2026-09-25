@@ -53,8 +53,8 @@ ROOT
 ├─ arxiv_bundles/                            [PUBLICATION]  per-manuscript main.tex + SUBMIT.md
 │    (photon_rubber_ball_qg_analogies, photon_rubber_ball_theory_connections)
 └─ "Law Apprehension of Works/"             separate essay/proposal thread [PLANNING];
-     ├─ 19 tracked .md: analyses + framework + PRESENTATION_OUTLINE + 2026-09-25
-     │    additions (VERIFIED, LAW, AUDIT, POSSIBILITIES, RANKS, STATE_OF_SCIENCE_2026)
+     ├─ 20 tracked .md: analyses + framework + PRESENTATION_OUTLINE + 2026-09-25
+     │    additions (VERIFIED, LAW, AUDIT, POSSIBILITIES, RANKS, STATE_OF_SCIENCE + zh twin)
      └─ not referenced by the verified physics; reads its own numbers
 ```
 

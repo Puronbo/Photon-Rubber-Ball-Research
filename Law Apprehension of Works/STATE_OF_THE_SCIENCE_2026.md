@@ -191,6 +191,8 @@ Risky (do not assert as corpus physics):
 ---
 
 ## Sources (researched 2026-09-25; live-verified)
+- 中文译本伴生文件：`STATE_OF_THE_SCIENCE_2026.zh.md`（canonical = 本英文原版；数字/编号出入
+  以英文为准，修改须同步两端并经 corrigendum）。
 - Wikipedia: Prime gap (records incl. 2026-05 maximal-gap 1854 and merit 41.94; CSG 0.9206);
   Cramér's conjecture (BHP upper bound, Maier/Granville/2e-γ, Aug-2026 preprint + Lean note);
   formula for primes (Rabinowitsch; not truncated detail on 41 yes via class number);

@@ -39,13 +39,14 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 - html/pdf twins for scenes, engines, infosets, visualizations, summaries.
 
 ## Planning thread (`Law Apprehension of Works/`, informational only)
-- 19 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
+- 20 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
   LIGHT_AS_DERIVATIVE, LIGHT_STEP_ACCELERATION, PHOTON_GEOMETRY, PHOTON_TO_PHONON,
   REAL_IMAGINARY_NUMBERS), 4 framework/summary (UNIFIED_CONNECTIONS_FRAMEWORK,
   SYNTHESIS_OF_ALL_WORK, WHAT_EVERYTHING_MEANS_CONCRETELY, RESEARCH_PROPOSAL),
   PRESENTATION_OUTLINE.md, and the 2026-09-25 additions: VERIFIED_COMPONENT_LINKAGE,
   LAW_OF_CENTER_ASCENT, AUDIT_OF_THE_UNIVERSE, POSSIBILITIES_AND_RELEVANCY,
-  RANKS_AND_DEGREES, STATE_OF_THE_SCIENCE_2026 (external reference, dated sources).
+  RANKS_AND_DEGREES, STATE_OF_THE_SCIENCE_2026 (external reference, dated sources)
+  + its Chinese translation twin `.zh.md` (canonical = English).
 
 ## Not tracked (local only)
 - `deterministic_simulation.py`, `investigation_example.py`,
