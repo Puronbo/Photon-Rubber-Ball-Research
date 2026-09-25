@@ -1,0 +1,175 @@
+# VERIFIED COMPONENT LINKAGE
+
+Planning-thread note (informational, not verified-numerics corpus). Everything
+below marked VERIFIED was checked numerically on 2026-09-25 or is already part
+of the battery/canonical set; nodes marked FRAMING are philosophical stance and
+must never be cited as corpus fact. The point of this file: every "real"
+component links to the next through a verified edge, with no dangling claims.
+
+## Self-gauge lemma (complete, added 2026-09-25)
+
+Definition. Every object O defines its own rest frame F_O. In F_O the object sits
+at its own origin: position x(O) = 0, and its proper extent is degenerate
+supp(O) = {0}, i.e. size(O) = 0. This is a gauge fix, not physics.
+
+Measuring with an integer line. Choose an external unit u. The lattice
+L_u = {k*u | k in {0,1,2,...}} reads O's diameter as
+
+    D_O = n_O(u) * u                       (n_O = integer lattice count)
+
+and its volume with shape factor c (sphere c = pi/6, cube c = 1, ...) is
+
+    V_O = c * (n_O(u) * u)^d .
+
+Completeness (three factors). Volume is well defined iff all three are specified:
+    n_O  <- counting   (Layer B; any integer lattice suffices; primes are a sparse
+                        texture choice, never required for the value)
+    u    <- unit       (Layer D; minted by h, c, k_B, G, moduli: u = 1 nm, lambda,
+                        hbar/(mc), (kT/E)*r, ...)
+    c    <- geometry   (dimensionless shape factor)
+Without u the "volume" is a dimensionless number n^3; without c it misses shape.
+Hence an object's self-0 is a gauge statement, NOT a measured size.
+
+Invariance (this is the completion; ties to corrigendum 70). D_O = n_O(u)*u is
+unit-invariant, so n_O(u) ~ 1/u. Verified on the ball, D = 550 nm:
+    u = 1 nm   -> n = 550        -> V = (pi/6)*(550 nm)^3 = 8.71e-20 m^3
+                                    (density 1100 kg/m^3 * V = 9.58e-17 kg == m, battery ✓)
+    u = 1 um   -> n = 0.55 < 1   -> sub-unit, reads as a point   (entry 70 boundary ✓)
+    u = 50 Mpc -> n = 3.56e-31   -> point                       (entry 70 ratio ✓)
+Self-consistency: the proper frame always gives n = 0, u-free -> size zero by gauge =
+the 0D point (A1). The whole size-at-scale ladder (A2) is just the function n(u) read
+at different lattices.
+
+## The linked chain
+
+    A0 self-gauge lemma (object = 0 in its own frame)             [VERIFIED math]
+       |  formal reason A1 holds; gives n_O(u)*u = D invariance
+       v
+    A1 0D point (Hausdorff dim 0, measure 0)                 [VERIFIED, trivial]
+       |
+       | correction boundary: a 550 nm ball is NOT a point at
+       | molecular scales; point-like only above ~um
+       v
+    A2 size-at-scale ladder (CORRIGENDUM entry 70)           [VERIFIED]
+       D/Earth       = 8.62e-14
+       D/50 Mpc      = 3.56e-31
+       D/1 nm molec  = 5.5e+02
+       D/0.1 nm atom = 5.5e+03
+       |
+       | the same counting substrate appears inside the ball:
+       v
+    B1 primes = irreducible positions of the line            [VERIFIED]
+       ladder 0,1,primes; partial sums S12 =
+       0,1,3,6,11,18,29,42,59,78,101,130
+       NOT triangular beyond T3 (T4=10 != S5=11)             [correction]
+       PNT: pi(1e6)=78498 (N/lnN 7.8% off, asymptotic);
+       p_500000=7368787 (n*ln n 12.3% off);
+       mean gap near 5e5 = 13.02 vs ln = 13.12;
+       max gap 154 <= Cramer (ln 1e7)^2 = 260  [CONJECTURE, evidence only]
+       |
+       | link: ~5.6e10 counted atoms in the ball = B applied to E
+       v
+    C1 pi/2 turn = multiplication by i, period 4            [VERIFIED]
+       i^n real cycle = 1,0,-1,0,1,0,-1,0
+       |
+       | link: adding anticommuting units = doubling dims
+       v
+    C2 Cayley-Dickson dims 1,2,4,8 (R,C,H,O)                 [VERIFIED]
+       physical space = 3+1 real signature; dims DO NOT
+       climb like primes (caps at 4 for physics)
+       |
+       | correction: prime turn-walk is an OPEN SPIRAL,
+       | not nested square rings; radius^2 = sum of squares
+       | of ladder terms (e.g. 0..7 -> 209; vertex (-8,5)
+       | has |.|^2 = 89 after steps summing squares to 88)
+       v
+    D1 constants meter the axes; h->0 deletes quantum sizes  [VERIFIED mapping]
+       ZPE->0, L_P->0, lambda_C->0, dx*dp->0
+       survivors: P/c = 3.3356 pN @ 1 mW (classical radiation
+       pressure), k_B*T trap RMS 0.034 nm, JKR/material sizes
+       |
+       | link: survivors are exactly what the battery measures
+       v
+    E1 the ball at the molecular rung                         [VERIFIED]
+       D=550 nm, R=275 nm, m=9.583e-17 kg, E=50 MPa, nu=0.5
+       Hertz d=5.807 nm @ 20.63 nN; compliant 7.662 nm @ 15.63 nN
+       v_th=11.4 mm/s; Qe=Qs=3.4822; contraction 0.08% (0.22 nm)
+       trap RMS 0.034 nm; melting shift 0.661 K
+       |
+       | link: the genuine coincidences (CORRIGENDUM entry 1)
+       v
+    E2 recoil KE ~= ZPE (9.9x); JKR >> k_B*T (6.3e5x);         [VERIFIED]
+       full energies ~37 orders apart; per-photon momentum
+       2h/lambda = 1.246e-27 kg*m/s (1064 nm)
+       |
+       | link: those scales are exactly A2's endpoints
+       v
+    F1 A2 closes back to A1: the ball is all-but-a-point at     [VERIFIED]
+       50 Mpc (3.56e-31), 8.6e-14 of Earth, a colloid at
+       molecular rungs (same numbers as A2)
+
+## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
+
+A0 self-gauge:
+  PROVEN   Gauge/coordinate freedom (diffeomorphism invariance of field laws; GR is
+           background-independent). "Position and size zero in own frame" is a gauge
+           fix, exactly the freedom these theorems guarantee.
+  PROVEN   Buckingham Pi theorem (1914): every physical relation reduces to
+           dimensionless groups -> why "volume = count * unit^d" splits as it does.
+  (operational): proper frame reading n = 0, u-free is by construction, not conjecture.
+
+B1 primes:
+  PROVEN   Prime Number Theorem (Hadamard & de la Vallee Poussin 1896; elementary:
+           Erdos & Selberg 1949). pi(x) ~ x/ln x; pi(1e6)=78498 vs 72382 is its 7.8%
+           asymptotic error. Consequence: mean gap ~ ln p (observed 13.02 vs 13.12).
+  PROVEN   Euclid (c.300 BCE): infinitely many primes. Dirichlet AP (1837):
+           primes in arithmetic progressions. Chebyshev 1850: Bertrand's postulate.
+  PROVEN   Green-Tao (2004): primes contain arbitrarily long arithmetic progressions.
+  CONJECTURE Riemann hypothesis (1859): exact pi(x) - Li(x) error from zeta zeros.
+           Open. Different proofs of rest of PNT family irreducible to it.
+  CONJECTURE Cramer (1936): maximal gap ~ (ln p)^2. My verified max gap 154 below 1e7
+           vs (ln 1e7)^2 = 260 is EVIDENCE, not proof. (corrected label)
+  CONJECTURE Goldbach (1742); twin primes/de Polignac; Legendre (prime between n^2 and
+           (n+1)^2). Note: bounded prime gaps <= 246 are PROVEN (Maynard 2013,
+           Polymath 8b 2014) but infinitude of twin primes is still open.
+  CONJECTURE Hardy-Littlewood (1923): density of primes among quadratics like
+           n^2+n+41. Its primality for n=0..39 and failure at 40 (=41^2) is PROVEN
+           computation but the density law (why Ulam diagonals are rich) is conjecture.
+
+C2 doubling/dimensions:
+  PROVEN   Frobenius (1877): only real associative finite division algebras are
+           R, C, H -> the "doubling" chain cannot extend associatively past H.
+  PROVEN   Hurwitz (1898): only normed division algebras are R, C, H, O (caps at 8).
+  PROVEN   Bott periodicity (1959): Clifford algebra repetitions of period 8
+           (the O/8D tail of the chain repeats).
+  PROVEN   i period 4 (i^2=-1, i^4=1) — Euler formula.
+  (empirical): observed space is 3+1 real. The chain capping at 8D is THEOREM-proven;
+           space being 3(+1)D is an empirical fact, not a theorem.
+
+E2 / physics connections (the corpus's theory-extension layer):
+  PROVEN   Fluctuation-dissipation theorem (Callen & Welton 1951); Jarzynski equality
+           (1997); Crooks (1999) — the FDT connection file's foundation, battery-tested.
+  CONJECTURE Verlinde entropic gravity (2010); quantum-gravity-induced decoherence
+           sizes; black-hole analog thermodynamics at microscale — analogical, open.
+  PROVEN (numeric) the "genuine coincidences": recoil KE ~= ZPE (9.9x),
+           JKR >> k_BT (6.3e5x), 37 orders of magnitude hierarchy (corrigendum 1).
+
+Crucial discipline: PNT, Frobenius, Hurwitz, Pi theorem give the frame our checks
+reproduced; Cramer, Goldbach, RH, twin primes, Hardy-Littlewood give the frame's
+open edges (the ladder's irregularity is EXACTLY where the conjectures live).
+
+## Closed loop
+
+A0 -> A1 -> A2 -> B1 -> D1 -> E1 -> E2 -> F1 -> back to A2/A1 (and A0 via D_O invariance).
+Every edge is a verified number or a correction recorded above.
+No node in the loop depends on an unverified claim.
+
+## FRAMING (never cited as corpus fact)
+
+- "consciousness = the action in space": process-ontology stance
+  (Whitehead/enactivism); no experiment in this project or physics
+  generally measures it. Kept here as framing only.
+- "count to the next prime, turn pi/2" as a SINGLE law: rejected.
+  Primes (positions, ~n ln n), doubling (dimensions, powers of 2),
+  constants (scale meter, dimensionless ratios) are three laws of
+  different growth; splicing them is poetic, not structural.
