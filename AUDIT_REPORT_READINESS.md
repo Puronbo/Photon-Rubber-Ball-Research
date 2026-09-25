@@ -279,3 +279,20 @@ Gate (Phase 10): battery 19/19 green, `results_of_record.py` 21/21 exit 0,
 
 Gate (Phase 11): battery 19/19 green, `results_of_record.py` 23/23 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 12 — external baseline reconciliation (2026-09-25)
+
+- `STATE_OF_THE_SCIENCE_2026.md` added (informational, dated sources) covering
+  the thread's open items: prime-gap records / Cramér status (+ Aug-2026
+  machine preprint, Lean-formalized, un-peer-reviewed), Euler = Rabinowitsch /
+  Heegner, 1,2,4,8 / Bott theorems, octonion-E8 (Distler-Garibaldi no-go),
+  Hubble tension (~5.6σ, 2026 reviews), Shapley-Dipole-Repeller bulk flow +
+  CF4++ anomaly, vacuum catastrophe (56-122 orders), QG LIV nulls, DM particle
+  open.
+- AUDIT / LAW / RANKS reconciled to that baseline (cross-links; FRAMING
+  boundaries enforced: no universal center, Cramér strong form doubted, CSG
+  data < 1). Corrigendum 78-79 record the count lag and the audit updates.
+- No battery numbers changed; `results_of_record.py` stays 23/23.
+
+Gate (Phase 12): battery 19/19 green, `results_of_record.py` 23/23 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

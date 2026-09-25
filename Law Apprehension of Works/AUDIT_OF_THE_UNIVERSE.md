@@ -9,6 +9,9 @@ refuses to blend them:
 - [OPEN]        no measurement or consensus yet
 - [FRAMING]     philosophical/law-craft stance; no scientific status
 - [FALSE]       proposed and falsified; corrected records exist
+- Baseline: reconciled 2026-09-25 against `STATE_OF_THE_SCIENCE_2026.md` (dated
+  external sources, §3 there); no corpus number changes — only this audit's
+  verbatims and verdicts.
 
 ## A. What is ESTABLISHED about the universe
 
@@ -23,8 +26,10 @@ refuses to blend them:
    Horizon images 2019/2022, JWST baryon observations).
 6. Structure is hierarchical and locally bound: atoms -> stars -> galaxies ->
    groups/clusters -> filaments/superclusters; Laniakea is real; the Great
-   Attractor is a real mass concentration ~50 Mpc, Local Group drawn toward it
-   at a few hundred km/s.
+   Attractor is now understood as the Shapley-supercluster overdensity acting
+   with the antipodal Dipole Repeller void as a dipole; local bulk flow drifts
+   toward it (~130-600 km/s). It is the largest nearby structure, NOT a
+   universal center (cosmological principle intact).
 7. Entropy/thermodynamics: the universe had low initial entropy, expands and
    cools toward heat death; fluctuation-dissipation & thermodynamic laws hold
    locally (Jarzynski/Crooks/FDT tested).
@@ -39,14 +44,24 @@ refuses to blend them:
 ## B. What is CONJECTURE / OPEN about the universe
 
 1. Dark matter identity (WIMPs, axions, PBH, MOND-family) — NO detection yet.
-   H0 tension (Planck 67.4 vs SH0ES 73 km/s/Mpc) is an open anomaly in the
-   standard model (Data-dependent; untuned).
+   H0 tension (Planck 67.36 vs SH0ES 73.04 km/s/Mpc) remains 2026's unresolved
+   ~5.6σ anomaly (seven-route ladder covariance 73.30 ± 0.92; JWST ruled out
+   Cepheid crowding at 8.2σ; STATE_OF_THE_SCIENCE_2026 §3.1).
+1a. Vacuum catastrophe: QFT zero-point estimate exceeds the measured ρ_vac
+   (5.96e-27 kg/m³) by 50-122 orders depending on regularization (naive ~120;
+   Lorentz-covariant ~56-60) — the field's largest open mismatch (§3.3).
+1b. Large-scale bulk flow (CF4/CF4++): apparent excess growing to ~200 h⁻¹ Mpc
+   (~0.003% probability in ΛCDM) — open anomaly against the cosmological
+   principle, under active measurement (§3.2).
 2. Dark energy nature (cosmological constant vs dynamical field); why it turned
    on ~ z < 1.
 3. Inflation mechanism / initial conditions: what preceded our expansion, and
    the baryon asymmetry origin (why matter > antimatter).
 4. Quantum gravity: string theory, LQG, causal sets, asymptotic safety — none
-   observable yet; black-hole information paradox unresolved.
+   observable yet; no spacetime-discreteness signal; strong LIV nulls from
+   GRB 221009A/LHAASO (n=1 scale ≥ 5.9 E_Pl); one contested 3.1σ claim at
+   ~3e17 GeV (Song-Ma, non-consensus); black-hole information paradox
+   unresolved (§3.4).
 5. The start: singularity vs bounce vs eternal-ish past — genuinely OPEN; no
    physics beyond the Planck epoch.
 6. Hard problem of consciousness: no physical theory explains why anything is
@@ -54,7 +69,7 @@ refuses to blend them:
 
 ## C. Audit of THIS PROJECT's claims about reality (against A/B verdicts)
 
-- [ESTABLISHED] ball physics numbers (battery, 19 scripts, results_of_record 16
+- [ESTABLISHED] ball physics numbers (battery, 19 scripts, results_of_record 23
    checks exit 0); the corrected "37 orders apart" hierarchy; recoil KE ~= ZPE
    9.9x; JKR >> k_BT 6.3e5x; point-likeness above ~um (corrigendum 70).
 - [ESTABLISHED] the math backing these numbers: PNT (π(1e6)=78498), the

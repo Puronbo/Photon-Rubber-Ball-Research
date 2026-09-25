@@ -116,6 +116,11 @@ COUNTING SUBSTRATE (node B1, the ladder's spacing statistics):
     (Hardy-Littlewood 2*C2*x/ln^2 x ~ 50822, 14% as-yet asymptotic error -
     CONJECTURE, evidence only). Mean gap ~ ln p stays the only reliable law;
     the irregular gaps ARE the dense texture that the conjectures live in.
+    External anchor (STATE_OF_THE_SCIENCE_2026 §1.4, 2026-09): across all known
+    prime data, gaps never beat merit 41.94 (2017 Gapcoin) or CSG 0.9206 (known
+    maxima); largest gap 16,045,848 (PRP ends) / 1,113,106 (proven ends). The
+    ladder's irregular log10 spacing (gaps 0.51-14.16 decades, max/min ~28) sits
+    well within those real bounds — a bounded resemblance, FRAMING only.
 
 ## Discipline
 

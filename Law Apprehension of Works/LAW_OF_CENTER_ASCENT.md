@@ -32,8 +32,12 @@ P1 THE DATUM. There is one center, the Great Attractor, and it is the floor.
    Axiom: in its own gauge, position = 0 and size = 0 forever (self-gauge lemma).
    Consequence: the datum is the null reading of every lattice, the reference for
    all ascent. No scale exists below it.
-   [REAL anchor: a massive concentration ~50 Mpc toward Norma, heart of Laniakea,
-   Local Group drawn toward it at a few hundred km/s.]
+   [REAL anchor: a massive concentration ~50 Mpc toward Norma (= the Shapley-
+   supercluster overdensity acting as a dipole with the antipodal Dipole Repeller
+   void), heart of Laniakea; local bulk flow toward it ~130-600 km/s. External
+   2026 status: no universal center exists (cosmological principle intact) —
+   STATE_OF_THE_SCIENCE_2026 §3.2; P1's "one center" is FRAMING by construction,
+   per Part V.]
 
 P2 THE GROWTH. The center grows: its tick u(t) increases monotonically.
    Consequence: the same physical span spans fewer ticks over time (n(u) falls),
