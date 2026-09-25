@@ -106,6 +106,7 @@ NOT-claim (section X).
 | A10 | theory-extension layer: entropic gravity, QG-induced decoherence at ball scales, mini black-hole analogies | [CONJECTURE] |
 | A11 | "size = 0 at all scales"; "prime-ladder is the structure of everything"; "consciousness = the action in space" | [FRAMING] |
 | A12 | the mathematical construct underlying "position is zero + distance + speed", present in every tested corner of physics: a pseudo-Riemannian manifold with metric + connection and GAUGED coordinates — at every event Riemann normal coordinates put the observer at the origin with locally flat metric (the equivalence principle: "position is always zero" is local gauge freedom, a theorem of GR); distance = invariant geodesic arc length; speed = norm of the tangent vector ds/dτ (parameter is proper time/affine, NOT position — "speed per position" is a misnomer: ds/dλ is reparametrization-invariant old speed, and "position per position" is a dimensionless tautology) | [ESTABLISHED]-external (differential geometry + GR: Mercury perihelion, GPS, LIGO, Shapiro delay, frame-dragging, EHT) | SR/GR precision tests; consistent with A0/L12 |
+| A13 | the universe as a whole has no position, no velocity, no momentum, and no center-of-mass frame "in which it is at rest": position is a relation between objects under gauge, and there is no external reference frame by definition — "the position of the universe" (and "what is everything the zero of?") is a category error, not a physical quantity; any proposed embedding of the universe in an external space (brane worlds) is speculative | [ESTABLISHED]-external (no preferred frame in GR; general covariance) + embedding claims [CONJECTURE]/[OPEN] | SR/GR coordinate freedom; relationalism; brane-world embeddings unobserved |
 
 ## F — Law-craft claims (LAW_OF_CENTER_ASCENT.md; invented axiom system)
 
@@ -128,6 +129,7 @@ NOT-claim (section X).
 | F15 | "the zero-to-horizon recursion is the same all the way up — each ball nests inside the next zero-to-horizon ball, and the chain continues" | the recursion of the READING machinery is real (L11); nested OBSERVABLE balls are real in intent (E16); anything claiming what sits beyond our horizon (a real "next" window) is overreach — the horizon is a causal boundary, no observation crosses it | REAL anchors: A0, L03/L2, L10, L11, E16; the chain-beyond-horizon [FRAMING] |
 | F16 | "LAW OF OBJECT ZEROS": every object is a zero of its own frame, and the pattern of object-zeros is a law governing the universe | the coordinate/gauge pattern is REAL (L12: A0 self-gauge, L03 degree collapse, L11 recursion, L10/E15 own ball, E05 no shared zero); "a law governing dynamics" = overreach — it is a statement about coordinates and resolvability, not a force or cause (X22) | REAL anchors A0/L03/L10/L11/L12/E05; the law-as-dynamics [FRAMING] |
 | F17 | "the differential-gauge construct is COMPLETELY in everything — the single underlying mathematics of the universe" | the construct IS the tested description of spacetime (A12, [ESTABLISHED]): gauge freedom + metric + connection, universal in measured physics; the union/simplification ("everything reduces to it", including DM/DE/QG) = overreach — open rows A04/A06 stay [OPEN] | A12 [ESTABLISHED]; the everything-law reading [FRAMING] |
+| F18 | "if every zero is a position making up the universe, the whole must be a zero too — the universe is its own position/center" | the relational part is REAL: positions are the coordination of object-zeros, relations are what's real (A13, [ESTABLISHED]); the whole has no external frame, so "gauges to zero from outside" is the same machinery as the top rung reading as a point from above (L11) — but no probe exists above, so the top-zero is not an observable station | "the universe has its own position/center at the top" = [FRAMING]; no vantage point of the whole exists (X24) |
 
 ## P — Possibility relevancy claims (POSSIBILITIES_AND_RELEVANCY.md)
 
@@ -148,7 +150,7 @@ NOT-claim (section X).
 | G01 | battery = 19 Python scripts, all exit 0 under `-W error::RuntimeWarning` | [VERIFIED] |
 | G02 | `results_of_record.py` = 27 checks, exit 0 | [VERIFIED] |
 | G03 | `ruff --select F` clean on tracked corpus | [VERIFIED] |
-| G04 | CORRIGENDUM.md = 88 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
+| G04 | CORRIGENDUM.md = 89 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
 | G05 | Law thread = 23 tracked .md + zh twin + PRESENTATION.tex; informational only | [VERIFIED] |
 | G06 | no experiment was performed; all narrative twin files banner-marked (PROVENANCE/FICTION) | [VERIFIED] |
 | G07 | arXiv bundles staged; upload requires the author's own arXiv account/endorsement | [VERIFIED] |
@@ -182,8 +184,9 @@ NOT-claim (section X).
 | X21 | beyond the observed horizon there is a "next zero-to-horizon" that is real and in principle observable | the recursion (L11) describes the READING machinery of the verified ladder; what exists beyond ANY horizon is the Copernican extrapolation (E16) at best, and topology [OPEN] — no experiment crosses the causal boundary |
 | X22 | the object-zero pattern is physical dynamics — object zeros govern forces, expansion, or the fabric of the universe | self-gauge A0 is a coordinate-invariance statement ([VERIFIED]); resolvability L03/L11 is the reading rule of the verified ladder; nothing in the corpus turns these into dynamics — no force, no cause |
 | X23 | speed is a rate "per position" — position is the parameter of speed | speed's parameter is time/proper time (or any affine parameter): v = ds/dτ; "per position" is a reparametrization of the SAME tangent-vector norm, not a new physical rate; "position per position" is dimensionless tautology |
+| X24 | the entire universe has (or must have) a position, a zero, or a vantage point outside itself — a universal center, an observer-of-the-whole, or a god's-eye frame | no external reference can exist by definition (A13): position is a relation between objects; GR has no preferred frame; there is no Archimedean point from which "the universe's position" could be measured; even the top-rung "reads as a point from above" has no probe (L11/X21) |
 
-Count: this register currently carries 98 numbered claims (B18, L12, N7, E16,
-A12, F17, P7, G9) + 23 NOT-claims, plus pointer to the 27-slot composite tree
+Count: this register currently carries 100 numbered claims (B18, L12, N7, E16,
+A13, F18, P7, G9) + 24 NOT-claims, plus pointer to the 27-slot composite tree
 (N07). Counts are per-row arithmetic (the 95/98 statements after the recursion
 and LOZ rounds were +2 over-counted; recomputed and corrected, corrigendum 88).

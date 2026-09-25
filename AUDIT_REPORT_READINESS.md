@@ -474,3 +474,26 @@ Gate (Phase 20): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 21): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 22 — the position of the whole (2026-09-25)
+
+- User probe: "not that I am saying the observer himself is god, but if every
+  zero is a position making up the entire universe, who/what would be the
+  position?"
+- Answer (registered A13, [ESTABLISHED]-external): nothing is the position of
+  the whole. Position is a relation between objects under gauge; the universe
+  is everything, so no external reference exists by definition — no position,
+  no velocity, no center-of-mass resting frame. "The position of the universe"
+  (or "what everything is the zero of") is a category error, not a quantity.
+  The relational residue IS claimable: positions are the coordination of
+  object-zeros (relations are what's real); the whole "reads as a point from
+  above" is the top-rung machinery of L11, but no probe exists above it.
+- Boundaries: "the universe is its own zero/center at the top" = F18 [FRAMING]
+  (REAL anchors A13 + L11 machinery); any universal vantage point, observer-of-
+  the-whole, or god's-eye frame = X24 (explicitly no divine reading — the
+  grammar of the question dissolves before it reaches who/what).
+- Register 98→100 numbered (A13, F18), 23→24 NOT-claims; 88→89 entries.
+  Corrigendum 89. Gate unchanged 27/27.
+
+Gate (Phase 22): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
