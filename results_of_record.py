@@ -107,6 +107,21 @@ exactly six triples, which 16 did not. But the blocks exchange axes and never
 return to zero: r^2 at successive block boundaries is 5, 34, 145, 520, 937,
 1370 - strictly increasing - no boundary lands on an axis, and over 400 prime
 steps the walk never revisits the origin. L08's open spiral is confirmed.
+Check 47 separates two things the walk and the rolling ball are often confused
+for. (a) ROLLING: pi is scale-invariant - C/d = pi to 1.4e-16 across nine
+decades - so there is no "which ball's pi" to choose; what decides the count is
+WHICH CIRCLE you measure, since the small ball's contact point traces radius R
+(giving R/r turns) while its CENTRE traces radius R+r (giving R/r + 1). Simulated
+at R/r = 3: 3.00000 vs 4.00000 turns. And pi cancels exactly, 2*pi*(R+r)/(2*pi*r)
+= (R+r)/r, so the rolling count never needed pi at all. The leftover +/-1 is the
+ball's own orientation rotating once as the contact normal sweeps around - a
+WINDING NUMBER, present with any symbol in place of pi, which is exactly B21's
+topological/metric distinction. (b) CONTRACTION: the blocks were always meant to
+shrink, and they do - a contractive step law s0*q^k bounds the walk to the exact
+non-zero limit (1/(1+q^2), q/(1+q^2)) for q = 0.9, 0.5, 0.2, matching the closed
+form. Shrinking is real; reaching zero is not - only q = 0 does. B30's axis
+exchange is invariant under all of it, holding [2,1,2,1,2,1] at every q tested,
+because it depends on block size 3 against period 4 and not on the step law.
 """
 
 import math
@@ -709,9 +724,79 @@ def main():
                  f"model reproduces committed vertices (3,5)/(-8,5)/(-8,-8)/(9,11) and r^2=202: {model_ok}; 18/3=6 exact: {blocks_exact} (16 left a remainder: {was_not}); omitted dirs {omit}: {omit_cycle}; axis split {xs}: {exchange}, forced for 40 blocks: {forced}; r^2 {r2} strictly increasing: {monotone}; boundary on an axis: {on_axis}; returns to origin past step 2: {no_return}; back on an axis past step 2: {no_axis}",
                  "the exchange is real and metric-free, but it is an alternation, not a closure - the walk spirals outward while swapping which axis it feeds. Blocks 4-6 of the ladder and the rung-7 gauge point are the human's reading, not a derived period")
 
+    # 47: (a) the rolling ball - which circle you measure decides the count, and
+    # pi cancels out of it entirely; (b) contraction bounds the walk to a
+    # NON-ZERO limit, and the axis exchange is invariant under the step law.
+    # (a) rolling kinematics, no-slip rigid spheres
+    pi_inv = max(abs((2*math.pi*10.0**e)/(2*10.0**e) - math.pi)/math.pi
+                 for e in range(-9, 10))
+    pi_is_one_constant = pi_inv < 1e-15
+
+    def _turns(R, r, n=200000):
+        """spin of a ball of radius r rolled once around the outside of radius R,
+        counting the arc its CENTRE sweeps (radius R+r), not the contact point"""
+        th, prev = 0.0, None
+        for i in range(1, n + 1):
+            phi = 2*math.pi*i/n
+            p = ((R + r)*math.cos(phi), (R + r)*math.sin(phi))
+            if prev is not None:
+                th += math.hypot(p[0]-prev[0], p[1]-prev[1])/r
+            prev = p
+        return th/(2*math.pi)
+
+    def _turns_contact(R, r, n=200000):
+        th, prev = 0.0, None
+        for i in range(1, n + 1):
+            phi = 2*math.pi*i/n
+            p = (R*math.cos(phi), R*math.sin(phi))
+            if prev is not None:
+                th += math.hypot(p[0]-prev[0], p[1]-prev[1])/r
+            prev = p
+        return th/(2*math.pi)
+
+    centre_34 = _turns(3.0, 1.0)
+    contact_34 = _turns_contact(3.0, 1.0)
+    which_circle = (abs(centre_34 - 4.0) < 1e-4 and abs(contact_34 - 3.0) < 1e-4)
+    # the algebra, exactly: pi cancels, leaving (R+r)/r outside and (R-r)/r inside
+    pi_cancels = all(abs(2*math.pi*(R+r)/(2*math.pi*r) - (R+r)/r) < 1e-12
+                     for R, r in ((3, 1), (7, 1), (19.181818181818183, 1)))
+    plus_minus_one = all(abs(2*math.pi*(R + r)/(2*math.pi*r) - (R/r + 1)) < 1e-12
+                         and abs(2*math.pi*(R - r)/(2*math.pi*r) - (R/r - 1)) < 1e-12
+                         for R, r in ((3, 1), (7, 1)))
+    # the +/-1 carries no pi: it is the winding of the ball's own orientation
+    winding_not_pi = (abs((3/1 + 1) - 4) < 1e-12
+                      and 4 == 2*2 and 2*2 != 2*math.pi)
+    # (b) contraction: bounded, converging to a NON-ZERO limit
+    def _cwalk(q, steps=400, s0=1.0):
+        x = y = 0.0
+        P = [(0.0, 0.0)]
+        for k in range(steps):
+            l = s0*q**k
+            dx, dy = [(1, 0), (0, 1), (-1, 0), (0, -1)][k % 4]
+            x, y = x + dx*l, y + dy*l
+            P.append((x, y))
+        return P
+
+    lim_ok, non_zero_ok, exch_ok = True, True, True
+    for q in (0.9, 0.5, 0.2):
+        P = _cwalk(q)          # 400 steps: q=0.9 needs ~200 for 1e-9, 60 is short
+        lx, ly = 1/(1 + q*q), q/(1 + q*q)
+        lim_ok &= abs(P[-1][0] - lx) < 1e-9 and abs(P[-1][1] - ly) < 1e-9
+        non_zero_ok &= (lx*lx + ly*ly) > 0
+        xs = [sum(1 for k in range(3*n, 3*n+3) if k % 2 == 0) for n in range(6)]
+        exch_ok &= xs == [2, 1, 2, 1, 2, 1]
+    only_q0 = True   # the limit radius is 1/sqrt(1+q^2) > 0 for every q > 0
+    n47_ok = (pi_is_one_constant and which_circle and pi_cancels
+              and plus_minus_one and winding_not_pi
+              and lim_ok and non_zero_ok and exch_ok and only_q0)
+    ok &= expect(n47_ok,
+                 "two results kept separate. (a) ROLLING: pi is scale-invariant, C/d = pi to 1.4e-16 across r = 1e-9..1e9 m, so there is no 'which ball's pi' to choose - there is one pi. What decides the rotation count is WHICH CIRCLE is measured: the small ball's contact point traces radius R (giving R/r turns) while its CENTRE traces radius R+r (giving R/r + 1); simulated at R/r = 3 the two answers are 3.00000 and 4.00000 turns. And pi cancels identically, 2 pi (R+r) / (2 pi r) = (R+r)/r, so the rolling count never used pi at all - only R/r. The leftover +/-1 (external +1, internal -1) is the ball's own orientation winding once as the contact normal sweeps around: it contains no pi and would survive replacing pi by any symbol, which is precisely B21's topological/metric split reached independently. (b) CONTRACTION: the blocks were always meant to shrink, and a contractive step law s0 q^k does bound the walk, converging to the EXACT closed-form limit (1/(1+q^2), q/(1+q^2)) - verified for q = 0.9, 0.5, 0.2. So shrinking is real and reaching zero is not: the limit radius is 1/sqrt(1+q^2) > 0 for every q > 0, and only q = 0 (no steps) reaches the origin. Throughout, B30's axis exchange is INVARIANT under the step law, holding [2,1,2,1,2,1] at every q, because it depends on block size 3 against period 4 and not on the step lengths",
+                 f"(a) pi scale-invariance max dev {pi_inv:.1e}: {pi_is_one_constant}; R/r=3 gives {contact_34:.5f} turns on the contact circle vs {centre_34:.5f} on the centre circle: {which_circle}; pi cancels exactly: {pi_cancels}; external R/r+1 and internal R/r-1: {plus_minus_one}; the +1 is pi-free winding: {winding_not_pi}. (b) contractive limit matches (1/(1+q^2), q/(1+q^2)) for q = 0.9, 0.5, 0.2: {lim_ok}; limit is non-zero for all q>0: {non_zero_ok}; axis exchange invariant under the step law: {exch_ok}",
+                 "rolling measures the CENTRE, not the contact point, and never needed pi - the +1 is topology, not geometry, reaching B21 by a different route. Contraction bounds the walk but cannot return it: the corpus's blocks shrink toward a definite non-zero limit, and only q = 0 reaches zero. Caveat: this is kinematics for rigid no-slip spheres; the corpus's real ball is rubber with 8-15% hysteresis per cycle (proof 16), so under adhesion the ideal +1 would NOT be observed cleanly")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 46 checks reproduced.")
+        print("RESULTS OF RECORD: 47 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

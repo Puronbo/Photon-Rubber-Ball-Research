@@ -509,3 +509,93 @@ $$\underbrace{\text{axes exchange}}_{\text{real, forced, period } 4}
 L08's open spiral stands, confirmed rather than overturned. The blocks swap
 which axis they feed; they do not cycle back. A period-3 *turn* (§12.1) would
 close such a loop — and that remains a choice, not a consequence.
+
+---
+
+## 14. Two corrections the author forced, both tightening earlier claims (B31, B32, X35; check 47)
+
+§13 settled the exchange of threes and left two loose ends that the author's
+next question exposed. Neither disturbs an earlier result; both sharpen one.
+
+### 14.1 Rolling: which circle you measure decides the count, and π is not involved (B31)
+
+*Is π constant when a ball smaller than another rolls on it? Which
+circumference or diameter do we use?* Both parts have clean answers, and the
+second is the interesting one.
+
+**π is scale-invariant, so the first question has no choice in it.** $C/d = \pi$
+holds to 1.4e-16 across $r = 10^{-9}\dots10^{9}$ m. There is one π; the small
+ball's and the large ball's are the same constant. Asking which ball's π to
+use is like asking which inch to prefer.
+
+**What decides the count is which circle you measure.** The small ball's
+*contact point* traces a circle of radius $R$; its **centre** traces a circle of
+radius $R + r$. Simulated at $R/r = 3$:
+
+| circle measured | radius | turns |
+|---|---|---|
+| contact point | $R$ | 2.99998 |
+| **centre** | $R + r$ | **3.99998** |
+
+That is the whole content of the "missing turn" in the rolling-circle problem,
+and it is a question about *geometry of reference*, not about constants.
+
+**And π cancels out of it entirely.**
+
+$$\text{turns} = \frac{2\pi (R + r)}{2\pi r} = \frac{R + r}{r} = \frac{R}{r} + 1 .$$
+
+π appears in both numerator and denominator and vanishes. The rolling count
+never needed π; only the ratio $R/r$.
+
+**The leftover $+1$ is a winding number, not a π-term.** It is the ball's own
+orientation rotating once as the contact normal sweeps around — external
+rolling gives $+1$, internal rolling (inside a larger circle) gives $-1$. It
+contains no π and would survive replacing π with any symbol whatever. This is
+**B21's topological/metric distinction reached by a completely independent
+route**: rolling adds winding 1, it does not add π.
+
+For the corpus's own 550 nm ball on a cell, $R/r = 18.1818$, so the honest
+count is **19.1818** turns, not 18.1818. On larger rungs the $+1$ remains real
+but becomes numerically negligible.
+
+*Scope limit, stated plainly:* this is kinematics for rigid no-slip spheres. The
+corpus's actual ball is rubber with 8–15% energy loss per cycle (proof 16), so
+under adhesion the no-slip condition fails and the ideal $+1$ would **not** be
+observed cleanly. This is a theorem about ideal balls, not a prediction about
+this one.
+
+### 14.2 The blocks were always meant to shrink, and they do (B32, X35)
+
+The author's correction — *"not supposed to close, supposed to shrink"* — is
+right, and the corpus had the machinery for it in B19's contractive $q$. What
+was missing was the closed form for **where** a contractive walk lands. With
+step lengths $s_0 q^k$ and the same period-4 direction cycle, the walk converges
+to
+
+$$\left( \frac{1}{1 + q^2},\ \frac{q}{1 + q^2} \right),$$
+
+verified for $q = 0.9, 0.5, 0.2$ against the closed form to $<10^{-9}$ (exact
+for $q \le 0.5$; $q = 0.9$ needs about 200 steps, so a first draft's 60-step
+horizon was too short and was corrected before registration).
+
+So **shrinking is real**. But note the limit's radius:
+
+$$r_\infty = \frac{1}{\sqrt{1 + q^2}} > 0 \quad \text{for every } q > 0 .$$
+
+Only $q = 0$ — no steps at all — reaches the origin, and a walk with no steps
+is not a walk. This closes **X35**: no step law delivers the blocks to zero.
+Growing steps diverge (L08, $r^2$ monotone at the boundaries); contractive steps
+converge to a fixed point that is not the origin.
+
+**And the exchange is indifferent to all of it.** B30's axis split holds
+$[2,1,2,1,2,1]$ at $q = 0.9$, $0.5$ and $0.2$ alike, because the exchange
+depends on block size 3 against period 4 and not on the step lengths at all. The
+blocks trading axes and the blocks shrinking are **compatible, not competing** —
+which is the reconciliation the author's phrasing was reaching for.
+
+### 14.3 The contrast worth keeping
+
+In the **ladder**, $n(u) = D/s$ genuinely tends to zero — $1.25 	imes 10^{-33}$
+at the top rung. In the **walk**, the scale only ever approaches a fixed point.
+Both are "going to zero" in a loose sense; only one of them actually gets there.
+Keeping them distinct is the whole content of X35.

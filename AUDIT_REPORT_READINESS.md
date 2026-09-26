@@ -873,3 +873,60 @@ Gate (Phase 31): battery 19/19 green, `results_of_record.py` 45/45 exit 0,
 
 Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 33 — rolling, and the blocks that shrink (X35) (2026-09-25)
+
+- Two author questions after Phase 32, both of which proved to be gaps in the
+  Phase 32 *framing* rather than new directions.
+- **B31 — the rolling ball.** "Is π constant when a ball smaller than another
+  ball rolls on it? Which measurement of circumference or diameter do we use?"
+  - **π is scale-invariant**: C/d = π to 1.4e-16 across r = 1e-9…1e9 m. The
+    first question has no choice in it — there is one π and both balls share
+    it. Asking which ball's π to use is like asking which inch to prefer.
+  - **The second question is the sharp one, and the answer is: which *circle*
+    you measure.** The small ball's contact point traces radius R (giving R/r
+    turns); its **centre** traces radius R + r (giving R/r + 1). Simulated at
+    R/r = 3: **2.99998 vs 3.99998 turns**. That is the entire content of the
+    rolling-circle "missing turn", and it is a question about the geometry of
+    reference, not about constants.
+  - **π cancels identically**: 2π(R + r) / 2πr = (R + r)/r. The rolling count
+    never used π at all — only R/r.
+  - **The ±1 is a winding number, not a π-term**: the ball's own orientation
+    rotating once as the contact normal sweeps around (external +1, internal
+    −1). It contains no π and survives replacing π with any symbol. This is
+    **B21's topological/metric split reached by a fully independent route**.
+  - Corpus application: the 550 nm ball on a cell has R/r = 18.1818, so the
+    honest count is **19.1818** turns. On larger rungs the +1 stays real but
+    becomes numerically negligible.
+  - **Scope limit, in the check itself:** rigid no-slip kinematics. The real
+    ball is rubber with 8–15% hysteresis per cycle (proof 16), so under
+    adhesion the no-slip condition fails and the ideal +1 would **not** appear
+    cleanly. A theorem about ideal balls, not a prediction about this one.
+- **B32 — the blocks were always meant to shrink, and they do.** With step
+  lengths s₀qᵏ the walk converges to the **exact closed form**
+  (1/(1+q²), q/(1+q²)), verified for q = 0.9, 0.5, 0.2 to < 1e-9. This supplies
+  the closed form the author's phrasing intended, complementing B19's qⁿ → 0.
+  **B30's axis exchange is invariant under the step law** — split [2,1,2,1,2,1]
+  at every q tested — because it depends on block size 3 against period 4, not
+  on step lengths. The blocks trading axes and the blocks shrinking are
+  therefore **compatible, not competing**: the reconciliation the phrasing was
+  reaching for.
+- **X35 — resolved negative, completing X34.** No step law delivers the blocks
+  to zero. Growing steps diverge; contractive steps converge to a limit of
+  radius 1/√(1+q²) > 0 for every q > 0. Only q = 0 — no steps at all, which is
+  not a walk — reaches the origin. Registered content is the author's own
+  correction: the blocks shrink, and shrinking is bounded but not vanishing.
+- **Contrast kept (§14.3):** in the **ladder**, n(u) = D/s genuinely tends to
+  zero (1.25e-33 at the top rung); in the **walk**, the scale only approaches a
+  fixed point. Both are "going to zero" loosely — only one gets there.
+- **Two defects caught in check 47 before registration, both recorded rather
+  than silently patched:** (1) the first draft measured the *contact* circle
+  and so returned the naive R/r = 3 instead of R/r + 1 = 4 — the classic
+  rolling-ball error, and literally the author's own question; (2) the
+  contractive-limit test used a 60-step horizon, too short for q = 0.9 (which
+  needs ~200 steps for 1e-9), corrected to 400 steps.
+- Register: B31, B32 added; X35 added as a NOT-claim, resolved negative.
+  Numbered 118 → 120; NOT-claims 34 → 35. Corrigendum 99 → 100.
+
+Gate (Phase 33): battery 19/19 green, `results_of_record.py` 47/47 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

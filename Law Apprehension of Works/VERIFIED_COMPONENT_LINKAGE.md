@@ -215,7 +215,13 @@ direction cycles S,W,N,E with period 4 since gcd(3,4)=1; 3 is odd so the dominan
 step-index parity alternates 2/1, 1/2 over 40 blocks), and 18 rungs divide into exactly
 six triples where 16 did not - but the blocks never return: r^2 at boundaries is 5, 34,
 145, 520, 937, 1370, strictly increasing, no boundary on an axis, no origin return in
-400 prime steps.
+400 prime steps. Rolling: pi is scale-invariant (C/d = pi to 1.4e-16 over nine decades),
+and the rotation count is set by WHICH CIRCLE is measured - contact point radius R gives
+R/r, centre path radius R+r gives R/r + 1 (3.00000 vs 4.00000 at R/r = 3) - while pi
+cancels exactly, 2 pi (R+r)/(2 pi r) = (R+r)/r, so only R/r matters and the +1 is the
+ball's own winding, not a pi-term. Contraction: the walk converges to (1/(1+q^2),
+q/(1+q^2)), non-zero for every q > 0, and B30's axis exchange is invariant under the
+step law (split [2,1,2,1,2,1] at q = 0.9, 0.5, 0.2).
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
