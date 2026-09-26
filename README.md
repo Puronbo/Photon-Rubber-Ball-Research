@@ -25,13 +25,20 @@ fluctuation-dissipation/Jarzynski/Crooks equalities — mapped node-by-node in
 `Law Apprehension of Works/VERIFIED_COMPONENT_LINKAGE.md` (PROVEN vs CONJECTURE
 labels, never conflated). Open conjectures (Riemann, Goldbach, Cramér gaps,
 twin primes, Hardy-Littlewood quadratics) are cited as open, not used as proof.
+`VERIFIED_SYNTHESIS_AND_EQUIVALENTS.md` sorts all 166 register rows by logical
+status and pairs each with the standard result it already is — the honest
+headline being that **every mathematically closed result here is a known
+result** (the `R/r + 1` rolling count is the coin-rotation problem, Poisson
+1837; countability is Cantor; the topological/metric split is `H₁(S¹) = ℤ`),
+so no priority claim is available on any of them. It also records the two
+errors the compilation found by recomputation (`X39`, `X40`).
 
 ## What to trust (verified foundation)
 
 The canonical numbers are reproducible with a single command:
 
 ```bash
-python results_of_record.py      # 51 checks, exit 0
+python results_of_record.py      # 52 checks, exit 0
 ```
 
 The "comparable energies" abstract claim is **false** (~37 orders of magnitude
@@ -67,7 +74,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
 │  ├─ COGNITIVE_UNIVERSE_MODEL.py · magnifying_glass_*.py · boson_scaling_probe.py
 │  └─ photon_rubber_ball_research/         twin canonical copies + 37 tests
 ├─ verification & honesty                  PROJECT_INDEX.md (canonical map: start here)
-│  │                                      CORRIGENDUM.md (103-entry catalog, 1 [FALSE], n [FIXED])
+│  │                                      CORRIGENDUM.md (104-entry catalog, 1 [FALSE], n [FIXED])
 │  │                                      AUDIT_REPORT_READINESS.md (Phase 1-8.3 gate results)
 │  │                                      ACTION_PLAN.md (Paths 1-4 to completion)
 │  │                                      CLAIM_REGISTER.md (every claim + every NOT-claim, verdict-coded)

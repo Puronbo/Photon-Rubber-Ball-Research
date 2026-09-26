@@ -1097,6 +1097,57 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B37, B38, X38 added. Numbered 124 → 126; NOT-claims 37 → 38.
   Corrigendum 102 → 103.
 
+## Phase 37 — compilation: what is proved, and what it already is (2026-09-26)
+
+- Request: *compile what is logically sound and verified, then expand or
+  reference to known equivalents.* New file
+  `VERIFIED_SYNTHESIS_AND_EQUIVALENTS.md`.
+- **All 166 register rows sorted by logical status**, under a four-gate
+  admission rule (computable / exact-or-sourced / reproducible / non-vacuous):
+  Tier I = 20 exact-maths, Tier II = 24 sourced empirical, Tier III = 14
+  negative, **68 excluded** as `[CONJECTURE]`/`[OPEN]`/`[FRAMING]`/
+  `[POSTULATE]`/`[REAL]`. The exclusions being 54% of the numbered claims is
+  the healthiest number in the register.
+- **The central finding, and it is deflationary on purpose:** every
+  mathematically *closed* result here is a **known** result. Named equivalents
+  registered — the `R/r + 1` rolling count is the **coin-rotation problem**
+  (Poisson 1837); Hurwitz's four algebras and Bott periodicity are textbook;
+  countability is **Cantor (1891)**; the topological/metric split is
+  `H₁(S¹) = ℤ`; E/G vacuity is **non-vacuity** in model theory; the
+  excluded-boundary result is the **boundary of an open set**; `0.999… = 1` is
+  the **geometric series** under the **Monotone Convergence Theorem**, and is a
+  *theorem, not a paradox*, which the synthesis says explicitly. **No priority
+  claim is available on any of the 20**, and the synthesis says so in writing so
+  the derivations are never read as discoveries.
+- Two register errors found by **recomputation, not reading**:
+  - **X39** — a "rung↔neutral-axis correspondence, 7 of 18 matching" had entered
+    the working context under B26's name. **No such claim exists**; B26 is the
+    two sourced rungs plus a CV that *rose* to 0.970, and "neutral axis" occurs
+    only as *neutral density filter*. Logged as not-claimed, because it would
+    have been the most novel-**looking** result in the corpus and was
+    unsupported.
+  - **X40** — **the first error in an `[PROVEN]` row.** N06 mixed the 10⁶ and
+    10⁷ ranges; mean gap 13.02 survives neither (true: 12.74 / 15.05) and its
+    "≈ ln 13.12" is `ln(5×10⁵)`, the midpoint, not `ln 10⁶ = 13.82`. Properly
+    measured it is a **7.8% shortfall**, not an agreement. Same error class as
+    `P02` — asymptotic used as pointwise identity. N06 marked superseded in
+    place, not deleted.
+- **Check 52 is the first check that audits the register instead of confirming
+  it**: a fresh independent sieve re-deriving N01/N02/N05/N06 and asserting the
+  superseded values to be *wrong*, so the error cannot silently return. It
+  caught a bug in its own first draft (coprime fraction compared against
+  divisible density) — same class of slip, caught the same way.
+- **Also recommended:** restate **B35** as a cardinality observation. For a
+  *finite* set any bijection determines both sides, and 18 distinct labels give
+  a trivial automorphism group uninterestingly, so "the zeros and the reals
+  determine each other" is **true but vacuous at 18 rungs**; the
+  300-relabelling check cannot fail by construction. The non-trivial version
+  needs an infinite index set plus monotonicity or shift-commutation.
+- Register: X39, X40 added (38 → 40 NOT-claims). Corrigendum 103 → 104.
+
+Gate (Phase 37): battery 19/19 green, `results_of_record.py` 52/52 exit 0,
+`ruff --select F` clean, only intended changes staged.
+
 Gate (Phase 36): battery 19/19 green, `results_of_record.py` 51/51 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
 

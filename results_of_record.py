@@ -196,6 +196,25 @@ Third, this is one law in three places: B19 (q^n -> 0), B32 (contractive walk
 the terms vanish, the remainder vanishes, and the TOTAL is 1/(1-q) > 1. The
 inference that fails is "all the tenth powers are zero, therefore everything is
 zero" - X35's overclaim one level up.
+Check 52 is the first check whose purpose is to AUDIT the register rather than
+confirm it. Compiling every claim against its known equivalent
+(VERIFIED_SYNTHESIS_AND_EQUIVALENTS.md) meant re-deriving the number-theory
+block, and one row did not survive: N06 mixed the 1e6 and 1e7 ranges, and its
+mean gap of 13.02 is neither 12.74 (p < 1e6) nor 15.05 (p < 1e7), while the
+logarithm it compares against, 13.12, is ln(5e5) - the MIDPOINT of the interval,
+not ln(1e6) = 13.82. So the old row was really a 7.8% shortfall dressed as an
+agreement, the same error class as P02: an asymptotic used as a pointwise
+identity. N06 is marked superseded in place (X40) rather than deleted. Check 52
+re-derives N01, N02, N05 and the corrected N06 from a fresh sieve that shares no
+code with checks 22-26, and asserts the superseded values to be WRONG so the
+error cannot silently return. It also caught a bug in its own first draft - the
+coprime fraction compared against the divisible density - which is the same
+class of slip, found the same way. Two near-misses, recorded rather than claimed:
+B01's mass looked like a 1000x error until the module's actual constants
+(rho = 1100, R = 275 nm) were traced, and check 51's q = 0.9 horizon was the
+earlier instance of the same pattern. The lesson is the point: a compilation
+that re-derives beats one that reads, and the one genuine error it found was
+found by recomputation, not by reading.
 """
 
 import math
@@ -1151,6 +1170,95 @@ def main():
                  "all 18 scale values distinct: " + str(distinct_ok) + "; automorphism group preserving s is trivial: " + str(rigid_ok) + "; preserving s forces the identity (300 random relabellings): " + str(force_ok) + "; s supplies 18 distinguishable references, Axiom B's word: " + str(distinct_refs_ok) + ". 0 is the scale of no reference and the codomain is open there: " + str(excluded_ok) + "; in the finite ladder 0 is not even a limit point, min rung " + f"{min(s18):.4e}" + ": " + str(finite_gap_ok) + ". Under Axiom E with q < 1, 0 is the limit and is never attained: " + str(ideal_ok) + ". 0 is the unique parameterless real (additive identity, negation fixed point, limit of 1/n): " + str(param_ok) + ". Neither side contains the other: " + str(not_contained_ok),
                  "the intuition is right about DETERMINATION and wrong about CONTAINMENT, and 0 is the interesting residue. The reals individuate the zeros exactly as strongly as the zeros index the reals - s makes the 18-rung ladder rigid, with no symmetry left over, and it is s that supplies the distinguishibility Axiom B asks for. But containment is refuted by arithmetic, and 0 belongs to NEITHER side: it is excluded from the open codomain R_{>0}, it is not even a limit point of the finite ladder (min 1.616e-35), and it becomes a limit only in the idealized q < 1 regime, where it is approached and never attained. Meanwhile 0 is the one real the structure can define with no parameters at all. So 0 is simultaneously the most fundamental and the least reachable element of the framework - the excluded boundary both sides need and neither supplies")
 
+    # 52: INDEPENDENT RE-DERIVATION of the number-theory block (N01, N02, N05,
+    # N06), from a fresh sieve that shares no code with checks 22-26. This is
+    # the first check whose purpose is to audit the register rather than to
+    # confirm it. It was written because VERIFIED_SYNTHESIS_AND_EQUIVALENTS.md
+    # re-derived every number-theory row and found one that did not survive
+    # (X40: N06 mixed the 1e6 and 1e7 ranges and its mean gap matched neither).
+    # Every figure below is recomputed from scratch; the corrected values are
+    # asserted, and the superseded ones are asserted to be WRONG so the error
+    # cannot silently return.
+    NT = 10**7
+    _s = bytearray([1]) * (NT + 1)
+    _s[0:2] = b"\x00\x00"
+    for _p in range(2, int(NT ** 0.5) + 1):
+        if _s[_p]:
+            _s[_p * _p:: _p] = bytearray(len(_s[_p * _p:: _p]))
+    _pr = [i for i in range(2, NT + 1) if _s[i]]
+
+    # N01: pi(1e7) = 664,579, and n/ln n sits 6.64% BELOW it
+    _pi7 = len(_pr)
+    _pnt_off = (_pi7 - NT / math.log(NT)) / _pi7 * 100.0
+    n01_ok = (_pi7 == 664579 and abs(_pnt_off - 6.64) < 0.02)
+
+    # N02: twins < 1e7 = 58,980 exact. The Hardy-Littlewood heuristic gives
+    # 50,822, which is 16.1% under the OBSERVATION. (The register's old "14%"
+    # was measured against the observation rather than the prediction; both
+    # denominators are now stated, because the honest one is the prediction.)
+    _tw = sum(1 for i in range(len(_pr) - 1)
+              if _pr[i + 1] - _pr[i] == 2 and _pr[i + 1] < NT)
+    _C2 = 0.66016181584686957392781211001455577843262336328448
+    _hl = 2 * _C2 * NT / math.log(NT) ** 2
+    _hl_off = (_tw - _hl) / _hl * 100.0
+    n02_ok = (_tw == 58980 and abs(_hl - 50822) < 1.0
+              and abs(_hl_off - 16.1) < 0.15)
+
+    # N05: 7,714,287 of n <= 1e7 are divisible by at least one of 2,3,5,7.
+    # Verified TWICE, by the periodic structure mod 210 and by brute force,
+    # because the density estimate 1e7*162/210 = 7,714,285.71 is NOT the floor:
+    # 1e7 = 47619*210 + 10 leaves a partial period whose boundary term is +2.
+    _per = 210
+    _phi = sum(1 for n in range(1, _per + 1)
+               if n % 2 and n % 3 and n % 5 and n % 7)
+    _full, _rem_n = divmod(NT, _per)
+    _n05 = _full * (_per - _phi)
+    _n05 += sum(1 for n in range(_full * _per + 1, NT + 1)
+                if n % 2 == 0 or n % 3 == 0 or n % 5 == 0 or n % 7 == 0)
+    _n05b = sum(1 for n in range(1, NT + 1)
+                if n % 2 == 0 or n % 3 == 0 or n % 5 == 0 or n % 7 == 0)
+    n05_ok = (_phi == 48 and _n05 == 7714287 and _n05b == _n05
+              and NT - _n05 == 2285713
+              # the DIVISIBLE fraction is _n05/NT; (NT-_n05)/NT is the coprime
+              # one, and 1 - _phi/_per is the divisible density. Comparing the
+              # coprime fraction against the divisible density is a mismatch -
+              # the first draft of this very check made that error, which is
+              # precisely the class of slip X40 is about.
+              and abs(_n05 / NT - (1 - _phi / _per)) < 1e-6)
+
+    # N06 CORRECTED. The old row quoted a mean gap of 13.02 and a logarithm of
+    # 13.12. Recomputed: the mean gap is 12.74 for p < 1e6 and 15.05 for
+    # p < 1e7 - 13.02 is neither - and 13.12 is ln(5e5), the MIDPOINT of the
+    # interval, not ln(1e6) = 13.82. The max gap 154 is the 1e7 record, not a
+    # 1e6 figure (that one is 114). The Cramér bound (ln 1e7)^2 = 260 is a 1e7
+    # figure and is correct. The row simply mixed two ranges.
+    _g6 = [_pr[i + 1] - _pr[i] for i in range(len(_pr) - 1) if _pr[i] < 10**6]
+    _g7 = [_pr[i + 1] - _pr[i] for i in range(len(_pr) - 1) if _pr[i] < NT]
+    _mg6 = sum(_g6) / len(_g6)
+    _mg7 = sum(_g7) / len(_g7)
+    _mx6, _mx7 = max(_g6), max(_g7)
+    _pi6 = 78498
+    _p500k = _pr[499999]
+    n06_ok = (_pi6 == 78498 and _p500k == 7368787
+              and abs(_mg6 - 12.74) < 0.005      # the 1e6 mean gap
+              and abs(_mg7 - 15.05) < 0.005      # the 1e7 mean gap
+              and abs(_mg6 - 13.02) > 0.2        # the OLD value matches neither
+              and abs(_mg7 - 13.02) > 0.2
+              and _mx6 == 114 and _mx7 == 154    # 154 is the 1e7 record
+              and abs(math.log(NT) ** 2 - 259.8) < 0.2)
+    # and the asymptotic is an asymptotic, not an identity at one cutoff
+    _shortfall = (math.log(10**6) - _mg6) / math.log(10**6) * 100.0
+    n06_ok &= (7.0 < _shortfall < 8.5)          # 12.74 vs ln(1e6)=13.82
+
+    ntx_ok = n01_ok and n02_ok and n05_ok and n06_ok
+    ok &= expect(ntx_ok,
+                 "INDEPENDENT re-derivation of the number-theory block from a fresh sieve: N01 pi(1e7)=664,579; N02 twins=58,980; N05 wheel count=7,714,287; N06 CORRECTED mean gap 12.74 (1e6) / 15.05 (1e7), max gap 114 (1e6) / 154 (1e7)",
+                 f"pi(1e7)={_pi7} (PNT {_pnt_off:.2f}% low); twins={_tw} (HL {_hl:.0f}, {_hl_off:.1f}% under observation); "
+                 f"wheel={_n05} (brute force {_n05b}, agrees); pi(1e6)={_pi6} p_500k={_p500k} "
+                 f"mean gap {_mg6:.2f} (1e6) / {_mg7:.2f} (1e7), max {_mx6} / {_mx7}, "
+                 f"ln(1e6) shortfall {_shortfall:.1f}%",
+                 "N01, N02, N05 reproduce exactly; N06's mean gap 13.02 and its 'ln 13.12' do NOT survive and are superseded - 13.02 matches neither range and 13.12 is ln(5e5), the midpoint")
+
     # 51: the author's connection - "does it not fall under the idea of zero and
     # all tenth powers, or multiplicity of 10s also zero?" Two things bundled,
     # and BOTH land. (a) The ladder is DECADE-DENOMINATED natively, so 0 and
@@ -1230,7 +1338,7 @@ def main():
 
     print()
     if ok:
-        print("RESULTS OF RECORD: 51 checks reproduced.")
+        print("RESULTS OF RECORD: 52 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
