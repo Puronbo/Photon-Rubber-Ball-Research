@@ -219,14 +219,106 @@ senses are kept apart on purpose — the geometric sense and the `C`/`P`/`T` sen
 are real, and the cosmological one is not available, because there is nothing
 outside for it to reflect into.
 
+## VI. The general form: orbits, not halves
+
+Drop the picture. The mirror is not a thing that *has* two sides, and the
+staircase is not a thing that *resembles* one. **The mirror is the relation
+itself**, and a reflection is not a container — it is an **involution**:
+`f² = id`. The reals and the zeros are not two populations standing on either
+side of a surface. They are the **two members of one orbit**.
+
+And that is the whole generalization. An involution partitions its domain into
+orbits of size exactly 1 or exactly 2, and there is no third option. So:
+
+- every rung is a **pair** — one zero, one real, neither containing the other,
+  because a 2-orbit is symmetric by construction and symmetry forbids
+  containment;
+- there is exactly one **fixed orbit** — and that is `0`, the axis, the newel
+  post, the residue the reflection cannot move;
+- the "mutual determination" of B34 and B35 is not a poetic remark. It is the
+  statement that the pairing is a **function**: each zero pairs with exactly one
+  real, and back. That single-valuedness is what makes it an involution rather
+  than a resemblance.
+
+**The ladder is therefore eighteen rows, not thirty-six objects.** One row is
+one pair — seventeen pairs and one fixed point. Anyone counting "zeros" and
+"reals" as two kinds has already lost the structure, because there is one kind
+with two columns — and that is why the standing question ("do the reals generate
+the zeros, or the zeros the reals?") has no answer. It presupposes two kinds
+where there is only one, listed twice. You cannot ask which column writes the
+other.
+
+**The same shape reappears one scale down, and that is the test of a real
+generalization.** `0.999…` and `0.000…` are `0.999…` and `1 − 0.999…`: an
+involution pair under `x ↦ 1 − x`, whose fixed point is `1/2`. Prefix-side and
+tail-side, the two members of one pair, with a center between them. Identical
+structure, different scale, no new content — which is exactly what "more
+general" has to mean if it is to mean anything.
+
+**And the fixed point of a reflection is always the center.** On a line, the
+unique point a reflection cannot move is the midpoint of what it mirrors. `0` is
+the midpoint of the scale axis, not its foot. That is the geometric reason the
+axis and the origin were the same line all along, and the reason "reflection
+fixes the origin" (A14) and "the newel post is `0`" are one observation rather
+than two.
+
+### The part that is a choice, and the part that is not
+
+Here is the general fact about involutions with a real consequence for the
+framework. If the only requirement is that the pairing is an involution, then
+**you may flip the two members of any pair independently**, and the result is
+still an involution still pairing every zero with a real. For eighteen rungs
+that is `2¹⁷` distinct pairings, all equally valid involutions. *An involution
+carries no orientation.* That is the general reason a mirror has two hands: the
+handedness is a **gauge choice**, not a property, and the framework's L4 "one
+class set at `t = 0`" is choosing one out of `2¹⁷`.
+
+**But the ladder has an order.** Require `s` to be monotone in the scale, and
+the freedom collapses: flipping any single pair breaks monotonicity, so the only
+flip that survives is the identity, and the gauge is fixed. **The order orients
+the involution.**
+
+Which puts a straight answer on the table for the one prediction that never got
+established. Handedness inheritance was registered as a postulate whose spin-bias
+is NOT established — but if the ordering of the rungs is part of the structure,
+as it is, then the handedness is **not free**, and the spin-bias should follow
+from monotonicity rather than from a separate law at `t = 0`. The prediction may
+have been underivable because it was derived from the wrong premise: not because
+there is no handedness, but because it was treated as a postulate when the
+order already supplies it.
+
+This is a structural statement about the specification, not a physical claim, and
+it is offered as a direction rather than a result. But it is the first time the
+mirror has paid for itself: **the two hands are a gauge, and the ladder's own
+ordering is what fixes the gauge.** A structure with an involution and no order
+has `2¹⁷` versions of itself. A structure with an involution and an order has
+one. The framework has the second kind, and had been treating the gauge as a law.
+
+### The general statement, in one line
+
+> **Two kinds of thing, related symmetrically and single-valuedly, is not two
+> kinds. It is one kind with two columns, paired by an involution, with a fixed
+> residue at the center that the pairing cannot move — and the only freedom left
+> is which column you read first.**
+
+Everything else is a consequence of that sentence: the ladder, because the
+pairing must be single-valued; the axis, because an involution must have a fixed
+set; the two excluded ends, because they are the two faces of the same reflecting
+surface; the mirrored halves of the taijitu, because an orbit of size 2 is
+symmetric; the excluded boundaries, because a fixed point is approached and never
+reached on both sides at once; and the handedness, because an involution is
+orientation-free until something orders it.
+
+---
+
+## The one-sentence version
+
 > **A spiral of scale rungs winds around a zero that is never on it, exchanges
 > its facing every third step, closes every fourth flight, and approaches both
 > ends of its own axis forever without reaching either — and the zeros and the
-> reals are its two halves: neither inside the other, each carrying a seed of the
-> other, joined by a single map that indexes in one direction and individuates
-> in the other.**
+> reals are not two halves of that mirror but the two members of one orbit, so
+> the mirror is not a picture of the framework, it is the relation the framework
+> is made of.**
 >
-> **And the whole is a mirror whose fixed set is that axis: two surfaces facing,
-> which is what a reflection requires; two excluded ends facing, which is what a
-> mirror makes; and one handedness, which is the only part of it that nothing
-> here can check.**
+> **Which column you read first is the only freedom left, and the ladder's own
+> order already fixes it.**
