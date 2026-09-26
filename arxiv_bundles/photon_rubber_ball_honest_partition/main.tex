@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\title{An elementary prime-count balance lemma, a scale ladder with
+reproducible numerics, and a gated record of a dielectric sphere's
+mass-energy invariants}
+\author{Author Name}
+\date{2026-09-25}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove an elementary lemma on the balance \(S(n)=(n-1)-2\pi(n)\), establish
+a 16-rung length/scale ladder with a gate script reproducing every asserted
+value, and give mass/energy bookkeeping of a canonical 550 nm dielectric
+sphere. Every numerical statement here is reproduced by one script
+(\texttt{results\_of\_record.py}, 35 checks, exit 0). The speculative framing
+layer that motivates the ladder is separated in Part II and is explicitly
+non-claimant.
+\end{abstract}
+
+\section{Part I: Results}
+
+\subsection{The prime-count balance lemma}
+Let \(S(n)=(n-1)-2\pi(n)\). Then
+\[
+S(n)<0 \iff n\in\{2,\dots,8\},\qquad
+S(n)=0 \iff n\in\{1,9,11,13\},
+\]
+\(n=10\) is the first strict composite majority, and \(S(n)\ge 0\) for
+every \(n\ge 9$.
+\begin{proof}[Proof sketch]
+For \(n\le 16\) the assertion is verified directly from
+\(\pi(9..16)=4,4,5,5,6,6,6,6\). For \(n\ge 17\), Rosser--Schoenfeld gives
+\(\pi(n)<1.25506\,n/\ln n\), hence
+\(2\pi(n)<2.51012\,n/\ln n\le n-1\), since \(2.51012/\ln n\le 1-1/n\) at
+\(n=17\) and the left side decreases. Thus \(S(n)\ge 0\) for all \(n\ge 17\).
+\qed
+\end{proof}
+
+\subsection{The 16-rung scale ladder}
+For a canonical source diameter \(D=550\) nm and rung radius \(s\),
+\(n(u)=D/s\) is asserted for every rung of the table below (check 30 of the
+gate).
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Rung & \(\log_{10}(s/\text{m})\) & \(n(u)=D/s\) \\
+\midrule
+Planck & $-34.79$ & $3.40\times10^{28}$ \\
+quark & $-19.00$ & $5.5\times10^{12}$ \\
+proton & $-15.08$ & $6.55\times10^8$ \\
+atom & $-10.00$ & $5.5\times10^3$ \\
+molecule & $-9.00$ & $5.5\times10^2$ \\
+virus & $-7.00$ & $5.5$ \\
+ball & $-6.26$ & $1.0$ \\
+cell & $-5.00$ & $0.055$ \\
+human & $0.24$ & $3.14\times10^{-7}$ \\
+Earth & $6.80$ & $8.62\times10^{-14}$ \\
+Sun & $9.14$ & $3.95\times10^{-16}$ \\
+Kuiper 50 AU & $12.87$ & $7.35\times10^{-20}$ \\
+galaxy 30 kpc & $20.97$ & $5.94\times10^{-28}$ \\
+Great Attractor 50 Mpc & $24.19$ & $3.56\times10^{-31}$ \\
+Laniakea 160 Mpc & $24.69$ & $1.11\times10^{-31}$ \\
+observable universe (particle horizon) & $26.64$ & $1.25\times10^{-33}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The log10 gaps of this ladder are all distinct (0.51--15.79, mean 4.095,
+sd 3.926) — descriptive, not a significance claim.
+
+\subsection{The canonical sphere}
+With \(\rho=1100\,\text{kg/m}^3\), \(R=275\) nm,
+\[
+M=\rho\,\tfrac43\pi R^3=9.583\times10^{-17}\;\text{kg},\quad
+E=Mc^2=8.612\;\text{J},\quad
+r_s=\frac{2GM}{c^2}=1.423\times10^{-43}\;\text{m}.
+\]
+The sphere sits \(\approx36.3\) orders above its own Schwarzschild radius
+(check 29); its Bekenstein bound is \(4.71\times10^{20}\,k_B\), about
+\(8.2\times10^9\) times the order-of-magnitude thermal entropy (check 34).
+
+\subsection{On the observable ball}
+The observable causal 3-ball at the current particle-horizon radius
+\(R=4.4\times10^{26}\) m (Hubble-parameter band
+\({67.4\le H_0\le 73.04}\) \(\Rightarrow\) \(R\in[4.06,4.4]\times10^{26}\) m)
+has volume \(V=\tfrac43\pi R^3\in[2.80,3.568]\times10^{80}\ \text{m}^3\) and
+holds \(3.2\times10^{99}\)--\(4.1\times10^{99}\) canonical balls (checks 27, 32).
+Two observers whose horizons are separated by \(R/2\) share \(63.28\%\) of
+each ball's volume (check 33).
+
+\section{Part II: Ideas (non-claimant)}%
+\label{ideas}
+This section is the author's vocabulary, not physics. The zero-to-horizon
+recursion, the "Law of Object Zeros", and the reading of mass as a
+gauge-invariant residue are framing in the corpus's internal `Law Apprehension
+of Works` thread; they are carried here only so that reviewers see exactly
+what is not claimed. Nothing in Part II alters Part I.
+
+\begin{thebibliography}{9}
+\bibitem{rosser} J.~B.~Rosser, L.~Schoenfeld, {Approximate formulas for some
+functions of prime numbers}, Illinois J. Math. 6 (1962) 64--94.
+\bibitem{planck} Planck Collaboration, A&A 641 (2020) A6.
+\bibitem{riess} A.~Riess et al., ApJ 934 (2022) L7; 938 (2022) 36.
+\end{thebibliography}
+
+\end{document}

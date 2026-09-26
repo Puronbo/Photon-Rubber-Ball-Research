@@ -142,6 +142,19 @@ filled light-cone = observable 3-ball at R = 4.4e26 m, V = 3.568e80 m^3,
 doubling 1,2,4,8; i period 4; Euler n^2+n+41 primes n=0..39 failing at
 n=40 (=41^2).
 
+Extension-round numbers (checks 28-35): register self-consistency CI (per-letter
+IDs contiguous; B18 L12 N7 E16 A16 F20 P7 G9 + X26, matching the Count line);
+ball rest energy E = mc^2 = 8.612 J (1 mW beam for 2.4 h); Schwarzschild radius
+2GM/c^2 = 1.423e-43 m (ball ~36.3 orders from a black hole, diameter 36.59);
+full 16-rung ladder matrix (log10 -34.79..+26.64 and n(u) = 3.40e28..1.25e-33);
+gap moments mean 4.095, sd 3.926, CV 0.959, max/min 31.0 (irregular everywhere);
+H0-band observable ball R = 4.06e26..4.4e26 m, V = 2.80e80..3.568e80 m^3,
+fill = 3.2e99..4.1e99 (central value is a band); two-observer overlap at
+separation R/2 = 63.28% of each ball's volume (mutually-visible core);
+Bekenstein bound 4.71e20 k_B, ~8.2e9x the Dulong-Petit thermal entropy
+(ball far below its information limit); Euler n^2+n+b prime-run table
+(b,run) = (2,1),(3,2),(5,4),(11,10),(17,16),(41,40), champion -163.
+
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
 A0 self-gauge:

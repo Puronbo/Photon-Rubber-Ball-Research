@@ -214,3 +214,30 @@ Risky (do not assert as corpus physics):
 - Numbers embedded in this file (gap lengths, velocities, H0 values) are transcribed from the
   cited sources; where a transcription error is found, amend THIS file and add a corrigendum entry
   (same discipline as battery numbers, though this is informational only).
+
+---
+
+## Source clock (dated 2026-09-25; re-validate each on the listed probe)
+
+One dated primary/secondary source per ESTABLISHED-external register row, its
+next re-validation trigger, and the finding that would flip the verdict. This
+is the anti-rot mechanism for the external half of the register.
+
+| Register row | Finding relied on | Source (dated) | Re-check when | Would flip to |
+|---|---|---|---|---|
+| A01-A03, E01-E03 | SR/GR precision; H0 tension 5-5.6σ live | Planck 2020; Riess 2022/2024; 2026 reviews above | next SH0ES/JWST/TEMPLATES release | A/E verdict re-labeled with new central value |
+| A12 | metric+connection+gauge = GR machinery | GR texts; LIGO 2015+ / EHT 2019 / JWST 2022 | any claimed falsification of GR in strong field | stays, tools unchanged |
+| A13 | universe has no position/velocity/rest frame | ΛCDM + CMB dipole analysis (CMB is frame here) | any "absolute rest frame" measurement claim | stays (category error by gauge construction) |
+| A14 | reflection = isometry fixing origin; C/P/T; Wu 1956 | standard; Wu et al. PR 105 (1957) 1413 | any measurement violating CPT (beyond parity at ~1e-5) | CPT row downgraded to [OPEN] |
+| A15 | m = E₀/c²; EP ~1e-13 (MICROSCOPE); QCD mass | Eötvös; MICROSCOPE PRL 128 (2022); QCD lattice reviews | updated EP bound (e.g. 10⁻¹⁵) | numbers refreshed, verdict unchanged |
+| A16 | 4-momentum norm Poincaré-invariant | SR standard | — | — (mathematical, not empirical) |
+| E04 | H0 = ~67-73 tension band; particle horizon 46.5 Gly | Planck 67.4 vs SH0ES 73.04; 2026 reviews | next DESI/CHIME/Euclid cosmology release | R/V band (check 32) re-centered |
+| E05/E14 | no center, no edge (observational) | CMB dipole; SFH; large-scale surveys | any anisotropic signal claim | re-weighted, not flipped absent replication |
+| E15 | causal past topologically a 3-ball | standard cosmology (future-past light cone integral) | — | — |
+| E16 | in-horizon homogeneity | Pantheon+ 2024; bulk-flow 2025 data above | new bulk-flow anomaly claim | homogeneity label re-scoped, horizon segment only |
+| F20's anchor | m = ρV gated as definition (check 2) | corpus-derived, not external | — | n/a (definitional) |
+
+Rule: rows with no empirical source (B/L/N/P rows, and A16) never enter this
+clock; the clock exists so that not a single ESTABLISHED-external row can rot
+in silence. When a probe fires, the finding and the new central value go into
+STATE (this file) and a corrigendum entry is made.

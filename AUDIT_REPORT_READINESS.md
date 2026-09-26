@@ -547,3 +547,41 @@ Gate (Phase 23): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 24): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 25 — extension round: further knowledge of the ideas (2026-09-25)
+
+- Battery 27 → 35 checks (checks 28-35), all gated:
+  - 28 register self-consistency CI — per-letter IDs contiguous, totals match
+    the Count line. This is the arithmetic guard that makes the +2 drift (fixed
+    in corrigendum 88) structurally impossible to reintroduce silently.
+  - 29 ball rest energy E = mc² = 8.612 J (1 mW beam for 2.4 h), Schwarzschild
+    radius 2GM/c² = 1.423e-43 m, ~36.3 orders from a black hole.
+  - 30 full 16-rung ladder matrix (log10 and n(u) for every rung, not a 7-rung
+    sample).
+  - 31 ladder gap moments: mean 4.095, sd 3.926, CV 0.959, max/min 31.0 — the
+    "irregular like primes" claim now quantified, kept descriptive.
+  - 32 observable ball as an H0 band: Planck 67.4 → SH0ES 73.04 gives R in
+    [4.06e26, 4.4e26] m, V in [2.80e80, 3.568e80] m³, fill 3.2e99..4.1e99 —
+    central values became bands, never points.
+  - 33 two-observer overlap: equal top-rung balls at separation R/2 share
+    63.28% of each ball's volume (the empirical content of "object zeros
+    share space").
+  - 34 Bekenstein bound 4.71e20 k_B, ~8.2e9× the Dulong-Petit thermal entropy
+    (the ball sits far below its information limit).
+  - 35 Euler n²+n+b prime-run table over the class-number-1 discriminants:
+    (b,run) = (2,1),(3,2),(5,4),(11,10),(17,16),(41,40), champion -163.
+- COMPOSITE_MAJORITY gains Appendix A: the tie-exhaustion lemma is proved
+  unconditionally (Rosser–Schoenfeld bound + finite check n ≤ 16) — the gate
+  covered it to 10⁷; the appendix turns it into a theorem for all n.
+- STATE_OF_THE_SCIENCE_2026 gains the Source Clock: each [ESTABLISHED]-
+  external row carries its dated source, its re-validation trigger, and the
+  finding that would flip the verdict (anti-rot for the external half).
+- REAL_AND_CLAIMABLE gains §7 Counter-claim dossier: steelman-then-rebuttal
+  for the key X rows, so knowledge vs conviction is exercised, not assumed.
+- arxiv_bundles gains the honest-partition bundle (Part I results / Part II
+  ideas, explicitly non-claimant); upload remains the author's own step.
+- No new register claims this round: numbered stays 105 + 26 NOT-claims
+  (check 28 confirms). Corrigendum 91 → 92 entries.
+
+Gate (Phase 25): battery 19/19 green, `results_of_record.py` 35/35 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

@@ -52,14 +52,14 @@ external dated source; full rows in CLAIM_REGISTER.md):
    E01-E16 with their codes (no center E05, no edge E14, observable ball E15,
    in-horizon homogeneity E16, plus H0/vacuum/bulk-flow/QG/DM/gap/prime
    records E01-E13).
-6. Governance: G01-G09 (battery 19/19, gate 27/27, ruff clean, corrigendum 91
+6. Governance: G01-G09 (battery 19/19, gate 35/35, ruff clean, corrigendum 92
    entries, 23 tracked law .md, no experiment, sibling-repo independence).
 
-Explicitly NOT claimable (X01-X20): every [FRAMING]/[POSTULATE] row (F01-F14
+Explicitly NOT claimable (X01-X26): every [FRAMING]/[POSTULATE] row (F01-F20
 decoration layers), the composite mirror claims (C22-C25), all X rows — in
 particular: no universal center (physics), no edge/wall, no "universe is a
 ball" finiteness claim, no beyond-horizon sameness, no FTA-mechanism, no
-physics from law-craft.
+physics from law-craft, no reflecting edge, no volume-alone-determines-mass.
 
 ## 3. Naming correction (this pass)
 
@@ -78,3 +78,41 @@ line attached (the first column above). A framing claim without its real core
 is a NOT-claim and gets X-listed. This is the enforcement of "correct the
 framing": nothing survives as physics unless it has a verdict and a check or
 a dated external cite.
+
+## 7. Counter-claim dossier (strengthen each NOT-claim, then rebut)
+
+Method: for every X row, first write the strongest case FOR it (steelman),
+then the rebuttal that keeps it X-listed. This is what separates knowledge
+from conviction in the register — an X claim that cannot be steelmanned or
+rebutted is a claim whose verdict is not yet honest.
+
+- **X19 (the universe is a finite ball):** steelman — the observed ball has
+  a finite radius and volume; "the universe IS a ball" reads the accessible
+  region as the whole. Rebuttal — the observed ball is the CAUSAL PAST (E15);
+  finiteness of what we can see says nothing about the whole (E14, A13);
+  the ball is a coordinate/topological fact, not a statement of totality.
+- **X21 (a real "next zero-to-horizon" beyond any horizon):** steelman —
+  if every horizon is a top rung, the recursion suggests unending ladders.
+  Rebuttal — beyond any horizon there is by definition no observation; the
+  recursion is verified MACHINERY (L11), the extrapolation is Copernican
+  (E16), and no experiment exists (G06).
+- **X22 (an object's zero is a force/cause):** steelman — a self-datum could
+  read as self-positioning. Rebuttal — the datum A0/L12 is a gauged
+  coordinate choice; cause requires dynamics no observation binds to it.
+- **X24 (a vantage/position for the whole):** steelman — every object has a
+  position, so the composite might too. Rebuttal — position is a relation
+  BETWEEN objects; the whole has no external frame by definition (A13);
+  this is the oldest "god's-eye" trap in cosmology, and it is refused.
+- **X25 (a mirror at the edge / twin universe):** steelman — reflection is
+  an isometry and CPT is established, so an inverted counterpart is tempting.
+  Rebuttal — C/P/T act on quantum states in a spacetime already there; an
+  edge-mirror needs a plane and an outside (A13/A14), neither exists, and no
+  twin object is observed.
+- **X26 (volume alone determines mass):** steelman — equal volumes in a
+  fixed material do weigh the same only up to density. Rebuttal — density is
+  the state variable, not volume; energy changes mass at fixed volume (A15);
+  m = ρV is a definition of M in this corpus, not a law of mass.
+
+Where a steelman survives, the X verdict is shrink-wrapped and this dossier
+is the enforcement: nothing here graduates to a claim without a battery
+check or an [ESTABLISHED]-external cite.

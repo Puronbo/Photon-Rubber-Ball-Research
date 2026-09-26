@@ -130,7 +130,7 @@ At 10⁷ the margin has grown to ≈13× pi(10⁷): primes are ≈6.65% of the n
 ## 8. The claim tree — every claim this idea can carry, verdict-coded
 
 All verdicts as of 2026-09-25. PROVEN(gate) = asserted by `results_of_record.py`
-(27 checks). PROVEN(cls) = elementary/classical theorem, quoted. CONJECTURE =
+(35 checks). PROVEN(cls) = elementary/classical theorem, quoted. CONJECTURE =
 open or empirically-suggested only. FALSE = tested and rejected. FRAMING =
 coherent in the Law thread's vocabulary, but not a science claim.
 
@@ -183,3 +183,26 @@ coherent in the Law thread's vocabulary, but not a science claim.
 
 Not claimed, ever (explicit): any physics, any experimental citation, any
 "center" consequence — those all die at C22-C25.
+
+## Appendix A. The tie-exhaustion lemma, proved unconditionally (checks 24 + C2)
+
+The gate asserts the composite-majority pattern only to 10⁷. In fact it is a
+theorem for every positive integer. Let S(n) = (n-1) - 2·π(n). Then:
+
+- (i)   S(n) < 0  if and only if  n ∈ {2,...,8};
+- (ii)  S(n) = 0  if and only if  n ∈ {1, 9, 11, 13};
+- (iii) n = 10 is the first strict composite majority (S(10) = 1);
+- (iv)  S(n) ≥ 0 for every n ≥ 9.
+
+Proof. Finite check: for n ≤ 16 the values of π(n) (4,4,5,5,6,6,6,6 on
+9..16) give S(9..16) = 0,1,0,1,0,1,2,3 and S(2..8) = -1,-2,-1,-2,-1,-2,-1,
+so (i)-(iii) and (iv) on [9,16] hold, and S(1) = 0 is the initial tie.
+For n ≥ 17 use the classical Rosser–Schoenfeld bound π(n) < 1.25506·n/ln n:
+2·π(n) < 2.51012·n/ln n ≤ n - 1  because  2.51012/ln n ≤ 1 - 1/n  for
+n ≥ 17 (checked at n = 17: 2.51012/2.8332 = 0.886 ≤ 0.941; the left side
+decreases). Hence S(n) ≥ 0 for all n ≥ 17, completing (iv). QED.
+
+Corollary: the counting window (C2) is unconditional arithmetic — the gate
+reproduces it exhaustively to 10⁷, the proof covers all n. Scope note: this
+proves an ARITHMETIC lemma about π(n); it is silent on primes at large scales
+beyond the cited bound and says nothing about any physical object (C22-C25).

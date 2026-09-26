@@ -153,9 +153,9 @@ NOT-claim (section X).
 | ID | claim | verdict |
 |---|---|---|
 | G01 | battery = 19 Python scripts, all exit 0 under `-W error::RuntimeWarning` | [VERIFIED] |
-| G02 | `results_of_record.py` = 27 checks, exit 0 | [VERIFIED] |
+| G02 | `results_of_record.py` = 35 checks, exit 0 | [VERIFIED] |
 | G03 | `ruff --select F` clean on tracked corpus | [VERIFIED] |
-| G04 | CORRIGENDUM.md = 91 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
+| G04 | CORRIGENDUM.md = 92 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
 | G05 | Law thread = 23 tracked .md + zh twin + PRESENTATION.tex; informational only | [VERIFIED] |
 | G06 | no experiment was performed; all narrative twin files banner-marked (PROVENANCE/FICTION) | [VERIFIED] |
 | G07 | arXiv bundles staged; upload requires the author's own arXiv account/endorsement | [VERIFIED] |

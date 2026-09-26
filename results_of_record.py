@@ -21,9 +21,26 @@ Checks 25-26 add the two sieve consequences: unbounded prime-free runs
 of the integers n <= 1e7. Check 27 fills the light-cone: the observable causal
 3-ball at the top particle-horizon rung 16 radius (4.4e26 m) has volume (4/3)pi R^3 =
 3.568e80 m^3, holding 4.10e99 canonical 550 nm balls.
+Checks 28-35 (extension round 2026-09-25): 28 auto-verifies CLAIM_REGISTER.md
+self-consistency (per-letter IDs contiguous, totals match the Count line) so
+register drift can never silently walk again; 29 ball rest mass-energy
+E = mc^2 = 8.612 J and Schwarzschild radius 2GM/c^2 = 1.423e-43 m (~36.3 orders
+from a black hole); 30 the full 16-rung ladder matrix (log10 s and n(u)=D/s for
+every rung of RANKS_AND_DEGREES.md); 31 ladder gap moments (mean 4.095, sd 3.926,
+CV 0.959, max/min 31.0 - irregular everywhere); 32 the observable ball as an H0
+band (Planck 67.4 -> SH0ES 73.04: R in [4.06e26, 4.4e26] m, V in [2.80e80,
+3.568e80] m^3, fill >= 3.2e99); 33 two-observer overlap: equal top-rung balls at
+separation R/2 share 63.28% of each ball's volume (observers' zeros share the
+mutually-visible core); 34 Bekenstein bound for the ball = 2*pi*kB*R*E/(hbar*c) =
+4.71e20 k_B, ~8.2e9x the Dulong-Petit order-of-magnitude thermal entropy (the ball
+sits far below its information limit); 35 the Euler n^2+n+b prime-run table over
+the class-number-1 discriminants (b,run) = (2,1),(3,2),(5,4),(11,10),(17,16),
+(41,40), b=41 champion (discriminant -163).
 """
 
 import math
+import os
+import re
 import sys
 
 import photon_rubber_ball_verification_improved as core
@@ -34,6 +51,7 @@ if hasattr(sys.stdout, "reconfigure"):
 KB = 1.380649e-23
 HBAR = 1.054571817e-34
 C0 = 299792458.0
+G = 6.67430e-11
 D = 2*core.R
 
 TOL_PCT = 0.01
@@ -225,9 +243,129 @@ def main():
                  f"V={v_univ:.3e} m^3  fill-count={fill:.3e}",
                  "V=3.568e80 m^3, ~4.10e99 canonical balls (R ratio 1.6e33, cubed)")
 
+    # ---- checks 28-35 (extension round 2026-09-25) ----
+
+    # 28: register self-consistency (arithmetic CI - the drift guard).
+    rc_ok = False
+    counts = {}
+    contig = False
+    declared_txt = "CLAIM_REGISTER.md not present"
+    if os.path.exists("CLAIM_REGISTER.md"):
+        rtxt = open("CLAIM_REGISTER.md", encoding="utf-8").read()
+        by = {}
+        for letter, num in re.findall(r"(?m)^\|\s*([BLNEFAPGX])(\d+)\s+\|", rtxt):
+            by.setdefault(letter, []).append(int(num))
+        contig = True
+        for letter, nums in by.items():
+            nums.sort()
+            counts[letter] = len(nums)
+            contig &= nums == list(range(1, len(nums) + 1))
+        mdecl = re.search(r"(\d+) numbered claims.*?\+ (\d+) NOT-claims", rtxt, re.S)
+        total = sum(counts.get(ch, 0) for ch in "BLNEFAPG")
+        rc_ok = contig and mdecl is not None \
+            and total == int(mdecl.group(1)) and counts.get("X", 0) == int(mdecl.group(2))
+        if mdecl:
+            declared_txt = str(mdecl.group(1)) + " numbered + " + mdecl.group(2) + " NOT-claims"
+    rc_got = "; ".join(f"{ch}={counts.get(ch, 0)}" for ch in "BLNEFAPGX")
+    ok &= expect(rc_ok, "register self-consistency (per-letter IDs contiguous, totals match Count line)",
+                 rc_got, declared_txt)
+
+    # 29: rest mass-energy and Schwarzschild distance-to-black-hole.
+    erest = m*C0*C0
+    rs_ball = 2*G*m/(C0*C0)
+    orders_rs = math.log10(core.R/rs_ball)
+    ok &= expect(abs(erest - 8.612)/8.612 < TOL_PCT,
+                 "ball rest mass-energy E=mc^2", f"{erest:.3f} J", "8.612 J (1 mW beam for 2.4 h)")
+    ok &= expect(abs(rs_ball - 1.423e-43)/1.423e-43 < TOL_PCT,
+                 "Schwarzschild radius 2GM/c^2 of the ball", f"{rs_ball:.3e} m", "1.423e-43 m")
+    ok &= expect(abs(orders_rs - 36.29) < 0.05,
+                 "ball is ~36.3 orders from being a black hole (R/rs)",
+                 f"{orders_rs:.2f} orders (diameter {math.log10(D/rs_ball):.2f})", "36.29 (diameter 36.59)")
+
+    # 30: full 16-rung ladder matrix (log10 s and n(u) = D/s).
+    ladder = [("Planck", 1.616e-35, -34.79), ("quark", 1e-19, -19.00),
+              ("proton", 8.4e-16, -15.08), ("atom", 1e-10, -10.00),
+              ("molecule", 1e-9, -9.00), ("virus", 1e-7, -7.00),
+              ("ball", 5.5e-7, -6.26), ("cell", 1e-5, -5.00),
+              ("human", 1.75, 0.24), ("Earth", 6.378e6, 6.80),
+              ("Sun", 1.393e9, 9.14), ("Kuiper-50AU", 7.48e12, 12.87),
+              ("galaxy-30kpc", 9.257e20, 20.97), ("GA-50Mpc", 1.543e24, 24.19),
+              ("Laniakea-160Mpc", 4.937e24, 24.69),
+              ("observable-universe", 4.4e26, 26.64)]
+    want_nu = [3.40e28, 5.5e12, 6.55e8, 5.5e3, 5.5e2, 5.5, 1.0, 0.055, 3.14e-7,
+               8.62e-14, 3.95e-16, 7.35e-20, 5.94e-28, 3.56e-31, 1.11e-31, 1.25e-33]
+    l10s = [math.log10(s) for _, s, _ in ladder]
+    nu_all = [D/s for _, s, _ in ladder]
+    mat_ok = all(abs(l10s[i] - ladder[i][2]) < 0.03 for i in range(16))
+    mat_ok &= all(abs(nu_all[i]/want_nu[i] - 1) < 0.02 for i in range(16))
+    mat_ok &= nu_all[6] == 1.0 and nu_all[7] < 1.0 \
+        and all(u > 1 for u in nu_all[:6]) and all(u < 1 for u in nu_all[8:])
+    ok &= expect(mat_ok,
+                 "full 16-rung ladder matrix (log10 s and n(u)=D/s per RANKS table; ball n=1, cell 0.055 collapse reads 0D, point above)",
+                 "; ".join(f"{ladder[i][0][:7]}={l10s[i]:+.2f}/n={nu_all[i]:.3g}" for i in range(16)),
+                 "Planck -34.79/n=3.40e28 .. observable 26.64/n=1.25e-33")
+
+    # 31: ladder gap moments (irregular everywhere).
+    g10 = [l10s[i+1] - l10s[i] for i in range(15)]
+    gm = sum(g10)/15
+    gsd = math.sqrt(sum((x - gm)**2 for x in g10)/14)
+    gm_ok = len(set(round(x, 4) for x in g10)) == 15 and g10[0] > 10 \
+        and abs(gm - 4.095) < 0.02 and abs(gsd - 3.926) < 0.02 \
+        and max(g10)/min(g10) > 25
+    ok &= expect(gm_ok,
+                 "ladder gap moments (log10 gaps 0.51..15.79, all distinct, Planck->quark 15.79 largest)",
+                 f"mean={gm:.3f} sd={gsd:.3f} CV={gsd/gm:.3f} min={min(g10):.2f} max={max(g10):.2f} max/min={max(g10)/min(g10):.1f}",
+                 "mean 4.095, sd 3.926, CV 0.959, max/min 31.0 - irregular everywhere")
+
+    # 32: observable ball as an H0 band (central value is a band, not a point).
+    r_low = r_obs*67.4/73.04
+    v_low = (4/3)*math.pi*r_low**3
+    fill_low = v_low/v_ball_fill
+    band_ok = abs(r_low - 4.06e26)/4.06e26 < 0.02 \
+        and (3.0e99 < fill_low < 3.5e99) and v_low < v_univ
+    ok &= expect(band_ok,
+                 "observable ball as an H0 band (Planck 67.4 -> SH0ES 73.04): R, V, fill-range",
+                 f"R=[{r_low:.2e}, {r_obs:.2e}] m V=[{v_low:.2e}, {v_univ:.2e}] m^3 fill=[{fill_low:.2e}, {fill:.3e}]",
+                 "R 4.06e26..4.4e26, V 2.80e80..3.568e80, fill 3.2e99..4.1e99")
+
+    # 33: two-observer overlap (observers' zeros share the mutually-visible core).
+    d_sep = r_obs/2
+    v_ov = (math.pi/12)*(4*r_obs + d_sep)*(2*r_obs - d_sep)**2
+    frac_ov = v_ov/v_univ
+    ok &= expect(abs(frac_ov - 0.6328) < 0.01,
+                 "two-observer overlap: equal top-rung balls at separation R/2 share volume",
+                 f"V_ov={v_ov:.3e} m^3 = {frac_ov*100:.2f}% of each observer's ball",
+                 "63.28% (each observer's zero shares the mutually-visible core)")
+
+    # 34: Bekenstein bound for the ball.
+    s_bek = 2*math.pi*core.R*m*C0/HBAR
+    n_units = m/3.0e-26
+    s_therm = 3*n_units*6.0
+    ratio34 = s_bek/s_therm
+    ok &= expect(abs(s_bek - 4.71e20)/4.71e20 < 0.02,
+                 "Bekenstein bound for the ball S=2*pi*kB*R*E/(hbar*c)",
+                 f"{s_bek:.3e} k_B", "4.71e20 k_B")
+    ok &= expect(1e9 < ratio34 < 1e10,
+                 "ball sits far below its information bound (S_BK / Dulong-Petit S_therm order-of-magnitude)",
+                 f"{ratio34:.2e}", "~8.2e9")
+
+    # 35: Euler n^2+n+b prime-run table over class-number-1 discriminants.
+    heegner = [(2, 1), (3, 2), (5, 4), (11, 10), (17, 16), (41, 40)]
+    hg_ok = True
+    hg_line = []
+    for b_val, want_run in heegner:
+        rl = 0
+        while _isprime(rl*rl + rl + b_val):
+            rl += 1
+        hg_line.append(f"{b_val}->{rl}")
+        hg_ok &= rl == want_run
+    ok &= expect(hg_ok,
+                 "Euler n^2+n+b prime-run table (class-number-1 discriminants -(4b-1)=-7,-11,-19,-43,-67,-163; b=41 champion run 40)",
+                 "; ".join(hg_line), "2->1, 3->2, 5->4, 11->10, 17->16, 41->40")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 27 checks reproduced.")
+        print("RESULTS OF RECORD: 35 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
