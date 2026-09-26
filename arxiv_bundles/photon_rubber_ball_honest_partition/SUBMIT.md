@@ -10,7 +10,7 @@ Steps:
    math.NT first-time submitters; physics.data-an may be easier).
 3. Upload: main.tex + generated .pdf (bundle the one .tex + .pdf; no figures).
 4. Abstract (suggested): "We prove an elementary lemma on the balance
-   S(n)=(n-1)-2pi(n), establish a 16-rung length/scale ladder with a gate
+   S(n)=(n-1)-2pi(n), establish an 18-rung length/scale ladder with a gate
    script reproducing every asserted value, and give the mass/energy/
    curvature bookkeeping of a canonical 550 nm dielectric sphere (rest energy
    8.612 J; Schwarzschild radius 1.4e-43 m). All numerical claims are

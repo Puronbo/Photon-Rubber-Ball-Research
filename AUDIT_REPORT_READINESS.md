@@ -745,3 +745,48 @@ Gate (Phase 28): battery 19/19 green, `results_of_record.py` 40/40 exit 0,
 
 Gate (Phase 29): battery 19/19 green, `results_of_record.py` 42/42 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 30 — pulsars and quasars: the boundary in nature (X32) (2026-09-25)
+
+- The corpus contained **no** pulsar, quasar or Eddington claim (verified by
+  search — only incidental mentions inside untracked WIP), despite these being
+  two of the best-known scale objects in nature and the two that sit on
+  opposite sides of the framework's metric boundary. Both are now in, sourced.
+- **B26 — two rungs added, 16 → 18.** Neutron star s = 1.239e4 m, the
+  equatorial radius of PSR J0740+6620 (R = 12.39 +0.98/−1.30 km, Riley et al.
+  2021 ApJL 918 L12; 12.49 +0.88/−1.28 km by Salmi et al. 2024). Quasar
+  broad-line region s = 2.590e15 m = cτ for the 100-day reverberation lag
+  measured across the 28 Palomar-Green quasars of Kaspi et al. (2000 ApJ
+  535:62), whose fitted size is 32.9 +2.0/−1.9 light-days at 1e44 erg/s,
+  scaling as L^0.70 ± 0.033.
+- **B27 — pulsar spin-down triad, check 43.** From the two timed observables
+  P = 0.226518 s, Ṗ = 1.15661e-15 s/s (Taylor et al. 1993) alone: τ =
+  P/2Ṗ = 3.103 Myr vs published 3.09-3.1 (0.10%); B = 3.2e19√(PṖ) =
+  5.18e11 G vs published 0.51e12 (1.2%); Ė = 4π²IṖ/P³ = 3.93e33 erg/s vs
+  published 3.89e33 (1.0%). The result is the **split**: τ is metric-free
+  period arithmetic needing only Axioms F and G, while B and Ė embed I, R
+  and c — and the pulsar's actual radiation needs a magnetic dipole, a symbol
+  the skeleton lacks entirely.
+- **B28 — quasar Eddington anchor, check 44.** L_Edd = 4πGMm_p c/σ_T =
+  1.257e38 erg/s per solar mass reproduces the published super-Eddington
+  ratios of the two most luminous z > 3.5 quasars — J0341+1720 λ_Edd = 2.742
+  vs 2.74, J2125−1719 3.021 vs 3.01 (Bian et al. 2021, arXiv:2010.14433) —
+  to 0.36%. The decisive feature is its shape, not its value: L_Edd ∝ M
+  *only* because the capture radius is GM/c², a Schwarzschild-metric object,
+  i.e. exactly the import A12 supplies.
+- **X32, resolved negative.** The zero-framework "explains" neither object.
+  This is registered as a NOT-claim rather than spun, because the pair is
+  worth more as a boundary marker than as a confirmation: one object in
+  nature where the relational layer is exactly sufficient, one where the
+  metric is not optional.
+- **Ladder statistics moved and are disclosed, not absorbed.** Gaps 15 → 17
+  (all distinct), mean 4.095 → 3.614, sd 3.926 → 3.504, **CV 0.959 → 0.970**,
+  max/min 31.0 → 31.3. Checks 30, 31 and 42 were rewritten to the 18-rung
+  table; check 42's verdict is unchanged in substance — still non-geometric,
+  still 0 of 17 prime-reciprocal steps. The corpus's claim is *irregularity*,
+  and adding two canonical non-cherry-picked rungs strengthened it.
+- Register: B26, B27, B28 added; X32 added as a NOT-claim, resolved negative.
+  Numbered 113 → 116; NOT-claims 31 → 32. Corrigendum 96 → 97.
+
+Gate (Phase 30): battery 19/19 green, `results_of_record.py` 44/44 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

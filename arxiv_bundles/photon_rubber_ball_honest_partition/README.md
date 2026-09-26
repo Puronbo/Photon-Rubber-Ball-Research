@@ -2,7 +2,7 @@
 
 This bundle is the submission-geometry the whole corpus has been converging on:
 PART I (Results) contains only statements that are either elementary theorems,
-or gate-asserted by `results_of_record.py` (42 checks, exit 0). PART II
+or gate-asserted by `results_of_record.py` (44 checks, exit 0). PART II
 (Ideas) is explicitly labeled as a vocabulary/narrative layer with zero science
 claims.
 
@@ -16,7 +16,7 @@ The core results carried here:
    S(n) = n-1-2·π(n), S<0 iff n∈{2..8}, S=0 iff n∈{1,9,11,13}, first strict
    majority at n=10, S(n) ≥ 0 for all n ≥ 9 — proved unconditionally in
    Appendix A via Rosser-Schoenfeld.
-2. Full 16-rung ladder matrix (check 30): log10 sizes -34.79..+26.64 and
+2. Full 18-rung ladder matrix (check 30, neutron-star and quasar-BLR rungs added 2026-09-25): log10 sizes -34.79..+26.64 and
    n(u) = D/s for D = 550 nm, all gate-asserted.
 3. The mass arithmetic (checks 2 + 29): m = ρ·(4/3)πR³ = 9.583e-17 kg,
    E = mc² = 8.612 J, Schwarzschild radius 1.423e-43 m.

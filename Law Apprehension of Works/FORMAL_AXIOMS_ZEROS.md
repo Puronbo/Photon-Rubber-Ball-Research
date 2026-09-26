@@ -251,7 +251,7 @@ restated, since as written they assert nothing. Registered **B24**.
 
 The strongest test of a framework is not internal consistency but whether it
 describes the data the author already has. Applied to the corpus's own
-16-rung rank-degree ladder, the answer splits:
+18-rung rank-degree ladder, the answer splits:
 
 - **A–D hold.** The ladder is a chain of distinguishable references, related
   by successive rungs, and paths along it compose. The relational and
@@ -296,3 +296,67 @@ this corpus's only route to a metric is A12's pseudo-Riemannian one.** The
 framework is therefore not a competitor to the corpus's geometry — it is a
 *pre-geometric* layer that would have to hand off to A12 at exactly the point
 where B23 and B25 show the zeros go silent.
+
+---
+
+## 11. Where the boundary falls: pulsars and quasars (checks 43-44; B26-B28)
+
+§10 prices the non-derivations abstractly. Two real objects test the
+boundary directly, and they land on **opposite sides** of it — which is the
+sharpest available evidence that the boundary is real and not an artefact of
+the formalism.
+
+### 11.1 A pulsar is the metric-free side (B27, check 43)
+
+PSR B1929+10 has two timed observables, $P = 0.226518$ s and
+$\dot P = 1.15661\times10^{-15}$ s/s (Taylor et al. 1993). From those two
+numbers alone:
+
+| Quantity | Formula | Computed | Published | Deviation |
+|---|---|---|---|---|
+| characteristic age | $\tau = P/2\dot P$ | 3.103 Myr | 3.09-3.1 Myr | **0.10%** |
+| surface field | $B = 3.2\times10^{19}\sqrt{P\dot P}$ | $5.18\times10^{11}$ G | $0.51\times10^{12}$ G | **1.2%** |
+| spin-down luminosity | $\dot E = 4\pi^2 I \dot P/P^3$ | $3.93\times10^{33}$ erg/s | $3.89\times10^{33}$ erg/s | **1.0%** |
+
+Now read the formulas against the axiom list. $\tau = P/2\dot P$ is pure
+period arithmetic — no $c$, no $R$, no metric, no norm. It uses exactly what
+Axioms **F** (a finite period) and **G** (something preserved under the
+transformation) already provide: a period and its drift. This is the
+framework's relational layer, and nature hands it a three-million-year clock.
+
+$\dot E$ and $B$, by contrast, embed $I$, $R$ and $c$. They are *not* in
+A-G. And the pulsar's actual radiation requires a magnetic dipole — a symbol
+the skeleton does not have at all.
+
+### 11.2 A quasar is the metric-dependent side (B28, check 44)
+
+A quasar's luminosity is anchored by the Eddington limit
+
+$$L_{\rm Edd} = \frac{4\pi G M m_p c}{\sigma_T} = 1.257\times10^{38}\ \left(\frac{M}{M_\odot}\right)\ \text{erg s}^{-1},$$
+
+which reproduces the published super-Eddington ratios of the two most
+luminous quasars at $z > 3.5$ to 0.36%: J0341+1720 ($M = 6.73\times10^9$
+$M_\odot$, $L_{\rm bol} = 2.32\times10^{48}$) gives $\lambda_{\rm Edd} = 2.742$
+against a published 2.74, and J2125-1719 ($5.45\times10^9$, $2.07\times10^{48}$)
+gives 3.021 against 3.01.
+
+The decisive feature is not the number but its *shape*: $L_{\rm Edd} \propto M$
+**only** because the capture radius is $r_g = GM/c^2$. That is a
+Schwarzschild-metric object — exactly the import A12 supplies and exactly what
+§4 and §7.2 showed the zeros cannot generate. Halving $M$ at fixed
+$L_{\rm bol}$ doubles $\lambda_{\rm Edd}$ exactly.
+
+### 11.3 The verdict
+
+$$\underbrace{\text{pulsar}}_{\tau = P/2\dot P\ \text{metric-free}}
+\ \Big|\ 
+\underbrace{\text{quasar}}_{L_{\rm Edd} \propto M \text{ via } GM/c^2}
+\ \text{— the boundary, in nature, in two objects.}$$
+
+Neither object is "explained" by A-G, and this is registered as **X32**
+(resolved negative) rather than spun. What the pair establishes is sharper
+than a demonstration would be: **the same framework that cannot fix its own
+angle or its own π has one object in nature where its relational layer is
+exactly sufficient, and one where the missing metric is not optional.** Any
+future version of the framework that claims predictive reach has to say which
+side of that line it is on.

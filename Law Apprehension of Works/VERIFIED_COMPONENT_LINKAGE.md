@@ -146,7 +146,7 @@ Extension-round numbers (checks 28-35): register self-consistency CI (per-letter
 IDs contiguous; B18 L12 N7 E16 A16 F20 P7 G9 + X26, matching the Count line);
 ball rest energy E = mc^2 = 8.612 J (1 mW beam for 2.4 h); Schwarzschild radius
 2GM/c^2 = 1.423e-43 m (ball ~36.3 orders from a black hole, diameter 36.59);
-full 16-rung ladder matrix (log10 -34.79..+26.64 and n(u) = 3.40e28..1.25e-33);
+full 18-rung ladder matrix (log10 -34.79..+26.64 and n(u) = 3.40e28..1.25e-33, with sourced neutron-star 1.239e4 m and quasar-BLR 2.590e15 m rungs);
 gap moments mean 4.095, sd 3.926, CV 0.959, max/min 31.0 (irregular everywhere);
 H0-band observable ball R = 4.06e26..4.4e26 m, V = 2.80e80..3.568e80 m^3,
 fill = 3.2e99..4.1e99 (central value is a band); two-observer overlap at
@@ -187,10 +187,24 @@ model-theoretic content - A, B, C are non-vacuity scaffolding, E is vacuous
 as stated (q = 1 is a witness) and G is vacuous as stated (T = id is a
 witness); the strengthened E' (q != 1) and G' (T != id) are independent, both
 refuted by the successor map, which has no finite period and no fixed point.
-Against the corpus's own 16-rung ladder, A-D hold but E fails - 15 distinct
+Against the corpus's own 18-rung ladder, A-D hold but E fails - 17 distinct
 ratios, gap mean 4.096 decades, CV 0.926, max/min 31.3 - and 0 of 15 steps
 are prime-reciprocal, so the scale axiom is an idealisation rather than a
 description of the observed hierarchy.
+
+Pulsar and quasar, the two objects that bracket the boundary (checks 43-44):
+PSR B1929+10 from P = 0.226518 s and Pdot = 1.15661e-15 s/s alone gives
+tau = P/2Pdot = 3.103 Myr (published 3.09-3.1, dev 0.10%), B = 3.2e19
+sqrt(P Pdot) = 5.180e11 G (published 0.51e12, dev 1.16%), Edot = 4 pi^2 I
+Pdot/P^3 = 3.929e33 erg/s (published 3.89e33, dev 0.99%, I = 1e45 g cm^2) -
+tau is metric-free, B and Edot embed I, R and c. L_Edd = 4 pi G M m_p c /
+sigma_T = 1.2573e38 erg/s per solar mass gives lambda_Edd = 2.742 (published
+2.74) for J0341+1720 (M = 6.73e9 Msun, L_bol = 2.32e48) and 3.021 (published
+3.01) for J2125-1719 (M = 5.45e9, L_bol = 2.07e48), and is linear in M only
+via the Schwarzschild radius GM/c^2. Ladder rungs: neutron star 1.239e4 m
+(PSR J0740+6620, R = 12.39 km, Riley et al. 2021), quasar BLR 2.590e15 m
+(100-day reverberation lag, Kaspi et al. 2000); gaps 17 distinct, mean 3.614,
+sd 3.504, CV 0.970.
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

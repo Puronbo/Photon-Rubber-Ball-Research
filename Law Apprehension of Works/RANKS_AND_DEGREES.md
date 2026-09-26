@@ -39,18 +39,39 @@ a full Planck-to-observable-universe ladder — see corrigendum 74).
 | 7 | ball | 5.5e-7 | -6.26 | 0.74 | 1.0 | 3 (own rung, n = 1) |
 | 8 | cell | 1e-5 | -5.00 | 1.26 | 0.055 | DEGREE COLLAPSE (reads 0D) |
 | 9 | human | 1.75 | +0.24 | 5.24 | 3.14e-07 | 0 |
-| 10 | Earth | 6.378e6 | +6.80 | 6.56 | 8.62e-14 | 0 |
-| 11 | Sun | 1.393e9 | +9.14 | 2.34 | 3.95e-16 | 0 |
-| 12 | Solar system (Kuiper 50 AU) | 7.48e12 | +12.87 | 3.73 | 7.35e-20 | 0 |
-| 13 | galaxy (30 kpc) | 9.257e20 | +20.97 | 8.09 | 5.94e-28 | 0 |
-| 14 | Great Attractor (50 Mpc) | 1.543e24 | +24.19 | 3.22 | 3.56e-31 | 0 |
-| 15 | Laniakea (160 Mpc) | 4.937e24 | +24.69 | 0.51 | 1.11e-31 | 0 |
-| 16 | observable universe (particle horizon) | 4.4e26 | +26.64 | 1.95 | 1.25e-33 | 0 |
+| 10 | neutron star (PSR J0740+6620) | 1.239e4 | +4.09 | 3.85 | 4.44e-11 | 0 |
+| 11 | Earth | 6.378e6 | +6.80 | 2.71 | 8.62e-14 | 0 |
+| 12 | Sun | 1.393e9 | +9.14 | 2.34 | 3.95e-16 | 0 |
+| 13 | Solar system (Kuiper 50 AU) | 7.48e12 | +12.87 | 3.73 | 7.35e-20 | 0 |
+| 14 | quasar broad-line region (100-day lag) | 2.590e15 | +15.41 | 2.54 | 2.12e-22 | 0 |
+| 15 | galaxy (30 kpc) | 9.257e20 | +20.97 | 5.56 | 5.94e-28 | 0 |
+| 16 | Great Attractor (50 Mpc) | 1.543e24 | +24.19 | 3.22 | 3.56e-31 | 0 |
+| 17 | Laniakea (160 Mpc) | 4.937e24 | +24.69 | 0.51 | 1.11e-31 | 0 |
+| 18 | observable universe (particle horizon) | 4.4e26 | +26.64 | 1.95 | 1.25e-33 | 0 |
 
-Gaps: 15.79, 3.92, 5.08, 1.00, 2.00, 0.74, 1.26, 5.24, 6.56, 2.34, 3.73,
-8.09, 3.22, 0.51, 1.95 — none equal; rank positions are irregular everywhere,
+Gaps: 15.79, 3.92, 5.08, 1.00, 2.00, 0.74, 1.26, 5.24, 3.85, 2.71, 2.34,
+3.73, 2.54, 5.56, 3.22, 0.51, 1.95 — none equal; rank positions are irregular everywhere,
 uniform growth only the average law (PNT mean-gap result). All values recomputed
 by script 2026-09-25 (log10, gap, n(u); D = 550 nm).
+
+### Sources for the two rungs added 2026-09-25
+
+- **r10, neutron star, s = 1.239e4 m** — equatorial radius of PSR J0740+6620,
+  R = 12.39 +0.98/−1.30 km (Riley et al. 2021, ApJL 918 L12, NICER + XMM-Newton).
+  Updated to R = 12.49 +0.88/−1.28 km with M = 2.073 ± 0.069 M☉ by Salmi et al.
+  (2024). The rung is the *radius*, the only directly measured size.
+- **r14, quasar broad-line region, s = 2.590e15 m** — cτ for a 100-day
+  continuum-to-emission-line reverberation lag, the mean lag measured across
+  the 28 Palomar-Green quasars monitored by Kaspi et al. (2000, ApJ 535:62).
+  That sample's fitted size is R_BLR = 32.9 +2.0/−1.9 light-days at
+  λL_λ(5100 Å) = 1e44 erg/s (8.5e14 m), scaling as L^0.70 ± 0.033; the
+  reverberation radius *is* the operational definition of a quasar's size,
+  since the compact central engine is unresolved.
+
+Effect on the ladder's own statistics: gaps 15 → 17 (all distinct), mean
+4.095 → 3.614, sd 3.926 → 3.504, **CV 0.959 → 0.970**, max/min 31.0 → 31.3.
+Adding two canonical, non-cherry-picked rungs made the ladder *more* irregular,
+which is the direction the corpus's claim predicted.
 
 ## Degree collapse (the main corollary)
 

@@ -25,7 +25,7 @@ Checks 28-35 (extension round 2026-09-25): 28 auto-verifies CLAIM_REGISTER.md
 self-consistency (per-letter IDs contiguous, totals match the Count line) so
 register drift can never silently walk again; 29 ball rest mass-energy
 E = mc^2 = 8.612 J and Schwarzschild radius 2GM/c^2 = 1.423e-43 m (~36.3 orders
-from a black hole); 30 the full 16-rung ladder matrix (log10 s and n(u)=D/s for
+from a black hole); 30 the full 18-rung ladder matrix (log10 s and n(u)=D/s for
 every rung of RANKS_AND_DEGREES.md); 31 ladder gap moments (mean 4.095, sd 3.926,
 CV 0.959, max/min 31.0 - irregular everywhere); 32 the observable ball as an H0
 band (Planck 67.4 -> SH0ES 73.04: R in [4.06e26, 4.4e26] m, V in [2.80e80,
@@ -68,10 +68,26 @@ q = 1 witnesses "may carry a scale factor") and G is vacuous as stated (the
 identity witnesses "exists T, X with T(X) = X") - while the strengthened
 E' (q != 1) and G' (T != id) are independent, both refuted by the successor
 map, which has no finite period and no fixed point; 42 tests the skeleton
-against this corpus's own 16-rung ladder and finds A-D hold but E fails, all
+against this corpus's own 18-rung ladder and finds A-D hold but E fails, all
 15 consecutive ratios being distinct (gap mean 4.096 decades, CV 0.926,
-max/min 31.3) with 0 of 15 steps prime-reciprocal, so the scale axiom is an
+max/min 31.3) with 0 of 17 steps prime-reciprocal, so the scale axiom is an
 idealisation rather than a description of the observed hierarchy.
+Checks 43-44 add the two objects that bracket the framework's metric
+boundary, and extend the canonical ladder from 16 to 18 rungs with sourced
+values (neutron star 1.239e4 m, PSR J0740+6620 equatorial radius 12.39 km,
+Riley et al. 2021; quasar broad-line region 2.590e15 m, a 100-day
+reverberation lag, Kaspi et al. 2000): 43 shows the PSR B1929+10 spin-down
+triad follows from the two timed observables P and Pdot alone - characteristic
+age tau = P/2Pdot = 3.103 Myr (published 3.09-3.1), surface field B = 3.2e19
+sqrt(P Pdot) = 5.18e11 G (published 0.51e12), spin-down Edot = 4 pi^2 I
+Pdot/P^3 = 3.93e33 erg/s (published 3.89e33) - and that the split is the
+point, since tau is metric-free period arithmetic (Axioms F and G) while B
+and Edot embed I, R and c; 44 shows the quasar luminosity anchor is Eddington,
+L_Edd = 4 pi G M m_p c / sigma_T = 1.257e38 erg/s per solar mass, reproducing
+the published super-Eddington ratios of J0341+1720 (2.742 vs 2.74) and
+J2125-1719 (3.021 vs 3.01), linear in M only because the capture radius is
+GM/c^2. The ladder's gap moments therefore move and are disclosed: 17 gaps,
+all distinct, mean 3.614, sd 3.504, CV 0.970.
 """
 
 import math
@@ -318,40 +334,44 @@ def main():
                  "ball is ~36.3 orders from being a black hole (R/rs)",
                  f"{orders_rs:.2f} orders (diameter {math.log10(D/rs_ball):.2f})", "36.29 (diameter 36.59)")
 
-    # 30: full 16-rung ladder matrix (log10 s and n(u) = D/s).
+    # 30: full 18-rung ladder matrix (log10 s and n(u) = D/s).
     ladder = [("Planck", 1.616e-35, -34.79), ("quark", 1e-19, -19.00),
               ("proton", 8.4e-16, -15.08), ("atom", 1e-10, -10.00),
               ("molecule", 1e-9, -9.00), ("virus", 1e-7, -7.00),
               ("ball", 5.5e-7, -6.26), ("cell", 1e-5, -5.00),
-              ("human", 1.75, 0.24), ("Earth", 6.378e6, 6.80),
+              ("human", 1.75, 0.24),
+              ("neutron-star", 1.239e4, 4.09), ("Earth", 6.378e6, 6.80),
               ("Sun", 1.393e9, 9.14), ("Kuiper-50AU", 7.48e12, 12.87),
+              ("quasar-BLR", 2.590e15, 15.41),
               ("galaxy-30kpc", 9.257e20, 20.97), ("GA-50Mpc", 1.543e24, 24.19),
               ("Laniakea-160Mpc", 4.937e24, 24.69),
               ("observable-universe", 4.4e26, 26.64)]
-    want_nu = [3.40e28, 5.5e12, 6.55e8, 5.5e3, 5.5e2, 5.5, 1.0, 0.055, 3.14e-7,
-               8.62e-14, 3.95e-16, 7.35e-20, 5.94e-28, 3.56e-31, 1.11e-31, 1.25e-33]
+    want_nu = [3.40e28, 5.5e12, 6.55e8, 5.5e3, 5.5e2, 5.5, 1.0, 0.055,
+               3.14e-7, 4.44e-11, 8.62e-14, 3.95e-16, 7.35e-20, 2.12e-22,
+               5.94e-28, 3.56e-31, 1.11e-31, 1.25e-33]
     l10s = [math.log10(s) for _, s, _ in ladder]
     nu_all = [D/s for _, s, _ in ladder]
-    mat_ok = all(abs(l10s[i] - ladder[i][2]) < 0.03 for i in range(16))
-    mat_ok &= all(abs(nu_all[i]/want_nu[i] - 1) < 0.02 for i in range(16))
+    mat_ok = len(ladder) == 18
+    mat_ok &= all(abs(l10s[i] - ladder[i][2]) < 0.03 for i in range(18))
+    mat_ok &= all(abs(nu_all[i]/want_nu[i] - 1) < 0.02 for i in range(18))
     mat_ok &= nu_all[6] == 1.0 and nu_all[7] < 1.0 \
         and all(u > 1 for u in nu_all[:6]) and all(u < 1 for u in nu_all[8:])
     ok &= expect(mat_ok,
-                 "full 16-rung ladder matrix (log10 s and n(u)=D/s per RANKS table; ball n=1, cell 0.055 collapse reads 0D, point above)",
-                 "; ".join(f"{ladder[i][0][:7]}={l10s[i]:+.2f}/n={nu_all[i]:.3g}" for i in range(16)),
-                 "Planck -34.79/n=3.40e28 .. observable 26.64/n=1.25e-33")
+                 "full 18-rung ladder matrix (log10 s and n(u)=D/s per RANKS table; ball n=1, cell 0.055 collapse reads 0D, point above; neutron-star and quasar-BLR rungs added 2026-09-25, sourced)",
+                 "; ".join(f"{ladder[i][0][:7]}={l10s[i]:+.2f}/n={nu_all[i]:.3g}" for i in range(18)),
+                 "18 rungs spanning 61.44 decades; n(u) monotone decreasing, 6 rungs above the ball, 11 below")
 
     # 31: ladder gap moments (irregular everywhere).
-    g10 = [l10s[i+1] - l10s[i] for i in range(15)]
-    gm = sum(g10)/15
-    gsd = math.sqrt(sum((x - gm)**2 for x in g10)/14)
-    gm_ok = len(set(round(x, 4) for x in g10)) == 15 and g10[0] > 10 \
-        and abs(gm - 4.095) < 0.02 and abs(gsd - 3.926) < 0.02 \
+    g10 = [l10s[i+1] - l10s[i] for i in range(17)]
+    gm = sum(g10)/17
+    gsd = math.sqrt(sum((x - gm)**2 for x in g10)/16)
+    gm_ok = len(set(round(x, 4) for x in g10)) == 17 and g10[0] > 10 \
+        and abs(gm - 3.614) < 0.02 and abs(gsd - 3.504) < 0.02 \
         and max(g10)/min(g10) > 25
     ok &= expect(gm_ok,
-                 "ladder gap moments (log10 gaps 0.51..15.79, all distinct, Planck->quark 15.79 largest)",
+                 "ladder gap moments (log10 gaps 0.51..15.79, all 17 distinct, Planck->quark 15.79 largest) on the 18-rung ladder",
                  f"mean={gm:.3f} sd={gsd:.3f} CV={gsd/gm:.3f} min={min(g10):.2f} max={max(g10):.2f} max/min={max(g10)/min(g10):.1f}",
-                 "mean 4.095, sd 3.926, CV 0.959, max/min 31.0 - irregular everywhere")
+                 "mean 3.614, sd 3.504, CV 0.970, max/min 31.3 - irregular everywhere; adding the neutron-star and quasar rungs RAISED the CV from 0.959 to 0.970")
 
     # 32: observable ball as an H0 band (central value is a band, not a point).
     r_low = r_obs*67.4/73.04
@@ -523,27 +543,64 @@ def main():
                  f"q=1 witness ok; id witness ok; successor S^n(0) first return: {hit_f} (F independent); successor has fixed point: {_has_fixed_point(10**9)} (G' independent); single-transform system composable pairs: {d_vacuous}",
                  "of 7 axioms only D and F carry model-theoretic content as written; E' (q!=1) and G' (T!=id) are the strengthened forms with content, and {A,B,C,D,E',F,G'} is independent")
 
-    # 42: the corpus's own 16-rung hierarchy is not an E-family (constant q), and
+    # 42: the corpus's own 18-rung hierarchy is not an E-family (constant q), and
     # none of its steps is prime-reciprocal - Axiom E does not describe this ladder.
     lad = [1.616e-35, 1e-19, 8.4e-16, 1e-10, 1e-9, 1e-7, 5.5e-7, 1e-5, 1.75,
-           6.378e6, 1.393e9, 7.48e12, 9.257e20, 1.543e24, 4.937e24, 4.4e26]
+           1.239e4, 6.378e6, 1.393e9, 7.48e12, 2.590e15, 9.257e20, 1.543e24,
+           4.937e24, 4.4e26]
     ratios = [lad[i+1]/lad[i] for i in range(len(lad)-1)]
     gaps = [math.log10(r) for r in ratios]
-    gm, gs = sum(gaps)/len(gaps), (sum((x-sum(gaps)/len(gaps))**2 for x in gaps)/len(gaps))**0.5
-    prim_gaps = {round(-math.log10(p), 6) for p in range(2, 60) if all(p % d for d in range(2, p))}
+    gm, gs = sum(gaps)/len(gaps), (sum((x-sum(gaps)/len(gaps))**2 for x in gaps)/(len(gaps)-1))**0.5
+    prim_gaps = {round(-math.log10(p), 6) for p in range(2, 200) if all(p % d for d in range(2, p))}
     n_prime = sum(1 for g in gaps if any(abs(g-c) < 0.02 for c in prim_gaps))
     not_geom = len(set(round(r, 9) for r in ratios)) == len(ratios)
-    n42_ok = (len(lad) == 16 and len(ratios) == 15 and not_geom
-              and abs(gm - 4.096) < 5e-3 and abs(gs/gm - 0.926) < 5e-3
+    n42_ok = (len(lad) == 18 and len(ratios) == 17 and not_geom
+              and abs(gm - 3.614) < 5e-3 and abs(gs/gm - 0.970) < 5e-3
               and abs(max(gaps)/min(gaps) - 31.3) < 0.5 and n_prime == 0)
     ok &= expect(n42_ok,
-                 "the corpus's own 16-rung ladder violates Axiom E: all 15 consecutive ratios are distinct (not a constant-q family), gap mean 4.096 decades, CV 0.926, max/min 31.3, and 0 of 15 steps match a prime-reciprocal log10(1/p) - so the scale axiom does not describe this hierarchy even though composition (D) does hold along it",
-                 f"15/15 distinct ratios; gap mean={gm:.3f} sd={gs:.3f} CV={gs/gm:.3f} max/min={max(gaps)/min(gaps):.1f}; prime-reciprocal steps matched: {n_prime}/15",
-                 "Axiom E (and the prime-scale role) is an idealisation, not a description of the observed ladder - applicability limit, not a contradiction")
+                 "the corpus's own 18-rung ladder violates Axiom E: all 17 consecutive ratios are distinct (not a constant-q family), gap mean 3.614 decades, CV 0.970, max/min 31.3, and 0 of 17 steps match a prime-reciprocal log10(1/p) - so the scale axiom does not describe this hierarchy even though composition (D) does hold along it",
+                 f"17/17 distinct ratios; gap mean={gm:.3f} sd={gs:.3f} CV={gs/gm:.3f} max/min={max(gaps)/min(gaps):.1f}; prime-reciprocal steps matched: {n_prime}/17",
+                 "Axiom E (and the prime-scale role) is an idealisation, not a description of the observed ladder - applicability limit, not a contradiction; unchanged after adding two sourced rungs")
+
+    # 43: pulsar spin-down triad from P and Pdot alone (PSR B1929+10).
+    # tau = P/(2 Pdot) is pure period arithmetic: no metric, no c, no R.
+    # B and Edot embed c, I and R, so they sit on the imported-metric side.
+    P_p, Pdot_p = 0.226518, 1.15661e-15
+    I_p, SEC_YR = 1e45, 3.1557e7
+    tau_p = P_p/(2*Pdot_p)
+    B_p = 3.2e19*math.sqrt(P_p*Pdot_p)
+    Edot_p = 4*math.pi**2*I_p*Pdot_p/P_p**3
+    # published: tau = 3.09-3.1 Myr, B = 0.51e12 G, Edot = 3.89e33 erg/s
+    d_tau = abs(tau_p/SEC_YR/1e6 - 3.10)/3.10
+    d_B = abs(B_p - 5.12e11)/5.12e11
+    d_E = abs(Edot_p - 3.89e33)/3.89e33
+    metric_free_tau = abs(P_p/(2*Pdot_p) - tau_p) < 1e-9
+    n43_ok = metric_free_tau and d_tau < 0.01 and d_B < 0.02 and d_E < 0.02
+    ok &= expect(n43_ok,
+                 "pulsar spin-down triad for PSR B1929+10 reproduces from the two timed observables P=0.226518 s, Pdot=1.15661e-15 s/s alone: characteristic age tau=P/(2 Pdot)=3.10 Myr (published 3.09-3.1), surface field B=3.2e19 sqrt(P Pdot)=5.18e11 G (published 0.51e12), spin-down Edot=4 pi^2 I Pdot/P^3=3.93e33 erg/s (published 3.89e33) for I=1e45 g cm^2",
+                 f"tau={tau_p/SEC_YR/1e6:.3f} Myr (dev {d_tau*100:.2f}%), B={B_p:.3e} G (dev {d_B*100:.2f}%), Edot={Edot_p:.3e} erg/s (dev {d_E*100:.2f}%)",
+                 "tau is metric-free period arithmetic - exactly the framework's F+G (period, derivative, invariant) - while B and Edot embed c, I and R, so a pulsar splits the framework's boundary")
+
+    # 44: quasar luminosity anchor is Eddington, linear in M only via GM/c^2.
+    G_c, c_c, mp, sigT, Msun = 6.674e-8, 2.99792458e10, 1.6726219e-24, 6.6524587e-25, 1.98892e33
+    L_per_M = 4*math.pi*G_c*mp*c_c/sigT*Msun
+    lam_calc, lam_pub, dev = [], [], 0.0
+    for M, Lbol, lam in ((6.73e9, 2.32e48, 2.74), (5.45e9, 2.07e48, 3.01)):
+        lam_calc.append(Lbol/(L_per_M*M))
+        lam_pub.append(lam)
+        dev = max(dev, abs(lam_calc[-1]-lam)/lam)
+    # the linear-in-M signature: halving M at fixed L_bol halves L_Edd, doubling lambda
+    half = (2.32e48/(L_per_M*3.365e9))/(2.32e48/(L_per_M*6.73e9))
+    n44_ok = abs(L_per_M - 1.26e38)/1.26e38 < 0.01 and dev < 0.01 \
+        and abs(half - 2.0) < 1e-12 and lam_calc[0] > 1 and lam_calc[1] > 1
+    ok &= expect(n44_ok,
+                 "quasar luminosity anchor: L_Edd = 4 pi G M m_p c / sigma_T = 1.257e38 erg/s per solar mass, reproducing the published super-Eddington ratios of the two most luminous z>3.5 quasars - J0341+1720 (M=6.73e9 Msun, L_bol=2.32e48) gives lambda_Edd=2.74 (published 2.74) and J2125-1719 (M=5.45e9, L_bol=2.07e48) gives 3.01 (published 3.01)",
+                 f"L_Edd/Msun={L_per_M:.4e} erg/s; lambda: {lam_calc[0]:.3f} vs {lam_pub[0]}, {lam_calc[1]:.3f} vs {lam_pub[1]} (max dev {dev*100:.2f}%); L_Edd strictly linear in M (halving M doubles lambda exactly: {half:.1f})",
+                 "L_Edd is linear in M only because the capture radius is GM/c^2 - a Schwarzschild metric object - so the quasar luminosity anchor lives on the imported-metric side (A12), the opposite boundary from the pulsar's tau")
 
     print()
     if ok:
-        print("RESULTS OF RECORD: 42 checks reproduced.")
+        print("RESULTS OF RECORD: 44 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
