@@ -790,3 +790,42 @@ Gate (Phase 29): battery 19/19 green, `results_of_record.py` 42/42 exit 0,
 
 Gate (Phase 30): battery 19/19 green, `results_of_record.py` 44/44 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 31 — the period-3 sibling: a turn that returns to zero (X33) (2026-09-25)
+
+- User idea: *"what if the turn happened at 4 5 and 6 to go back to zero like
+  a triangle of sort."* Tested in all three coordinates the corpus actually has.
+  The answer splits the idea in half, and both halves are recorded.
+- **B29 — a real gap in the audit's coverage.** A period-3 return is a legal
+  model of Axioms F and G: σ₃ on ℤ/3 has fundamental period exactly 3 and
+  returns to 0. Check 39 probed periods in order to *refute primality* and so
+  tested only the composite set {4, 6, 8, 9, 10, 12} — all six reproduce with
+  period = m exactly. The prime 3 was never in the test set, because a check
+  built to show "periods need not be prime" has no reason to include one. The
+  triangle was never excluded by the framework; it was never enumerated.
+  Nothing is disturbed: B22 already established that no period is forced.
+- **X33 — resolved negative.** The specific instantiation closes nowhere.
+  - *Ladder coordinate:* rungs 4/5/6 = atom/molecule/virus at log₁₀ −10.00 /
+    −9.00 / −7.00, so the sides are 1.00, 2.00, 3.00 decades and 1 + 2 = 3.
+    Degenerate, zero area — structural, since a **1D** ladder makes any three
+    rungs collinear. The walk traces a there-and-back fold. §12.2 flags the
+    round 1.00/2.00 gaps as an artifact of nominal definitions, not a pattern
+    about nature.
+  - *Turn-walk:* the corpus's turn is π/2 (L06). Three turns is 270° = −i,
+    **not** a return; four are needed. A walk built only from quarter turns has
+    four distinct leg directions, so it can close a rectangle, never a triangle.
+  - *Degree reading:* the corpus's one genuine zero-event cannot be moved.
+    n(u) = 5.5 > 1 at rung 6 (reads degree 3), n(u) = 1 exactly at rung 7 (the
+    ball's own rung), n(u) = 0.055 < 1 at rung 8 — so the first 0D rung is r8,
+    uniquely fixed by the committed n(u) column. A zero at r6 would put the
+    corpus's own gauge object below its resolution limit.
+- **Retained asymmetry, which is the useful part:** "a return to zero" is
+  axiomatic (G); "this triangle" is not. The only constructive residue is the
+  turn angle — 2π/3 instead of π/2 would give a genuine closed figure beside
+  L08's committed open spiral — and that choice is permitted and entailed by
+  nothing. Adopting it would revise a [PROVEN] claim and is left to the author.
+- Register: B29 added; X33 added as a NOT-claim, resolved negative. Numbered
+  116 → 117; NOT-claims 32 → 33. Corrigendum 97 → 98.
+
+Gate (Phase 31): battery 19/19 green, `results_of_record.py` 45/45 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

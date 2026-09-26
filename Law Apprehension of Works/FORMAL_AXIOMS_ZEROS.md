@@ -360,3 +360,72 @@ angle or its own π has one object in nature where its relational layer is
 exactly sufficient, and one where the missing metric is not optional.** Any
 future version of the framework that claims predictive reach has to say which
 side of that line it is on.
+
+---
+
+## 12. A turn that returns to zero: the period-3 sibling (B29, X33; check 45)
+
+§11 fixed the boundary from outside. This section tests a proposal from the
+inside: *what if the turn happens at rungs 4, 5 and 6 and goes back to zero,
+like a triangle?* It is worth recording in full because the honest answer
+splits the idea in half — one half is a real gap in the audit, the other half
+does not close.
+
+### 12.1 The idea is legal: Axiom G is a period-3 fixed point too
+
+"Goes back to zero" is not an addition to the framework — it *is* Axiom G,
+$\exists\, T, X$ with $T(X) = X$. A triangle is the period-3 instance of that
+fixed point, and it is a perfectly good model: the cyclic shift
+$\sigma_3(x) = (x+1) \bmod 3$ on $\mathbb{Z}/3\mathbb{Z}$ has fundamental
+period exactly $3$ and returns to $0$.
+
+And here is the gap. Check 39 probed the period question in order to *refute
+primality*, so it tested only the composite set $\{4,6,8,9,10,12\}$ — all six
+reproduce with period $= m$ exactly. The prime $3$ was never in the test set,
+because a check designed to show "periods need not be prime" has no reason to
+include one. So the triangle was not excluded by the framework; it was simply
+never enumerated (**B29**). This is a coverage gap in the audit, and closing it
+disturbs nothing — B22 already established that *no* period is forced.
+
+### 12.2 The instantiation does not close: three coordinates, three failures
+
+**(a) The ladder's own coordinate — degenerate.** Rungs 4, 5, 6 are atom,
+molecule, virus, at $\log_{10} s = -10.00, -9.00, -7.00$. The three side
+lengths are $1.00$, $2.00$ and $3.00$ decades, and
+
+$$1 + 2 = 3 \quad \text{exactly}.$$
+
+The triangle is degenerate. This is structural, not numerical: the ladder is
+**one-dimensional**, so any three rungs are collinear and the enclosed area is
+identically zero. What the walk actually traces is a there-and-back fold.
+
+*(A trap worth naming: the gaps $1.00$ and $2.00$ are round because the corpus
+defines molecule and virus at nominal $10^{-9}$ and $10^{-7}$ m. The $1$-$2$-$3$
+pattern is a property of those nominal definitions, not of nature, and must not
+be promoted into a pattern.)*
+
+**(b) The turn-walk — rectangular.** The corpus's turn is $\pi/2$ (L06,
+$i^4 = 1$). Three such turns is $270^\circ$, i.e. $-i$, which is **not** a
+return; four are required. More decisively, a walk built only from quarter
+turns carries four distinct leg directions $(+x, +y, -x, -y)$, so a closed
+figure from it has four distinct vertices. It can close a rectangle; it can
+never close a triangle. Making it triangular requires turning by $2\pi/3$
+instead — period 3, which §12.1 shows is legal, and which is a *choice*.
+
+**(c) The degree reading — self-defeating.** The corpus's one genuine
+zero-event is the degree collapse at rung 8, and it is not free: $n(u) = 5.5 > 1$
+at rung 6, so rung 6 reads degree 3; $n(u) = 1$ exactly at rung 7 (the ball's
+own rung); $n(u) = 0.055 < 1$ at rung 8. The first 0D rung is therefore r8,
+uniquely fixed by the committed $n(u)$ column. Relocating a zero to rung 6 would
+put the corpus's own gauge object below its resolution limit.
+
+### 12.3 Verdict
+
+The framework permits the triangle; the corpus's ladder, turn angle and
+resolution rule each independently prevent it from appearing *there*. That is a
+real asymmetry worth keeping: **"a return to zero" is axiomatic (G), "this
+triangle" is not (X33, resolved negative).** The constructive residue is B29 —
+the period-3 fixed point is a legal structure the audit never enumerated — and
+if the corpus ever wanted a closed figure to sit beside L08's committed open
+spiral, the choice available is the turn angle, $2\pi/3$ rather than $\pi/2$.
+That choice is permitted and entailed by nothing.

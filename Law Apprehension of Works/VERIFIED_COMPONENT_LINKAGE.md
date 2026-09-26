@@ -204,7 +204,12 @@ sigma_T = 1.2573e38 erg/s per solar mass gives lambda_Edd = 2.742 (published
 via the Schwarzschild radius GM/c^2. Ladder rungs: neutron star 1.239e4 m
 (PSR J0740+6620, R = 12.39 km, Riley et al. 2021), quasar BLR 2.590e15 m
 (100-day reverberation lag, Kaspi et al. 2000); gaps 17 distinct, mean 3.614,
-sd 3.504, CV 0.970.
+sd 3.504, CV 0.970. A period-3 return is a legal model of F and G (sigma_3 on Z/3 has
+fundamental period exactly 3) that check 39 never probed, having tested only the composite
+set {4,6,8,9,10,12}; but the proposed triangle at rungs 4-6 closes nowhere - degenerate in
+the 1D ladder (sides 1.00 + 2.00 = 3.00 decades), rectangular under the pi/2 turn (three
+quarter turns = 270 deg, not a return; four distinct leg directions), and the corpus's one
+real zero-event is r8, fixed by the ball's n = 1 at r7.
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

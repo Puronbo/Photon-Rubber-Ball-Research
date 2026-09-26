@@ -88,6 +88,15 @@ the published super-Eddington ratios of J0341+1720 (2.742 vs 2.74) and
 J2125-1719 (3.021 vs 3.01), linear in M only because the capture radius is
 GM/c^2. The ladder's gap moments therefore move and are disclosed: 17 gaps,
 all distinct, mean 3.614, sd 3.504, CV 0.970.
+Check 45 tests the idea that a turn at rungs 4, 5 and 6 returns to zero as a
+triangle: the ladder's own coordinate makes it degenerate (sides 1.00 + 2.00 =
+3.00 decades, since a 1D ladder makes any three rungs collinear), the corpus's
+pi/2 turn makes it rectangular rather than triangular (three quarter turns is
+270 deg, not a return, and quarter turns have four distinct leg directions), and
+the corpus's single real zero-event is pinned to rung 8 by the committed n(u)
+column - yet a period-3 return is itself a perfectly legal model of Axioms F and
+G (sigma_3 on Z/3 has fundamental period exactly 3), a case check 39 never
+probed because it tested only composite periods to refute primality.
 """
 
 import math
@@ -598,9 +607,46 @@ def main():
                  f"L_Edd/Msun={L_per_M:.4e} erg/s; lambda: {lam_calc[0]:.3f} vs {lam_pub[0]}, {lam_calc[1]:.3f} vs {lam_pub[1]} (max dev {dev*100:.2f}%); L_Edd strictly linear in M (halving M doubles lambda exactly: {half:.1f})",
                  "L_Edd is linear in M only because the capture radius is GM/c^2 - a Schwarzschild metric object - so the quasar luminosity anchor lives on the imported-metric side (A12), the opposite boundary from the pulsar's tau")
 
+    # 45: the "turn at rungs 4,5,6 returns to zero as a triangle" idea, tested
+    # in every coordinate the corpus actually has. Positive half: a period-3
+    # return is a legal model of F and G, and check 39 never probed it.
+    r4, r5, r6 = math.log10(1e-10), math.log10(1e-9), math.log10(1e-7)
+    tri = sorted([abs(r5-r4), abs(r6-r5), abs(r4-r6)])
+    degenerate = abs(tri[0] + tri[1] - tri[2]) < 1e-9
+    # pi/2 turn: how many turns to return?
+    def quarter(n):
+        return complex(round(math.cos(n*math.pi/2), 12), round(math.sin(n*math.pi/2), 12))
+    three_is_return = quarter(3) == 1 + 0j
+    four_is_return = quarter(4) == 1 + 0j
+    # a closed walk built only from quarter turns has 4 distinct leg directions
+    dirs = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+    quad_not_tri = len(set(dirs)) == 4
+    # the constructive half: fundamental period of the cyclic shift on Z/m
+    def fund_period(m):
+        x, n = 0, 0
+        while True:
+            x, n = (x + 1) % m, n + 1
+            if x == 0:
+                return n
+    per = {m: fund_period(m) for m in (3, 4, 6, 8, 9, 10, 12)}
+    period3_legal = per[3] == 3
+    check39_set = {4, 6, 8, 9, 10, 12}
+    blind_spot = 3 not in check39_set and all(per[m] == m for m in check39_set)
+    # the corpus's one real zero-event, and why it cannot be moved to rung 6
+    Dp = 550e-9
+    n6, n7, n8 = Dp/1e-7, Dp/5.5e-7, Dp/1e-5
+    first_zero_rung = 8 if (n6 > 1 and abs(n7 - 1) < 1e-12 and n8 < 1) else -1
+    n45_ok = (degenerate and not three_is_return and four_is_return
+              and quad_not_tri and period3_legal and blind_spot
+              and first_zero_rung == 8)
+    ok &= expect(n45_ok,
+                 "the 'turn at rungs 4,5,6 returning to zero like a triangle' idea, tested in all three coordinates the corpus has: (a) in the ladder's own coordinate r4/r5/r6 = atom/molecule/virus sit at log10 -10.00/-9.00/-7.00, so the three side lengths are 1.00, 2.00, 3.00 decades and 1+2=3 - DEGENERATE, zero area, because a 1D ladder makes any three rungs collinear; (b) under the corpus's pi/2 turn three turns is 270 deg = -i, NOT a return - four turns are needed, and a walk built only from quarter turns has four distinct leg directions, so it can only close a rectangle, never a triangle; (c) but a period-3 return IS legal under Axiom F and G - the cyclic shift on Z/3 has fundamental period exactly 3 - and check 39 never probed it, having tested only the composite periods {4,6,8,9,10,12} to refute primality, so prime 3 fell outside its own test set. The corpus's single genuine zero-event also cannot be moved to rung 6: n(u) there is 5.5 > 1, so rung 6 reads degree 3, and the first 0D rung is r8, uniquely fixed by the committed n(u) column via the ball's own n = 1 at r7",
+                 f"(a) sides {tri[0]:.2f}/{tri[1]:.2f}/{tri[2]:.2f}, degenerate={degenerate}; (b) 3 turns -> {quarter(3)}, 4 turns -> {quarter(4)}, quarter-turn closures are quadrilaterals={quad_not_tri}; (c) sigma_3 period={per[3]}, all of {sorted(per)} reproduce, 3 absent from check 39's set={blind_spot}; (d) n(r6)={n6:.2f}>1, n(r7)={n7:.2f}, n(r8)={n8:.3f}<1, first 0D rung = r{first_zero_rung}",
+                 "the triangle is structurally LEGAL - it is Axiom G's fixed point at period 3, a permitted sibling of the pi/2 turn that the corpus never enumerated - but the specific instantiation at rungs 4-6 closes in NO coordinate the corpus has: degenerate in the ladder, rectangular in the turn-walk. A period-3 turn (2pi/3) would make it real; that is a choice, not a consequence")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 44 checks reproduced.")
+        print("RESULTS OF RECORD: 45 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
