@@ -585,3 +585,39 @@ Gate (Phase 24): battery 19/19 green, `results_of_record.py` 27/27 exit 0,
 
 Gate (Phase 25): battery 19/19 green, `results_of_record.py` 35/35 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 26 — the Zeros, Interconnection, Scale, and Geometry framework (2026-09-25)
+
+- User pasted the full framework document of that name (MGS Puno, conceptual
+  development with ChatGPT), requesting the same treatment as every other
+  claim-set: correct framing, register, gate any arithmetic kernel.
+- Assessment: mathematically sound and honestly scoped. The document itself
+  (a) separates established math from hypotheses (Part XIII), (b) refuses
+  scaling ⇒ π/4 explicitly (Prop 10), (c) refuses Π = π (Props 17), and (d)
+  states its own central open problem: does the fundamental zero relation
+  force balanced geometry Δr = Δz (Part X/XVI)? None of its "established
+  within mathematics" items is false; none of its hypotheses is smuggled in
+  as a consequence. This mirrors the corpus's own discipline exactly.
+- Alignment with the register: space-as-interconnection-of-zeros ↔ L12
+  (object zeros, [PROVEN] machinery at coordinate level), A13 (no absolute
+  frame), E05/E14 (no center/edge); time-as-ordered-transformations ↔ the
+  gauged reading already held; prime roles (period/scale/generator) ↔ the
+  counting substrate + the honestly-OPEN generator question; i-period/2π
+  closure ↔ check 20/36.
+- What is NEW and claimable: (1) the cone/scale/closure kernel — balanced
+  Δr = Δz ⇒ θ = π/4 (tan(π/4) = 1), general c ⇒ θ = arctan c ≠ π/4 so scaling
+  never fixes the angle, s₀qⁿ → 0, prime scales 1/p distinct, 2π closure —
+  gated as check 36; (2) the prime-scaling hierarchy rule q = 1/p as an
+  arithmetic object; (3) a formal minimal axiom skeleton (reference →
+  relation → transformation → scale → closure → invariant) usable as a
+  math-native phrasing of the gauge reading.
+- Register additions: B19 ([ESTABLISHED] arithmetic, check 36), F21
+  (space/time relational rephrasing = [FRAMING], anchors L12/A13/E05), X27
+  (forced balanced geometry / derivation-free π/4 = NOT-claim — it is the
+  framework's own open problem), X28 (Π = π = NOT-claim, needs a derivation).
+  No false claim to kill: the framework is already honest.
+- Battery 35 → 36 checks; register 105 → 107 numbered (B19, F21),
+  26 → 28 NOT-claims; corrigendum 92 → 93 entries. Gate 36/36.
+
+Gate (Phase 26): battery 19/19 green, `results_of_record.py` 36/36 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

@@ -36,6 +36,13 @@ mutually-visible core); 34 Bekenstein bound for the ball = 2*pi*kB*R*E/(hbar*c) 
 sits far below its information limit); 35 the Euler n^2+n+b prime-run table over
 the class-number-1 discriminants (b,run) = (2,1),(3,2),(5,4),(11,10),(17,16),
 (41,40), b=41 champion (discriminant -163).
+Check 36 asserts the zero-framework cone/scale/closure kernel of the
+"Zeros, Interconnection, Scale, and Geometry" framework (MGS Puno): balanced
+r = z gives the pi/4 cone (tan(pi/4) = 1, cos = sin at pi/4); a general
+slope c gives theta = atan(c) which generically differs from pi/4, so scaling
+alone never fixes the angle; the contractive scale sequence s_0*q^n converges
+to zero; prime scales q = 1/p form distinct discrete hierarchies; and
+rotational closure returns the orientation (cos 2pi = 1, sin 2pi = 0).
 """
 
 import math
@@ -363,9 +370,25 @@ def main():
                  "Euler n^2+n+b prime-run table (class-number-1 discriminants -(4b-1)=-7,-11,-19,-43,-67,-163; b=41 champion run 40)",
                  "; ".join(hg_line), "2->1, 3->2, 5->4, 11->10, 17->16, 41->40")
 
+    # 36: zero-framework cone/scale/closure kernel.
+    c1_ok = abs(math.tan(math.pi/4) - 1.0) < 1e-12 \
+        and abs(math.cos(math.pi/4) - math.sin(math.pi/4)) < 1e-15 \
+        and abs(math.atan(1.0) - math.pi/4) < 1e-15
+    c2 = math.atan(2.0)
+    c_ok = c2 > math.pi/4 and abs(c2 - math.pi/4) > 0.1
+    s_ok = (0.5)**200 < 1e-50
+    pinv = [1.0/p for p in (2, 3, 5, 7, 11)]
+    p_ok = all(0 < x < 1 for x in pinv) and len(set(pinv)) == 5
+    rot_ok = abs(math.cos(2*math.pi) - 1.0) < 1e-15 and abs(math.sin(2*math.pi)) < 1e-15
+    kernel_ok = c1_ok and c_ok and s_ok and p_ok and rot_ok
+    ok &= expect(kernel_ok,
+                 "zero-framework kernel (balanced r=z -> tan(pi/4)=1; general c=atan(c)!=pi/4, scaling never fixes the angle; q^n -> 0; prime scales 1/p distinct; 2pi closure)",
+                 f"tan(pi/4)~1 atan1=pi/4 atan2={c2:.4f}!=pi/4 q^200={(0.5)**200:.1e} p-ratios={['%.3f' % x for x in pinv]} cos2pi={math.cos(2*math.pi):.1f} sin2pi={math.sin(2*math.pi):+.1e}",
+                 "pi/4 derivable only under balanced geometry; contraction to 0; distinct prime hierarchies; orientation returns")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 35 checks reproduced.")
+        print("RESULTS OF RECORD: 36 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

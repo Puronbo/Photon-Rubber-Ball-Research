@@ -155,6 +155,13 @@ Bekenstein bound 4.71e20 k_B, ~8.2e9x the Dulong-Petit thermal entropy
 (ball far below its information limit); Euler n^2+n+b prime-run table
 (b,run) = (2,1),(3,2),(5,4),(11,10),(17,16),(41,40), champion -163.
 
+Framework-kernel numbers (check 36, "Zeros, Interconnection, Scale, and
+Geometry"): tan(pi/4) = 1 with cos = sin at pi/4 (balanced r = z -> cone
+half-angle pi/4); general slope c = atan(2) = 1.1071 rad != pi/4 (scaling
+never fixes the angle); contractive (1/2)^200 ~ 6.2e-61 (s_0 q^n -> 0);
+prime scales 1/p for p = 2,3,5,7,11 distinct in (0,1); rotational closure
+cos 2pi = 1, sin 2pi = 0.
+
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
 A0 self-gauge:

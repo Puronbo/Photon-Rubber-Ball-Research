@@ -39,6 +39,7 @@ NOT-claim (section X).
 | B16 | ball is point-like ONLY above ~µm; a colloid at molecular scales (5.5e3× atom, 5.5e2× molecule); 8.62e-14× Earth, 3.56e-31× 50 Mpc | [ESTABLISHED] | corrigendum 70, A2/F1 |
 | B17 | ball is a solid on every rung below its own (Planck n = 3.4e28 ticks … proton 6.55e8) | [ESTABLISHED] | RANKS DOWN |
 | B18 | "the object's size is zero at all scales" | **[FALSE]** point-like only above ~µm | corrigendum 70 |
+| B19 | zero-framework cone/scale/closure kernel (framework "Zeros, Interconnection, Scale, and Geometry"): balanced connection Δr = Δz gives a cone with half-angle θ = π/4 (tan(π/4) = 1; cos = sin at π/4); a general slope c gives θ = arctan c ≠ π/4 generically, so self-similar scaling NEVER fixes the angle; contractive scale s₀qⁿ → 0 for 0 < q < 1; prime scales q = 1/p form distinct discrete hierarchies in (0,1); rotational closure returns orientation (cos 2π = 1, sin 2π = 0) | [ESTABLISHED] elementary arithmetic/geometry | check 36 |
 
 ## L — Ladder, rank × degree (checks 17-21)
 
@@ -135,6 +136,7 @@ NOT-claim (section X).
 | F18 | "if every zero is a position making up the universe, the whole must be a zero too — the universe is its own position/center" | the relational part is REAL: positions are the coordination of object-zeros, relations are what's real (A13, [ESTABLISHED]); the whole has no external frame, so "gauges to zero from outside" is the same machinery as the top rung reading as a point from above (L11) — but no probe exists above, so the top-zero is not an observable station | "the universe has its own position/center at the top" = [FRAMING]; no vantage point of the whole exists (X24) |
 | F19 | "nothing is a mirror — the nothingness at the top reflects the whole universe back to itself" | the involution IS real as mathematics and tested physics: reflection fixes its origin (every object's zero is the fixed center of its orientation-mirror), and the universe's mirror-like inversions are C/P/T with CPT established — this is the claimable content of "the whole is symmetric under a mirror" | "nothing at the edge is a reflecting surface / the boundary mirrors everything back" = overreach (a mirror needs a plane and an outside; A13/A14); the poetic self-reflection = [FRAMING] involution metaphor | REAL anchors A13/A14 (coordinate mirrors, C/P/CPT); the boundary-mirror reading [FRAMING] |
 | F20 | "mass is the position of the object given by its volume — the object's footprint in space" | the real kernel: the only volume bridge is density, m = ρV (corpus M = 9.583e-17 kg exactly so, check 2), and mass is the gauge-invariant residue of an object — the property that DOESN'T gauge away where position does (A16), so in that precise sense it is the object's true "footprint"; mass as DEFINED by location/extent = category mixing (X26) | m = ρV REAL (check 2); mass-as-position-by-volume [FRAMING] |
+| F21 | "space is the interconnection of zeros; time is an ordering of transformations; spacetime = relational configuration + ordered transformation" (framework "Zeros, Interconnection, Scale, and Geometry") | the relational core is REAL and matches this corpus: positions are the coordination of object-zeros (L12, [PROVEN] machinery at coordinate level), no absolute frame exists (A13), no universal center (E05/E14), and "the configuration of relations + their order" is exactly the gauged reading of spacetime the corpus already holds; what the framework adds is a formal axiom skeleton (reference → relation → transformation → scale → closure → invariant) — a candidate math-native phrasing, not new physics | "space IS a zero-network physics" = [FRAMING] hypothesis (the framework itself calls it a hypothesis, Part XIII); time-definition is proposed, not established | REAL anchors L12, A13, E05/E14; formal skeleton [FRAMING] |
 
 ## P — Possibility relevancy claims (POSSIBILITIES_AND_RELEVANCY.md)
 
@@ -153,9 +155,9 @@ NOT-claim (section X).
 | ID | claim | verdict |
 |---|---|---|
 | G01 | battery = 19 Python scripts, all exit 0 under `-W error::RuntimeWarning` | [VERIFIED] |
-| G02 | `results_of_record.py` = 35 checks, exit 0 | [VERIFIED] |
+| G02 | `results_of_record.py` = 36 checks, exit 0 | [VERIFIED] |
 | G03 | `ruff --select F` clean on tracked corpus | [VERIFIED] |
-| G04 | CORRIGENDUM.md = 92 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
+| G04 | CORRIGENDUM.md = 93 entries (1 [FALSE], n [FIXED]) | [VERIFIED] |
 | G05 | Law thread = 23 tracked .md + zh twin + PRESENTATION.tex; informational only | [VERIFIED] |
 | G06 | no experiment was performed; all narrative twin files banner-marked (PROVENANCE/FICTION) | [VERIFIED] |
 | G07 | arXiv bundles staged; upload requires the author's own arXiv account/endorsement | [VERIFIED] |
@@ -192,8 +194,10 @@ NOT-claim (section X).
 | X24 | the entire universe has (or must have) a position, a zero, or a vantage point outside itself — a universal center, an observer-of-the-whole, or a god's-eye frame | no external reference can exist by definition (A13): position is a relation between objects; GR has no preferred frame; there is no Archimedean point from which "the universe's position" could be measured; even the top-rung "reads as a point from above" has no probe (L11/X21) |
 | X25 | the edge of the universe is a reflecting surface, or there is a mirror/twin universe outside ours that reflects it | the horizon is a causal boundary, not a reflector — nothing is observed bouncing back; a mirror needs a mirror-plane and an outside to reflect into, and the whole has no outside (A13); mirror/twin-universe embeddings are [CONJECTURE], no mechanism or observation |
 | X26 | mass is (or is equivalent to) the object's position given by its volume, and volume alone determines mass | position is a gauged coordinate and volume a frame-dependent geometry; mass is the Lorentz-invariant scalar m = E₀/c² — two equal volumes can carry different masses (density), and energy changes mass at fixed volume; volume enters only through density (m = ρV), never as a definition |
+| X27 | balanced geometry is FORCED by the zero relation — i.e. the π/4 cone follows from the minimal axioms without independently assuming Δr = Δz | the framework itself states this is its open problem (Part X/XVI): scaling alone admits arbitrary cone angles (Prop 10; θ = arctan c), and nothing in the axioms reference/relation/transformation forces r = z; balanced geometry therefore remains a permitted specialization, not a derivation |
+| X28 | the reserved invariant Π is numerically π ("Π = π") | the identification requires a derivation showing the invariant has π's numerical/geometric properties (framework Prop 17, Part VIII); none exists, so the equality is an open problem — the same discipline the corpus applies to every Π-style claim |
 
-Count: this register currently carries 105 numbered claims (B18, L12, N7, E16,
-A16, F20, P7, G9) + 26 NOT-claims, plus pointer to the 27-slot composite tree
+Count: this register currently carries 107 numbered claims (B19, L12, N7, E16,
+A16, F21, P7, G9) + 28 NOT-claims, plus pointer to the 27-slot composite tree
 (N07). Counts are per-row arithmetic (the 95/98 statements after the recursion
 and LOZ rounds were +2 over-counted; recomputed and corrected, corrigendum 88).

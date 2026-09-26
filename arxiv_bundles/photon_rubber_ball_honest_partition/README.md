@@ -2,13 +2,13 @@
 
 This bundle is the submission-geometry the whole corpus has been converging on:
 PART I (Results) contains only statements that are either elementary theorems,
-or gate-asserted by `results_of_record.py` (35 checks, exit 0). PART II
+or gate-asserted by `results_of_record.py` (36 checks, exit 0). PART II
 (Ideas) is explicitly labeled as a vocabulary/narrative layer with zero science
 claims.
 
 Why separate: peer review can stress PART I and either it checks out or it
 doesn't — no appeal to narrative. PART II is included only so reviewers know
-exactly what the author is NOT claiming (the anti-goal, mirroring X01-X26 in
+exactly what the author is NOT claiming (the anti-goal, mirroring X01-X28 in
 CLAIM_REGISTER.md).
 
 The core results carried here:
