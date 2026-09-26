@@ -783,3 +783,80 @@ What survives is therefore sharper than what was proposed:
 That is §15's asymmetry and §16's rigidity meeting in one place: §15 showed
 the zeros cannot **assemble** an interval, §16 shows the reals **rigidify** the
 zeros, and $0$ sits exactly on the seam — reached by neither, required by both.
+
+---
+
+## 17. Tenth powers: the excluded boundaries come in pairs (B37, B38, X38; check 51)
+
+> *Does it not fall under the idea of zero and all tenth powers — or
+> multiplicity of 10s also zero?*
+
+Yes. Both halves land, and the first one **corrects §16**.
+
+### 17.1 B36 was half an excluded boundary (B37)
+
+§16 registered $0$ as *the* excluded boundary of $s:\mathcal{Z}\to\mathbb{R}_{>0}$. But
+$\mathbb{R}_{>0} = (0,\infty)$ is open at **both** ends, and the corpus's own
+denomination is what makes the second end visible: **14 of the 18 rungs sit
+within a quarter-decade of an integer power of ten**, and the ladder spans
+**61.43 decades**, $\log_{10}s = -34.79$ to $+26.64$.
+
+So "tenth powers" is not an analogy imposed on the corpus — it is the corpus's
+own grid. And on that grid the two directions of the axis are symmetric:
+
+| excluded boundary | distance from the ladder | attained? |
+|---|---|---|
+| $0$ | Planck rung sits **34.79 decades above** | never |
+| $\infty$ | top rung sits **26.64 decades below** | never |
+
+The framework's scale assignment has **two ends it can never reach**, and the
+decade grid is precisely the coordinate on which $10^{-n}\to 0$ and
+$10^{n}\to\infty$
+are the two directions of a single axis. The ladder's 61.43 decades is an
+*observed* span, not the axis.
+
+### 17.2 $0.999\ldots = 1$ is the corpus's signature in decimal form (B38)
+
+Exact, in rationals.
+
+- The **prefixes** $0.9,\ 0.99,\ 0.999,\dots$ tend to $1$ and **never attain
+  it** — every finite string of nines is strictly less than $1$. So $1$ is an
+  **excluded boundary too**, approached from below. (Floating point only loses
+  the distinction at $n = 17$, where $1 - 10^{-17}$ falls inside half an ulp;
+  the exact rational is still short of $1$ at $n = 30$.)
+- The **tail** — literally *all the tenth powers* — obeys
+  $\sum_{k=1}^{\infty} 10^{-k} = \tfrac{1}{9}$ **exactly**, with the tail after $n$
+  terms **exactly $10^{-n}/9$**: positive at every finite $n$, never $0$.
+
+So **one sequence's two halves have different limits**:
+
+$$\underbrace{0.9,\ 0.99,\ 0.999,\dots \;\longrightarrow\; 1}_{\text{prefixes, never reaching }1}
+\qquad\text{while}\qquad
+\underbrace{10^{-1} + 10^{-2} + \cdots \;\longrightarrow\; 0}_{\text{the leftover, never reaching }0}$$
+
+That is precisely the shape of the contractive walk in §14.2: the steps shrink
+to zero and the displacement does not.
+
+The **general law**, which is B19 and B32 in one line: for any $q\in(0,1)$,
+the terms vanish, the remainder vanishes, and
+
+$$\sum_{k\ge 0} q^{k} = \frac{1}{1-q} > 1 .$$
+
+Verified for $q = 1/10,\ 1/2,\ 9/10,\ 1/3$ — with the vanishing exponents
+*found* rather than assumed. And $1/9$ **is** the $q = 1/10$ case, so the
+decimal expansion and the geometric series are the same object.
+
+### 17.3 The inference that fails (X38)
+
+The antecedent is true and the conclusion is false. The terms $10^{-k}$ do
+vanish; the tail $\to 0$ does vanish; the **total does not** — it is exactly
+$1/9$, and $1/(1-q) > 1$ for every $q\in(0,1)$. Symmetrically $10^{+n}\to\infty$
+does not make the ladder's top infinite: the largest rung sits 26.64 decades
+below $\infty$, because $(0,\infty)$ excludes it.
+
+This is **X35's overclaim one level up** — the identical mistake made about a
+sum instead of a walk. The corpus has now registered the same non-implication
+three separate times (X34, X35, X38), which is itself the evidence that it is
+the framework's central caution rather than an accident of one model:
+
+$$\text{contributions} \to 0 \;\centernot\implies\; \text{total} \to 0 .$$

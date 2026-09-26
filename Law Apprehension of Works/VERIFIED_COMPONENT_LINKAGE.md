@@ -236,7 +236,14 @@ is rigid (trivial automorphism group), and s is what supplies the distinguishibi
 demands - index and individuator in one map. 0 itself is in neither side: the codomain R>0
 is open at 0, the finite ladder does not even approach it (min 1.616e-35), it becomes a
 limit only under q < 1 and is never attained there, and it is the unique real definable
-with no parameters (additive identity, unique negation fixed point, limit of 1/n).
+with no parameters (additive identity, unique negation fixed point, limit of 1/n). And the
+excluded boundary is a PAIR, not a singleton: the codomain R_{>0} is open at BOTH ends and
+the ladder is decade-native (14 of 18 rungs within a quarter-decade of an integer power of
+ten, spanning 61.43 decades), so Planck sits 34.79 decades above 0 while the top rung sits
+26.64 decades below infinity - both approached, neither attained. 0.999... = 1 is the same
+signature in decimal form: the prefixes tend to 1 and never attain it, the tail (all the
+tenth powers) is exactly 1/9 with remainder 10^-n/9, and the total does not vanish - for
+any q in (0,1) the terms vanish, the remainder vanishes, and the total is 1/(1-q) > 1.
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

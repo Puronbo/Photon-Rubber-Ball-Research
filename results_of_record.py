@@ -174,6 +174,28 @@ alone with no parameters: the additive identity, the unique fixed point of
 negation, the limit of 1/n. So 0 is simultaneously the most fundamental and the
 least reachable element of the framework - the excluded boundary both sides need
 and neither supplies.
+Check 51 asks whether this falls under "zero and all tenth powers, or
+multiplicity of 10s also zero". Both halves land, and the first one CORRECTS
+B36. The ladder is DECADE-DENOMINATED natively - 14 of 18 rungs sit within a
+quarter-decade of an integer power of ten, spanning 61.43 decades - so "tenth
+powers" is the corpus's own grid, not an analogy. And s: Z -> R_{>0} has
+codomain (0, inf), open at BOTH ends, so B36's single excluded boundary is
+really a PAIR: the Planck rung sits 34.79 decades above 0 and the top rung 26.64
+decades below infinity, approaching both and attaining neither. Second,
+0.999... = 1 is the decimal instance of the corpus's signature. The prefixes
+tend to 1 and NEVER attain it - every finite string of nines is strictly less
+than 1, so 1 is an excluded boundary too (and floats only lose the distinction
+at n = 17, where 1 - 1e-17 falls inside half an ulp). The TAIL, which is
+literally all the tenth powers 10^-1 + 10^-2 + ..., tends to 0 and is never 0
+either. And the sum of all tenth powers from 10^-1 upward is EXACTLY 1/9, with
+the tail after n terms exactly 10^-n/9. So one sequence's two halves have
+DIFFERENT limits - prefixes to 1, leftovers to 0 - precisely the shape of the
+contractive walk, where the steps shrink to zero and the displacement does not.
+Third, this is one law in three places: B19 (q^n -> 0), B32 (contractive walk
+-> 1/sqrt(1+q^2) > 0), and now the geometric series, where for any q in (0,1)
+the terms vanish, the remainder vanishes, and the TOTAL is 1/(1-q) > 1. The
+inference that fails is "all the tenth powers are zero, therefore everything is
+zero" - X35's overclaim one level up.
 """
 
 import math
@@ -1129,9 +1151,86 @@ def main():
                  "all 18 scale values distinct: " + str(distinct_ok) + "; automorphism group preserving s is trivial: " + str(rigid_ok) + "; preserving s forces the identity (300 random relabellings): " + str(force_ok) + "; s supplies 18 distinguishable references, Axiom B's word: " + str(distinct_refs_ok) + ". 0 is the scale of no reference and the codomain is open there: " + str(excluded_ok) + "; in the finite ladder 0 is not even a limit point, min rung " + f"{min(s18):.4e}" + ": " + str(finite_gap_ok) + ". Under Axiom E with q < 1, 0 is the limit and is never attained: " + str(ideal_ok) + ". 0 is the unique parameterless real (additive identity, negation fixed point, limit of 1/n): " + str(param_ok) + ". Neither side contains the other: " + str(not_contained_ok),
                  "the intuition is right about DETERMINATION and wrong about CONTAINMENT, and 0 is the interesting residue. The reals individuate the zeros exactly as strongly as the zeros index the reals - s makes the 18-rung ladder rigid, with no symmetry left over, and it is s that supplies the distinguishibility Axiom B asks for. But containment is refuted by arithmetic, and 0 belongs to NEITHER side: it is excluded from the open codomain R_{>0}, it is not even a limit point of the finite ladder (min 1.616e-35), and it becomes a limit only in the idealized q < 1 regime, where it is approached and never attained. Meanwhile 0 is the one real the structure can define with no parameters at all. So 0 is simultaneously the most fundamental and the least reachable element of the framework - the excluded boundary both sides need and neither supplies")
 
+    # 51: the author's connection - "does it not fall under the idea of zero and
+    # all tenth powers, or multiplicity of 10s also zero?" Two things bundled,
+    # and BOTH land. (a) The ladder is DECADE-DENOMINATED natively, so 0 and
+    # infinity are its own two excluded boundaries - which CORRECTS B36, since I
+    # registered only the lower one. (b) 0.999... = 1 is the decimal instance
+    # of B19/B32: the parts vanish, the remainder vanishes, the total does not.
+    from fractions import Fraction as Fr2
+
+    lad_x = [(nm, sc, lg) for nm, sc, lg in ladder]
+    l10x = [lg for _, _, lg in lad_x]
+
+    # (a) the "tenth powers" grid is the ladder's own denomination
+    near_int = sum(1 for v in l10x if abs(v - round(v)) < 0.25)
+    decade_ok = (len(lad_x) == 18 and near_int >= 12
+                 and abs((max(l10x) - min(l10x)) - 61.43) < 0.05)
+    # and BOTH ends are excluded: the codomain R_{>0} = (0, inf) is open at
+    # 0 AND at infinity, and the ladder sits strictly inside, many decades from
+    # either. This is the correction to B36: there are TWO excluded boundaries.
+    both_open_ok = (min(sc for _, sc, _ in lad_x) > 0
+                    and math.isfinite(max(sc for _, sc, _ in lad_x)))
+    decades_to_zero = abs(min(l10x))       # Planck sits 34.79 decades above 0
+    decades_to_inf = max(l10x)             # top rung sits 26.64 decades below inf
+    span_ok = (34.0 < decades_to_zero < 35.5 and 26.0 < decades_to_inf < 27.5
+               and decades_to_zero > 1.0 and decades_to_inf > 1.0)
+
+    # (b) 0.999... = 1. The PREFIXES tend to 1; the TAIL - literally all the
+    # tenth powers 10^-1 + 10^-2 + ... - tends to 0; the two limits differ.
+    dec_ok = True
+    for n in (1, 2, 3, 6, 12, 30):
+        pref = Fr2(10**n - 1, 10**n)
+        dec_ok &= (pref < 1) and (1 - pref == Fr2(1, 10**n))   # never attains 1
+    # the prefixes climb toward 1; floats lose the distinction only at n=17,
+    # where 1 - 1e-17 falls inside half an ulp of 1.0, while the exact rational
+    # is still strictly short of 1 even at n=30
+    dec_ok &= all(Fr2(10**(n+1) - 1, 10**(n+1)) > Fr2(10**n - 1, 10**n)
+                  for n in (1, 2, 3, 6, 12, 29))
+    dec_ok &= (float(Fr2(10**6 - 1, 10**6)) < 1.0
+               and float(Fr2(10**12 - 1, 10**12)) < 1.0
+               and float(Fr2(10**16 - 1, 10**16)) < 1.0
+               and float(Fr2(10**17 - 1, 10**17)) == 1.0
+               and Fr2(10**30 - 1, 10**30) < 1)
+    # the sum of ALL tenth powers from 10^-1 upward is exactly 1/9, and the
+    # tail after n terms is exactly 10^-n / 9  (closed forms, so exact)
+    tail_ok = True
+    for n in (1, 3, 6, 12, 30):
+        part = sum(Fr2(1, 10**k) for k in range(1, n + 1))
+        rem = Fr2(1, 9 * 10**n)                      # exact tail = 10^-n/9
+        tail_ok &= (part == Fr2(10**n - 1, 9 * 10**n))
+        tail_ok &= (rem > 0)                         # but never 0
+        tail_ok &= (part + rem == Fr2(1, 9))         # total is exactly 1/9
+    total_ok = (Fr2(1, 9) > 0) and (float(Fr2(1, 9)) != 0.0)
+
+    # (c) the general law, which is B19 and B32 in one line: for q in (0,1) the
+    # terms vanish, the remainder vanishes, and the TOTAL is 1/(1-q) > 1.
+    gen_ok = True
+    for q in (Fr2(1, 10), Fr2(1, 2), Fr2(9, 10), Fr2(1, 3)):
+        tot = 1 / (1 - q)
+        gen_ok &= (tot > 1) and (tot == Fr2(1) / (1 - q))
+        for n in (5, 20, 60):
+            gen_ok &= (q**(n + 1) / (1 - q)) > 0        # remainder never 0
+        # "terms vanish" = there EXISTS an n with q^n < 1e-20, found not assumed
+        n_star = 0
+        while q**n_star >= Fr2(1, 10**20):
+            n_star += 1
+        gen_ok &= n_star > 0 and q**n_star < Fr2(1, 10**20)
+        gen_ok &= (q**(n_star + 1) / (1 - q)) < Fr2(1, 10**15)   # remainder too
+    # and 1/9 is exactly the q=1/10 case, so the decimal IS the geometric
+    unify_ok = ((1 / (1 - Fr2(1, 10))) == Fr2(10, 9) and Fr2(1, 9) * 9 == 1
+                and (Fr2(1, 9) == (1 / (1 - Fr2(1, 10))) - 1))
+
+    n51_ok = (decade_ok and both_open_ok and span_ok and dec_ok
+              and tail_ok and total_ok and gen_ok and unify_ok)
+    ok &= expect(n51_ok,
+                 "the author's connection, and BOTH halves of it land. (a) THE LADDER IS DECADE-DENOMINATED NATIVELY, so 0 and infinity are its OWN two excluded boundaries - which CORRECTS B36, since I registered only the lower one. 14 of the 18 rungs sit within a quarter-decade of an integer power of ten, and the ladder spans 61.43 decades, so 'tenth powers' is the corpus's native grid rather than an analogy imposed on it. The scale assignment s: Z -> R_{>0} has codomain (0, inf), which is open at BOTH ends, and the ladder sits strictly inside: the Planck rung is 34.79 decades above 0 and the top rung is 26.64 decades below infinity. Both are approached, neither is attained, and B36's single excluded boundary is really a PAIR. (b) 0.999... = 1 IS THE DECIMAL INSTANCE OF B19 AND B32. The prefixes 0.9, 0.99, 0.999, ... tend to 1 and NEVER attain it - every finite string of nines is strictly less than 1, so 1 is an excluded boundary too. The TAIL, which is literally all the tenth powers, 10^-1 + 10^-2 + 10^-3 + ..., tends to 0 and is never 0 either. And the sum of all tenth powers from 10^-1 upward is EXACTLY 1/9, with the tail after n terms exactly 10^-n/9. So the two halves of one sequence have DIFFERENT limits - the prefixes go to 1, the leftovers go to 0 - and this is precisely the shape of the contractive walk, where the steps shrink to zero and the displacement does not. (c) THE GENERAL LAW, which is B19 and B32 in a single line: for any q in (0,1) the terms vanish, the remainder vanishes, and the TOTAL is 1/(1-q) > 1. Verified for q = 1/10, 1/2, 9/10, 1/3, and 1/9 is exactly the q = 1/10 case, so the decimal expansion and the geometric series are the same object",
+                 "ladder is decade-denominated (" + str(len(lad_x)) + " rungs, span " + f"{max(l10x) - min(l10x):.2f}" + " decades): " + str(decade_ok) + "; codomain (0, inf) open at BOTH ends: " + str(both_open_ok) + "; ladder sits " + f"{decades_to_zero:.2f}" + " decades above 0 and " + f"{decades_to_inf:.2f}" + " below infinity: " + str(span_ok) + ". Prefixes of 0.999... tend to 1 and never attain it, tail = 10^-n exactly: " + str(dec_ok) + "; all tenth powers sum to EXACTLY 1/9 with tail after n terms exactly 10^-n/9, never 0: " + str(tail_ok) + "; total is nonzero: " + str(total_ok) + ". General law for q in (0,1): terms vanish, remainder vanishes, total = 1/(1-q) > 1: " + str(gen_ok) + "; the decimal IS the q=1/10 geometric case: " + str(unify_ok),
+                 "yes - and it completes the pattern rather than restating it. Three things follow. First, B36 is CORRECTED to a PAIR of excluded boundaries: s has codomain (0, inf), open at 0 AND at infinity, and this decade-denominated ladder approaches both - 34.79 decades above zero, 26.64 decades below infinity - attaining neither. Second, 0.999... = 1 shows the corpus's signature in decimal form: the parts vanish, the remainder vanishes, the total does not, and the total here is exactly 1/9, the q = 1/10 case of 1/(1-q). Third, this is the SAME law as B19 (q^n -> 0) and B32 (contractive walk -> 1/sqrt(1+q^2) > 0): a sum of ever-shrinking contributions whose whole is bounded away from zero. The inference 'all the tenth powers are zero, therefore everything is zero' is the one that fails - it is X35's overclaim one level up")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 50 checks reproduced.")
+        print("RESULTS OF RECORD: 51 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

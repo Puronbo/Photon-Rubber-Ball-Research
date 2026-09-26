@@ -1045,6 +1045,61 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B35, B36 added; X37 added. Numbered 122 → 124; NOT-claims 36 → 37.
   Corrigendum 101 → 102.
 
+## Phase 36 — tenth powers: the excluded boundaries come in pairs (2026-09-26)
+
+- Author's connection: *"does it not fall under the idea of zero and all tenth
+  powers, or multiplicity of 10s also zero?"* Both halves land, and the first
+  **corrects** Phase 35.
+- **B37** ([ESTABLISHED] check 51) — **B36 corrected to a PAIR of excluded
+  boundaries**, for a reason internal to the corpus: the ladder is
+  **decade-native**. 14 of 18 rungs sit within a quarter-decade of an integer
+  power of ten, spanning **61.43 decades** (log₁₀ s = −34.79 → +26.64), so
+  "tenth powers" is the corpus's own grid, not an analogy.
+  - `s: 𝒵 → ℝ₊` has codomain **(0, ∞), open at BOTH ends**. Planck sits
+    **34.79 decades above 0**; the top rung sits **26.64 decades below ∞**.
+    Both approached, **neither attained**, both structurally excluded.
+  - The decade grid is exactly the coordinate on which 10⁻ⁿ → 0 and 10ⁿ → ∞
+    are the *two directions of one axis* — so the scale assignment has two ends
+    it can never reach, symmetrically. The 61.43 decades is an **observed span,
+    not the axis**.
+- **B38** ([ESTABLISHED] check 51) — **0.999… = 1**: the corpus's signature in
+  decimal form. *The parts vanish, the remainder vanishes, the total does not.*
+  - **Prefixes** 0.9, 0.99, 0.999, … → 1 and **never attain it** (every finite
+    string of nines is < 1), so 1 is an **excluded boundary too**. Floats lose
+    the distinction only at n = 17 (1 − 10⁻¹⁷ inside half an ulp); the exact
+    rational is still short of 1 at n = 30.
+  - **Tail** — literally *all the tenth powers* — is **exactly 1/9**, with the
+    tail after n terms **exactly 10⁻ⁿ/9**: positive at every finite n, never 0.
+  - ⇒ **one sequence's two halves have different limits**: prefixes → 1,
+    leftovers → 0. Exactly the contractive walk's shape.
+  - **General law** (B19 and B32 in one line): for q ∈ (0,1) the terms vanish,
+    the remainder vanishes, and Σ qᵏ = 1/(1−q) > 1. Verified q = 1/10, 1/2, 9/10,
+    1/3, vanishing exponents **found** not assumed. And 1/9 **is** the q = 1/10
+    case — the decimal expansion and the geometric series are the same object.
+- **X38** (RESOLVED NEGATIVE, check 51) — "all the tenth powers are zero,
+  therefore everything is zero" has a **true antecedent and a false conclusion**:
+  terms vanish, tail vanishes, total does not (exactly 1/9; 1/(1−q) > 1 always).
+  Symmetrically 10ⁿ → ∞ does not make the ladder's top infinite. This is **X35's
+  overclaim one level up**, made about a sum instead of a walk — and the corpus
+  has now registered the same non-implication **three** times (X34, X35, X38),
+  which is itself the evidence that it is the framework's central caution rather
+  than an accident of one model.
+- **Four defects caught** while building check 51, all recorded rather than
+  patched: the prefix threshold compared 0.9 against 1 − 1e-6 (false for small
+  n; should have been a monotonicity test); the tail was summed **finitely** then
+  compared to 1/9, which no truncation satisfies, so the exact closed forms
+  part = (10ⁿ−1)/(9·10ⁿ), rem = 1/(9·10ⁿ) are used; the term-vanishing test
+  hard-coded n = 60, far too small for q = 9/10 (0.9⁶⁰ is still 1.8e-3), so the
+  exponent is now **searched for**; and a probe repeated the truncation error
+  (40-term sum vs 1/9 → False) before it reached the battery. Also removed a
+  junk gate line I had written with `or True`, which would have passed
+  unconditionally.
+- Register: B37, B38, X38 added. Numbered 124 → 126; NOT-claims 37 → 38.
+  Corrigendum 102 → 103.
+
+Gate (Phase 36): battery 19/19 green, `results_of_record.py` 51/51 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
+
 Gate (Phase 35): battery 19/19 green, `results_of_record.py` 50/50 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
 
