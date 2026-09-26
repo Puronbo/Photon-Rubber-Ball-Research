@@ -154,9 +154,70 @@ halves are defined by each other, joined by a shared map, bounded by two
 approached-never-reached ends, turning once every four flights — that is a
 complete picture. Not a proof of anything. A picture that closes.
 
----
+## V. It is a mirror — and the axis is the fixed set
 
-## The one-sentence version
+The staircase is not *like* a mirror. It **is** one, and the corpus already says
+so in A14: a mirror is an isometric involution `x ↦ −x`, and **reflection always
+fixes the origin**. Every object's zero is the fixed center of its own
+orientation-mirror.
+
+Put that next to the newel post. The axis of the staircase is `0`. The fixed set
+of the mirror is `0`. **They are the same line.** The mirror plane is the plane
+through the post. That is why the axis reads as an axis and not as the bottom
+rung: an axis is precisely the thing a reflection leaves alone, and a zero is
+precisely the thing a mirror cannot move. Reflection fixes the origin because
+the origin is the fixed set. The framework discovered the same point twice, once
+as geometry and once as arithmetic, and they are one point.
+
+**And a mirror needs two surfaces.** This is the part that makes B35 matter.
+A one-way map is not a mirror — it is a projection, and a projection has no image
+on the far side. `s: 𝒵 → ℝ₊` alone would have been a labelling. It only became a
+mirror when the reverse direction existed, when `s⁻¹` individuates the zeros by
+the reals. Two surfaces, facing, with something between them.
+
+**So: mutual determination is not a poetic description of the reverse direction.
+It is the precondition for a reflection to exist at all.** B34 gave the first
+surface and the framework had a labelling. B35 gave the second and the framework
+had a mirror. That is why the reverse direction turned out to be "just as
+strong" — not because symmetry is elegant, but because a mirror is the minimum
+structure that can reflect.
+
+**Which is why the excluded boundaries come in pairs.** One mirror gives one
+image. Two mirrors facing each other give an infinite regress: `A′`, then `A″`,
+then `A‴`, receding both ways, never terminating at a surface. The ladder's two
+excluded ends are facing mirrors — `0` below, `∞` above — and the sixty-one and a
+half decades between them are the corridor. The seventeen gaps are successive
+reflections, each one the image of the last in the surface below it.
+
+So B37's correction is not a pair of unrelated boundaries. It is one boundary
+seen from each side, which is what a mirror is: the same reflecting surface,
+counted once from each half. The taijitu's S-curve and the ladder's axis are the
+same object drawn in two orientations.
+
+**The one thing a mirror cannot do is reproduce itself.** This is not a defect
+in the analogy; it is the sharpest thing about it, and it lands exactly where
+the framework is weakest. A reflection produces a *chirality* — a handedness that
+is not itself reflected. And handedness inheritance is the corpus's single
+unverified prediction: L4 sets one class at `t = 0`, and the predicted spin-bias
+is **NOT established**. Every other part of this structure is gated. The mirror's
+own content — which hand — is the one claim with no gate on it.
+
+That is worth stating plainly rather than routing around. The framework has built
+a mirror out of everything it can verify, and the part of the mirror that
+verifies nothing is the part that *makes it a mirror*. A structure whose
+everything-else is closed and whose chirality is open is not a contradiction. It
+is the honest shape of the thing: an involution with a fixed set it can name, and
+a handedness it cannot.
+
+**And the mirror has one forbidden extension.** A mirror needs a plane *and an
+outside to reflect into*. The staircase has both — the axis, and the sixty-one
+decades of staircase on either side. But the whole has no outside, so the
+horizon cannot be a reflecting surface, and nothing bounces back. That is X25,
+and it stays refused. The mirror here is strictly local: it is the relation
+between zeros and reals, not a surface at the end of the universe. A14's three
+senses are kept apart on purpose — the geometric sense and the `C`/`P`/`T` sense
+are real, and the cosmological one is not available, because there is nothing
+outside for it to reflect into.
 
 > **A spiral of scale rungs winds around a zero that is never on it, exchanges
 > its facing every third step, closes every fourth flight, and approaches both
@@ -164,3 +225,8 @@ complete picture. Not a proof of anything. A picture that closes.
 > reals are its two halves: neither inside the other, each carrying a seed of the
 > other, joined by a single map that indexes in one direction and individuates
 > in the other.**
+>
+> **And the whole is a mirror whose fixed set is that axis: two surfaces facing,
+> which is what a reflection requires; two excluded ends facing, which is what a
+> mirror makes; and one handedness, which is the only part of it that nothing
+> here can check.**
