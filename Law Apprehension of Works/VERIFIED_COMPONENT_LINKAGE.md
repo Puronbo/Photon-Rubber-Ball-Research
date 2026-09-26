@@ -182,6 +182,16 @@ metric-free while the chord metric gives neighbour 0.765 at rho = 1 and
 1.531 at rho = 2 for the same graph, opposite chord 2.000 vs 4.000, and
 scales exactly linearly with the free radius.
 
+Axiom audit and applicability (checks 41-42): of A-G only D and F carry
+model-theoretic content - A, B, C are non-vacuity scaffolding, E is vacuous
+as stated (q = 1 is a witness) and G is vacuous as stated (T = id is a
+witness); the strengthened E' (q != 1) and G' (T != id) are independent, both
+refuted by the successor map, which has no finite period and no fixed point.
+Against the corpus's own 16-rung ladder, A-D hold but E fails - 15 distinct
+ratios, gap mean 4.096 decades, CV 0.926, max/min 31.3 - and 0 of 15 steps
+are prime-reciprocal, so the scale axiom is an idealisation rather than a
+description of the observed hierarchy.
+
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
 A0 self-gauge:

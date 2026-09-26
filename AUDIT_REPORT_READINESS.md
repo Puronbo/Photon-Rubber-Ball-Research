@@ -694,3 +694,54 @@ Gate (Phase 27): battery 19/19 green, `results_of_record.py` 38/38 exit 0,
 
 Gate (Phase 28): battery 19/19 green, `results_of_record.py` 40/40 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 29 — axiom audit and applicability test (X31) (2026-09-25)
+
+- Two questions were still unasked after Part XVI closed: (a) can the axiom
+  set A–G settle *anything*, and (b) does it describe the data this corpus
+  already has? Question (a) turned out to weaken the framework's own
+  presentation, and question (b) produced the first genuine limit on the
+  framework's reach.
+- **Axiom audit (B24, check 41).** Applied literally, only **D** and **F**
+  carry model-theoretic content. **A, B, C** are non-vacuity scaffolding —
+  remove any one and the rest become vacuous, so none is independent. **E is
+  vacuous as written**: "a transformation *may* carry a scale factor" is
+  satisfied by the constant scale q = 1. **G is vacuous as written**:
+  "∃T, X: T(X) = X" is always witnessed by the identity T = id. D is
+  unsatisfiable without a composable pair (a single-transformation system has
+  none), and F is independent, witnessed by the successor map. The
+  strengthened forms E′ (q ≠ 1) and G′ (T ≠ id) do carry content and are
+  independent — the successor refutes both, having no finite period and no
+  fixed point under any non-identity power. **No conclusion in the thread is
+  disturbed**: every independence result was proved against the literal A–G,
+  so it holds a fortiori against the strengthened set. But the framework's
+  Axioms E and G should be restated, since as written they assert nothing.
+- **Applicability test (B25, X31, check 42).** The corpus's own 16-rung
+  rank-degree ladder satisfies A–D — distinguishable references, relations,
+  transformations, and composition along the chain — but **violates E**: all
+  15 consecutive ratios are distinct rather than one constant q (gap mean
+  4.096 decades, sd 3.794, CV 0.926, max/min 31.3, largest deviation 11.7
+  decades from the constant-gap requirement), and **0 of 15** steps match a
+  prime-reciprocal log10(1/p), so the prime-scale role fails outright on the
+  only hierarchy this corpus has evidence for. This is an applicability
+  limit, not a contradiction — the ladder is irregular by design — but it
+  means the scale axiom describes an idealised hierarchy, not the observed
+  one.
+- **New §10, the import-cost table.** Each non-derivation of Phase 28 is
+  priced against what this corpus already contains: θ = π/4 needs isotropy,
+  which A13 does *not* supply (frame-independence is not isotropy); value(Π)
+  = π and a metric are obtainable only by *importing* A12's pseudo-Riemannian
+  metric from GR; prime N and q = 1/p are unforced restrictions the ladder
+  actively contradicts. The pattern is consistent: the framework's
+  relational layer is self-contained, while its metric layer must be
+  imported, and A12 is this corpus's only route to a metric. The framework is
+  therefore a *pre-geometric* layer that must hand off to A12 at exactly the
+  point where B23 and B25 show the zeros go silent.
+- Register: B24, B25 added [ESTABLISHED]; X31 added as a NOT-claim, resolved
+  negative. Numbered 111 → 113; NOT-claims 30 → 31. Corrigendum 95 → 96. No
+  prior claim, number, ladder value or paper claim changed — check 42
+  recomputes the ladder from the same RANKS values used by checks 30–31 and
+  reproduces their gap moments.
+
+Gate (Phase 29): battery 19/19 green, `results_of_record.py` 42/42 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

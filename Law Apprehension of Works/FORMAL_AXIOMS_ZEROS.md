@@ -208,3 +208,91 @@ available way: **the minimal axiomatisation is honest, and every one of its
 open consequences has been shown to be a genuine extra assumption rather
 than a derivation in disguise.** That is the real result of this thread, and
 it is the answer the framework itself asked for.
+
+---
+
+## 8. Axiom audit: how strong is A–G really? (check 41; B24)
+
+Before using a skeleton to settle anything, it has to be asked whether the
+skeleton *can* settle anything. Applied literally, A–G are weaker than the
+framework intends.
+
+| Axiom | As written | Content? | Why |
+|---|---|---|---|
+| A — Reference | $\exists Z$ | scaffolding | without it every other axiom is vacuously true |
+| B — Relation | $R(Z_i,Z_j)$ exists | scaffolding | without it C, D, F, G cannot be stated |
+| C — Transformation | $F: Z_i \mapsto Z_j$ | scaffolding | without it D has nothing to compose |
+| D — Composition | $F_{BC}\circ F_{AB}$ exists | **yes** | a single-transformation system has no composable pair, so D is unsatisfiable while A, B, C, E, F, G all hold |
+| E — Scale | a transformation *may* carry $s_{n+1} = qs_n$ | **none** | permissive: the constant scale $q = 1$ is always a witness |
+| F — Closure | $\exists N>0: F^N(Z) = Z$ | **yes** | the successor $S(n) = n+1$ has no finite period, so F is independent of the rest |
+| G — Invariance | $\exists T, X: T(X) = X$ | **none** | the identity $T = \mathrm{id}$ is always a witness |
+
+So of seven axioms, **two (D, F) carry model-theoretic content, three are
+scaffolding, and two are vacuous as stated.**
+
+The fix is to state the intended, strengthened forms:
+
+$$\text{E}' : \exists\, q \neq 1, \qquad \text{G}' : \exists\, T \neq \mathrm{id},\ X:\ T(X) = X .$$
+
+Both are independent, and both are witnessed apart by the same model: the
+successor map has no finite period (refutes F) **and** no fixed point under
+any non-identity power (refutes G′). The constant-scale system satisfies E
+but refutes E′.
+
+**Consequence for the whole thread:** every independence result in §3, §4 and
+§7 was proved against the *literal* A–G, so it remains valid a fortiori
+against the strengthened A–G ∪ {E′, G′}. The framework's conclusions are
+robust to this repair — but the framework's own Axioms E and G should be
+restated, since as written they assert nothing. Registered **B24**.
+
+---
+
+## 9. Does A–G describe *this* corpus? (check 42; B25)
+
+The strongest test of a framework is not internal consistency but whether it
+describes the data the author already has. Applied to the corpus's own
+16-rung rank-degree ladder, the answer splits:
+
+- **A–D hold.** The ladder is a chain of distinguishable references, related
+  by successive rungs, and paths along it compose. The relational and
+  compositional content of the skeleton fits.
+- **E fails.** Consecutive scale ratios are 15 distinct values, not one
+  constant $q$: gap mean $4.096$ decades, sd $3.794$, CV $0.926$,
+  $\max/\min = 31.3$. A geometric family would need every gap equal to the
+  mean; the largest deviation is $11.7$ decades.
+- **The prime-scale role fails outright.** $0$ of the $15$ steps match a
+  prime-reciprocal $\log_{10}(1/p)$ for any prime $p < 60$.
+
+$$\text{A--D} \;\checkmark\; \text{on the corpus ladder}, \qquad
+\text{E} \;\times, \qquad \text{prime scale} \;\times .$$
+
+This is an **applicability limit, not a contradiction**: the ladder is
+irregular by design (its gaps are the "prime-gap-like" spacing of
+RANKS_AND_DEGREES.md), so it was never a geometric family. What the check
+establishes is that the framework's scale axiom describes an *idealised*
+hierarchy, not the observed one — and the observed one is the only one this
+corpus actually has evidence for. Registered **X31** (resolved negative) and
+**B25**.
+
+---
+
+## 10. What each missing piece would cost
+
+The five non-derivations of §7 are not gaps to be filled by assertion; each
+is bought by one named extra assumption. The table also records whether this
+corpus already contains that assumption.
+
+| Wanted | Bought by | Already in this corpus? |
+|---|---|---|
+| $\theta = \pi/4$ | isotropy $\lvert\Delta r\rvert = \lvert\Delta z\rvert$ | **no** — A13 gives frame-*independence*, which is not isotropy |
+| $\mathrm{value}(\Pi) = \pi$ | an induced arc/diameter measure | **yes, externally** — A12 supplies metric + connection from GR; it must be *imported*, not derived from zeros |
+| $N$ prime | restricting the model class (5 of 11 periods in 2–12) | **no**, and the corpus's own ladder is non-geometric (§9) |
+| $q = 1/p$ | the same restriction, applied to scale | **no** — 0 of 15 observed steps are prime-reciprocal |
+| a metric | choosing an embedding (§4, §7.2) | **yes, externally** — same import as $\Pi$ |
+
+The pattern is consistent and worth stating plainly: **the relational layer
+of the framework is self-contained; the metric layer must be imported, and
+this corpus's only route to a metric is A12's pseudo-Riemannian one.** The
+framework is therefore not a competitor to the corpus's geometry — it is a
+*pre-geometric* layer that would have to hand off to A12 at exactly the point
+where B23 and B25 show the zeros go silent.
