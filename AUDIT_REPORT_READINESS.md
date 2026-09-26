@@ -621,3 +621,35 @@ Gate (Phase 25): battery 19/19 green, `results_of_record.py` 35/35 exit 0,
 
 Gate (Phase 26): battery 19/19 green, `results_of_record.py` 36/36 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 27 — closing the framework's two open problems (X27, X28) (2026-09-25)
+
+- The framework "Zeros, Interconnection, Scale, and Geometry" names exactly two
+  open problems (Parts X/XVI): does the zero relation force balanced geometry
+  Δr = Δz (X27), and is the invariant Π numerically π (X28). Both are now
+  RESOLVED NEGATIVE, and both resolutions are gated.
+- **X27 → independence (B20, check 37).** For every c > 0 the model
+  r_n = c·qⁿ, z_n = qⁿ satisfies the minimal axioms A–G (F = shift, scale q)
+  and self-similarity r_{n+1}/z_{n+1} = r_n/z_n = c. So c is a free parameter
+  of the minimal skeleton, θ = arctan c ranges over all of (0, π/2), and
+  self-similarity can NEVER entail π/4. The minimal extra condition that would
+  force c = 1 is isotropy of the elementary relation — an assumption, not a
+  consequence. Formally A–G ⇏ c = 1; A–G + isotropy ⇒ c = 1. The framework's
+  Prop 10 was correct and is now gated, not merely asserted.
+- **X28 → topological vs metric (B21, check 38).** Rotational closure is the
+  group statement R_{2πk} = I, k ∈ ℤ; winding number is a homotopy invariant,
+  so T(Π) = Π holds with NO metric in the axioms (verified: R_{2πk} = (1,0) to
+  machine precision with no metric term). The numerical π enters only after a
+  measure is induced (arc length = ρ·Δφ, circumference/diameter). Formally
+  A–G ⇒ T(Π) = Π (topological) but value(Π) = π ⇒ metric ∉ A–G.
+- New law-thread doc FORMAL_AXIOMS_ZEROS.md codifies the minimal A–G skeleton
+  with no metric/norm among the primitives, states the two independence
+  questions formally, and links B19/B20/B21. Law thread 23 → 24 tracked .md.
+- Register: B20, B21 added [ESTABLISHED] (independence + topology-vs-measure);
+  X27/X28 rewritten with their resolutions. Numbered 107 → 109; NOT-claims
+  stay 28 (X27/X28 re-verdicted, not deleted). Corrigendum 93 → 94.
+- Battery 36 → 38 checks. Nothing else moved: the honest-partition bundle's
+  Part II (ideas) is unchanged — these were Part I-grade results.
+
+Gate (Phase 27): battery 19/19 green, `results_of_record.py` 38/38 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

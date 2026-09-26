@@ -4,12 +4,12 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 
 ## Verified core (reproducible)
 - 19 Python scripts: 18 at repo root + 1 in `photon_rubber_ball_research/` (`test_expansion_rigorous.py`).
-  Entry points: `results_of_record.py` (36 asserts, exit 0) and
+  Entry points: `results_of_record.py` (38 asserts, exit 0) and
   `photon_rubber_ball_verification_improved.py`. Gate: all exit 0 under
   `python -W error::RuntimeWarning`; lint `ruff --select F` clean.
 - 2 LaTeX manuscripts: `RESEARCH_PAPER.tex`, `PHYSICS_CONNECTIONS_REVIEW.tex`
   (both compile exit 0 under TeX Live). Compiled head: `Photon_Rubber_Ball_PAPER.pdf`.
-- 6 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (93 entries),
+- 6 governance docs: `PROJECT_INDEX.md`, `CORRIGENDUM.md` (94 entries),
   `AUDIT_REPORT_READINESS.md`, `ACTION_PLAN.md`, `CLAIM_REGISTER.md`, `README.md`.
 
 ## Staging
@@ -39,7 +39,7 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
 - html/pdf twins for scenes, engines, infosets, visualizations, summaries.
 
 ## Planning thread (`Law Apprehension of Works/`, informational only)
-- 23 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
+- 24 tracked .md + PRESENTATION.tex twin: 8 analyses (CONNECTION_AUDIT, FDT, HEAT,
   LIGHT_AS_DERIVATIVE, LIGHT_STEP_ACCELERATION, PHOTON_GEOMETRY, PHOTON_TO_PHONON,
   REAL_IMAGINARY_NUMBERS), 4 framework/summary (UNIFIED_CONNECTIONS_FRAMEWORK,
   SYNTHESIS_OF_ALL_WORK, WHAT_EVERYTHING_MEANS_CONCRETELY, RESEARCH_PROPOSAL),
@@ -49,7 +49,9 @@ Factual inventory of tracked content. Counts as of 2026-09-25. No commentary.
   + its Chinese translation twin `.zh.md` (canonical = English),
   COMPOSITE_MAJORITY (internal counting theorem, gated by check 24),
   REAL_AND_CLAIMABLE (framing-correction pass: claimable cores + rung-16 naming),
-  LAW_OF_OBJECT_ZEROS (object zeros = coordinate pattern, NOT dynamics).
+  LAW_OF_OBJECT_ZEROS (object zeros = coordinate pattern, NOT dynamics),
+  FORMAL_AXIOMS_ZEROS (minimal axiom skeleton A–G + the two resolved open
+  problems: X27 independence of c, X28 topological Π vs metric π).
 
 ## Not tracked (local only)
 - `deterministic_simulation.py`, `investigation_example.py`,

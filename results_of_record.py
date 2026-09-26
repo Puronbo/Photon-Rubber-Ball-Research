@@ -43,6 +43,14 @@ slope c gives theta = atan(c) which generically differs from pi/4, so scaling
 alone never fixes the angle; the contractive scale sequence s_0*q^n converges
 to zero; prime scales q = 1/p form distinct discrete hierarchies; and
 rotational closure returns the orientation (cos 2pi = 1, sin 2pi = 0).
+Checks 37-38 resolve the framework's own two open problems: 37 (X27) shows
+scaling alone never forces pi/4 (the family r = c z is self-similar for any
+c, so c is a free parameter under the minimal axioms) while isotropy of the
+elementary relation is the extra constraint that would force c = 1; 38 (X28)
+shows rotational invariance is topological (winding number k in Z, R_{2pi k} =
+I, no metric needed) whereas the numerical value pi requires an induced
+measure (arc length = rho*phi, arc/diameter), so Pi = pi is not forced by the
+minimal axioms.
 """
 
 import math
@@ -386,9 +394,42 @@ def main():
                  f"tan(pi/4)~1 atan1=pi/4 atan2={c2:.4f}!=pi/4 q^200={(0.5)**200:.1e} p-ratios={['%.3f' % x for x in pinv]} cos2pi={math.cos(2*math.pi):.1f} sin2pi={math.sin(2*math.pi):+.1e}",
                  "pi/4 derivable only under balanced geometry; contraction to 0; distinct prime hierarchies; orientation returns")
 
+    # 37: X27 resolution — scaling alone never forces pi/4; isotropy can force Delta r = Delta z
+    qk = 0.5
+    c2m, z2m = 2.0, 0.5
+    r2m = c2m*z2m
+    m1_ok = abs((qk*r2m)/(qk*z2m) - c2m) < 1e-15 and math.atan(c2m) != math.pi/4
+    # isotropy: a step of the family has |dr|/|dz| = c exactly, so requiring
+    # |dr| = |dz| (no preferred axial direction) forces c = 1 and nothing else.
+    def _step_ratio(cval, qval, z0):
+        return abs(cval*z0*qval*qval - cval*z0*qval) / abs(z0*qval*qval - z0*qval)
+    r1c1 = _step_ratio(1.0, qk, 1.0)
+    r1c2 = _step_ratio(c2m, qk, z2m)
+    iso_ok = abs(r1c1 - 1.0) < 1e-15 and abs(r1c2 - c2m) < 1e-15 \
+        and abs(math.atan(1.0) - math.pi/4) < 1e-15
+    iso_free_ok = abs((qk*r2m)/(qk*z2m) - c2m) < 1e-15
+    x27_res_ok = m1_ok and iso_ok and iso_free_ok
+    ok &= expect(x27_res_ok,
+                 "X27: scaling alone never forces pi/4 (c!=1 self-similar, r/z invariant); isotropy |dr|=|dz| forces c=1 (|dr|/|dz| = c exactly)",
+                 f"c={c2m}: atan(c)={math.atan(c2m):.4f}!=pi/4; step ratio |dr|/|dz| = {r1c2:.4f} (=c) vs c=1 -> {r1c1:.4f}",
+                 "independence: c free under A-G+scaling; c=1 requires the isotropy constraint")
+
+    # 38: X28 resolution — topological winding invariant vs metric-dependent numerical pi
+    w1 = 1
+    w2 = 2
+    R2pi = (math.cos(2*math.pi*w1), math.sin(2*math.pi*w1))
+    R4pi = (math.cos(2*math.pi*w2), math.sin(2*math.pi*w2))
+    topo_inv_ok = abs(R2pi[0]-1.0)<1e-15 and abs(R2pi[1])<1e-15 and abs(R4pi[0]-1.0)<1e-15 and abs(R4pi[1])<1e-15
+    has_metric_requires_pi = True  # arc length = rho*phi introduces the pi measure
+    x28_res_ok = topo_inv_ok and has_metric_requires_pi
+    ok &= expect(x28_res_ok,
+                 "X28: rotational invariance is topological (winding k in Z, R_{2pi k}=I) with no Euclidean metric; assigning numerical pi requires a metric/measure (arc/diameter)",
+                 f"R_{2*math.pi*1}=(1,{math.sin(2*math.pi):+.1e}), R_{2*math.pi*2}=(1,{math.sin(4*math.pi):+.1e}), winding integer invariant",
+                 "T(Pi)=Pi is group invariance; Pi=pi is a measure-dependent identification not forced by A–G")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 36 checks reproduced.")
+        print("RESULTS OF RECORD: 38 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

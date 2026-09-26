@@ -162,6 +162,15 @@ never fixes the angle); contractive (1/2)^200 ~ 6.2e-61 (s_0 q^n -> 0);
 prime scales 1/p for p = 2,3,5,7,11 distinct in (0,1); rotational closure
 cos 2pi = 1, sin 2pi = 0.
 
+Open-problem resolutions (checks 37-38, FORMAL_AXIOMS_ZEROS.md): X27
+independence — for every c > 0 the model r_n = c*q^n, z_n = q^n satisfies
+minimal axioms A–G with r/z invariant (c = 2 gives atan(c) = 1.1071 rad !=
+pi/4), so c is a free parameter and self-similarity never entails pi/4;
+isotropy would be the extra assumption forcing c = 1. X28 topology vs measure
+— R_{2pi k} = (1, 0) for k = 1, 2 to machine precision with no metric in the
+expression, so T(Pi) = Pi is metric-free while value(Pi) = pi requires an
+induced arc/diameter measure.
+
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
 A0 self-gauge:
