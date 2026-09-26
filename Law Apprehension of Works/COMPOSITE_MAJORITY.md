@@ -130,7 +130,7 @@ At 10⁷ the margin has grown to ≈13× pi(10⁷): primes are ≈6.65% of the n
 ## 8. The claim tree — every claim this idea can carry, verdict-coded
 
 All verdicts as of 2026-09-25. PROVEN(gate) = asserted by `results_of_record.py`
-(47 checks). PROVEN(cls) = elementary/classical theorem, quoted. CONJECTURE =
+(49 checks). PROVEN(cls) = elementary/classical theorem, quoted. CONJECTURE =
 open or empirically-suggested only. FALSE = tested and rejected. FRAMING =
 coherent in the Law thread's vocabulary, but not a science claim.
 

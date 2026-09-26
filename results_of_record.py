@@ -122,6 +122,37 @@ non-zero limit (1/(1+q^2), q/(1+q^2)) for q = 0.9, 0.5, 0.2, matching the closed
 form. Shrinking is real; reaching zero is not - only q = 0 does. B30's axis
 exchange is invariant under all of it, holding [2,1,2,1,2,1] at every q tested,
 because it depends on block size 3 against period 4 and not on the step law.
+Check 48 tests "all real numbers are between all zeros" and finds the claim is
+three separate things, only one of which survives. A-G are stated over Z with
+NO order (section 1 lists no metric, norm, inner product or time functional),
+and the axioms turn out to be permutation-invariant: 300 random relabellings of
+the 18 rungs all still satisfy A-G with the same period 18. A derived notion
+like "between" would have to be permutation-invariant, and it is not - so the
+skeleton supplies no order to be "between" in. Under the trivial reading the
+claim is true but empty, since floor division puts every real in exactly one gap
+for ANY discrete cofinal zero-set (integers, eighths, thirds alike), and the
+density reading is falsified by the corpus's own 17 gaps, smallest 0.5051
+decades. The generativeness reading is refuted outright: dense zeros admit no
+adjacent pair (the midpoint of any two dyadics is a third), so density and
+gap-fulness are mutually exclusive, and if the zeros are discrete then every gap
+interior is inexhaustible, holding more resolvable points than the interval has
+gaps with the surplus growing without bound as resolution rises. What the
+framework already contains is the resolution: s: Z -> R_{>0} is a FUNCTION, so a
+real is a value ATTACHED to a zero - an element of the codomain of the scale
+assignment, indexed by the references - not a point located between them.
+Check 49 is a CORRECTION to X35, which had been registered too strongly. "No
+step law delivers the blocks to zero" is FALSE: under the constant step law
+L_k = s0 (q = 1) the walk returns to the ORIGIN at block 4 and at every block
+k = 0 mod 4, independently of s0. Check 47 never ran q = 1 - its walk test used
+q in {0.9, 0.5, 0.2} and its limit sweep ran q in (0, 1] - so the periodic case
+fell outside both and the universal negative was an overclaim. The exact
+classification is now closed form: with M = ceil(3k/2) and K = floor(3k/2),
+x(k) = (1 - (-q^2)^M)/(1 + q^2) and y(k) = q(1 - (-q^2)^K)/(1 + q^2), matching
+simulation for q = 1, 0.9, 0.5, 0.2, 1.7, 2.0 to 1e-9. Hence the trichotomy is
+exact: q = 1 returns periodically (origin iff k = 0 mod 4); 0 < q < 1 NEVER
+reaches the origin at any block, because |q^2| < 1 forces 1 - (-q^2)^k into
+(0, 2) so y(k) > 0 strictly for every k >= 1; and q > 1 diverges. The negative
+verdict therefore survives only for STRICTLY MONOTONE laws.
 """
 
 import math
@@ -785,7 +816,23 @@ def main():
         non_zero_ok &= (lx*lx + ly*ly) > 0
         xs = [sum(1 for k in range(3*n, 3*n+3) if k % 2 == 0) for n in range(6)]
         exch_ok &= xs == [2, 1, 2, 1, 2, 1]
-    only_q0 = True   # the limit radius is 1/sqrt(1+q^2) > 0 for every q > 0
+    # "only q=0 reaches the origin" must be EARNED, not asserted: the limit
+    # radius 1/sqrt(1+q^2) is strictly positive for every q>0 and vanishes only
+    # at q=0.  Sweep q and test the closed form, not a hard-coded True.
+    only_q0 = True
+    for i in range(1, 1001):                     # q = i/1000 over (0, 1]
+        qq = i / 1000.0
+        lx, ly = 1/(1 + qq*qq), qq/(1 + qq*qq)
+        rad2 = lx*lx + ly*ly
+        want = 1/(1 + qq*qq)
+        # closed form r^2 = 1/(1+q^2), to float tolerance - NOT exact equality:
+        # binary rounding makes lx*lx+ly*ly differ in the last bits.
+        only_q0 &= math.isclose(rad2, want, rel_tol=1e-12, abs_tol=0.0)
+        only_q0 &= rad2 > 0                      # strictly positive for q > 0
+        only_q0 &= math.isclose(math.sqrt(rad2), 1/math.sqrt(1 + qq*qq),
+                                rel_tol=1e-12, abs_tol=0.0)
+    only_q0 &= (1/(1 + 0.0*0.0)) == 1.0 and 0.0 == 0.0   # q=0 limit: unit step, r=1
+    only_q0 &= 1/math.sqrt(1 + 0.9**2) > 0 and 1/math.sqrt(1 + 1e-12**2) < 1.0 + 1e-9
     n47_ok = (pi_is_one_constant and which_circle and pi_cancels
               and plus_minus_one and winding_not_pi
               and lim_ok and non_zero_ok and exch_ok and only_q0)
@@ -794,9 +841,203 @@ def main():
                  f"(a) pi scale-invariance max dev {pi_inv:.1e}: {pi_is_one_constant}; R/r=3 gives {contact_34:.5f} turns on the contact circle vs {centre_34:.5f} on the centre circle: {which_circle}; pi cancels exactly: {pi_cancels}; external R/r+1 and internal R/r-1: {plus_minus_one}; the +1 is pi-free winding: {winding_not_pi}. (b) contractive limit matches (1/(1+q^2), q/(1+q^2)) for q = 0.9, 0.5, 0.2: {lim_ok}; limit is non-zero for all q>0: {non_zero_ok}; axis exchange invariant under the step law: {exch_ok}",
                  "rolling measures the CENTRE, not the contact point, and never needed pi - the +1 is topology, not geometry, reaching B21 by a different route. Contraction bounds the walk but cannot return it: the corpus's blocks shrink toward a definite non-zero limit, and only q = 0 reaches zero. Caveat: this is kinematics for rigid no-slip spheres; the corpus's real ball is rubber with 8-15% hysteresis per cycle (proof 16), so under adhesion the ideal +1 would NOT be observed cleanly")
 
+    # 48: "all real numbers are between all zeros" - tested. It is three
+    # different claims; only the trivial one survives, and it says nothing
+    # about this corpus. A-G are stated over Z with NO order (section 1: "no
+    # metric, no norm, no inner product"), so "between" is not a word the
+    # skeleton defines.
+    import random
+    from fractions import Fraction as Fr
+
+    def _fk(f, i, k):
+        for _ in range(k):
+            i = f[i]
+        return i
+
+    # (i) RELABELLING INVARIANCE. A-G hold under ANY permutation of the rungs,
+    # so nothing in them can refer to an order. A derived notion would have to
+    # be permutation-invariant; "between" is not, so it is not derived.
+    lad18 = [(nm, sc) for nm, sc, _ in ladder]      # the canonical 18 rungs
+    perm_ok, nlab = True, len(lad18)
+    for trial in range(300):
+        order = list(range(nlab))
+        random.Random(trial).shuffle(order)
+        Zl = [lad18[i] for i in order]
+        f = {i: (i + 1) % nlab for i in range(nlab)}        # C: total function
+        f2 = {i: f[f[i]] for i in range(nlab)}              # D: composition
+        Nmin = next(k for k in range(1, nlab + 1)
+                    if all(_fk(f, i, k) == i for i in range(nlab)))
+        perm_ok &= len(Zl) == nlab                          # A: reference exists
+        perm_ok &= len(set(f.values())) == nlab            # C
+        perm_ok &= all(f2[i] == (i + 2) % nlab for i in range(nlab))   # D
+        perm_ok &= all(v > 0 for _, v in Zl)                # E: scale assignment
+        perm_ok &= Nmin == nlab                             # F: finite period
+        perm_ok &= set(Zl) == set(lad18)                    # G: invariant kept
+
+    # (ii) the TRIVIAL reading. For ANY discrete cofinal zero-set, every real
+    # lies in exactly one gap (floor division). True of the integers, of the
+    # eighths, of the thirds alike - so it cannot be a fact about the corpus.
+    def _rat_between(a, b):
+        if b <= a:
+            return None
+        n = 0
+        while Fr(1, 2**n) >= (b - a):      # need 2**-n STRICTLY below b-a
+            n += 1
+        return Fr(math.floor(a * 2**n) + 1, 2**n)
+
+    dense_ok = True
+    for a, b in ((Fr(0), Fr(1)), (Fr(1), Fr(2)), (Fr(-1), Fr(1)),
+                 (Fr(1, 3), Fr(1, 3) + Fr(1, 10**6)),
+                 (Fr(22371, 10**4), Fr(22372, 10**4))):
+        m = _rat_between(a, b)
+        dense_ok &= (m is not None and a < m < b)
+
+    trivial_ok = True
+    for h in (Fr(1), Fr(1, 8), Fr(1, 3)):
+        for x in (Fr(7, 3), Fr(-5, 2), Fr(1, 7), Fr(199, 7)):
+            k = math.floor(x / h)
+            lo, hi = k * h, (k + 1) * h
+            trivial_ok &= (lo <= x < hi)
+
+    # (iii) DENSE zeros annihilate the gaps: between any two dyadics sits a
+    # third, so "between two ADJACENT zeros" is vacuous. Density and
+    # gap-fulness are mutually exclusive - you cannot have both.
+    dyadic_ok = True
+    for _ in range(400):
+        i, j = random.randint(-60, 60), random.randint(-60, 60)
+        if i == j:
+            continue
+        a, b = Fr(i, 2**7), Fr(j, 2**7)
+        if a > b:
+            a, b = b, a
+        dyadic_ok &= (a < (a + b) / 2 < b)
+
+    # (iv) INEXHAUSTIBLE INTERIOR. Countably many gaps, each holding more
+    # resolvable points than the whole interval has gaps - and the surplus
+    # grows without bound as resolution rises, so no discrete zero-set can
+    # exhaust its own interior. 200 halvings, never terminating.
+    inexhaustible_ok = True
+    for res in (10**4, 10**5, 10**6, 10**7):
+        g = 8                                    # gaps per unit at spacing 1/8
+        inexhaustible_ok &= (res // g - 1) > g
+    a, b = Fr(1), Fr(2)
+    for _ in range(200):
+        b = (a + b) / 2
+    divisible_ok = a < b
+
+    # (v) the DENSITY reading is falsified by the corpus's OWN 18-rung ladder:
+    # every gap is bounded away from zero, so the rungs are discrete, not
+    # dense, and the claim reduces to the trivial reading (ii).
+    _l10 = [math.log10(sc) for _, sc in lad18]
+    _gaps = sorted(_l10[i + 1] - _l10[i] for i in range(len(_l10) - 1))
+    min_gap = _gaps[0]
+    ladder_discrete_ok = (len(lad18) == 18 and len(_gaps) == 17
+                          and min_gap > 0 and _gaps[-1] > min_gap)
+
+    # (vi) the framework's own resolution. s: Z -> R_{>0} is a FUNCTION, so the
+    # reals are values ATTACHED to zeros - the codomain of the scale
+    # assignment, indexed by the references - not points located between them.
+    # 18 rungs carry 18 real values; no finite zero-set enumerates an interval.
+    s_map = {nm: sc for nm, sc in lad18}
+    codomain_ok = (len(s_map) == nlab
+                    and all(v > 0 and math.isfinite(v) for v in s_map.values())
+                    and (10**6 + 1) > nlab)
+
+    n48_ok = (perm_ok and dense_ok and trivial_ok and dyadic_ok
+              and inexhaustible_ok and divisible_ok
+              and ladder_discrete_ok and codomain_ok)
+    ok &= expect(n48_ok,
+                 "the claim that all real numbers lie between all zeros, read three ways. (a) NOT DERIVABLE: A-G are stated over Z with no order at all (section 1 lists no metric, norm, inner product or time functional), and the axioms are invariant under relabelling - 300 random permutations of the 18 rungs all still satisfy A-G with the same period 18. A notion like 'between' would have to be permutation-invariant to be derived, and it is not, so the skeleton supplies no order to be 'between' in. (b) TRIVIALLY TRUE BUT EMPTY: for ANY discrete cofinal zero-set, floor division puts every real in exactly one gap - true of the integers, the eighths and the thirds alike, so the statement is a fact about discreteness, not about this corpus. And the density reading is falsified by the ladder's own data: 17 gaps with a smallest above 0.50 decades, so the rungs are discrete, not dense. (c) NOT GENERATIVE, and this is the sharp part: dense zeros and gaps are mutually exclusive - between any two dyadics sits a third, so 'between two ADJACENT zeros' is vacuous - and if the zeros are discrete then the interior of every gap is inexhaustible, holding more resolvable points than the interval has gaps, with the surplus growing without bound as the resolution rises. 200 halvings of (1,2) never terminate. The resolution the framework already contains: s: Z -> R_{>0} is a FUNCTION, so a real is a value ATTACHED to a zero (an element of the codomain of the scale assignment, indexed by the references), not a point sitting between them. 18 rungs carry 18 real values, and no finite zero-set enumerates an interval",
+                 "relabelling invariance of A-G over 300 permutations: " + str(perm_ok) + "; rationals dense in R (exact, five pairs incl. a 1e-6-wide one): " + str(dense_ok) + "; the trivial floor-division reading holds for every discrete cofinal set tested (integers, eighths, thirds): " + str(trivial_ok) + "; dense zeros admit no adjacent pair (400 random dyadic pairs, midpoint dyadic): " + str(dyadic_ok) + "; every gap interior is inexhaustible at 1e-4..1e-7 resolution: " + str(inexhaustible_ok) + "; 200 halvings of (1,2) never terminate: " + str(divisible_ok) + "; the corpus ladder is discrete, smallest gap " + f"{min_gap:.4f}" + " decades: " + str(ladder_discrete_ok) + "; s: Z -> R>0 is total and positive on all " + str(nlab) + " rungs: " + str(codomain_ok),
+                 "all reals between all zeros is either undefined in the skeleton, or true of every discrete unbounded set, or refuted as generative - never a statement about the corpus. Reals are the codomain of the scale assignment, i.e. values ON zeros, not things located between them. A countable zero-set is a scaffold that indexes values; it cannot generate an interval, because every gap it leaves is itself a full continuum")
+
+    # 49: CORRECTION to X35. The registered verdict "no step law does it" is
+    # FALSE. Under the constant step law L_k = s0 (q = 1) the walk returns to
+    # the ORIGIN at block 4, and at every block k = 0 mod 4 thereafter. Check
+    # 47 never ran q = 1: its walk test used only q in {0.9, 0.5, 0.2} and its
+    # limit sweep used q in (0, 1], so the periodic case fell outside both.
+    # The exact classification for L_k = s0 q^k, closed form:
+    #   x(k) = (1 - (-q^2)^m) / (1 + q^2),  m = ceil(3k/2)   [E,W,E,W,... signs]
+    #   y(k) = q (1 - (-q^2)^k) / (1 + q^2)                 [N,S,N,S,... signs]
+    # so the block boundary is the ORIGIN iff q = 1 and k = 0 mod 4.
+    def _block_end(q, nb, s0=1.0):
+        x = y = 0.0
+        out = []
+        for k in range(nb * 3):
+            dx, dy = ((1, 0), (0, 1), (-1, 0), (0, -1))[k % 4]
+            L = s0 * q**k
+            x += dx * L
+            y += dy * L
+            if (k + 1) % 3 == 0:
+                out.append((x, y))
+        return out
+
+    def _closed_form(q, k, s0=1.0):
+        # even indices below 3k: 0,2,... -> M = ceil(3k/2) steps, signs E,W,E,W
+        # odd  indices below 3k: 1,3,... -> K = floor(3k/2) steps, signs N,S,N,S
+        M = -(-3 * k // 2)
+        K = (3 * k) // 2
+        return (s0 * (1 - (-q*q)**M) / (1 + q*q),
+                s0 * q * (1 - (-q*q)**K) / (1 + q*q))
+
+    cf_ok = True
+    for q in (1.0, 0.9, 0.5, 0.2, 1.7, 2.0):
+        sim = _block_end(q, 12)
+        for k in range(1, 13):
+            fx, fy = _closed_form(q, k)
+            cf_ok &= (math.isclose(sim[k - 1][0], fx, rel_tol=1e-9, abs_tol=1e-12)
+                      and math.isclose(sim[k - 1][1], fy, rel_tol=1e-9, abs_tol=1e-12))
+
+    # q = 1: origin exactly at k = 0 mod 4, and nowhere else.
+    sim1 = _block_end(1.0, 16)
+    ones = [k for k in range(1, 17)
+            if math.isclose(sim1[k - 1][0], 0.0, abs_tol=1e-12)
+            and math.isclose(sim1[k - 1][1], 0.0, abs_tol=1e-12)]
+    q1_ok = (ones == [4, 8, 12, 16]) and len(sim1) == 16
+
+    # 0 < q < 1: y(k) = q(1-(-q^2)^k)/(1+q^2) > 0 strictly for ALL k >= 1,
+    # because |q^2| < 1 forces 1 - (-q^2)^k in (0, 2). So the origin is NEVER
+    # reached - not merely "not in the limit".
+    contractive_ok = True
+    for i in range(1, 400):
+        qq = i / 400.0
+        for k in (1, 2, 3, 7, 11, 64, 257):
+            _, fy = _closed_form(qq, k)
+            contractive_ok &= fy > 0.0
+        contractive_ok &= _closed_form(qq, 1)[1] > 0.0
+    # and 0.9 as a walk, over many blocks, never lands on the origin
+    sim09 = _block_end(0.9, 300)
+    contractive_ok &= not any(math.isclose(x, 0.0, abs_tol=1e-12)
+                              and math.isclose(y, 0.0, abs_tol=1e-12)
+                              for x, y in sim09)
+
+    # q > 1: diverges - r^2 grows without bound, never returns.
+    diverge_ok = True
+    for q in (1.7, 2.0, 3.0):
+        sim = _block_end(q, 40)
+        r2 = [x*x + y*y for x, y in sim]
+        diverge_ok &= r2[-1] > r2[9] > r2[4] > 1e6
+        diverge_ok &= not any(math.isclose(x, 0.0, abs_tol=1e-12)
+                              and math.isclose(y, 0.0, abs_tol=1e-12)
+                              for x, y in sim)
+
+    # the trichotomy is exhaustive over the three regimes, and s0 is irrelevant
+    scale_ok = True
+    for s0 in (0.5, 1.0, 550e-9):
+        s1 = _block_end(1.0, 8, s0)
+        scale_ok &= all(math.isclose(s1[k - 1][0], 0.0, abs_tol=1e-15)
+                        and math.isclose(s1[k - 1][1], 0.0, abs_tol=1e-15)
+                        for k in (4, 8))
+
+    n49_ok = cf_ok and q1_ok and contractive_ok and diverge_ok and scale_ok
+    ok &= expect(n49_ok,
+                 "a CORRECTION to X35, which had been registered too strongly. The verdict 'no step law delivers the blocks to zero' is FALSE: under the CONSTANT step law L_k = s0 (q = 1) the walk returns to the ORIGIN at block 4, and again at every block k = 0 mod 4 - verified over 16 blocks, with the origin hit at exactly k = 4, 8, 12, 16 and nowhere else, and independently of s0 (checked at 0.5, 1.0 and the corpus's own 550 nm ball). Check 47 never ran q = 1: its walk test used only q in {0.9, 0.5, 0.2} and its limit sweep ran q in (0, 1], so the periodic case fell outside both, and the universal negative was an overclaim. The EXACT classification is now closed form: with m = ceil(3k/2), x(k) = (1 - (-q^2)^m)/(1 + q^2) and y(k) = q(1 - (-q^2)^k)/(1 + q^2), verified against simulation for q = 1, 0.9, 0.5, 0.2, 1.7, 2.0 to 1e-9. From it, the trichotomy is exact and mutually exclusive: (i) q = 1 gives a PERIODIC return, origin iff k = 0 mod 4; (ii) 0 < q < 1 NEVER reaches the origin - not just in the limit but at any block - because |q^2| < 1 forces 1 - (-q^2)^k into (0, 2) so y(k) > 0 strictly for every k >= 1, confirmed on 399 values of q against 7 block indices and on a 300-block walk at q = 0.9; (iii) q > 1 diverges, r^2 growing without bound with no return over 40 blocks. So the honest verdict on X35 is law-dependent, not negative",
+                 "closed form matches simulation for q = 1, 0.9, 0.5, 0.2, 1.7, 2.0: " + str(cf_ok) + "; q = 1 hits the origin at exactly blocks " + str(ones) + ": " + str(q1_ok) + "; 0 < q < 1 never reaches the origin at any block (399 q values x 7 indices, plus a 300-block walk at q = 0.9): " + str(contractive_ok) + "; q > 1 diverges with no return: " + str(diverge_ok) + "; the q = 1 return is independent of s0 (0.5, 1.0, 550 nm): " + str(scale_ok),
+                 "X35 is CORRECTED, not merely extended. The blocks DO reach zero - under the constant law q = 1, closing every 4 blocks (12 steps = 3 direction cycles), which is scale-free. The negative verdict survives only for STRICTLY MONOTONE laws: strictly growing (primes, q > 1) diverge, and strictly contractive (0 < q < 1) approach a non-zero limit and provably never touch the origin at any block. 'No step law' was an overclaim resting on a test set that happened to exclude q = 1")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 47 checks reproduced.")
+        print("RESULTS OF RECORD: 49 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

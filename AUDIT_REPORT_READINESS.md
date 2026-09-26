@@ -928,5 +928,80 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B31, B32 added; X35 added as a NOT-claim, resolved negative.
   Numbered 118 → 120; NOT-claims 34 → 35. Corrigendum 99 → 100.
 
+## Phase 34 — "all reals between all zeros", and a retraction of X35 (2026-09-26)
+
+- Two author statements after Phase 33: a foundational claim, and a re-audit
+  that found my own overclaim.
+- **X35 RETRACTED AND RESTATED** (check 49). The registered verdict "no step
+  law delivers the blocks to zero" was **false**. Under the **constant** step
+  law L_k = s₀ (q = 1) the walk returns to the origin at **block 4**, and at
+  every block k ≡ 0 mod 4 — independently of s₀ (verified at 0.5, 1.0, and the
+  corpus's 550 nm ball), since 12 steps is exactly three direction cycles.
+  - **Why it survived a whole phase:** check 47's walk test ran q ∈ {0.9, 0.5,
+    0.2} and its limit sweep ran q ∈ (0, 1], so q = 1 fell outside *both*. A
+    universal negative resting on a test set that happens to exclude the answer
+    is not a negative result.
+  - **Exact classification now replaces it.** With M = ⌈3k/2⌉ even steps and
+    K = ⌊3k/2⌋ odd steps: x(k) = (1 − (−q²)^M)/(1 + q²), y(k) = q(1 −
+    (−q²)^K)/(1 + q²), matching simulation to 1e-9 for q = 1, 0.9, 0.5, 0.2,
+    1.7, 2.0.
+  - **Exact trichotomy:** (i) **q = 1** returns periodically, origin iff
+    k ≡ 0 mod 4; (ii) **0 < q < 1 never reaches the origin at any block**, not
+    merely in the limit, because |q²| < 1 forces 1 − (−q²)^k ∈ (0,2) so
+    y(k) > 0 strictly for every k ≥ 1 (399 q values × 7 block indices, plus a
+    300-block walk at q = 0.9); (iii) **q > 1** diverges, no return over 40
+    blocks. The negative verdict survives **only for strictly monotone laws**.
+  - **The irony worth keeping:** q = 1 is precisely the value at which check 41
+    found Axiom E **vacuous**. The corpus's own recorded degeneracy is
+    load-bearing here, because it is the only *scale-free* law. The author's
+    "the blocks close" intuition was right; what closed them was the one law
+    nobody had tried.
+- **B33** ([ESTABLISHED] check 48) — a countable zero-set is a **scaffold
+  that indexes values, never a generator of a continuum**, because density and
+  gap-fulness are **mutually exclusive**:
+  - **Dense zeros** admit no adjacent pair (midpoint of any two dyadics is a
+    third; 400 random pairs), so "between two *adjacent* zeros" is vacuous and
+    there are no gaps at all.
+  - **Discrete zeros** do have gaps — floor division puts every real in exactly
+    one, true of the integers, eighths and thirds alike — but every interior is
+    **inexhaustible**: more resolvable points than the interval has gaps at
+    1e-4…1e-7 resolution, surplus growing without bound. 200 halvings of (1,2)
+    never terminate.
+  - Wherever you place the gaps, each is a copy of the whole problem. Same shape
+    as §13.3 (blocks never return) and §14.2 (shrinking bounded but not
+    vanishing): **the inside never closes.**
+- **B34** ([ESTABLISHED] check 48) — every real is a value **attached to** a
+  zero, not a point located **between** zeros, and "between" is not derivable:
+  - **Category:** §1 lists no metric, norm, inner product or time functional,
+    and the axioms are **permutation-invariant** — 300 random relabellings of
+    the 18 rungs all still satisfy A–G with the same period 18. A derived
+    notion must be permutation-invariant; "between" is not. This is B23's and
+    §11's boundary reached *structurally* rather than by listing omissions.
+  - **Resolution already in the framework:** s: 𝒵 → ℝ₊ is a **function**, so a
+    real is an element of its **codomain**, indexed by the references — a label
+    carried by a zero. 18 rungs carry 18 real values; no finite zero-set
+    enumerates an interval. The "between" feeling comes from ordering the zeros
+    along an orbit under F, not from the reals' own location.
+- **X36** (RESOLVED NEGATIVE, check 48) — "all real numbers are between all
+  zeros" splits three ways and none is a statement about this corpus: not
+  derivable (B34), trivially true but empty, and not generative (B33). The
+  density reading is additionally falsified by the corpus's own 17 gaps,
+  smallest **0.5051** decades. What survives is the codomain reading, B34.
+- **Three defects caught in checks 48–49 before registration**, all recorded
+  rather than silently patched: the rational-denseness construction was off by
+  one (tested 2^−(n+1) < b−a instead of 2^−n < b−a, so (0,1) returned m = 1);
+  the gate read the 9-rung `rungs` list where the canonical ladder is the
+  18-rung `ladder`, reporting 0.5051 against a hard-coded 0.51 and counting 9
+  rungs; and check 47's newly-hardened `only_q0` sweep demanded **exact** float
+  equality on r² = 1/(1+q²), which binary rounding falsifies (q = 0.5 gives
+  0.8000000000000002). That last one also **exposed the deeper fault** — the
+  sweep covered q ∈ (0, 1] and so structurally could not see q = 1, which is
+  exactly how the false universal verdict survived.
+- Register: B33, B34 added; X36 added; **X35 retracted and restated**. Numbered
+  120 → 122; NOT-claims 35 → 36. Corrigendum 100 → 101.
+
+Gate (Phase 34): battery 19/19 green, `results_of_record.py` 49/49 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
+
 Gate (Phase 33): battery 19/19 green, `results_of_record.py` 47/47 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.

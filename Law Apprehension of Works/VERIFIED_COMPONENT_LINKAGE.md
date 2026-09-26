@@ -221,7 +221,16 @@ R/r, centre path radius R+r gives R/r + 1 (3.00000 vs 4.00000 at R/r = 3) - whil
 cancels exactly, 2 pi (R+r)/(2 pi r) = (R+r)/r, so only R/r matters and the +1 is the
 ball's own winding, not a pi-term. Contraction: the walk converges to (1/(1+q^2),
 q/(1+q^2)), non-zero for every q > 0, and B30's axis exchange is invariant under the
-step law (split [2,1,2,1,2,1] at q = 0.9, 0.5, 0.2).
+step law (split [2,1,2,1,2,1] at q = 0.9, 0.5, 0.2). But q = 1 was missed at check 47:
+the CONSTANT step law L_k = s0 returns the walk to the origin at block 4 and every block
+k = 0 mod 4, independently of s0, so X35's universal negative was an overclaim and is
+retracted. Exact form: M = ceil(3k/2), K = floor(3k/2), x(k) = (1 - (-q^2)^M)/(1+q^2),
+y(k) = q(1 - (-q^2)^K)/(1+q^2); 0 < q < 1 provably never reaches the origin at any block.
+Zeros and reals: A-G are permutation-invariant (300 relabellings of the 18 rungs all
+satisfy A-G, period 18) while 'between' is not, so no order is derivable; and a countable
+zero-set is a scaffold, not a generator - dense zeros admit no adjacent pair while
+discrete zeros leave inexhaustible gap interiors. s: Z -> R>0 is a function, so a real is
+a value ON a zero (the codomain of the scale assignment), not located between zeros.
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

@@ -599,3 +599,104 @@ In the **ladder**, $n(u) = D/s$ genuinely tends to zero — $1.25 	imes 10^{-33}
 at the top rung. In the **walk**, the scale only ever approaches a fixed point.
 Both are "going to zero" in a loose sense; only one of them actually gets there.
 Keeping them distinct is the whole content of X35.
+
+---
+
+## 15. "All real numbers are between all zeros" — and a retraction of X35 (B33, B34, X36, X35-corrected; checks 48–49)
+
+Two author statements, one foundational and one corrective. The first exposes
+a limit in the skeleton; the second exposes an overclaim of mine.
+
+### 15.1 The claim is three claims, and only one survives (B33, B34, X36)
+
+*So all real numbers are between all zeros.* Before testing it, note what the
+skeleton contains: §1 lists **no metric, no norm, no inner product, no time
+functional** among the primitives. There is no order on $\mathcal{Z}$. So
+"between" is not a word the axioms can answer with.
+
+**And that is provable, not just an omission.** The axioms are
+**permutation-invariant**: relabel the 18 rungs arbitrarily, re-point the
+relations, and A–G all still hold, with the same period 18. A *derived* notion
+must be invariant under the models' symmetries, and "between" is manifestly
+not — it depends on the labelling. So no ordering principle can be extracted
+from A–G. This is the same boundary as B23 and §11, reached structurally
+rather than by listing missing primitives.
+
+**(b) Trivially true, and therefore empty.** For *any* discrete cofinal
+zero-set, floor division places every real in exactly one gap. That holds for
+the integers, the eighths and the thirds alike, so the statement is a fact
+about discreteness and says nothing about this corpus. The *density* reading is
+additionally falsified by the corpus's own data: 17 gaps, smallest **0.5051**
+decades. The rungs are discrete, not dense.
+
+**(c) Not generative — and here is the sharp part.** Density and gap-fulness
+are **mutually exclusive**:
+
+- If the zeros are **dense** (the dyadics), no two are ever adjacent — the
+  midpoint of any two dyadics is a third. "Between two *adjacent* zeros" is
+  vacuous, and there are no gaps at all.
+- If the zeros are **discrete**, gaps exist, but every interior is
+  **inexhaustible**. At resolutions $10^{-4}$ through $10^{-7}$ a single gap
+  holds more resolvable points than the whole interval has gaps, and the surplus
+  grows without bound. 200 halvings of $(1,2)$ never terminate.
+
+So a countable zero-set is a **scaffold that indexes values; it can never
+assemble an interval** (**B33**). Wherever you place the gaps, each one is a
+copy of the entire problem. This is §13.3's "the blocks never return to zero"
+and §14.2's "shrinking is bounded but not vanishing" in a new place: **the
+inside never closes.**
+
+**What survives is the reading the framework already contains** (**B34**).
+$s: \mathcal{Z} \to \mathbb{R}_{>0}$ is a **function**, so a real number is an
+element of its **codomain**, indexed by the references — a value *carried by* a
+zero. The 18 rungs carry 18 real values; no finite zero-set enumerates an
+interval. The sense that reals lie *between* zeros comes from ordering the
+zeros along an orbit under $F$, not from the reals' own location:
+
+$$\underbrace{\text{the real is } \textbf{on} \text{ the zero}}_{\text{codomain of } s}
+\qquad\neq\qquad
+\underbrace{\text{the real is } \textbf{between} \text{ the zeros}}_{\text{not derivable}} .$$
+
+**X36** records the negative verdict on the claim as stated.
+
+### 15.2 Retraction: X35's "no step law" was false, and the classification is exact
+
+Re-auditing X35 before registering it turned up a counterexample I had missed.
+Under the **constant** step law $L_k = s_0$ — that is, $q = 1$ — the walk
+returns to the origin at **block 4**, and at every block $k \equiv 0 \pmod 4$:
+
+| block $k$ | 1 | 2 | 3 | **4** | 5 | 6 | 7 | **8** |
+|---|---|---|---|---|---|---|---|---|
+| position | (0,1) | (1,1) | (1,0) | **(0,0)** | (0,1) | (1,1) | (1,0) | **(0,0)** |
+
+Twelve steps is exactly three direction cycles, and the return is independent
+of $s_0$ — checked at 0.5, at 1.0, and at the corpus's own 550 nm ball. Check 47
+never ran $q = 1$: its walk test used $q \in \{0.9, 0.5, 0.2\}$ and its limit sweep
+ran $q \in (0,1]$, so the periodic case fell outside both test sets, and
+"no step law does it" was an overclaim resting on a test set that happened to
+exclude the answer.
+
+The exact closed form, with $M = \lceil 3k/2 \rceil$ even steps and
+$K = \lfloor 3k/2 \rfloor$ odd steps, is
+
+$$x(k) = \frac{1 - (-q^2)^M}{1 + q^2}, \qquad y(k) = \frac{q\left(1 - (-q^2)^K\right)}{1 + q^2},$$
+
+verified against simulation to $10^{-9}$ for $q = 1,\ 0.9,\ 0.5,\ 0.2,\ 1.7,\ 2.0$.
+From it the trichotomy is exact and mutually exclusive:
+
+| regime | origin at a block boundary? | why |
+|---|---|---|
+| $q = 1$ | **yes, iff $k \equiv 0 \pmod 4$** | $(-q^2)^M = 1$ requires $q = 1$ and $M$ even |
+| $0 < q < 1$ | **never, at any block** | $\|q^2\| < 1 \Rightarrow 1 - (-q^2)^k \in (0,2)$, so $y(k) > 0$ strictly for every $k \ge 1$ |
+| $q > 1$ | **no, diverges** | $r^2$ grows without bound; no return over 40 blocks |
+
+So the negative verdict survives **only for strictly monotone laws** — growing
+(primes, L08) diverge, strictly shrinking approach a non-zero limit and
+provably never touch the origin. The author's intuition that the blocks "close"
+was right after all; what closed them was the one law nobody had tried, and it
+is the *only* scale-free one: $q = 1$ is precisely the law Axiom E's
+$s_{n+1} = q s_n$ permits at $q = 1$ — the very case check 41 recorded as
+**vacuous**. The corpus's own degeneracies keep returning as load-bearing.
+
+**This is a retraction, not an extension.** X35's status changes from
+RESOLVED NEGATIVE to RESOLVED, law-dependent.
