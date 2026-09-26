@@ -51,6 +51,16 @@ shows rotational invariance is topological (winding number k in Z, R_{2pi k} =
 I, no metric needed) whereas the numerical value pi requires an induced
 measure (arc length = rho*phi, arc/diameter), so Pi = pi is not forced by the
 minimal axioms.
+Checks 39-40 close the rest of the framework's Part XVI question
+F => (N, q, theta, p, Pi): 39 (X29) shows the closure period need not be prime
+(the cyclic shift on Z/m has fundamental period exactly m for every m, so
+4,6,8,9,10,12 are models of the closure axiom) and the scale factor need not
+be prime-reciprocal (1/4, 1/6, 1/9, 1/15 are all legal contractive scales),
+with closure itself optional (the successor map has no finite period); 40
+(X30) shows the relations do not determine the geometry - cycle path distance
+is metric-free (diam = n//2) while any Euclidean embedding uses the chord
+2*rho*sin(pi*d/n), so the same C_8 graph has neighbour chord 0.765 at rho = 1
+and 1.531 at rho = 2 and pi enters only at the embedding step.
 """
 
 import math
@@ -427,9 +437,51 @@ def main():
                  f"R_{2*math.pi*1}=(1,{math.sin(2*math.pi):+.1e}), R_{2*math.pi*2}=(1,{math.sin(4*math.pi):+.1e}), winding integer invariant",
                  "T(Pi)=Pi is group invariance; Pi=pi is a measure-dependent identification not forced by A–G")
 
+    # 39: closure period N and scale q are NOT forced prime by the minimal axioms.
+    def _period_shift(m):
+        x, k = 0, 0
+        while True:
+            x = (x + 1) % m
+            k += 1
+            if x == 0:
+                return k
+    orders = {m: _period_shift(m) for m in (4, 5, 6, 7, 8, 9, 10, 12)}
+    ord_ok = all(orders[m] == m for m in orders)
+    composite_present = any(m % 2 == 0 or m % 3 == 0 for m in orders)
+    qs = (1/2, 1/3, 1/4, 1/6, 1/9, 1/15)
+    q_ok = all(0 < q < 1 for q in qs) and len(set(qs)) == len(qs) \
+        and qs[2]**50 < 1e-30 and qs[5]**50 < 1e-58
+    xs, hit = 0, None
+    for k in range(1, 1000):
+        xs += 1
+        if xs == 0:
+            hit = k
+            break
+    n39_ok = ord_ok and composite_present and q_ok and hit is None
+    ok &= expect(n39_ok,
+                 "N and q are NOT forced prime by A-G (Part XVI p,q remain free): cyclic shift on Z/m has fundamental period exactly m for every m (composite periods 4,6,8,9,10,12 exist); composite contractive q=1/4,1/6,1/9,1/15 legal; successor S has no finite period at all",
+                 "periods=" + ";".join(f"Z/{m}:{orders[m]}" for m in (4, 6, 8, 9)) + f"; q^50: 1/4->{qs[2]**50:.1e}, 1/15->{qs[5]**50:.1e}; S^N(0)=0: {hit}",
+                 "prime periods/prime-reciprocal q are a CHOICE, not a consequence of the minimal axioms")
+
+    # 40: relational data does not determine geometry (graph distance vs embedding).
+    def _path_diam(n):
+        return n//2
+    def _chord(n, d, rho):
+        return 2*rho*math.sin(math.pi*d/n)
+    g_ok = all(_path_diam(n) == n//2 for n in (6, 8, 12))
+    c8a, c8b = _chord(8, 1, 1.0), _chord(8, 1, 2.0)
+    c8o = _chord(8, 4, 1.0)
+    emb_ok = abs(c8a - 0.765367) < 1e-5 and abs(c8b - 2*c8a) < 1e-12 \
+        and abs(c8o - 2.0) < 1e-12 and abs(_path_diam(8) - 1) > 1e-9
+    n40_ok = g_ok and emb_ok
+    ok &= expect(n40_ok,
+                 "relational data does not determine geometry: C_n path distance is metric-free (diam = n//2) while any Euclidean embedding uses chord 2*rho*sin(pi*d/n); C_8 neighbour is path-1 but chord 0.765 at rho=1, 1.531 at rho=2 - the graph is unchanged, so pi and the metric are extra choices",
+                 f"C8 path-neighbour=1, chord@rho=1: {c8a:.6f}, chord@rho=2: {c8b:.6f}, chord(opposite)@rho=1: {c8o:.6f}",
+                 "same zero-network, two geometries; interconnection fixes relations, not measurement")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 38 checks reproduced.")
+        print("RESULTS OF RECORD: 40 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

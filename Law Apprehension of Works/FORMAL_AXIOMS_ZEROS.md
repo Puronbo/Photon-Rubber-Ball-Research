@@ -119,12 +119,13 @@ Prop 17 is correct and now gated.
 | Statement | Verdict | Anchor |
 |---|---|---|
 | A–G are satisfiable; $c$ free in $(0,\infty)$; $\theta = \arctan c$ | [ESTABLISHED] | check 36/37, B19 |
-| Scaling alone never forces $\pi/4$ | [ESTABLISHED] (negation of X27) | check 36/37 |
+| Scaling alone never forces $\pi/4$ | [ESTABLISHED] (negation of X27) | check 36/37, B20 |
 | Isotropy would force $\Delta r = \Delta z$ | [ESTABLISHED] as conditional | check 37 |
-| Rotational closure = $R_{2\pi k}=I$, metric-free | [ESTABLISHED] | check 38 |
-| $\Pi = \pi$ | [OPEN] — needs a derivation | X28 |
+| Rotational closure = $R_{2\pi k}=I$, metric-free | [ESTABLISHED] | check 38, B21 |
+| $\Pi = \pi$ | **[RESOLVED NEGATIVE]** — not a consequence of A–G (X28) | check 38, B21 |
 | primes give discrete hierarchies $q = 1/p$ | [ESTABLISHED] arithmetic | check 36 |
-| primes as "structural generator" (Part IX role 3) | [OPEN] / [FRAMING] | C-thread, no check |
+| primes as "structural generator" (Part IX role 3) | **[RESOLVED NEGATIVE]** — nothing forces prime periods or prime scales; closure itself is optional (X29) | check 39, B22 |
+| the relations fix the geometry | **[RESOLVED NEGATIVE]** — one network, continuum many geometries (X30) | check 40, B23 |
 | space = interconnection of zeros; time = ordered transformations | [FRAMING] hypothesis | F21 (anchors L12, A13, E05) |
 | time is an ordering of transformations | [FRAMING] — ordering alone does not give a metric on the order | F21 |
 
@@ -132,12 +133,78 @@ Prop 17 is correct and now gated.
 
 ## 6. The one-line answer to the framework's central question (Part XVI)
 
-> $F \stackrel{?}{\Rightarrow} (N, q, \theta, p, \Pi)$ — *no* under A–G. The
-> minimal skeleton yields $N$ and $q$ (from F and E) and topological $\Pi$
-> (from G), but $\theta$ and $p$ are *free parameters* unless isotropy and a
-> scale rule are added. The framework's research program is therefore
-> correctly identified as genuinely open — and now the two specific gaps are
-> named, formalized, and gated.
+> $F \stackrel{?}{\Rightarrow} (N, q, \theta, p, \Pi)$ — **no, under A–G nothing in
+> the tuple is determined.** Axioms F and E *permit* a period $N$ and a scale
+> $q$, but permit any value; Axiom G gives a topological $\Pi$; and $\theta$
+> and $p$ are free parameters unless isotropy and a prime scale rule are added
+> as extra assumptions. The framework's research program is therefore
+> correctly identified as genuinely open — and now every specific gap is
+> named, formalized, and gated (below).
 
 **Adjacency rule (enforced):** no sentence above may be cited as physics.
-The claimable core is B19 + checks 36-38; the rest is framing.
+The claimable core is B19–B23 + checks 36–40; the rest is framing.
+
+---
+
+## 7. The remaining symbols, closed (checks 39-40; B22, B23)
+
+Part XVI lists five symbols. $\theta$ and $\Pi$ were settled in §3–§4; the
+other three are settled here.
+
+### 7.1 $N$ and $p$ need not be prime (B22, check 39)
+
+Axiom F says *some* $F$ have finite period. It does not restrict the period.
+The cyclic shift $\sigma_m(x) = (x+1) \bmod m$ on $\mathbb{Z}/m\mathbb{Z}$ has
+**fundamental period exactly $m$ for every $m$** — prime or composite. Gated
+witnesses: $m = 4, 6, 8, 9, 10, 12$ all give period $m$.
+
+Axiom E likewise permits any $q > 0$; the composite contractive scales
+$q = 1/4,\; 1/6,\; 1/9,\; 1/15$ are legal ($q^{50} < 10^{-30}$ for $q = 1/4$,
+$< 10^{-58}$ for $q = 1/15$).
+
+Closure is even **optional**: the successor $S(n) = n+1$ has no finite period
+— no $N > 0$ with $S^N(0) = 0$ (the framework's own Prop 5, now gated).
+
+$$\text{A--G} \;\nRightarrow\; N \text{ prime}, \qquad
+\text{A--G} \;\nRightarrow\; q = 1/p .$$
+
+So all three of the framework's prime roles (Part IX: period, scale,
+generator) are *choices*. The framework's own summary — "prime structure is
+presently a candidate structural property, not a physical law" — is correct
+and now carries a gate. Registered **X29** (resolved negative).
+
+### 7.2 The relations do not fix the geometry (B23, check 40)
+
+A zero-network is combinatorial: path distance on a cycle $C_n$ is
+$\lfloor n/2 \rfloor$, a pure integer, metric-free. Any Euclidean embedding
+instead realises distance $d$ as the chord $2\rho\sin(\pi d/n)$, where $\rho$
+is a **free positive parameter**.
+
+Witness: $C_8$ is the *same graph* at $\rho = 1$ and $\rho = 2$ — neighbour
+chord $0.765$ vs $1.531$, opposite chord $2.000$ vs $4.000$ — while path
+distance stays $1$ and $4$ respectively. One relational structure, continuum
+many geometries.
+
+$$\text{relations} \;\nRightarrow\; \text{metric}, \qquad
+\pi \text{ enters only at the embedding } 2\rho\sin(\pi d/n).$$
+
+This is the same gauge lesson the corpus already holds for *positions*
+(A13, L12) extended to *measurement itself*: the relations are the invariant
+content, the geometry is a gauge choice. Registered **X30** (resolved
+negative).
+
+### 7.3 Status of Part XVI after this round
+
+| Symbol | Forced by A–G? | Why |
+|---|---|---|
+| $N$ | **no** | any $m$ is a period of some $F$ (check 39) |
+| $q$ | **no** | any $q > 0$; prime-reciprocals are a choice (check 39) |
+| $\theta$ | **no** | $c \in (0,\infty)$ free; $\theta = \arctan c$ (check 37) |
+| $p$ | **no** | nothing privileges primes (check 39) |
+| $\Pi$ | only topologically | $R_{2\pi k} = I$; the *number* $\pi$ needs a measure (check 38) |
+
+The framework's central question is therefore answered in the strongest
+available way: **the minimal axiomatisation is honest, and every one of its
+open consequences has been shown to be a genuine extra assumption rather
+than a derivation in disguise.** That is the real result of this thread, and
+it is the answer the framework itself asked for.

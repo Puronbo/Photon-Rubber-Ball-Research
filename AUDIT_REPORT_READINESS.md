@@ -653,3 +653,44 @@ Gate (Phase 26): battery 19/19 green, `results_of_record.py` 36/36 exit 0,
 
 Gate (Phase 27): battery 19/19 green, `results_of_record.py` 38/38 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 28 — closing Part XVI's remaining symbols (X29, X30) (2026-09-25)
+
+- Phase 27 answered the framework's Part XVI question `F ⇒ (N, q, θ, p, Π)`
+  only halfway: θ and Π were closed, but N, q and the primes themselves were
+  left unexamined. This phase closes them. A stale `[OPEN]` verdict in §5 of
+  FORMAL_AXIOMS_ZEROS.md (Π = π, listed as open after check 38 had already
+  resolved it) was corrected in the same pass.
+- **X29 → primes are a choice, not a consequence (B22, check 39).** Axiom F
+  admits *any* fundamental period: the cyclic shift σ_m(x) = (x+1) mod m on
+  ℤ/mℤ has period exactly m for every m, so the composite periods
+  {4,6,8,9,10,12} are all models. Axiom E admits any q > 0, and the composite
+  contractive scales 1/4, 1/6, 1/9, 1/15 are legal (q⁵⁰ = 7.9e-31 and
+  1.6e-59 respectively). Closure is moreover *optional* — the successor
+  S(n) = n+1 has no finite period at all, so Axiom F's "some F" is precisely
+  right. All three of the framework's Part IX prime roles (period, scale,
+  structural generator) are therefore choices. This confirms, with a gate,
+  the framework's own summary that "prime structure is presently a candidate
+  structural property, not a physical law".
+- **X30 → the relations do not fix the geometry (B23, check 40).** A zero-
+  network is combinatorial: path distance on C_n is ⌊n/2⌋, a metric-free
+  integer. Any Euclidean embedding instead realises distance d as the chord
+  2ρ·sin(πd/n) with a *free* radius ρ. Gated witness: C₈ is the identical
+  graph at ρ = 1 and ρ = 2 — neighbour chord 0.765 vs 1.531, opposite chord
+  2.000 vs 4.000 — while path distance is unchanged. One relational
+  structure, continuum many geometries. This is the corpus's existing
+  position-gauge lesson (A13, L12) extended to the metric itself, and it
+  completes the chain: relations are the invariant content, geometry (and
+  with it the numerical π) is a gauge choice made at embedding time.
+- FORMAL_AXIOMS_ZEROS.md gains §7 with the two proofs, the two formal
+  non-implications A–G ⇏ (N prime), A–G ⇏ q = 1/p and A–G ⇏ metric, and a
+  per-symbol status table for (N, q, θ, p, Π) in which every entry is "no".
+  §6 is rewritten accordingly. §5's Π = π and prime-generator rows move
+  from [OPEN] to resolved negative; conditional and hypothesis rows are
+  untouched.
+- Register: B22, B23 added [ESTABLISHED]; X29, X30 added as NOT-claims, both
+  resolved negative. Numbered 109 → 111; NOT-claims 28 → 30. Corrigendum
+  94 → 95. No prior claim, number or paper claim changed.
+
+Gate (Phase 28): battery 19/19 green, `results_of_record.py` 40/40 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.

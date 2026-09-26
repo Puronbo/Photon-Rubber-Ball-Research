@@ -171,6 +171,17 @@ isotropy would be the extra assumption forcing c = 1. X28 topology vs measure
 expression, so T(Pi) = Pi is metric-free while value(Pi) = pi requires an
 induced arc/diameter measure.
 
+Part XVI's remaining symbols, closed (checks 39-40): N is not forced prime —
+the cyclic shift on Z/m has fundamental period exactly m for every m, so
+composite periods 4,6,8,9,10,12 are models of Axiom F; q is not forced
+prime-reciprocal — q = 1/4, 1/6, 1/9, 1/15 are legal contractive scales
+(q^50 = 7.9e-31 for 1/4, 1.6e-59 for 1/15); closure is optional — the
+successor S(n) = n+1 has no finite period (no N > 0 with S^N(0) = 0).
+Geometry is not fixed by the relations: C_8 path distance (diam 4) is
+metric-free while the chord metric gives neighbour 0.765 at rho = 1 and
+1.531 at rho = 2 for the same graph, opposite chord 2.000 vs 4.000, and
+scales exactly linearly with the free radius.
+
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
 A0 self-gauge:
