@@ -97,6 +97,16 @@ the corpus's single real zero-event is pinned to rung 8 by the committed n(u)
 column - yet a period-3 return is itself a perfectly legal model of Axioms F and
 G (sigma_3 on Z/3 has fundamental period exactly 3), a case check 39 never
 probed because it tested only composite periods to refute primality.
+Check 46 tests the same idea recast as block structure rather than geometry:
+grouping the walk's steps in threes makes the x and y axes TRADE PLACES every
+block - each block of 3 omits one of the four directions, the omitted one
+cycling S,W,N,E with period 4 because gcd(3,4) = 1, and since 3 is odd the
+dominant step-index parity alternates 2/1 then 1/2 (verified over 40 blocks,
+so forced by arithmetic rather than fitted). The 18 rungs also divide into
+exactly six triples, which 16 did not. But the blocks exchange axes and never
+return to zero: r^2 at successive block boundaries is 5, 34, 145, 520, 937,
+1370 - strictly increasing - no boundary lands on an axis, and over 400 prime
+steps the walk never revisits the origin. L08's open spiral is confirmed.
 """
 
 import math
@@ -644,9 +654,64 @@ def main():
                  f"(a) sides {tri[0]:.2f}/{tri[1]:.2f}/{tri[2]:.2f}, degenerate={degenerate}; (b) 3 turns -> {quarter(3)}, 4 turns -> {quarter(4)}, quarter-turn closures are quadrilaterals={quad_not_tri}; (c) sigma_3 period={per[3]}, all of {sorted(per)} reproduce, 3 absent from check 39's set={blind_spot}; (d) n(r6)={n6:.2f}>1, n(r7)={n7:.2f}, n(r8)={n8:.3f}<1, first 0D rung = r{first_zero_rung}",
                  "the triangle is structurally LEGAL - it is Axiom G's fixed point at period 3, a permitted sibling of the pi/2 turn that the corpus never enumerated - but the specific instantiation at rungs 4-6 closes in NO coordinate the corpus has: degenerate in the ladder, rectangular in the turn-walk. A period-3 turn (2pi/3) would make it real; that is a choice, not a consequence")
 
+    # 46: the "exchange of threes" - blocks {1,2,3} {4,5,6} {7,8,9} ... in the
+    # walk's step index, against the period-4 direction cycle E,N,W,S. The
+    # AXES TRADE PLACES every block. The blocks never return to zero.
+    def _primes(n):
+        out, c = [], 2
+        while len(out) < n:
+            if all(c % d for d in range(2, int(c**0.5) + 1)):
+                out.append(c)
+            c += 1
+        return out
+
+    def _walk(steps):
+        x = y = 0
+        P = [(0, 0)]
+        for k in range(steps):
+            dx, dy = [(1, 0), (0, 1), (-1, 0), (0, -1)][k % 4]
+            x, y = x + dx*L[k], y + dy*L[k]
+            P.append((x, y))
+        return P
+
+    L = [0, 1] + _primes(400)          # step lengths: 0, 1, then the primes
+    # the model must reproduce the corpus's own committed vertices before we trust it
+    P = _walk(20)
+    model_ok = (P[6] == (3, 5) and P[7] == (-8, 5) and P[8] == (-8, -8)
+                and P[10] == (9, 11) and P[10][0]**2 + P[10][1]**2 == 202)
+    # 18 rungs divide into exactly six triples; 16 (the pre-pulsar/quasar ladder) did not
+    blocks_exact = 18 % 3 == 0 and 18 // 3 == 6
+    was_not = 16 % 3 != 0
+    # each block of 3 omits one direction; the omitted one cycles with period 4 (gcd(3,4)=1)
+    omit = [[d for d in "ENWS" if d not in [ "ENWS"[k % 4] for k in range(3*n, 3*n+3) ]][0]
+            for n in range(6)]
+    omit_cycle = omit == ['S', 'W', 'N', 'E', 'S', 'W']
+    # 3 is odd, so every block splits 2/1 across the index parities - and the split ALTERNATES
+    xs = [sum(1 for k in range(3*n, 3*n+3) if k % 2 == 0) for n in range(6)]
+    exchange = xs == [2, 1, 2, 1, 2, 1]
+    # ... and the alternation is forced, not fitted: 3 odd against a period-4 cycle
+    forced = all(sum(1 for k in range(3*n, 3*n+3) if k % 2 == 0) == (2 if n % 2 == 0 else 1)
+                 for n in range(40))
+    # the negative half: the blocks exchange axes but never return to zero
+    ends = [P[3*n+3] for n in range(6)]
+    r2 = [e[0]**2 + e[1]**2 for e in ends]
+    monotone = all(r2[i+1] > r2[i] for i in range(5))
+    on_axis = any(e[0] == 0 or e[1] == 0 for e in ends)
+    # over 400 prime steps the walk never returns to the origin (the sole hit is the
+    # trivial zero-length first step) and never sits on either axis past step 2
+    P_long = _walk(400)
+    no_return = not any(P_long[k] == (0, 0) for k in range(2, len(P_long)))
+    no_axis = not any(P_long[k][0] == 0 or P_long[k][1] == 0 for k in range(3, len(P_long)))
+    n46_ok = (model_ok and blocks_exact and was_not and omit_cycle and exchange
+              and forced and monotone and not on_axis and no_return and no_axis)
+    ok &= expect(n46_ok,
+                 "the exchange of threes: grouping the turn-walk's steps in blocks of 3 - {1,2,3} {4,5,6} {7,8,9} - against the period-4 direction cycle E,N,W,S makes the x and y axes TRADE PLACES every block. Each block of 3 consumes three of the four directions and omits one, and the omitted direction cycles S,W,N,E,S,W with period 4 because gcd(3,4)=1; because 3 is odd every block splits 2/1 across the step-index parities, and the dominant parity ALTERNATES (2 x-steps then 1, then 1 then 2) - forced by arithmetic, not fitted. The ladder's 18 rungs also divide into exactly six triples, which 16 (the pre-pulsar/quasar ladder) did not. But the blocks exchange axes and never RETURN: r^2 at successive block boundaries is 5, 34, 145, 520, 937, 1370, strictly increasing, no boundary lands on an axis, and over 400 prime steps the walk never returns to the origin and never touches an axis again past step 2. L08's open spiral is confirmed, not overturned",
+                 f"model reproduces committed vertices (3,5)/(-8,5)/(-8,-8)/(9,11) and r^2=202: {model_ok}; 18/3=6 exact: {blocks_exact} (16 left a remainder: {was_not}); omitted dirs {omit}: {omit_cycle}; axis split {xs}: {exchange}, forced for 40 blocks: {forced}; r^2 {r2} strictly increasing: {monotone}; boundary on an axis: {on_axis}; returns to origin past step 2: {no_return}; back on an axis past step 2: {no_axis}",
+                 "the exchange is real and metric-free, but it is an alternation, not a closure - the walk spirals outward while swapping which axis it feeds. Blocks 4-6 of the ladder and the rung-7 gauge point are the human's reading, not a derived period")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 45 checks reproduced.")
+        print("RESULTS OF RECORD: 46 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

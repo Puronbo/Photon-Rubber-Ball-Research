@@ -2,7 +2,7 @@
 
 This bundle is the submission-geometry the whole corpus has been converging on:
 PART I (Results) contains only statements that are either elementary theorems,
-or gate-asserted by `results_of_record.py` (45 checks, exit 0). PART II
+or gate-asserted by `results_of_record.py` (46 checks, exit 0). PART II
 (Ideas) is explicitly labeled as a vocabulary/narrative layer with zero science
 claims.
 

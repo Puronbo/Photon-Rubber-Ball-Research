@@ -429,3 +429,83 @@ the period-3 fixed point is a legal structure the audit never enumerated — and
 if the corpus ever wanted a closed figure to sit beside L08's committed open
 spiral, the choice available is the turn angle, $2\pi/3$ rather than $\pi/2$.
 That choice is permitted and entailed by nothing.
+
+---
+
+## 13. The exchange of threes (B30, X34; check 46)
+
+§12 tested a *geometric* triangle and found it degenerate. The same intuition
+recast as **block structure in the walk's step index** — grouping the steps
+into threes, $\{1,2,3\}, \{4,5,6\}, \{7,8,9\}$ — turns out to be exactly right
+about one thing and wrong about another. Both halves are worth having.
+
+### 13.1 The exchange is real, and it is forced
+
+The walk (L08) uses step lengths $L = 0, 1, 2, 3, 5, 7, 11, \dots$ — zero, one,
+then the primes — with directions cycling $E, N, W, S$, period 4. Group the
+steps three at a time and two things happen, neither of them fitted:
+
+**The omitted direction cycles with period 4, not 3.** A block of three
+consecutive steps uses three of the four directions and omits one. The omitted
+one runs
+
+$$S,\ W,\ N,\ E,\ S,\ W,\ \dots$$
+
+so no two consecutive blocks agree until four blocks have passed — twelve
+steps. The reason is $\gcd(3,4) = 1$: a block of 3 advances through a cycle
+of 4 by an amount coprime to it, which is the standard reason two cycles of
+length 3 and 4 never phase-align.
+
+**The two axes trade places on every block.** Because $3$ is odd, a block of
+three consecutive integers contains two of one index-parity and one of the
+other, and even steps feed $x$ while odd steps feed $y$ in the corpus's exact
+identity (B30's model reproduces the committed vertices $(3,5)$, $(-8,5)$,
+$(-8,-8)$, $(9,11)$ and $r^2 = 202$ before any of this is tested). The
+dominating parity therefore alternates:
+
+| block | steps | directions | omitted | parity | x-steps | y-steps |
+|---|---|---|---|---|---|---|
+| 0 | 0,1,2 | E N W | S | E O E | **2** | 1 |
+| 1 | 3,4,5 | S E N | W | O E O | 1 | **2** |
+| 2 | 6,7,8 | W S E | N | E O E | **2** | 1 |
+| 3 | 9,10,11 | N W S | E | O E O | 1 | **2** |
+
+This is the "exchange" — the axes swapping which one they feed, block after
+block, verified over 40 consecutive blocks. It is arithmetic, not structure
+that was searched for, and it is metric-free.
+
+### 13.2 The ladder closes into whole triples only at 18 rungs
+
+$18 = 6 \times 3$ exactly, so the rung index partitions into six clean blocks.
+$16$ — the ladder as it stood before the pulsar and quasar rungs were added —
+did **not**: it left a remainder of one. So the whole-block structure is a
+consequence of B26, not a property the corpus had before Phase 30. Worth
+recording plainly, since it means those two rungs did more than add two sizes.
+
+One caution against over-reading: the ladder's own gauge point, the ball at
+$n(u) = 1$, is rung 7 — which sits *inside* block 2, not at a block boundary.
+The blocks are an index convenience, not a claim about where the ladder's
+physics changes.
+
+### 13.3 But the blocks never return to zero
+
+$X_{34}$ is the negative half, and it is unambiguous. The block endpoints are
+
+$$(-2,1),\ (3,5),\ (9,-8),\ (-14,-18),\ (-24,19),\ (23,29),$$
+
+with $r^2 = 5, 34, 145, 520, 937, 1370$ — **strictly increasing**. No boundary
+falls on either axis. Over 400 prime steps the walk never revisits the origin
+and never touches an axis again after step 2; the one origin hit is the
+trivial zero-length first step $L_0 = 0$, which is not a closure. The reason
+is not subtle: the step lengths are the primes and grow without bound, so the
+endpoints diverge.
+
+So the honest form of the intuition is:
+
+$$\underbrace{\text{axes exchange}}_{\text{real, forced, period } 4}
+\ \Big|\ 
+\underbrace{\text{blocks return to zero}}_{\text{false - } r^2 \text{ monotone}}.$$
+
+L08's open spiral stands, confirmed rather than overturned. The blocks swap
+which axis they feed; they do not cycle back. A period-3 *turn* (§12.1) would
+close such a loop — and that remains a choice, not a consequence.

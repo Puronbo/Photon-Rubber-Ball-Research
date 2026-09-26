@@ -209,7 +209,13 @@ fundamental period exactly 3) that check 39 never probed, having tested only the
 set {4,6,8,9,10,12}; but the proposed triangle at rungs 4-6 closes nowhere - degenerate in
 the 1D ladder (sides 1.00 + 2.00 = 3.00 decades), rectangular under the pi/2 turn (three
 quarter turns = 270 deg, not a return; four distinct leg directions), and the corpus's one
-real zero-event is r8, fixed by the ball's n = 1 at r7.
+real zero-event is r8, fixed by the ball's n = 1 at r7. Grouping the walk's steps in threes
+against the period-4 direction cycle makes the axes trade places every block (omitted
+direction cycles S,W,N,E with period 4 since gcd(3,4)=1; 3 is odd so the dominant
+step-index parity alternates 2/1, 1/2 over 40 blocks), and 18 rungs divide into exactly
+six triples where 16 did not - but the blocks never return: r^2 at boundaries is 5, 34,
+145, 520, 937, 1370, strictly increasing, no boundary on an axis, no origin return in
+400 prime steps.
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 

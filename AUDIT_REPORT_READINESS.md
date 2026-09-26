@@ -829,3 +829,47 @@ Gate (Phase 30): battery 19/19 green, `results_of_record.py` 44/44 exit 0,
 
 Gate (Phase 31): battery 19/19 green, `results_of_record.py` 45/45 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
+
+## Phase 32 — the exchange of threes (X34) (2026-09-25)
+
+- Phase 31's idea, clarified by the author: *"not a real triangle but the
+  exchange of threes {1,2,3} {4,5,6} {7,8,9}."* Recast as block structure in the
+  walk's step index rather than a geometric figure — a different and sharper
+  question, and the recast is what made it answerable.
+- **B30 — the exchange is real, and forced.** Grouping the turn-walk's steps
+  (L = 0, 1, then the primes) three at a time against the period-4 direction
+  cycle E,N,W,S:
+  - each block of 3 consumes three of the four directions and omits one, and
+    the omitted direction cycles **S, W, N, E** — period **4, not 3**, because
+    gcd(3,4) = 1, so no two consecutive blocks agree until 4 blocks = 12 steps;
+  - since 3 is odd, every block splits 2/1 across the step-index parities, and
+    the dominant parity **alternates** — blocks 0,2,4 give 2 x-steps + 1 y-step,
+    blocks 1,3,5 give 1 + 2. Verified over 40 consecutive blocks, so this is
+    arithmetic, not a fit;
+  - the model is self-validating: it reproduces the corpus's own committed
+    vertices (3,5), (−8,5), (−8,−8), (9,11) and r² = 202 before any of this is
+    tested.
+  - Metric-free walk combinatorics; no physical content claimed.
+- **A consequence recorded for B26.** The 18-rung ladder divides into exactly
+  six triples. **16 did not** — it left a remainder of 1. The whole-block
+  structure is therefore a consequence of the pulsar/quasar round, meaning
+  those two rungs did more than add two sizes. Counter-caution kept in §13.2:
+  the ball's gauge point n(u) = 1 is rung 7, *inside* block 2 rather than at a
+  boundary, so the blocks are an index convenience, not a claim about where
+  the ladder's physics changes.
+- **X34 — resolved negative.** The blocks exchange axes but never return.
+  r² at successive block boundaries is 5, 34, 145, 520, 937, 1370 — strictly
+  increasing. No boundary lands on either axis. Over 400 prime steps the walk
+  never revisits the origin and never touches an axis after step 2; the sole
+  origin hit is the trivial zero-length first step L₀ = 0. The mechanism is
+  plain: the step lengths are the primes and grow without bound, so the
+  endpoints diverge. **L08's open spiral is confirmed, not overturned.**
+- **Defect caught in the check itself, before registration.** The first draft
+  of check 46 asserted "over 400 prime steps" while the walk was only 20 steps
+  long — the no-return and no-axis tests were silently running over a short
+  horizon. Corrected to a genuine 400-step walk before any claim was entered.
+- Register: B30 added; X34 added as a NOT-claim, resolved negative. Numbered
+  117 → 118; NOT-claims 33 → 34. Corrigendum 98 → 99.
+
+Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
