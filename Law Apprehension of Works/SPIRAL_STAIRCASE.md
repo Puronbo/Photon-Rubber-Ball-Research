@@ -241,7 +241,10 @@ orbits of size exactly 1 or exactly 2, and there is no third option. So:
   than a resemblance.
 
 **The ladder is therefore eighteen rows, not thirty-six objects.** One row is
-one pair — seventeen pairs and one fixed point. Anyone counting "zeros" and
+one pair — **eighteen pairs and one fixed point**, nineteen orbits over
+thirty-seven elements. *(Section VI first wrote "seventeen pairs" and was wrong:
+all eighteen rungs carry a distinct scale, so all eighteen are paired, and `0` is
+the single unpaired element. Corrected at check 53.)* Anyone counting "zeros" and
 "reals" as two kinds has already lost the structure, because there is one kind
 with two columns — and that is why the standing question ("do the reals generate
 the zeros, or the zeros the reals?") has no answer. It presupposes two kinds
@@ -273,26 +276,70 @@ carries no orientation.* That is the general reason a mirror has two hands: the
 handedness is a **gauge choice**, not a property, and the framework's L4 "one
 class set at `t = 0`" is choosing one out of `2¹⁷`.
 
-**But the ladder has an order.** Require `s` to be monotone in the scale, and
-the freedom collapses: flipping any single pair breaks monotonicity, so the only
-flip that survives is the identity, and the gauge is fixed. **The order orients
-the involution.**
+**But the ladder has an order — and here the first draft of this section was
+wrong, in a way that would have cost a real prediction.** Three different counts
+were being conflated. Corrected at check 53:
+
+| freedom | size |
+|---|---|
+| which entry of each row is called "zero" (column relabelling) | `2¹⁸ = 262,144` |
+| which zero pairs with which real (pairing reassignment) | `18! = 6.4×10¹⁵` |
+| pairing that also respects the ladder's order | **2** |
+
+The `2¹⁸` counted column relabellings — a relabelling, not a reassignment. The
+pairing count is `18!`. And once the order is imposed, the answer is **two, not
+one**: a bijection of two eighteen-element chains is order-*preserving* in
+exactly one way (rank `i ↦ i`) and order-*reversing* in exactly one way (rank
+`i ↦ 17−i`). Verified by enumeration on chains of length 2 through 6, and
+forced by rank in general.
 
 Which puts a straight answer on the table for the one prediction that never got
-established. Handedness inheritance was registered as a postulate whose spin-bias
-is NOT established — but if the ordering of the rungs is part of the structure,
-as it is, then the handedness is **not free**, and the spin-bias should follow
-from monotonicity rather than from a separate law at `t = 0`. The prediction may
-have been underivable because it was derived from the wrong premise: not because
-there is no handedness, but because it was treated as a postulate when the
-order already supplies it.
+established — and the answer is the opposite of the one this section first gave.
 
-This is a structural statement about the specification, not a physical claim, and
-it is offered as a direction rather than a result. But it is the first time the
-mirror has paid for itself: **the two hands are a gauge, and the ladder's own
-ordering is what fixes the gauge.** A structure with an involution and no order
-has `2¹⁷` versions of itself. A structure with an involution and an order has
-one. The framework has the second kind, and had been treating the gauge as a law.
+**The order narrows `18!` to 2 and then stops.** The two survivors are mirror
+images of each other, related by the rank reflection `x ↦ 17 − x`. So the
+handedness is **not** removed by the order; it is *reduced to a binary and
+preserved*. The residual 2 is irreducible, it is exactly two, and it is exactly
+the mirror's two hands.
+
+So L4's spin-bias is **not** a gauge artifact to be explained away. It is a
+prediction about a genuine two-way choice that survives every constraint the
+structure can impose. Had the first draft of this section been right — that
+monotonicity collapses the gauge to 1 — the framework would have retired a real
+prediction as a bookkeeping convention, which is the opposite of the truth. The
+order is not what fixes the hand. **The order is what proves there are only two
+hands to choose between.**
+
+### And the mirror's centre is a gap, not a rung
+
+Eighteen is even, so the rank reflection `x ↦ 17 − x` fixes **no rung**. Its
+fixed point is the half-integer rank `8.5`, which falls in the **gap** between
+`human` (1.75 m) and `neutron-star` (1.239×10⁴ m) — and that gap is four and a
+half decades wide, the widest on the ladder after the Planck–quark jump.
+
+So the structure contains **two kinds of centre, of different kinds**:
+
+- **`0` is an element.** A real with no zero. Fixed because it pairs with nothing.
+- **`8.5` is an absence.** A half-integer rank between two rungs. Fixed because
+  *nothing* sits there.
+
+And a third, at a third scale: `1/2`, the fixed point of `x ↦ 1 − x`, which pairs
+`0.999…` with `0.000…`. Also not a rung.
+
+Three centres, three sets being mirrored, three different answers to "what is at
+the middle" — an element, a gap, a fraction. **The centre is always a fixed
+point, and what it *is* depends entirely on which set you are mirroring.** That is
+the honest general statement, and it is a better one than "0 is the centre",
+because it says why `0` needed the ladder at all: `0` is the centre of the *real*
+line, and the ladder is a different set with a different middle that is not a
+member of it.
+
+It also makes a sharp, cheap prediction. The handedness structure depends on the
+**parity of the rung count**: with an odd number of rungs the rank reflection
+would fix the central rung, the centre would be an element, and the mirror would
+have a rung sitting on its own axis. The corpus has eighteen. So the prediction is
+conditional and falsifiable — add or remove one sourced rung and the centre
+changes kind.
 
 ### The general statement, in one line
 

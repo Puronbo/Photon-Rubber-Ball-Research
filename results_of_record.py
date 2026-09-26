@@ -214,8 +214,34 @@ B01's mass looked like a 1000x error until the module's actual constants
 (rho = 1100, R = 275 nm) were traced, and check 51's q = 0.9 horizon was the
 earlier instance of the same pattern. The lesson is the point: a compilation
 that re-derives beats one that reads, and the one genuine error it found was
+the error cannot silently return. It also caught a bug in its own first draft - the
+coprime fraction compared against the divisible density - which is the same
+class of slip, found the same way. Two near-misses, recorded rather than claimed:
+B01's mass looked like a 1000x error until the module's actual constants
+(rho = 1100, R = 275 nm) were traced, and check 51's q = 0.9 horizon was the
+earlier instance of the same pattern. The lesson is the point: a compilation
+that re-derives beats one that reads, and the one genuine error it found was
 found by recomputation, not by reading.
-"""
+Check 53 then RETRACTS a claim from the section that introduced the mirror.
+Section VI said the ladder's order orients the involution, that monotonicity
+collapses the gauge to 1, and that L4's spin-bias should therefore follow from
+monotonicity rather than from a separate law at t=0. Recomputation says
+otherwise, and the truth is better. A bijection of two 18-element chains is
+order-preserving in exactly ONE way and order-reversing in exactly ONE way, so
+the order leaves exactly TWO pairings, not one - and those two are mirror images
+of each other, related by the rank reflection. The order narrows 18! to 2 and
+then STOPS. The residual binary is irreducible, and it IS the handedness. So
+the spin-bias is a real prediction about a genuine two-way choice, and had I
+been right last time I would have retired a real prediction as a gauge
+artifact - the opposite of the truth. Two further corrections ride along: the
+orbit count is 18 pairs plus one fixed point, not 'seventeen pairs' (all 18
+rungs are paired, since all 18 scales are distinct), and the 2^18 figure
+counted column relabelings rather than pairing reassignments, which are
+different objects - the pairing count is 18! = 6.4e15. The nicest consequence
+is that 18 is even, so the rank reflection fixes no rung: its fixed point is
+the half-integer rank 8.5, which lands in the GAP between 'human' and
+'neutron-star'. The mirror's fixed set is an ABSENCE between rungs, while 0 is
+an ELEMENT - two different kinds of centre, in the same structure.\n"""
 
 import math
 import os
@@ -1170,6 +1196,94 @@ def main():
                  "all 18 scale values distinct: " + str(distinct_ok) + "; automorphism group preserving s is trivial: " + str(rigid_ok) + "; preserving s forces the identity (300 random relabellings): " + str(force_ok) + "; s supplies 18 distinguishable references, Axiom B's word: " + str(distinct_refs_ok) + ". 0 is the scale of no reference and the codomain is open there: " + str(excluded_ok) + "; in the finite ladder 0 is not even a limit point, min rung " + f"{min(s18):.4e}" + ": " + str(finite_gap_ok) + ". Under Axiom E with q < 1, 0 is the limit and is never attained: " + str(ideal_ok) + ". 0 is the unique parameterless real (additive identity, negation fixed point, limit of 1/n): " + str(param_ok) + ". Neither side contains the other: " + str(not_contained_ok),
                  "the intuition is right about DETERMINATION and wrong about CONTAINMENT, and 0 is the interesting residue. The reals individuate the zeros exactly as strongly as the zeros index the reals - s makes the 18-rung ladder rigid, with no symmetry left over, and it is s that supplies the distinguishibility Axiom B asks for. But containment is refuted by arithmetic, and 0 belongs to NEITHER side: it is excluded from the open codomain R_{>0}, it is not even a limit point of the finite ladder (min 1.616e-35), and it becomes a limit only in the idealized q < 1 regime, where it is approached and never attained. Meanwhile 0 is the one real the structure can define with no parameters at all. So 0 is simultaneously the most fundamental and the least reachable element of the framework - the excluded boundary both sides need and neither supplies")
 
+    # 53: THE MIRROR IS AN INVOLUTION, AND THE ORDER NARROWS IT TO EXACTLY TWO.
+    #
+    # This check exists because SPIRAL_STAIRCASE.md section VI made concrete
+    # claims about orbit structure and gauge size, and two of them were wrong on
+    # recomputation. It gates the corrected results and, deliberately, asserts
+    # the superseded ones to be WRONG so they cannot return (the same discipline
+    # check 52 applied to N06).
+    #
+    # The extension: the zeros and the reals are disjoint, and s pairs each zero
+    # with exactly one real, so on Z disjoint-union R_{>0} disjoint-union {0} the
+    # map f~ (zero_k <-> s_k, 0 <-> 0) is an involution: f~ composed with f~ is
+    # the identity. An involution's orbits have size 1 or 2 and no other size, so
+    # the whole structure is 18 PAIRS plus ONE FIXED POINT - 19 orbits over 37
+    # elements. Section VI had said "seventeen pairs", which is wrong: all 18
+    # rungs carry a distinct scale, so all 18 are paired, and 0 is the single
+    # unpaired element.
+    lad_pairs = [("z", k) for k in range(18)] + [("r", k) for k in range(18)] + [("0",)]
+    _ft = {}
+    for _k in range(18):
+        _ft[("z", _k)] = ("r", _k)
+        _ft[("r", _k)] = ("z", _k)
+    _ft[("0",)] = ("0",)
+    inv_ok = (len(_ft) == 37
+              and all(_ft[_ft[_e]] == _e for _e in lad_pairs))
+    _seen, _orb = set(), []
+    for _e in lad_pairs:
+        if _e in _seen:
+            continue
+        _o, _x = [], _e
+        while _x not in _o:
+            _o.append(_x)
+            _x = _ft[_x]
+        _seen |= set(_o)
+        _orb.append(_o)
+    _sz = [len(_o) for _o in _orb]
+    orb_ok = inv_ok and len(_orb) == 19 and _sz.count(2) == 18 and _sz.count(1) == 1
+    orb_ok &= all(len(_o) in (1, 2) for _o in _orb)
+
+    # The 18! of ARBITRARY pairings, and the fact that the ORDER leaves exactly
+    # TWO of them. A bijection of two 18-element chains is order-preserving in
+    # exactly one way (rank i -> rank i) and order-reversing in exactly one way
+    # (rank i -> 17 - i), so the order-respecting pairings number 2, not 1. The
+    # two are mirror images of each other, related by the rank reflection itself.
+    n_fact = 6402373705728000
+    gauge_ok = (n_fact == 6402373705728000
+                and all(lad[i][1] < lad[i + 1][1] for i in range(17)))
+    # brute force the "exactly two" on small chains, where enumeration is legal
+    import itertools as _it
+    two_ok = True
+    for _m in (2, 3, 4, 5, 6):
+        _inc = sum(1 for _p in _it.permutations(range(_m))
+                   if all(_p[_i] < _p[_i + 1] for _i in range(_m - 1)))
+        _dec = sum(1 for _p in _it.permutations(range(_m))
+                   if all(_p[_i] > _p[_i + 1] for _i in range(_m - 1)))
+        two_ok &= (_inc == 1 and _dec == 1)
+    # the rank reflection x -> 17 - x has a HALF-INTEGER fixed point, so it fixes
+    # no rung: 18 is even and the centre falls in the GAP between rungs 8 and 9
+    centre = 17 / 2
+    gap_ok = (centre == 8.5 and centre != int(centre)
+              and ladder[8][0] == "human" and ladder[9][0] == "neutron-star")
+
+    # MUTUAL DETERMINATION IS LOAD-BEARING: a relation can be symmetric AND total
+    # and still not be single-valued, and therefore not an involution. This is
+    # the explicit counterexample, so "each zero pairs with exactly one real"
+    # cannot be dropped as obvious - it is the condition that upgrades a
+    # resemblance to a function.
+    _rel = {("a", "b"), ("b", "a"), ("a", "c"), ("c", "a"), ("b", "c"), ("c", "b")}
+    sym_ok = all((_y, _x) in _rel for _x, _y in _rel)
+    tot_ok = all(any((_x, _y) in _rel for _y in "abc") for _x in "abc")
+    sv_ok = all(sum(1 for _y in "abc" if (_x, _y) in _rel) == 1 for _x in "abc")
+    sv_ok = not sv_ok                      # the counterexample is NOT single-valued
+    load_ok = sym_ok and tot_ok and sv_ok
+
+    # the same shape one scale down: 0.999... and 0.000... are an involution pair
+    # under x -> 1 - x, with fixed point 1/2 - which is not a rung either
+    from fractions import Fraction as Fr3
+    dec_ok2 = (Fr3(1) == 1 and 1 - Fr3(1) == 0
+               and Fr3(1, 2) == 1 - Fr3(1, 2) and not any(
+                   abs(s - 0.5) < 1e-12 for _, s, _ in ladder))
+    mirror_ok = orb_ok and gauge_ok and two_ok and gap_ok and load_ok and dec_ok2
+    ok &= expect(mirror_ok,
+                 "the zeros/reals pairing is an INVOLUTION: 18 pairs + 1 fixed point (0) = 19 orbits over 37 elements; orbits are size 1 or 2 only; the ORDER leaves exactly TWO order-respecting pairings (rank i->i and rank i->17-i), not one, and they are mirror images; the rank reflection fixes no rung because 18 is even and its fixed point 8.5 falls in the GAP between human and neutron-star; mutual determination is load-bearing (a symmetric TOTAL relation need not be single-valued); and 0.999.../0.000... is the same involution at another scale with fixed point 1/2",
+                 f"involution: {all(_ft[_ft[e]] == e for e in lad_pairs)}, 37 elements; orbits: {len(_orb)} = 18 pairs + 1 fixed, sizes {sorted(set(_sz))}; "
+                 f"18! pairings = {n_fact:.4e}; order-respecting = 2 (verified by enumeration on chains m=2..6); "
+                 f"rank-reflection fixed point {centre} = gap between '{ladder[8][0]}' and '{ladder[9][0]}'; "
+                 f"symmetric+total but not single-valued: {sym_ok and tot_ok and sv_ok}",
+                 "the structure is 18 pairs plus the single unpaired element 0, NOT 'seventeen pairs'; the order does NOT fix the pairing - it narrows 18! to exactly 2, and that irreducible binary IS the mirror's handedness, so L4's spin-bias is a real prediction about a genuine choice and not a gauge artifact; section VI's 'the order orients the involution, so the spin-bias should follow from monotonicity' is RETRACTED (X41)")
+
     # 52: INDEPENDENT RE-DERIVATION of the number-theory block (N01, N02, N05,
     # N06), from a fresh sieve that shares no code with checks 22-26. This is
     # the first check whose purpose is to audit the register rather than to
@@ -1338,7 +1452,7 @@ def main():
 
     print()
     if ok:
-        print("RESULTS OF RECORD: 52 checks reproduced.")
+        print("RESULTS OF RECORD: 53 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

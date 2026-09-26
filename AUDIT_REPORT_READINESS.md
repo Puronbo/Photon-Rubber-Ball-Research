@@ -1145,6 +1145,59 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   needs an infinite index set plus monotonicity or shift-commutation.
 - Register: X39, X40 added (38 → 40 NOT-claims). Corrigendum 103 → 104.
 
+## Phase 38 — the mirror is an involution, and the order does not fix the hand (2026-09-26)
+
+- Follows Phase 37. The mirror proposed in `SPIRAL_STAIRCASE.md` was an idea;
+  its concrete claims were then **verified rather than asserted**. One large
+  claim did not survive, and it was the load-bearing one.
+- **B39** (check 53) — extending `s` to `𝒵 ⊔ ℝ₊ ⊔ {0}` gives an **involution**:
+  `f² = id`. Orbits have size 1 or 2 and no third size, so the structure is
+  **18 pairs + 1 fixed point = 19 orbits over 37 elements**. §VI's "seventeen
+  pairs" was wrong — all 18 rungs carry distinct scales, so all 18 are paired,
+  and `0` is the single unpaired element.
+- **B40** (check 53) — **mutual determination is load-bearing.** An explicit
+  3-element counterexample (`{ab,ba,ac,ca,bc,cb}`) is symmetric *and* total and
+  still not single-valued, hence not an involution. Single-valuedness is the
+  condition that upgrades a resemblance to a function, not a restatement of one.
+- **B41** (check 53) — the order narrows the pairing gauge from
+  `18! = 6,402,373,705,728,000` to **exactly 2**, verified by enumeration on
+  chains of length 2–6 and forced by rank. The two survivors are mirror images
+  (`rank i ↦ i` and `rank i ↦ 17−i`).
+- **X41 — THE RETRACTION.** §VI concluded: *"the order orients the involution,
+  so monotonicity collapses the gauge to 1, and L4's spin-bias should follow
+  from monotonicity rather than from a separate law at `t = 0`."*
+  **False, and backwards.** The order does not remove the handedness — it
+  reduces the gauge to a binary and preserves it. The residual 2 is
+  **irreducible** and **is** the two hands. So the spin-bias is a real
+  prediction about a genuine two-way choice, and the first draft would have
+  **retired a real prediction as a bookkeeping convention**. Recorded because
+  the error was in the direction of discarding something real.
+- **Second error, corrected alongside:** the `2¹⁸` figure counted **column
+  relabellings**, not **pairing reassignments**. Three counts now kept apart —
+  column relabelling `2¹⁸ = 262,144`; pairing reassignment `18! = 6.4×10¹⁵`;
+  order-respecting pairing **2**.
+- **B42 (check 53) — the finding not expected.** 18 is **even**, so the rank
+  reflection `x ↦ 17−x` fixes no rung; its fixed point is the half-integer rank
+  **8.5**, in the 4.5-decade gap between `human` and `neutron-star`. So the
+  structure carries **two kinds of centre**: `0` is an **element** (a real with
+  no zero), `8.5` is an **absence** (nothing there). A third kind at another
+  scale: `1/2`, pairing `0.999…` with `0.000…`. **The centre is always a fixed
+  point; what it *is* depends on which set is mirrored** — a better general
+  statement than "0 is the centre", because it says why `0` needed the ladder:
+  `0` is the centre of the *real* line, and the ladder is a different set whose
+  middle is not a member of it.
+- **Sharp conditional prediction:** the handedness structure depends on the
+  **parity of the rung count**. With an odd number of rungs the central rung
+  would sit on the mirror's own axis. Add or remove one sourced rung and the
+  centre changes kind. Cheap, falsifiable, and not yet tested.
+- A fourth same-class slip, in check 53's own first run: an off-by-one in the gap
+  indices. Third caught by recomputation rather than reading.
+- Register: B39–B42 added (126 → 130), X41 added (40 → 41). Corrigendum
+  104 → 105.
+
+Gate (Phase 38): battery 19/19 green, `results_of_record.py` 53/53 exit 0,
+`ruff --select F` clean, only intended changes staged.
+
 Gate (Phase 37): battery 19/19 green, `results_of_record.py` 52/52 exit 0,
 `ruff --select F` clean, only intended changes staged.
 
