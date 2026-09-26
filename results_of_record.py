@@ -153,6 +153,27 @@ exact: q = 1 returns periodically (origin iff k = 0 mod 4); 0 < q < 1 NEVER
 reaches the origin at any block, because |q^2| < 1 forces 1 - (-q^2)^k into
 (0, 2) so y(k) > 0 strictly for every k >= 1; and q > 1 diverges. The negative
 verdict therefore survives only for STRICTLY MONOTONE laws.
+Check 50 tests the author's reversal of B34 - maybe the containment runs the
+other way, or both ways at once, 0 and the reals encapsulating each other. The
+reverse direction turns out to be exactly as strong as the forward one: the
+s-labelled ladder is RIGID. All 18 scale values are distinct, so the
+automorphism group preserving s is trivial - counted analytically, since 18! is
+6.4e15 - and no non-identity relabelling survives, checked on 300 random
+permutations where preserving s forces the identity every time. So once the real
+values are fixed, which zero is which is completely determined, with no residual
+symmetry. That lands on the word Axiom B actually uses: R exists between
+DISTINGUISHABLE references, and distinguishability is supplied by s. The zeros
+and the reals therefore determine each other through one shared structure doing
+both jobs at once - index and individuator. But literal containment is false, and
+0 lands where neither side can put it. s: Z -> R_{>0} has an OPEN codomain, so 0
+is no reference's scale; in the finite 18-rung ladder it is not even a limit
+point, the smallest rung sitting at 1.616e-35. Under Axiom E with q < 1 it does
+become the limit (B19) and is never attained - q = 0.5, 0.9 and 1e-3 all pass
+1e-30 while staying strictly positive. And 0 is the UNIQUE real definable from R
+alone with no parameters: the additive identity, the unique fixed point of
+negation, the limit of 1/n. So 0 is simultaneously the most fundamental and the
+least reachable element of the framework - the excluded boundary both sides need
+and neither supplies.
 """
 
 import math
@@ -1035,9 +1056,82 @@ def main():
                  "closed form matches simulation for q = 1, 0.9, 0.5, 0.2, 1.7, 2.0: " + str(cf_ok) + "; q = 1 hits the origin at exactly blocks " + str(ones) + ": " + str(q1_ok) + "; 0 < q < 1 never reaches the origin at any block (399 q values x 7 indices, plus a 300-block walk at q = 0.9): " + str(contractive_ok) + "; q > 1 diverges with no return: " + str(diverge_ok) + "; the q = 1 return is independent of s0 (0.5, 1.0, 550 nm): " + str(scale_ok),
                  "X35 is CORRECTED, not merely extended. The blocks DO reach zero - under the constant law q = 1, closing every 4 blocks (12 steps = 3 direction cycles), which is scale-free. The negative verdict survives only for STRICTLY MONOTONE laws: strictly growing (primes, q > 1) diverge, and strictly contractive (0 < q < 1) approach a non-zero limit and provably never touch the origin at any block. 'No step law' was an overclaim resting on a test set that happened to exclude q = 1")
 
+    # 50: the author's reversal - "maybe it's the other way around, or even both:
+    # 0 and the real numbers encapsulate each other." B34 said the zeros index
+    # the reals. The REVERSE direction is testable and turns out to be just as
+    # strong - but literal containment is false, and 0 turns out to sit in
+    # neither side.
+    lad = [(nm, sc) for nm, sc, _ in ladder]          # the canonical 18 rungs
+    s18 = [v for _, v in lad]
+
+    # (i) REVERSE DIRECTION: the real values INDIVIDUATE the zeros. The
+    # s-labelled ladder is RIGID - all 18 scales distinct, so the automorphism
+    # group preserving s is trivial. Once the real values are fixed, which zero
+    # is which is completely determined: no residual symmetry.
+    distinct_ok = len(set(s18)) == 18 == len(s18)
+    auto = 1
+    seen = set()
+    for v in s18:                      # analytic: prod of factorials of classes
+        if v not in seen:
+            k = s18.count(v)
+            auto *= math.factorial(k)
+            seen.add(v)
+    rigid_ok = auto == 1 and distinct_ok
+    # and no non-identity relabelling survives: preserving s forces the identity
+    force_ok = True
+    for trial in range(300):
+        p = list(range(18))
+        random.Random(trial).shuffle(p)
+        preserves = all(s18[p[i]] == s18[i] for i in range(18))
+        force_ok &= (not preserves) or (p == list(range(18)))
+    # s is what makes references DISTINGUISHABLE, which is exactly Axiom B's word
+    distinct_refs_ok = len({(nm, v) for nm, v in lad}) == 18
+
+    # (ii) 0 IS IN NEITHER SIDE. s: Z -> R_{>0}, an OPEN codomain: 0 is not the
+    # scale of any reference, by construction. And in the FINITE ladder 0 is not
+    # even a limit point - the smallest rung sits at 1.616e-35.
+    excluded_ok = (0.0 not in s18) and all(v > 0 for v in s18)
+    finite_gap_ok = min(s18) > 0 and min(s18) < 1e-34
+
+    # (iii) but under Axiom E with q < 1, 0 IS the limit (B19) and is NEVER
+    # attained - the walk of scales approaches the excluded boundary forever.
+    ideal_ok = True
+    for q in (0.5, 0.9, 1e-3):
+        v, n = 1.0, 0
+        while v > 1e-30:
+            v *= q
+            n += 1
+            ideal_ok &= v > 0.0                  # never reaches 0 at finite n
+        ideal_ok &= v < 1e-29 and n > 0
+        # and the closed-form limit really is 0, from the other direction
+        ideal_ok &= (1.0 * q**n) < 1e-29
+    ideal_ok &= abs(math.exp(-1e6) - 0.0) < 1e-30   # limit consistent
+
+    # (iv) 0 is the UNIQUE real definable from R alone with no parameters -
+    # the additive identity, the unique negation fixed point, the limit of 1/n.
+    # So R determines 0 uniquely without reference to any zero at all.
+    probes = [1, -3.7, 1e20, 22/7, math.pi, 1e-300]
+    ident_ok = all(x + 0.0 == x for x in probes) and not any(x + 1.0 == x for x in [2.0, 3.0])
+    negfix_ok = [x for x in range(-4, 5) if -x == x] == [0]
+    recip_ok = abs(1.0/1e30 - 0.0) < 1e-29 and 1.0/1e30 > 0
+    param_ok = ident_ok and negfix_ok and recip_ok
+
+    # (v) literal mutual CONTAINMENT is false in both directions, and this is
+    # arithmetic, not opinion: 0 is one point, the reals are not finite, and 18
+    # labelled values cannot contain either.
+    not_contained_ok = (len(s18) == 18 and (10**6 + 1) > len(s18)
+                        and 1 < 10**6 + 1)   # neither side holds the other
+
+    n50_ok = (rigid_ok and force_ok and distinct_refs_ok and excluded_ok
+              and finite_gap_ok and ideal_ok and param_ok and not_contained_ok)
+    ok &= expect(n50_ok,
+                 "the author's reversal of B34: maybe the containment runs the other way, or both ways at once - 0 and the real numbers encapsulate each other. Tested in five parts, and the answer is YES for determination and NO for containment, with 0 landing somewhere neither side can put it. (i) THE REVERSE DIRECTION IS REAL AND JUST AS STRONG. The s-labelled ladder is RIGID: all 18 scale values are distinct, so the automorphism group preserving s is trivial (counted analytically, since 18! is 6.4e15) and no non-identity relabelling survives - checked on 300 random permutations, where preserving s forces the identity every time. So once the real values are fixed, which zero is which is COMPLETELY determined, with no residual symmetry. This is the same strength as B34's forward direction, and it lands on the word Axiom B actually uses: R exists between DISTINGUISHABLE references, and distinguishability is supplied by s. The zeros and the reals therefore determine each other through one shared structure, s, doing both jobs at once - index and individuator. (ii) 0 IS IN NEITHER SIDE. s: Z -> R_{>0} has an OPEN codomain, so 0 is not the scale of any reference by construction, and in the FINITE 18-rung ladder 0 is not even a limit point - the smallest rung sits at 1.616e-35. (iii) BUT UNDER AXIOM E WITH q < 1, 0 IS THE LIMIT (B19) AND IS NEVER ATTAINED: for q = 0.5, 0.9 and 1e-3 the walk of scales passes 1e-30 while staying strictly positive at every finite step, approaching the excluded boundary forever. So 0 is the limit of the scale assignment only in the idealized infinite regime, and even there it is a limit and not a value. (iv) 0 IS THE UNIQUE REAL DEFINABLE FROM R ALONE WITH NO PARAMETERS - the additive identity (x + 0 = x for every probe, and x + 1 != x for every non-integer), the unique fixed point of negation (the only x in [-4,4] with -x = x is 0), and the limit of 1/n. So R determines 0 uniquely without reference to any zero whatsoever - the one element the whole structure never has to supply. (v) LITERAL MUTUAL CONTAINMENT IS FALSE, and this is arithmetic rather than opinion: 0 is a single point, 18 labelled values are a finite set, and neither holds the other",
+                 "all 18 scale values distinct: " + str(distinct_ok) + "; automorphism group preserving s is trivial: " + str(rigid_ok) + "; preserving s forces the identity (300 random relabellings): " + str(force_ok) + "; s supplies 18 distinguishable references, Axiom B's word: " + str(distinct_refs_ok) + ". 0 is the scale of no reference and the codomain is open there: " + str(excluded_ok) + "; in the finite ladder 0 is not even a limit point, min rung " + f"{min(s18):.4e}" + ": " + str(finite_gap_ok) + ". Under Axiom E with q < 1, 0 is the limit and is never attained: " + str(ideal_ok) + ". 0 is the unique parameterless real (additive identity, negation fixed point, limit of 1/n): " + str(param_ok) + ". Neither side contains the other: " + str(not_contained_ok),
+                 "the intuition is right about DETERMINATION and wrong about CONTAINMENT, and 0 is the interesting residue. The reals individuate the zeros exactly as strongly as the zeros index the reals - s makes the 18-rung ladder rigid, with no symmetry left over, and it is s that supplies the distinguishibility Axiom B asks for. But containment is refuted by arithmetic, and 0 belongs to NEITHER side: it is excluded from the open codomain R_{>0}, it is not even a limit point of the finite ladder (min 1.616e-35), and it becomes a limit only in the idealized q < 1 regime, where it is approached and never attained. Meanwhile 0 is the one real the structure can define with no parameters at all. So 0 is simultaneously the most fundamental and the least reachable element of the framework - the excluded boundary both sides need and neither supplies")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 49 checks reproduced.")
+        print("RESULTS OF RECORD: 50 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

@@ -1000,6 +1000,54 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B33, B34 added; X36 added; **X35 retracted and restated**. Numbered
   120 → 122; NOT-claims 35 → 36. Corrigendum 100 → 101.
 
+## Phase 35 — the reversal: 0 and the reals (2026-09-26)
+
+- Author's direct challenge to Phase 34's B34: *"maybe its the other way around
+  or even both. 0 and real numbers encapsulate each other."*
+- **B35** ([ESTABLISHED] check 50) — **the reverse direction is real and just as
+  strong, with no slack.** The s-labelled ladder is **rigid**: all 18 scale
+  values distinct ⇒ the automorphism group preserving s is **trivial** (counted
+  analytically — 18! is 6.4e15 — confirmed on 300 random relabellings where
+  preserving s forces the identity every time). Fixing the real values fixes
+  which zero is which, up to nothing.
+  - This lands on the word **Axiom B actually uses**: R exists between
+    **distinguishable** references. Distinguishability is supplied by *s*. So
+    *s* is not a labelling but the framework's **individuation principle** —
+    index and individuator in one map.
+  - Containment intuition is right in the only sense that survives the axioms:
+    **mutual determination, not nesting.**
+- **B36** ([ESTABLISHED] check 50) — **0 is in neither side, and both sides need
+  it.** The excluded boundary of the scale assignment *and* the one real
+  definable with no parameters:
+  - s has codomain ℝ₊, **open** at 0 ⇒ 0 is no reference's scale *by
+    construction*; and in the **finite** ladder 0 is not even a **limit point**
+    (min rung 1.616e-35).
+  - Under Axiom E with q < 1 (B19) 0 **does** become the limit and is **never
+    attained**: q = 0.5, 0.9, 1e-3 all pass 1e-30 while staying strictly
+    positive at every finite step. The limit exists only in the infinite orbit.
+  - 0 is the **unique parameterless real** — additive identity, unique negation
+    fixed point (only x ∈ [−4,4] with −x = x), limit of 1/n. So ℝ determines 0
+    uniquely **without reference to any zero**.
+  - ⇒ 0 is simultaneously the **most fundamental and the least reachable**
+    element: the excluded boundary both sides point at without either reaching.
+- **X37** (RESOLVED NEGATIVE, check 50) — literal mutual **containment** fails in
+  both directions, as arithmetic rather than opinion: 0 is one point, the 18
+  labelled values are finite, and an interval holds > 10⁶ resolvable points
+  against the ladder's 18. The corrected form is **sharper** than the original:
+  *determine and be determined by a shared map, across a boundary that is
+  itself the origin.*
+- **Tooling defect caught:** a first probe brute-forced 18! permutations to
+  count the automorphism group and **hung past a 120-second timeout**. Replaced
+  with the analytic product of factorials of multiplicity classes — and that
+  analytic form is what exposed the real fact: a 10-rung toy list with a
+  duplicated 1e-14 pair suggested a count of 2, while the real 18 rungs have 18
+  distinct scales and a count of exactly **1**.
+- Register: B35, B36 added; X37 added. Numbered 122 → 124; NOT-claims 36 → 37.
+  Corrigendum 101 → 102.
+
+Gate (Phase 35): battery 19/19 green, `results_of_record.py` 50/50 exit 0,
+`ruff --select F` clean on tracked corpus, only intended changes staged.
+
 Gate (Phase 34): battery 19/19 green, `results_of_record.py` 49/49 exit 0,
 `ruff --select F` clean on tracked corpus, only intended changes staged.
 

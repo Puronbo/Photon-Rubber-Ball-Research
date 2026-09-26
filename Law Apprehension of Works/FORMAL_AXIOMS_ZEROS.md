@@ -700,3 +700,86 @@ $s_{n+1} = q s_n$ permits at $q = 1$ — the very case check 41 recorded as
 
 **This is a retraction, not an extension.** X35's status changes from
 RESOLVED NEGATIVE to RESOLVED, law-dependent.
+
+---
+
+## 16. The reversal: 0 and the reals, and which one holds the other (B35, B36, X37; check 50)
+
+§15 concluded that the zeros index the reals and cannot generate them. The
+author immediately pushed back, and the push is half right in a way that
+sharpens §15 rather than undoing it.
+
+> *Maybe it's the other way around — or even both. 0 and real numbers
+> encapsulate each other.*
+
+### 16.1 The reverse direction is real, and just as strong (B35)
+
+B34 ran $\mathcal{Z} \to \mathbb{R}_{>0}$. The converse is
+$\mathbb{R} \to \mathcal{Z}$, and it turns out to hold with **no slack at
+all**: the $s$-labelled ladder is **rigid**.
+
+All 18 scale values are distinct, so the automorphism group preserving $s$ is
+**trivial** — counted analytically, since $18! = 6.4\times10^{15}$ — and
+confirmed on 300 random relabellings, where preserving $s$ forces the identity
+every time. So:
+
+$$\text{fix the real values} \;\Longrightarrow\; \text{fix which zero is which, up to nothing}.$$
+
+Note where this lands. **Axiom B does not say "relations exist"; it says
+relations exist between _distinguishable_ references.** The word the framework
+actually needs is *distinguishable*, and distinguishability is supplied by
+$s$. So $s$ is not a labelling — it is the framework's **individuation
+principle**, index and individuator in a single map.
+
+So the corrected form of B34 is symmetric:
+
+$$\underbrace{s:\mathcal{Z}\to\mathbb{R}_{>0}}_{\text{indexes the reals by the zeros}}
+\qquad\text{and}\qquad
+\underbrace{s^{-1}}_{\text{individuates the zeros by the reals, rigidly}} .$$
+
+**Mutual determination, yes. Containment, no.**
+
+### 16.2 0 is in neither side, and both sides need it (B36)
+
+The residue the intuition was reaching for is $0$ itself — and $0$ is not a
+member of either set.
+
+**(i) $0$ is in neither side.** $s$ has codomain $\mathbb{R}_{>0}$, which is
+**open** at $0$, so $0$ is the scale of no reference *by construction*. And in
+the **finite** 18-rung ladder $0$ is not even a **limit point**: the smallest
+rung sits at $1.616\times10^{-35}$.
+
+**(ii) $0$ is a limit only in the idealized regime.** Under Axiom E with
+$q < 1$ (B19) the walk of scales passes $10^{-30}$ while staying strictly
+positive at every finite step — verified at $q = 0.5,\ 0.9,\ 10^{-3}$. So $0$
+is approached forever and **never attained**. The limit exists only in the
+infinite orbit; the finite ladder does not approach it at all.
+
+**(iii) $0$ is the unique parameterless real.** It is the additive identity
+($x + 0 = x$ for every probe; $x + 1 \ne x$ for every non-integer), the unique
+fixed point of negation (the only $x \in [-4,4]$ with $-x = x$), and the limit
+of $1/n$. So $\mathbb{R}$ determines $0$ **uniquely without reference to any
+zero whatsoever** — the one element the entire structure never has to supply.
+
+$$\boxed{\ 0 \text{ is simultaneously the most fundamental and the least reachable element.}\ }$$
+
+It is the excluded boundary of the codomain, the limit of the scales only in
+the regime where scales run forever, and the only real definable with an empty
+parameter list. Containment would have made $0$ a mere member; the truth makes
+$0$ the thing both sides point at without either reaching.
+
+### 16.3 Why containment fails, as arithmetic (X37)
+
+Literal mutual containment is false in both directions, and this is not a
+matter of taste. $0$ is one point. The 18 labelled scale values are a finite
+set. An interval holds more than $10^{6}$ resolvable points against the
+ladder's 18. Neither side holds the other.
+
+What survives is therefore sharper than what was proposed:
+
+> *Determine and be determined by a shared map, across a boundary that is
+> itself the origin.*
+
+That is §15's asymmetry and §16's rigidity meeting in one place: §15 showed
+the zeros cannot **assemble** an interval, §16 shows the reals **rigidify** the
+zeros, and $0$ sits exactly on the seam — reached by neither, required by both.

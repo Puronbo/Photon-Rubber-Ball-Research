@@ -53,7 +53,7 @@ external dated source; full rows in CLAIM_REGISTER.md):
    E01-E16 with their codes (no center E05, no edge E14, observable ball E15,
    in-horizon homogeneity E16, plus H0/vacuum/bulk-flow/QG/DM/gap/prime
    records E01-E13).
-6. Governance: G01-G09 (battery 19/19, gate 49/49, ruff clean, corrigendum 101
+6. Governance: G01-G09 (battery 19/19, gate 50/50, ruff clean, corrigendum 102
    entries, 24 tracked law .md, no experiment, sibling-repo independence).
 
 Explicitly NOT claimable (X01-X28): every [FRAMING]/[POSTULATE] row (F01-F21

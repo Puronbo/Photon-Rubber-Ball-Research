@@ -230,7 +230,13 @@ Zeros and reals: A-G are permutation-invariant (300 relabellings of the 18 rungs
 satisfy A-G, period 18) while 'between' is not, so no order is derivable; and a countable
 zero-set is a scaffold, not a generator - dense zeros admit no adjacent pair while
 discrete zeros leave inexhaustible gap interiors. s: Z -> R>0 is a function, so a real is
-a value ON a zero (the codomain of the scale assignment), not located between zeros.
+a value ON a zero (the codomain of the scale assignment), not located between zeros. The
+REVERSE direction holds equally: all 18 scale values are distinct, so the s-labelled ladder
+is rigid (trivial automorphism group), and s is what supplies the distinguishibility Axiom B
+demands - index and individuator in one map. 0 itself is in neither side: the codomain R>0
+is open at 0, the finite ladder does not even approach it (min 1.616e-35), it becomes a
+limit only under q < 1 and is never attained there, and it is the unique real definable
+with no parameters (additive identity, unique negation fixed point, limit of 1/n).
 
 ## Theorems and conjectures per layer (label PROVEN / CONJECTURE — never conflate)
 
