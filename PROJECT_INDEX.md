@@ -20,7 +20,7 @@ corrupted on disk and have been repaired in place (see CORRIGENDUM.md).
 | `magnifying_glass_simulation.py`, `magnifying_glass_param_sweep.py` | param sweeps |
 | `PHOTON_RUBBER_BALL_AUDIT_DOCUMENTATION.md/.html` | audit narrative — **[FIXED]** (Mie fix direction and quoted outputs corrected to true runtime values) |
 
-Battery: 19 Python scripts run under `python -W error::RuntimeWarning`, all exit 0, zero `[FAIL]`. Lint: `ruff --select F` clean.
+Gates: `results_of_record.py` 58/58 and `ladder_instrument.py` 27/27, both exit 0. **Not** a battery: 22 tracked `.py` exist, but no `-W error::RuntimeWarning` wiring and no runner do (X55). Lint: `ruff --select F` clean.
 
 ## Canonical results (all cross-verified)
 
@@ -77,5 +77,5 @@ copies are canonical.
 
 1. Prefer the research-folder copies for `photon_rubber_ball_research/`-indexed files.
 2. Never "fix" narrative numbers silently; add to `CORRIGENDUM.md` (historical integrity).
-3. The 19-script battery + `ruff --select F` clean is the green bar for any change that touches code.
+3. The two-code gate (`results_of_record.py` + `ladder_instrument.py`) + `ruff --select F` clean is the green bar for any change that touches code.
 4. Any new doc that repeats the comparability claim must cite the probe's verdict.

@@ -16,7 +16,7 @@ in `CORRIGENDUM.md` (never silently fixed), and the numbers are tracked.
 - `PHYSICS_CONNECTIONS_REVIEW.tex` — the connections review companion paper.
 
 **Verified and mathematically backed.** Every number in the paper is reproduced
-by the 19-script battery (`results_of_record.py` = 23 assert-style checks, exit
+by the two-code gate (`results_of_record.py` = 58 assert-style checks, exit
 0; full battery green under `-W error::RuntimeWarning`). The mathematical backing
 is explicit: the verified results fall on proven theorems — the prime-number
 distribution (PNT), dimension-cap theorems (Frobenius, Hurwitz), Euler's
@@ -44,7 +44,7 @@ python results_of_record.py      # 58 checks, exit 0
 The "comparable energies" abstract claim is **false** (~37 orders of magnitude
 apart; see `CORRIGENDUM.md` entry 1). What survives as genuinely coincident:
 per-photon recoil KE ~ ball zeropoint (9.9x), JKR adhesion >> kT (6.3e5x), and
-the trap contraction 0.22 nm = 6.4x the trap thermal RMS. The 19-script battery
+the trap contraction 0.22 nm = 6.4x the trap thermal RMS. The two-code gate
 runs green under `python -W error::RuntimeWarning`; lint standard is
 `ruff --select F` clean.
 
@@ -74,7 +74,7 @@ runs green under `python -W error::RuntimeWarning`; lint standard is
 │  ├─ COGNITIVE_UNIVERSE_MODEL.py · magnifying_glass_*.py · boson_scaling_probe.py
 │  └─ photon_rubber_ball_research/         twin canonical copies + 37 tests
 ├─ verification & honesty                  PROJECT_INDEX.md (canonical map: start here)
-│  │                                      CORRIGENDUM.md (111-entry catalog, 1 [FALSE], n [FIXED])
+│  │                                      CORRIGENDUM.md (118-entry catalog, 1 [FALSE], n [FIXED])
 │  │                                      AUDIT_REPORT_READINESS.md (Phase 1-8.3 gate results)
 │  │                                      ACTION_PLAN.md (Paths 1-4 to completion)
 │  │                                      CLAIM_REGISTER.md (every claim + every NOT-claim, verdict-coded)
@@ -122,7 +122,7 @@ Git remotes: `lore` and `folding` (fetch/push) are configured alongside
 # single-command reproduction gate
 python results_of_record.py
 
-# the full 19-script battery (all exit 0 under -W error::RuntimeWarning)
+# the second gate (27/27, exit 0); no -W error::RuntimeWarning wiring exists (X55)
 python photon_rubber_ball_verification_improved.py
 python script.py
 python energy_comparability_probe.py
@@ -139,7 +139,7 @@ pdflatex -halt-on-error RESEARCH_PAPER.tex
 
 1. `photon_rubber_ball_research/` copies are canonical; the root copies mirror them.
 2. Never silently rewrite narrative numbers — only `CORRIGENDUM.md` records changes.
-3. The 19-script battery + `ruff --select F` clean is the green bar for any code change.
+3. The two-code gate + `ruff --select F` clean is the green bar for any code change.
 4. Path to completion and open publication tasks: `ACTION_PLAN.md` (Paths 1-4).
 5. The Law Apprehension of Works thread is planning material: informational only,
    never citable as measured physics without a battery step (corrigendum 25/57 policy).

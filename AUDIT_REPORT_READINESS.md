@@ -6,7 +6,7 @@
 
 | Check | Before | After |
 |---|---|---|
-| Battery (19 Python runs, `-W error::RuntimeWarning`) | 2/11 top-level scripts ran | **19/19 green, 0 `[FAIL]`** |
+| Battery (22 tracked `.py`) | 2/11 top-level scripts ran | **[FALSE]** - no `-W error::RuntimeWarning` wiring, no runner; the two-code gate (58/58 + 27/27) is the real evidence (X55) |
 | Lint (`ruff --select F`) | F403/F405 + F841/F541/F401 noise | **fully clean** |
 | Manager trio (emoji/noemoji/final) | run path and EOF untested; `select` NameError always crashed a real run | exit 0 on `q`, real `run_script` path, and end-of-input |
 | `.js` workflows (5 on disk; 4 tracked) | all parse | all `node --check` clean (5th = gitignored `.claude/workflows/` copy of `_v2.js`) |
@@ -114,7 +114,7 @@ the publication-integrity pass deferred since Phase 6. Tracked as corrigendum
   Photon-Sized Rubber Ball Verification System" (no experiment has been run).
 - Abstracts: state that the relativistic/thermal/zero-point scales are ~37 orders
   apart and not comparable, name the genuine coincidences (recoil ≈ ZPE, JKR ≫
-  kT), and cite the 19-script independent re-verification.
+  kT), and cite the two-code gate (58/58 + 27/27) rather than the unverified 19-script battery (X55).
 - §5 "Experimental Access" gains a feasibility paragraph: 1 mW → 3.33 pN →
   0.94 pm deflection (36× below the 0.034 nm trap thermal RMS), so 10× SNR
   requires ~360 mW at k = 3.55 N/m or trap softening; per-photon recoil
@@ -147,7 +147,7 @@ language stops applying). The dark/hidden-photon slow-boson absorption direction
 is framework-level only and NOT asserted numerically.
 
 Documentation: RESEARCH_PAPER.tex gained §"Probe-particle type dimension";
-abstracts now cite a 19-script battery across both manuscripts and the arXiv
+abstracts cite a 19-script battery across both manuscripts and the arXiv; that claim is **withdrawn** (X55) and the external text still needs correcting
 bundles (main.tex + PDFs regenerated).
 
 ## Phase 8.3 — Coverage sweep (2026-09-25, third full pass)
@@ -1478,6 +1478,12 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   be coupled to, and a monotone rescaling of a zero-set is not new physics.*
 - Battery unchanged at 58 (retraction, not addition); register 142 → 143
   numbered (X47), 46 NOT-claims; corrigendum 110 → 111.
+
+Gate (Phase 45): `results_of_record.py` 58/58 exit 0, `ladder_instrument.py` 27/27
+exit 0, 22/22 tracked .py byte-compile clean, `ruff --select F` clean on tracked
+corpus. Register 144 numbered + 55 NOT-claims, corrigendum 118. No battery
+runner and no `-W error::RuntimeWarning` wiring exist anywhere in the corpus, so
+the 19-script green bar is retracted across all six documents that asserted it.
 
 Gate (Phase 44): battery 19/19 green, `results_of_record.py` 58/58 exit 0,
 `ruff --select F` clean, only intended changes staged.

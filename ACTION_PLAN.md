@@ -4,13 +4,13 @@ Grounding: everything tagged **[VERIFIED]** in `PROJECT_INDEX.md` is trusted;
 everything else is narrative and is tracked in `CORRIGENDUM.md` (never silently
 rewritten). This document is the actionable layer: each goal path lists concrete
 tasks with a **Done** criterion and current status. A closing gate runs
-`results_of_record.py` + the 19-script battery + `ruff check --select F`.
+`results_of_record.py` + `ladder_instrument.py` + `ruff check --select F`.
 
 ## Verified foundations (fast facts)
 
 - Canonical numbers are reproducible with one command: `python results_of_record.py` (58 checks, exit 0).
 - Central abstract claim ("relativistic/quantum/thermal comparable at β=0.04") is **false** (~37 orders apart); true coincidences: per-photon recoil KE ≈ ball zeropoint (9.9×), JKR adhesion ≫ kT (6.3e5×), contraction 0.22 nm = 6.4× the trap thermal RMS.
-- 19 Python scripts = code of record (all green under `-W error::RuntimeWarning`); `ruff --select F` clean.
+- 22 tracked `.py` files; the only *executed* evidence is the two-code gate (`results_of_record.py` 58/58, `ladder_instrument.py` 27/27). No `-W error::RuntimeWarning` wiring and no runner exist, so "all green" is not a claim this repo can make (X55); `ruff --select F` clean.
 - The `.md/.html/.txt` corpus is generated narrative; the expert comments are generative, not reviewers.
 
 ---
@@ -67,7 +67,7 @@ the verified constants (m=9.58e-17 kg, k_trap=3.55 N/m, T=300 K, λ=550 nm).
 Closed when: Paths 1–2 done (already); Path 3 designs carry verified feasibility
 numbers; Path 4.2/4.3 explicitly decided; final gate below is green.
 
-Final gate: `python results_of_record.py` (exit 0) + 19-script battery (all exit 0,
+Final gate: `python results_of_record.py` (exit 0) + `python ladder_instrument.py` (exit 0);
 zero `[FAIL]`) + `ruff check --select F` (clean) + `__pycache__` residual 0.
 
 ## Status log
