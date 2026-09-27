@@ -1268,17 +1268,27 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   *excludes* `1/|Δs|` but *selects nothing among* functions of `g`, and the
   phrase "the unique unit-covariant weighting" is **false**. Exponent 2 comes
   from the framework's own `1/L²` law applied with `L = g` (B46), not from
-  covariance. The **bottleneck coefficient is 1.0581, not 2**.
+  covariance. The **bottleneck coefficient is 1.0581, not 2** — the value stands,
+  but its explanation ("the two sides carry mass") is **withdrawn in Phase 44**
+  as the same rescaling-dressed-as-mechanism error as the shadow.
 - **X43 — two corrections and one sharpening.**
   - **(a) FALSE:** "more relational structure gives more possible change." `K_n`
     has Laplacian spectrum `{0, n}` **exactly** — one nonzero rate at n = 9,
     n = 18, n = 100, at any size, against `n−1` for the path and 2 for the
     star. **Connectivity destroys frequency diversity.** Structure *reduces*
     possibility to fewer independent rates.
-  - **(b) FALSE:** the shadow adds no slow behaviour. `ω² = λ` and `ω² = λ + 2K`,
-    stable, with `+2K` **constant in ω²**, so the relative split is largest on
-    the **softest** mode (+117.5% vs +22.5%). It splits slow modes hardest. The
-    doubling of the mode count is **bookkeeping** — the dimension doubled.
+  - **(b) FALSE — RETRACTED IN FULL (Phase 44), superseding the Phase 55
+    "correction".** Phase 55 set a coupling `K = 0.5` **by hand** and reported
+    what followed as physics. The **doubling of the mode count is an identity**:
+    `G` is **one** quantity, it is **zero**, and it appears as curvature and in
+    the field equation — the two are read at **different scales**, which is not
+    a difference in kind and therefore not two quantities. A term proportional
+    to `G` vanishes identically, so the spectrum is **17 rates, not 34**. And
+    "the relative split is largest on the softest mode" is **vacuous**:
+    `(λ+c)/λ = 1 + c/λ` is strictly decreasing in λ for **every** c > 0
+    (`d/dλ = −c/λ²`), so the ordering is forced by adding a positive constant to
+    anything. Same error in the bottleneck explanation: **1.0581 stands**, "the
+    two sides carry mass" is **withdrawn**.
   - **(c) SHARPENED:** the combinatorial Laplacian is **scale-blind**, so the
     framework as written cannot derive "smaller scale → more change". B46/B47
     supply the missing weighting.
@@ -1437,6 +1447,40 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   functions of `g`. Exponent 2 comes from the `1/L²` premise with `L = g`.
 - Register: B54 added (141 → 142), X46 added (45 → 46), B47 and X45 corrected.
   Corrigendum 109 → 110.
+
+## Phase 44 — the shadow is VOID: G is one zero quantity read at two scales (2026-09-27)
+
+- **The objection.** I had been treating two things as distinct that are one
+  quantity. `G` appears as **curvature** and in the **field equation**, and it is
+  **zero**; the two are read at **different scales**, which is not a difference
+  in kind. Counting them as two is mixing standards, and it inflated the model.
+- **What the code was actually doing.** There is no `G` anywhere in the
+  framework. The only curvature-like coupling in the battery was
+  `results_of_record.py:1708`, `_Kc = 0.5` — **hand-picked**, with no
+  derivation and no identification. Every shadow number descended from a constant
+  I chose.
+- **Damage 1 — the mode-count doubling was an identity.** With `G = 0` the
+  "doubled" spectrum has the **same distinct rates** as the original: 17, not 34.
+  Check 55 now gates this directly rather than describing it.
+- **Damage 2 — the "mechanism" was arithmetic.** "The relative split is largest
+  on the softest mode" is `(λ+c)/λ = 1 + c/λ`, **strictly decreasing in λ for
+  every c > 0** (`d/dλ = −c/λ²`). The ordering is forced by adding a positive
+  constant to *anything*. Check 55 now gates the vacuity by showing the ordering
+  is unchanged for couplings three orders of magnitude apart (`0.5` and `137.0`)
+  — so it cannot be evidence about either.
+- **Damage 3 — the same error in the bottleneck coefficient.** The measured
+  **1.0581 stands**; the explanation "since the two sides of the bottleneck carry
+  mass" is the same rescaling-dressed-as-mechanism and is **withdrawn**. The
+  honest statement is only that the naive factor of 2 does not survive the sum.
+- **X43(b) is retracted in full**, superseding the Phase 55 "correction" of it.
+  A correction that preserves the claim's mechanism was not a correction.
+- **X47 added** — the general form of the error: *a quantity that is zero may not
+  be coupled to, and a monotone rescaling of a zero-set is not new physics.*
+- Battery unchanged at 58 (retraction, not addition); register 142 → 143
+  numbered (X47), 46 NOT-claims; corrigendum 110 → 111.
+
+Gate (Phase 44): battery 19/19 green, `results_of_record.py` 58/58 exit 0,
+`ruff --select F` clean, only intended changes staged.
 
 Gate (Phase 43): battery 19/19 green, `results_of_record.py` 58/58 exit 0,
 `ruff --select F` clean, only intended changes staged.

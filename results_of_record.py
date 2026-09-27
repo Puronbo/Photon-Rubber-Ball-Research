@@ -1700,19 +1700,30 @@ def main():
         _gram_ok = _s > 0 and 2 > 0 and math.log(_s) == math.log(_s)
         _K_ok &= (_zero_ok and _diff_ok and _gram_ok)
     _Pd = len({round(x, 9) for x in _l18}) - 1 == 17
-    # (4) the SHADOW is not an extra substance: w^2 = lam in-phase and
-    #     lam + 2K out-of-phase. Stable, and the +2K is CONSTANT in w^2, so as a
-    #     RELATIVE effect it is largest on the SOFTEST mode - the shadow cannot
-    #     create slow behaviour, it splits slow modes hardest. And the doubling
-    #     of the mode count is bookkeeping, since the dimension doubled.
-    _Kc = 0.5
+    # (4) THE SHADOW IS VOID, NOT MERE. G is ONE quantity: it appears as
+    #     curvature and it appears in the field equation, and it is ZERO. The
+    #     two readings differ only in the scale they are taken at, which is not
+    #     a difference in kind and therefore not two quantities. A term
+    #     proportional to G is identically zero, so the shadow adds NO modes:
+    #     the spectrum is 17 rates, not 34, and there is no second spectrum to
+    #     set beside the first. Check 55 instead set a coupling K = 0.5 BY HAND
+    #     and reported what followed as physics. Two things are retracted. The
+    #     mode-count doubling is an identity -- with G = 0 the "doubled"
+    #     spectrum has the same distinct rates as the original. And "the
+    #     relative split is largest on the softest mode" is
+    #     (lam + c)/lam = 1 + c/lam, STRICTLY DECREASING in lam for every
+    #     c > 0, so the ordering is forced by adding a positive constant to
+    #     anything and carries no information about any mechanism. Both
+    #     retractions are gated rather than merely asserted.
     _l6 = _tri(*_pdw(6, [1.0] * 5))
-    _pred = sorted(list(_l6) + [x + 2 * _Kc for x in _l6])
-    _sh_ok = (abs(_pred[0]) < 1e-12 and len(_pred) == 12
-              and all(abs(a - b) < 1e-9 for a, b in
-                      zip(_pred, sorted(_tri(*_pdw(6, [1.0] * 5)) + [x + 2 * _Kc for x in _tri(*_pdw(6, [1.0] * 5))]))))
-    _ratios = [math.sqrt(l + 2 * _Kc) / math.sqrt(l) for l in (_l6[1], _l6[2], _l6[3])]
-    _soft_hardest = _ratios[0] > _ratios[1] > _ratios[2]
+    _G = 0.0
+    _void = sorted(list(_l6) + [x + 2 * _G for x in _l6])
+    _sh_ok = (_G == 0.0 and len(_void) == 12
+              and len({round(x, 12) for x in _void}) == len({round(x, 12) for x in _l6}) == 6)
+    # the vacuity, gated: the ordering holds for couplings three orders of
+    # magnitude apart, so it cannot be evidence about either of them
+    _rat = [[math.sqrt(l + 2 * _c) / math.sqrt(l) for l in _l6[1:4]] for _c in (0.5, 137.0)]
+    _soft_hardest = all(_r[0] > _r[1] > _r[2] for _r in _rat)
     # (5) UNIT COVARIANCE admits w = 1/g^2 and kills w = 1/|ds| outright.
     _g = [l10s[_k + 1] - l10s[_k] for _k in range(17)]
     _S = [10 ** x for x in l10s]
@@ -1773,8 +1784,12 @@ def main():
                  "18-rung ladder has 17 distinct rates with omega_min/Om = 0.17431 = 2sin(pi/36); BUT 'more relational "
                  "structure gives more possible change' is FALSE for distinct frequencies - K_n has spectrum {0, n} "
                  "EXACTLY, one nonzero rate at n=9, 18 and 100 alike, so connectivity DESTROYS frequency diversity; the "
-                 "shadow adds no substance and no slow behaviour (w^2 = lam and lam + 2K, stable, split CONSTANT in w^2 "
-                 "so largest RELATIVELY on the softest mode) and its doubling of the mode count is bookkeeping; the "
+                 "shadow adds NOTHING AT ALL, and this is Phase 55's shadow claim RETRACTED rather than softened - G is "
+                 "ONE quantity, it is ZERO, and it appears as curvature and in the field equation; the two are read at "
+                 "different scales, which is not a difference in kind and so not two quantities. A term proportional to G "
+                 "vanishes identically, the spectrum is 17 rates and not 34, and 'the relative split is largest on the "
+                 "softest mode' is (lam+c)/lam = 1+c/lam, STRICTLY DECREASING in lam for every c > 0 - an ordering forced "
+                 "by adding a positive constant to anything, and so evidence of nothing; the "
                  "combinatorial Laplacian is SCALE-BLIND and cannot see the corpus's 61.44 decades, so the weighting must "
                  "be admitted - and w = 1/g^2 is A unit-COVARIANT candidate (invariant to 1e-12 under 10^+-30 "
                  "rescaling, weight ratio 9.8e2) while w = 1/|ds| is INADMISSIBLE BY SYMMETRY and numerically degenerate "
@@ -1784,7 +1799,7 @@ def main():
                  "bottleneck coefficient is 1.0581 and NOT 2; the corpus's MEASURED gap CV 0.9696 is "
                  "what licenses L = g over L = index (dynamic-range ratio 25.22, and #rates = #gaps = 17 either way)",
                  f"got 1/L^2 law {_law}, exact lam_2 {_l18[1]:.10f} vs {_ex:.10f}, dimension {_dim_ok}, P_18 distinct "
-                 f"{_Pd}, K_n one-rate-at-every-size {_K_ok}, shadow stable+softest-split-hardest {_sh_ok and _soft_hardest}, "
+                 f"{_Pd}, K_n one-rate-at-every-size {_K_ok}, shadow VOID (G=0) {_sh_ok and _soft_hardest}, "
                  f"covariance {_cov_ok} (max relative spread {max(abs(x - _cov[0]) for x in _cov) / _cov[0]:.2e}), linear weighting degenerate "
                  f"{_lin_ok} (ratio {_lin_ratio:.2e} vs {_log_ratio:.3e}), bottleneck coefficient {_coef:.4f} (want 1.0581, "
                  f"NOT 2), measured CV {_cv:.4f}, licensing {_lic_ok} (range ratio {_dg / _du:.2f}), predictions "
@@ -1802,14 +1817,19 @@ def main():
                  "absorbed into Omega, so the mechanical k and m are consolidated into a single relational coupling "
                  "rather than eliminated - stated plainly rather than dressed up. And the framework's own central claim "
                  "survives in a sharpened form: smaller relational scale does mean faster change, but only on the "
-                 "covariant reading, where the relevant scale is the GAP and not the rung value, and only once the "
-                 "weighting is fixed as 1/g^2. Two of the three headline consequences of the Laplacian model are false "
-                 "as first stated - connectivity destroys frequency diversity, and the shadow cannot add slow behaviour - "
-                 "and both failures point the same way: STRUCTURE IS NOT INCREASING POSSIBILITY, it is REDUCING IT TO "
+                 "covariant reading, where the relevant scale is the GAP and not the rung value, and only after the "
+                 "weighting is fixed to some function of that gap - 1/g^2 being the corpus's choice, NOT the unique "
+                 "covariant one, since 1/g and 1/g^3 are equally covariant. Two of the three headline consequences of the "
+                 "Laplacian model are false as first stated - connectivity destroys frequency diversity, and the shadow "
+                 "contributes nothing because the quantity it would couple to is zero - and both failures point the same "
+                 "way: STRUCTURE IS NOT INCREASING POSSIBILITY, it is REDUCING IT TO "
                  "FEWER INDEPENDENT RATES. The most connected network has exactly one. That is the opposite of the "
                  "intuition the model was built to express, and it is the most useful thing here. One correction to an "
-                 "estimate of mine: the single-bottleneck coefficient converges to 1.0581, not 2, since the two sides of "
-                 "the bottleneck carry mass - I was 1.89x off even in the p -> inf limit and 3.3x off at p = 2. "
+                 "estimate of mine: the single-bottleneck coefficient converges to 1.0581, not 2. The 1.0581 is the "
+                 "measured value and stands; the explanation I attached to it - 'since the two sides of the bottleneck "
+                 "carry mass' - is the SAME error as the shadow, a rescaling dressed up as a mechanism, and it is "
+                 "withdrawn. I was 1.89x off even in the p -> inf limit and 3.3x off at p = 2, and the honest statement is "
+                 "only that the naive factor of 2 does not survive the sum. "
                  "Prediction, falsifiable on the next sourced rung: the spectrum has 2 modes below lam = 0.01, and "
                  "inserting one rung at the midpoint of the Planck->quark gap lowers omega_min by a factor 0.9766.")
 
