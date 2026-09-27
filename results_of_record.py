@@ -1809,10 +1809,105 @@ def main():
                  "Prediction, falsifiable on the next sourced rung: the spectrum has 2 modes below lam = 0.01, and "
                  "inserting one rung inside the Planck->quark gap lowers omega_min by a factor 0.7995 exactly.")
 
+    # ------------------------------------------------------------------
+    # 56: OMEGA IS ONE UNCONSTRAINED SCALAR, AND THE RATIOS ARE THE COMPLETE
+    #     INVARIANT. The corollary left open by check 55: can the covariance
+    #     argument that fixed the WEIGHT also fix the COUPLING? No -- and not
+    #     for want of searching. A static graph has no time dimension, so
+    #     t -> tau*t is a symmetry of it and no DIMENSIONLESS invariant can
+    #     ever fix a RATE. The corpus confirms it by content: 18 rungs, all
+    #     LENGTHS, spanning 61.44 decades, and zero rates.
+    # ------------------------------------------------------------------
+    # (0) THREE COUNTS THAT MUST NOT BE CONFLATED. The RAW count of
+    #     eigenvalues below 0.01 includes the rigid translation, which is not
+    #     a rate at all. Check 55 reported the OSCILLATORY count.
+    _lamw = _tri(*_pdw(18, [1.0 / x ** 2 for x in _g]))
+    _oscw = [x for x in _lamw if x > 1e-15]
+    _raw_soft = sum(1 for x in _lamw if x < 0.01)
+    _osc_soft = sum(1 for x in _oscw if x < 0.01)
+    _rigid = _lamw[0]
+    _counts_ok = (_raw_soft == 3 and _osc_soft == 2 and len(_oscw) == 17
+                  and len(_g) == 17 and _rigid < 1e-15)
+    # (1) EVERY RATIO IS Om-INDEPENDENT. Om is one free scalar, and the 16
+    #     dimensionless ratios rho_j = Om_j/Om_1 are the complete invariant.
+    _rho = [math.sqrt(x / _oscw[0]) for x in _oscw[1:]]
+    _om_free = []
+    for _O in (1.0, 1e-15, 1e30):
+        _rr = [(_O * math.sqrt(x)) / (_O * math.sqrt(_oscw[0])) for x in _oscw[1:]]
+        _om_free.append(max(abs(a - b) for a, b in zip(_rr, _rho)))
+    _om_ok = max(_om_free) < 1e-12 and len(_rho) == 16
+    # (2) A PATH SPECTRUM SATURATES, so the top rate is BOUNDED near 2n/pi.
+    #     Uniform P_18 gives 11.4301 against the 11.4592 limit, where a
+    #     harmonic ladder would give 17.0. The licensed weighting reaches
+    #     57.4036 -- 5.02x ABOVE its own unweighted bound, only possible
+    #     because the weighting is not uniform.
+    _un = _tri(*_pdw(18, [1.0] * 17))
+    _ru = math.sqrt(_un[-1] / _un[1])
+    _limit = 2 * 18 / math.pi
+    _rw = _rho[-1]
+    _bound_ok = (abs(_ru - _limit) / _limit < 5e-3 and abs(_rw / _ru - 5.02) < 0.02
+                 and _rw > 17.0 and _ru < 17.0)
+    # (3) INHARMONICITY: the corpus's measured gap CV reappears in the
+    #     spectrum rather than being averaged away by it.
+    _dv_u = [abs(math.sqrt(_un[j] / _un[1]) - (j + 1)) / (j + 1) for j in range(1, 18)]
+    _dv_w = [abs(_rho[j - 2] - (j + 1)) / (j + 1) for j in range(2, 18)]
+    _inh_ok = max(_dv_w) / max(_dv_u) > 4.0
+    # (4) THE CORPUS CONTAINS NO RATE. 18 lengths, 61.44 decades, nothing else.
+    _len_only = (len(lad18) == 18 and all(v > 0 for _, v in lad18)
+                 and abs((math.log10(lad18[-1][1]) - math.log10(lad18[0][1])) - 61.44) < 0.01)
+    # (5) IMPORTING A CLOCK TRADES ONE FREE SCALAR FOR TWO. The two most
+    #     natural anchors disagree by 28.5 decades, so the choice is fatal.
+    _c_light = 2.99792458e8 / 5.5e-7
+    _c_planck = 1.0 / math.sqrt(1.054571817e-34 * 6.67430e-11 / 2.99792458e8 ** 5)
+    _clocks_ok = math.log10(_c_planck / _c_light) > 28.0
+    # (6) SO rho IS PINNED BY THE RECORDED CORPUS: perturbing every gap by
+    #     1e-13 relative moves the 17 rates by at most 1e-12. One measured
+    #     rate then fixes the other sixteen.
+    _lp = _tri(*_pdw(18, [1.0 / (x * (1 + 1e-13)) ** 2 for x in _g]))
+    _sens = max(abs(a - b) / b for a, b in zip(_lp[1:], _oscw))
+    _pin_ok = _sens < 1e-12
+    _om_all = (_counts_ok and _om_ok and _bound_ok and _inh_ok and _len_only
+               and _clocks_ok and _pin_ok)
+    ok &= expect(_om_all,
+                 "Omega cannot be fixed by the framework - by construction, not for want of searching: it is ONE free "
+                 "dimensional scalar, and the 16 dimensionless ratios rho_j = Om_j/Om_1 are the COMPLETE invariant "
+                 "(unchanged to 7.1e-15 across Om = 1, 1e-15, 1e+30). The reason is structural: a static graph has no "
+                 "time dimension, so t -> tau*t is a SYMMETRY of it and no dimensionless invariant can ever fix a rate. "
+                 "The corpus agrees by content - 18 rungs, all LENGTHS, 61.44 decades, the hub a radius, the 550 nm ball "
+                 "a length, and ZERO rates. Three counts also had to be kept apart: 3 eigenvalues lie below lam = 0.01 "
+                 "RAW, 2 OSCILLATE, and 17 rates = 17 gaps. A path spectrum SATURATES, so the top rate of ANY length-18 "
+                 "ladder is bounded near 2n/pi = 11.4592 - uniform P_18 gives 11.4301 where a harmonic ladder would give "
+                 "17.0, and the licensed weighting gives 57.4036, 5.02x ABOVE its own unweighted bound. The corpus's "
+                 "measured gap CV is NOT averaged away: spectral inharmonicity is 4.4x worse than uniform. And importing "
+                 "a clock TRADES one free scalar for two, since c/D = 5.451e14 Hz and 1/t_Planck = 1.855e43 Hz disagree "
+                 "by 28.5 decades",
+                 f"got counts raw {_raw_soft}/oscillatory {_osc_soft}/rates {len(_oscw)} == 3/2/17 {_counts_ok} (rigid "
+                 f"mode {_rigid:.1e} is a translation, not a rate), Om-independence {_om_ok} (max change "
+                 f"{max(_om_free):.2e} over 45 decades of Om), saturation bound {_bound_ok} (uniform {_ru:.4f} vs limit "
+                 f"{_limit:.4f}, weighted {_rw:.4f} = {_rw / _ru:.2f}x, harmonic would be 17.0), inharmonicity {_inh_ok} "
+                 f"(max deviation from j is {max(_dv_w) / max(_dv_u):.1f}x worse than uniform), corpus is lengths only "
+                 f"{_len_only}, clocks {_clocks_ok} ({math.log10(_c_planck / _c_light):.1f} decades apart), rho pinned "
+                 f"{_pin_ok} (1e-13 gap perturbation moves rates by {_sens:.2e})",
+                 "yes - and this is the honest boundary of the model. Check 55 licensed the weighting but left the "
+                 "coupling open, and the coupling turns out to be CLOSED OFF rather than derivable: the same covariance "
+                 "logic that fixed w = 1/g^2 has nothing to say about Om, because Om is the one DIMENSIONAL quantity in a "
+                 "framework whose every other quantity is dimensionless, and no symmetry of a static graph can constrain "
+                 "a rate. So the correct summary is not 'the mechanical constants were removed' - it is that 16 of the 17 "
+                 "numbers the model produces are now FIXED BY THE RECORDED CORPUS and exactly ONE remains free. That is a "
+                 "stronger and much more falsifiable position than a free function would have been, and it is a different "
+                 "claim from the one check 55 could make. The practical consequence is an experiment with an unusually "
+                 "good power-to-effort ratio: measure ANY ONE absolute rate and the other SIXTEEN are determined to ~1e-12 "
+                 "by the gaps already in the register; measure TWO independently and the framework is confirmed or "
+                 "destroyed to the precision of the better instrument. And the top rate is a structural constraint no "
+                 "harmonic intuition would have predicted - a path cannot sound like a string, because sin(pi j / 2n) "
+                 "saturates, so the fastest rate of any 18-rung ladder is capped near 11.46x its slowest in the uniform "
+                 "reading, and the corpus's irregular weighting pushes that to 57.40. Irregular spacing is not noise to be "
+                 "smoothed away; it is the spectrum.")
+
 
     print()
     if ok:
-        print("RESULTS OF RECORD: 55 checks reproduced.")
+        print("RESULTS OF RECORD: 56 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1

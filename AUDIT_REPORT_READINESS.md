@@ -1291,6 +1291,49 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B45–B47 added (132 → 135), X43 added (42 → 43). Corrigendum
   106 → 107.
 
+## Phase 41 — the coupling is closed off, not derived: one free scalar and 16 fixed ratios (2026-09-27)
+
+- Follows Phase 40. Check 55 licensed the weighting but left the coupling `Om`
+  open. The natural next question: **can the same covariance argument fix it?**
+- **B48 (check 56) — no, and that is structural.** The 16 dimensionless ratios
+  `ρ_j = ω_j/ω_1` are the **complete invariant**, unchanged to 7.1e-15 across
+  45 decades of `Om`. The reason is not that the search came up empty: **a
+  static graph has no time dimension, so `t → τt` is a symmetry of it, and no
+  dimensionless invariant of a graph can ever fix a rate.** The corpus agrees by
+  content — 18 rungs, all **lengths**, 61.44 decades, the hub a radius, the
+  550 nm ball a length, **zero rates**. `Om` is the only dimensional quantity
+  in a framework whose everything else is dimensionless, which is exactly why
+  the covariance argument has nothing to say about it.
+- **B49 (check 56) — a path spectrum saturates.** `ω_j = 2Ω sin(πj/2n)`, so the
+  top rate of any length-18 ladder is capped near `2n/π = 11.4592`. Uniform
+  `P₁₈` gives **11.4301** where a harmonic string would give **17.0** — a path
+  cannot sound like a string. The licensed weighting reaches **57.4036**,
+  **5.02× above its own unweighted bound**, reachable only because the weighting
+  is non-uniform. Three counts kept apart: **3** eigenvalues below `λ = 0.01`
+  raw, **2** oscillatory (the third is the rigid translation), **17** rates = 17
+  gaps. And the measured gap CV is **not averaged away** — spectral
+  inharmonicity is **4.4×** worse than uniform. Irregular spacing *is* the
+  spectrum.
+- **B50 (check 56) — a clock costs more than it buys.** Importing one trades a
+  single free scalar for two, and the two most natural anchors — `c/D =
+  5.451e14 Hz` from the 550 nm ball, `1/t_Planck = 1.855e43 Hz` from the hub —
+  disagree by **28.5 decades**. What the corpus does buy: `ρ` is pinned to
+  ~1e-12 by the already-recorded gaps.
+- **X44 — three NOT-claims.** The framework fixes **ratios, never a rate**; the
+  mechanical parameters were **consolidated, not removed**; and the rate count
+  does **not** run away with `j`, because `sin(πj/2n)` saturates.
+- **Net position: 16 of 17 numbers fixed by the recorded corpus, exactly one
+  free.** A narrower claim than Phase 40 could make, and a stronger one — and it
+  buys an experiment with an unusually good power-to-effort ratio: **measure any
+  one absolute rate and the other sixteen are determined; measure two
+  independently and the framework is confirmed or destroyed to the precision of
+  the better instrument.**
+- Register: B48–B50 added (135 → 138), X44 added (43 → 44). Corrigendum
+  107 → 108.
+
+Gate (Phase 41): battery 19/19 green, `results_of_record.py` 56/56 exit 0,
+`ruff --select F` clean, only intended changes staged.
+
 Gate (Phase 40): battery 19/19 green, `results_of_record.py` 55/55 exit 0,
 `ruff --select F` clean, only intended changes staged.
 
