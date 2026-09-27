@@ -1331,6 +1331,56 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B48–B50 added (135 → 138), X44 added (43 → 44). Corrigendum
   107 → 108.
 
+## Phase 42 — the universe as a point: the counting holds, the physics moves, and the Phase 40 test flips sign (2026-09-27)
+
+- Follows Phase 41. The scale of the entire universe was proposed **as a
+  point** rather than as the eighteenth rung.
+- **B51 (check 57) — it is the only rung that is not the size of a thing.** The
+  other **17** are characteristic scales; this one is a **radius**, the edge of
+  the visible region. As a point it has no extent, so it is a **boundary, not a
+  rung**, and a point's position is a **convention**: the top gap is
+  conventional, the other 16 are physical. But a conventional gap **is still a
+  gap**, so **#rates = #gaps = 17 in both readings** and the identity is
+  **total** — the pinned path has 17 thing-nodes plus the point (17 unknowns,
+  17 edges), hence 17 rates and **no zero** against the free path's 17 rates and
+  one zero. The point reading **spends the rigid mode** rather than removing a
+  rate. The licensing statistic does not move: **CV 0.9696** over the 17 gaps of
+  either reading (0.9660 is the 16-gap sub-ladder figure).
+- **B52 (check 57) — pinning SOFTENS the fundamental by 1.79×**, not stiffens
+  it (`ω₁` ratio **0.5581**), while the top rate is unchanged (**0.9997**) and the
+  uniform cap roughly **doubles** (11.4301 → 22.1994). The free path's lowest
+  *nonzero* mode is already a **half wave**; pinning forbids it and leaves a
+  **quarter wave** leaning on the point, θ = π/35 against π/18 — 4× in λ, 2× in
+  ω. The uniform cross-check gives 0.5148 = 1.94× and the corpus reproduces it
+  at 1.79×. What pinning stiffens is the **count**, not the softest rate.
+- **B53 (check 57) — which end you pin is measurable, not taste.** The licensed
+  weighting is asymmetric (4.01e-03 at the Planck end, 3.92e+00 at Laniakea), so
+  pinning the universe gives 0.5581 and pinning Planck gives **0.2792** — a
+  **99.91%** difference, ratio 1.999. A **uniform** ladder could not tell the
+  ends apart at all. The irregularity B46 licensed is what makes the question
+  answerable.
+- **X45 — the Phase 40 numbers split.** Count (17) and CV (0.9696) hold; the
+  gap-split factor **0.7995 does not** — under the point reading the same
+  insertion leaves the softest rate at **1.0102**, unchanged. A **sign flip, not
+  a magnitude difference**, so the Phase 40 falsification test does not merely
+  probe the model: it **discriminates between the two readings**. One measurement
+  of the softest rate after a single inserted rung would settle whether the
+  observable universe is a rung or a point.
+- **A correction to my own first pass, which is why the check asserts the count
+  instead of accepting it.** I initially claimed the rate count moved 17→16 and
+  the CV moved 0.9696→0.9660. Both were wrong: there are **seventeen** sizes of
+  things, and a conventional gap is still a gap. The gate caught it because the
+  assertion asked for `len(spectrum)`.
+- A point still supplies **no clock**, so Ω remains external (B48). What it adds
+  is that the covariance becomes **exact** — a point can be moved and rescaled
+  freely, which is what the 61.44 decades and B47's 1e-12 invariance were
+  already measuring without a name.
+- Register: B51–B53 added (138 → 141), X45 added (44 → 45). Corrigendum
+  108 → 109.
+
+Gate (Phase 42): battery 19/19 green, `results_of_record.py` 57/57 exit 0,
+`ruff --select F` clean, only intended changes staged.
+
 Gate (Phase 41): battery 19/19 green, `results_of_record.py` 56/56 exit 0,
 `ruff --select F` clean, only intended changes staged.
 

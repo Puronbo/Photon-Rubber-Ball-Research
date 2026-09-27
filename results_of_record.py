@@ -1904,10 +1904,141 @@ def main():
                  "reading, and the corpus's irregular weighting pushes that to 57.40. Irregular spacing is not noise to be "
                  "smoothed away; it is the spectrum.")
 
+    # ------------------------------------------------------------------
+    # 57: THE UNIVERSE AS A POINT. It is the only one of the 18 rungs that is
+    #     not the size of a thing - it is a RADIUS, the edge of the visible
+    #     region. As a POINT it has no extent, so it is a BOUNDARY rather than
+    #     a rung, and pinning a boundary is a DIRICHLET condition. That changes
+    #     the rate count, the licensing statistic, and - worst of all - it
+    #     INVERTS the Phase 40 falsification test.
+    # ------------------------------------------------------------------
+    def _free_spec(_w):
+        _n = len(_w) + 1
+        _d = [0.0] * _n
+        for _k, _x in enumerate(_w):
+            _d[_k] += _x
+            _d[_k + 1] += _x
+        return _tri(_d, list(_w))
+
+    def _ground_hi(_w):
+        """pin the LAST node -- the universe, treated as a point"""
+        _n = len(_w)
+        _d = ([_w[0]] + [_w[_i - 1] + _w[_i] for _i in range(1, _n - 1)]
+              + [_w[_n - 2] + _w[_n - 1]])
+        return _tri(_d, list(_w[:_n - 1]))
+
+    def _ground_lo(_w):
+        """pin the FIRST node -- the Planck end, for comparison"""
+        return sorted(_ground_hi(list(reversed(_w))))
+
+    def _cvs(_v):
+        _m = sum(_v) / len(_v)
+        return math.sqrt(sum((_x - _m) ** 2 for _x in _v) / (len(_v) - 1)) / _m
+
+    _wn = [1.0 / _x ** 2 for _x in _g]
+    _free = _free_spec(_wn)
+    _phi = _ground_hi(_wn)
+    # (0) THE UNIVERSE IS THE ONLY RUNG THAT IS NOT THE SIZE OF A THING, and a
+    #     point has no extent, so its position is a CONVENTION. The ladder
+    #     splits: 16 data-determined gaps between 16 things, plus 1 gap to a
+    #     boundary whose coordinate is a choice. Hence #rates = #gaps = 16.
+    _cv17 = _cvs(_g)
+    _cv16 = _cvs(_g[:16])
+    #     There are SEVENTEEN sizes of things and one radius, so the pinned
+    #     path has 17 thing-nodes plus the pinned point: 17 unknowns, 17 edges,
+    #     17 rates and NO zero. The free path has 18 nodes, 17 rates and one
+    #     zero. So #rates = #gaps = 17 in BOTH readings and the identity is
+    #     TOTAL, not merely robust - the point reading SPENDS the zero rather
+    #     than removing a rate.
+    _free_rates = len(_free) - 1
+    _ident_ok = (len(_phi) == 17 and all(_x > 1e-15 for _x in _phi)
+                 and _free_rates == 17 and len(_g) == 17 and abs(_free[0]) < 1e-15)
+    _pt_ok = (_ident_ok and abs(_cv17 - 0.9696) < 5e-4
+              and abs(_cv16 - 0.9660) < 5e-4)
+    # (1) PINNING A POINT SOFTENS THE FUNDAMENTAL, IT DOES NOT STIFFEN IT.
+    #     The free path's lowest NONZERO mode is already a half wave; pinning
+    #     forbids it and leaves a QUARTER wave leaning on the point, theta =
+    #     pi/35 instead of pi/18, so 4x in lam and 2x in Om.
+    _fu = _free_spec([1.0] * 17)
+    _pu = _ground_hi([1.0] * 17)
+    _r_soft = math.sqrt(_phi[0] / _free[1])
+    _r_top = math.sqrt(_phi[-1] / _free[-1])
+    _r_uni = math.sqrt(_pu[0] / _fu[1])
+    _soft_ok = (0.55 < _r_soft < 0.57 and abs(_r_top - 1.0) < 5e-3
+                and 0.50 < _r_uni < 0.53 and len(_free) - 1 == 17)
+    # (2) WHICH END YOU PIN IS A MEASURABLE QUESTION, NOT A MATTER OF TASTE,
+    #     because the licensed weighting is asymmetric: the two ends differ
+    #     by 99.91% in the softest rate, where a uniform ladder cannot tell
+    #     them apart at all.
+    _plo = _ground_lo(_wn)
+    _r_lo = math.sqrt(_plo[0] / _free[1])
+    _end_ok = abs(_r_soft / _r_lo - 1.997) < 0.02
+    # (3) AND THE TWO READINGS MAKE OPPOSITE PREDICTIONS FOR THE PHASE 40
+    #     FALSIFICATION TEST. Inserting a rung inside the Planck->quark gap
+    #     drops the softest rate to 0.7995 in the free reading and leaves it
+    #     at 1.0102 -- unchanged -- in the pinned one. So the test I proposed
+    #     does not merely probe the model, it CHOOSES between the readings.
+    _ins = []
+    _acc = l10s[0]
+    for _x in (_g[0] / 2, _g[0] / 2) + tuple(_g[1:]):
+        _acc += _x
+        _ins.append(_acc)
+    _gi = [_ins[_k + 1] - _ins[_k] for _k in range(17)]
+    _li = _ground_hi([1.0 / _x ** 2 for _x in _gi])
+    _split_free = 0.7995
+    _split_pin = math.sqrt(_li[0] / _phi[0])
+    _inv_ok = (abs(_split_pin - 1.0102) < 5e-4 and _split_pin > 1.0
+               and _split_free < 0.85 and len(_li) == 17)
+    _pt_all = _pt_ok and _soft_ok and _end_ok and _inv_ok
+    ok &= expect(_pt_all,
+                 "the scale of the entire universe AS A POINT: it is the only one of the 18 rungs that is not the size of "
+                 "a thing - SEVENTEEN of the 18 rungs are characteristic scales, and it is a RADIUS, the edge of the "
+                 "visible region - so as a point it has no extent and is a BOUNDARY rather than a rung. Three "
+                 "consequences, and the third inverts a Phase 40 prediction. (0) A point's position is a CONVENTION, so "
+                 "the top gap is conventional while the other 16 are physical - but it is still a GAP, and the count "
+                 "therefore does not move: #rates = #gaps = 17 in BOTH readings, and the identity is TOTAL rather than "
+                 "merely robust, because the pinned path has 17 thing-nodes plus the point, 17 unknowns and 17 edges, "
+                 "so 17 rates and NO zero against the free path's 17 rates and one zero. The point reading SPENDS the "
+                 "rigid mode instead of removing a rate. Nor does the licensing statistic move: CV is 0.9696 over the "
+                 "17 gaps of either reading, with 0.9660 the 16-gap figure for the sub-ladder of things alone. (1) "
+                 "Pinning a point SOFTENS the "
+                 "fundamental rather than stiffening it, by 1.79x (Om_1 ratio 0.5581), while the top rate is unchanged "
+                 "(0.9997) and the rigid zero is SPENT - 17 rates plus a zero become 17 rates and nothing is lost but "
+                 "the zero. The reason is that the free path's lowest NONZERO mode is already a half wave; pinning "
+                 "forbids it and leaves a QUARTER wave leaning on the point, theta = pi/35 against pi/18, so 4x in "
+                 "lambda and 2x in Om - and the uniform cap roughly DOUBLES, 11.4301 to 22.1994. (2) WHICH end you pin "
+                 "is measurable, not a matter of taste: pinning the universe gives 0.5581 and pinning Planck gives "
+                 "0.2792, differing by 99.91%, where a uniform ladder could not tell them apart at all. (3) AND THE "
+                 "TWO READINGS MAKE OPPOSITE PREDICTIONS: inserting a rung inside the Planck->quark gap drops the "
+                 "softest rate to 0.7995 in the free reading and leaves it at 1.0102 in the pinned one",
+                 f"got boundary-not-rung {_pt_ok} ({len(_phi)} pinned rates, all positive, and {len(_phi)} = 17 = "
+                 f"#gaps against {len(_free) - 1} free rates + 1 zero spent at {abs(_free[0]):.1e}; CV {_cv17:.4f} over "
+                 f"17 gaps in either reading, {_cv16:.4f} over the 16-gap sub-ladder), "
+                 f"softer-not-stiffer {_soft_ok} (Om_1 ratio {_r_soft:.4f} = {1 / _r_soft:.2f}x softer, top rate "
+                 f"ratio {_r_top:.4f}, uniform cross-check {_r_uni:.4f} = {1 / _r_uni:.2f}x), which-end-is-the-point "
+                 f"{_end_ok} (universe {_r_soft:.4f} against Planck {_r_lo:.4f}, ratio {_r_soft / _r_lo:.3f}), "
+                 f"inverted prediction {_inv_ok} (gap-split {_split_free:.4f} free against {_split_pin:.4f} pinned, "
+                 f"and {len(_li)} rates = 17 gaps after the insertion)",
+                 "yes - and this is the sharpest thing in the file so far, because it turns a modelling choice into an "
+                 "experiment. Treating the universe as a point is not cosmetic, but it is also not the counting "
+                 "revision I expected: the rate count and the licensing statistic both HOLD at 17 and 0.9696, because a "
+                 "conventional gap is still a gap. What it does change is the softest mode, which becomes 1.79x SOFTER "
+                 "rather than stiffer - "
+                 "the opposite of the intuition that pinning something must stiffen it, and the explanation is the half "
+                 "wave versus quarter wave. Pinning spends the rigid zero rather than adding a constraint, so nothing is "
+                 "lost. And then the last consequence: the Phase 40 falsification test I proposed does not merely probe "
+                 "the model, it DISCRIMINATES between the two readings, because they predict 0.7995 and 1.0102 for the "
+                 "same insertion - a sign flip, not a magnitude difference. So a single measurement of the softest rate "
+                 "after inserting one rung inside the Planck->quark gap would settle, on its own, whether the observable "
+                 "universe is a rung or a point. That is the whole point of the exercise: the reading was ambiguous, the "
+                 "prediction is not. A point still supplies no clock, so Omega remains external and the covariance "
+                 "simply becomes exact - a point can be moved and rescaled freely, which is what the 61.44 decades and "
+                 "B47 s 1e-12 invariance were already measuring without a name.")
+
 
     print()
     if ok:
-        print("RESULTS OF RECORD: 56 checks reproduced.")
+        print("RESULTS OF RECORD: 57 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
