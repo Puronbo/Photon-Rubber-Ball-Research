@@ -1257,13 +1257,18 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   **CV 0.9696** (max/min 31.26). So `L = gap` is licensed by data while
   `L = index` contradicts the corpus's own record; they differ by **25.22×** in
   dynamic range. And **#rates = #gaps = 17** on either reading.
-- **B47 (check 55)** — **`w = 1/g²` is the unique unit-covariant weighting;
-  `w = 1/|Δs|` is inadmissible on symmetry alone.** `λ₂` is invariant to
+- **B47 (check 55; CORRECTED in check 58)** — **`w = 1/g²` is *a*
+  unit-covariant weighting; `w = 1/|Δs|` is inadmissible on symmetry alone —
+  but the weighting is NOT uniquely determined.** `λ₂` is invariant to
   3.0e-14 under `10^{±30}` rescaling; the linear weighting would move `ω_min`
   by `10⁻¹⁵`, making the derived frequency encode the arbitrary choice of metre,
   and is numerically degenerate besides (weight ratio 4.35e+45, above float64
-  resolution). Exponent 2 is then forced by the framework's own law with
-  `L = g`, and the **bottleneck coefficient is 1.0581, not 2**.
+  resolution). **Correction:** every function of the invariant gap is covariant —
+  `1/g`, `1/g³`, `1/e^g` all pass the same test as `1/g²` — so covariance
+  *excludes* `1/|Δs|` but *selects nothing among* functions of `g`, and the
+  phrase "the unique unit-covariant weighting" is **false**. Exponent 2 comes
+  from the framework's own `1/L²` law applied with `L = g` (B46), not from
+  covariance. The **bottleneck coefficient is 1.0581, not 2**.
 - **X43 — two corrections and one sharpening.**
   - **(a) FALSE:** "more relational structure gives more possible change." `K_n`
     has Laplacian spectrum `{0, n}` **exactly** — one nonzero rate at n = 9,
@@ -1278,8 +1283,11 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
     framework as written cannot derive "smaller scale → more change". B46/B47
     supply the missing weighting.
   - **Prediction, falsifiable on the next sourced rung:** 2 modes below
-    `λ = 0.01`; inserting one rung inside the Planck→quark gap lowers `ω_min` by
-    a factor **0.7995** exactly.
+    `λ = 0.01`; inserting one rung at the midpoint of the Planck→quark gap
+    lowers `ω_min` by a factor **0.9766** in the free reading.
+    **Superseded in Phase 43:** the 0.7995 originally recorded here was an
+    artifact — check 55 halved the first gap but left the second at full
+    length, so it solved a ladder spanning 69.33 decades instead of 61.44.
 - **A fifth stale docstring number.** Check 31's code and want-string were
   already correct (3.614 / 3.504 / 0.970 / 31.3) while the module docstring still
   recorded the pre-extension values (4.095 / 3.926 / 0.959 / 31.0), stale since
@@ -1331,7 +1339,7 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B48–B50 added (135 → 138), X44 added (43 → 44). Corrigendum
   107 → 108.
 
-## Phase 42 — the universe as a point: the counting holds, the physics moves, and the Phase 40 test flips sign (2026-09-27)
+## Phase 42 — the universe as a point: the counting holds, the physics moves, and the Phase 40 test flips sign (2026-09-27) — **the sign-flip clause is RETRACTED in Phase 43**
 
 - Follows Phase 41. The scale of the entire universe was proposed **as a
   point** rather than as the eighteenth rung.
@@ -1366,6 +1374,9 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   probe the model: it **discriminates between the two readings**. One measurement
   of the softest rate after a single inserted rung would settle whether the
   observable universe is a rung or a point.
+  **RETRACTED IN PHASE 43 — including this correction, which was itself wrong.**
+  The 0.7995 and the 1.0102 came from two *different* ladders, so the two
+  branches were never compared on equal terms. See Phase 43.
 - **A correction to my own first pass, which is why the check asserts the count
   instead of accepting it.** I initially claimed the rate count moved 17→16 and
   the CV moved 0.9696→0.9660. Both were wrong: there are **seventeen** sizes of
@@ -1377,6 +1388,58 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
   already measuring without a name.
 - Register: B51–B53 added (138 → 141), X45 added (44 → 45). Corrigendum
   108 → 109.
+
+## Phase 43 — the insertion sign-flip is RETRACTED; two bugs, not one, and a better experiment (2026-09-27)
+
+- **The claim being withdrawn.** Phases 40 and 42 reported that inserting one
+  rung inside the Planck→quark gap drops `ω_min` to **0.7995** in the free
+  reading and leaves it at **1.0102** in the pinned reading — a *sign flip*, on
+  the strength of which I wrote that one measurement would settle rung-versus-
+  point on its own. **Both numbers are artifacts, and of two different kinds.**
+- **Mistake 1 (check 55).** The 19-node path was built from the edge list
+  `[g₀/2, g₀, g₁, …, g₁₆]` — the first gap halved but the **second left at full
+  length**. The ladder actually solved therefore spanned **69.33** decades
+  instead of 61.44; it was stretched by exactly `g₀/2 = 7.90` decades and no
+  rung was ever inserted.
+- **Mistake 2 (check 57).** The log-values were accumulated starting **at** the
+  midpoint, so `l10s[0]` — Planck — was never emitted and the ladder **lost its
+  smallest rung**, spanning **53.54** decades.
+- **Why the gate never caught it.** The two spans differ by exactly
+  `g₀ = 15.79` decades: the free and pinned branches were **not computed on the
+  same ladder at all**. Each number *was* reproducible from its own code, so
+  per-number assertions were satisfied. This is a different failure class from
+  the seven bad sub-assertions in check 55 — those were arithmetic, this was
+  **input mismatch across two branches**, and only comparing the inputs catches
+  it.
+- **B54 (check 58) — corrected, both branches drop.** On one correct 19-rung
+  ladder (18 gaps, Planck kept) the midpoint insertion gives **0.9766 free**
+  against **0.9480 pinned** — both **down**, **2.9%** apart, same sign, at all 19
+  sampled positions. The sign flip is gone.
+- **The unscanned free parameter.** *Where* in the gap the rung goes was never
+  varied. Scanning it finds a **crossover at t = 0.3174**: above it free sits
+  above pinned, below it below, with the separation growing to **9.8%** at
+  t = 0.05.
+- **X46 — the test is available but must be aimed.** Sweeping all **17** gap
+  midpoints, **10 discriminate and 7 do not** (gaps 1, 2, 4, 5, 6, 7, 12). The
+  gap tested first, Planck→quark, is one of the seven — which is why the
+  retraction was invisible from that position.
+- **The decisive gap.** **quasar-BLR → galaxy-30kpc**: free predicts **0.9994**,
+  i.e. *no change at all*, against pinned **1.0802** — **8.08%** apart. The
+  Phase 42 recommendation **inverts**: do not insert in the Planck→quark gap.
+- **Convexity, and a non-monotone response.** The local stiffening of a split
+  gap is **minimal at the midpoint, exactly 8.00×**, diverging to **401×** at
+  t = 0.05 — yet the free branch responds *least* at t = 0.05 (0.8388) and most
+  at the midpoint (0.9766), because near t = 0 the new rung nearly coincides
+  with Planck and its single enormous weight dominates the softest mode.
+- **B47 corrected.** `1/g²` is **not** the unique unit-covariant weighting. Every
+  function of the invariant gap — `1/g`, `1/g³`, `1/e^g` — passes the same
+  rescaling test. Covariance *excludes* `1/|Δs|`; it *selects nothing among*
+  functions of `g`. Exponent 2 comes from the `1/L²` premise with `L = g`.
+- Register: B54 added (141 → 142), X46 added (45 → 46), B47 and X45 corrected.
+  Corrigendum 109 → 110.
+
+Gate (Phase 43): battery 19/19 green, `results_of_record.py` 58/58 exit 0,
+`ruff --select F` clean, only intended changes staged.
 
 Gate (Phase 42): battery 19/19 green, `results_of_record.py` 57/57 exit 0,
 `ruff --select F` clean, only intended changes staged.

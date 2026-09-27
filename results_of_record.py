@@ -1755,15 +1755,15 @@ def main():
                and abs(_dg / _du - 25.22) < 0.1)
     # (8) THE PREDICTIONS, stated numerically so a new rung can falsify them.
     _soft = [x for x in _lg[1:] if x < 0.01]
-    _ins = [_gmax / 2] + list(_g)
-    _Sins, _acc = [], l10s[0]
-    for _x in _ins:
-        _Sins.append(10 ** _acc)
-        _acc += _x
-    _li = _tri(*_pdw(19, [1.0 / x ** 2 for x in _ins]))
+    # CORRECTED IN CHECK 58: the accumulation below started at the MIDPOINT, so
+    # l10s[0] (Planck) was never emitted and the ladder LOST its smallest rung.
+    # The correct 19-rung ladder is the 18 originals PLUS the inserted midpoint.
+    _ins = sorted(l10s + [l10s[0] + _gmax / 2])
+    _gi = [_ins[_k + 1] - _ins[_k] for _k in range(18)]
+    _li = _tri(*_pdw(19, [1.0 / x ** 2 for x in _gi]))
     _split = math.sqrt(_li[1]) / math.sqrt(_lam2_log)
     _pred_ok = (len(_soft) == 2 and len({round(x, 10) for x in _li}) - 1 == 18
-                and abs(_split - 0.7995) < 5e-4)
+                and abs(_split - 0.9766) < 5e-4)
     _lap_ok = (_law and abs(_l18[1] - _ex) < 1e-12 and _dim_ok and _Pd and _K_ok
                and _sh_ok and _soft_hardest and _cov_ok and _lin_ok and _b_ok
                and _lic_ok and _pred_ok)
@@ -1776,23 +1776,27 @@ def main():
                  "shadow adds no substance and no slow behaviour (w^2 = lam and lam + 2K, stable, split CONSTANT in w^2 "
                  "so largest RELATIVELY on the softest mode) and its doubling of the mode count is bookkeeping; the "
                  "combinatorial Laplacian is SCALE-BLIND and cannot see the corpus's 61.44 decades, so the weighting must "
-                 "be admitted - and w = 1/g^2 is the unique unit-COVARIANT candidate (invariant to 1e-12 under 10^+-30 "
+                 "be admitted - and w = 1/g^2 is A unit-COVARIANT candidate (invariant to 1e-12 under 10^+-30 "
                  "rescaling, weight ratio 9.8e2) while w = 1/|ds| is INADMISSIBLE BY SYMMETRY and numerically degenerate "
-                 "(weight ratio 4.4e45, above float64 resolution); the exponent 2 is forced by the framework's own law "
-                 "with L = g, whose bottleneck coefficient is 1.0581 and NOT 2; the corpus's MEASURED gap CV 0.9696 is "
+                 "(weight ratio 4.4e45, above float64 resolution); but it is NOT the unique one, since every function of "
+                 "the invariant gap is equally covariant - 1/g, 1/g^3 and 1/e^g all qualify - so covariance alone cannot "
+                 "pick the exponent; the exponent 2 comes from the framework's own 1/L^2 law with L = g, whose "
+                 "bottleneck coefficient is 1.0581 and NOT 2; the corpus's MEASURED gap CV 0.9696 is "
                  "what licenses L = g over L = index (dynamic-range ratio 25.22, and #rates = #gaps = 17 either way)",
                  f"got 1/L^2 law {_law}, exact lam_2 {_l18[1]:.10f} vs {_ex:.10f}, dimension {_dim_ok}, P_18 distinct "
                  f"{_Pd}, K_n one-rate-at-every-size {_K_ok}, shadow stable+softest-split-hardest {_sh_ok and _soft_hardest}, "
                  f"covariance {_cov_ok} (max relative spread {max(abs(x - _cov[0]) for x in _cov) / _cov[0]:.2e}), linear weighting degenerate "
                  f"{_lin_ok} (ratio {_lin_ratio:.2e} vs {_log_ratio:.3e}), bottleneck coefficient {_coef:.4f} (want 1.0581, "
                  f"NOT 2), measured CV {_cv:.4f}, licensing {_lic_ok} (range ratio {_dg / _du:.2f}), predictions "
-                 f"{_pred_ok} ({len(_soft)} soft modes, gap-split factor {_split:.4f}, want 0.7995)",
+                 f"{_pred_ok} ({len(_soft)} soft modes, gap-split factor {_split:.4f}, want 0.9766 - 0.7995 was the value on a ladder that had lost its Planck rung, retracted in check 58)",
                  "yes - and it is admitted with its failures attached, because the failures are the content. Three "
                  "things are now derivable rather than stipulated: the ladder is a path graph whose spectrum is closed-form, "
                  "so the 1/L^2 law is EXACT with constant pi^2 and the constant carries the DIMENSION, d*pi^2/L^2, which "
-                 "was the missing free parameter; the undetermined edge weighting is not free after all, because unit "
-                 "covariance admits w = 1/g^2 and excludes w = 1/|ds| on symmetry grounds alone, and the exponent 2 is "
-                 "then forced by the framework's own law with the decade gap as the relational length; and the corpus's "
+                 "was the missing free parameter; the undetermined edge weighting is narrowed but NOT fixed, because unit "
+                 "covariance excludes w = 1/|ds| on symmetry grounds while admitting w = 1/g^2 together with 1/g, 1/g^3 and "
+                 "1/e^g - every function of an invariant gap is covariant, so 'the unique unit-covariant weighting' is "
+                 "FALSE and the exponent 2 instead comes from the framework's own law applied to the decade gap as the "
+                 "relational length; and the corpus's "
                  "own RECORDED gap CV of 0.9696 is what licenses that length over the uniform one, so the selection comes "
                  "from data rather than from wanting a sign. What is left open is exactly one undetermined constant, "
                  "absorbed into Omega, so the mechanical k and m are consolidated into a single relational coupling "
@@ -1807,7 +1811,7 @@ def main():
                  "estimate of mine: the single-bottleneck coefficient converges to 1.0581, not 2, since the two sides of "
                  "the bottleneck carry mass - I was 1.89x off even in the p -> inf limit and 3.3x off at p = 2. "
                  "Prediction, falsifiable on the next sourced rung: the spectrum has 2 modes below lam = 0.01, and "
-                 "inserting one rung inside the Planck->quark gap lowers omega_min by a factor 0.7995 exactly.")
+                 "inserting one rung at the midpoint of the Planck->quark gap lowers omega_min by a factor 0.9766.")
 
     # ------------------------------------------------------------------
     # 56: OMEGA IS ONE UNCONSTRAINED SCALAR, AND THE RATIOS ARE THE COMPLETE
@@ -1973,22 +1977,22 @@ def main():
     _plo = _ground_lo(_wn)
     _r_lo = math.sqrt(_plo[0] / _free[1])
     _end_ok = abs(_r_soft / _r_lo - 1.997) < 0.02
-    # (3) AND THE TWO READINGS MAKE OPPOSITE PREDICTIONS FOR THE PHASE 40
-    #     FALSIFICATION TEST. Inserting a rung inside the Planck->quark gap
-    #     drops the softest rate to 0.7995 in the free reading and leaves it
-    #     at 1.0102 -- unchanged -- in the pinned one. So the test I proposed
-    #     does not merely probe the model, it CHOOSES between the readings.
-    _ins = []
-    _acc = l10s[0]
-    for _x in (_g[0] / 2, _g[0] / 2) + tuple(_g[1:]):
-        _acc += _x
-        _ins.append(_acc)
-    _gi = [_ins[_k + 1] - _ins[_k] for _k in range(17)]
-    _li = _ground_hi([1.0 / _x ** 2 for _x in _gi])
-    _split_free = 0.7995
+    # (3) ... AND THE TWO READINGS COME CLOSE ON THE PHASE 40 FALSIFICATION
+    #     TEST, BUT NOT THE WAY PHASE 42 SAID. Phase 42 reported OPPOSITE
+    #     predictions for inserting a rung inside the Planck->quark gap,
+    #     0.7995 free against 1.0102 pinned, and called it a discriminator.
+    #     Both numbers were an artifact of an accumulation loop that started
+    #     AT the midpoint, so l10s[0] -- Planck -- was never emitted and the
+    #     ladder LOST its smallest rung. Retracted in check 58. Corrected,
+    #     the insertion drops the softest rate in BOTH readings, to 0.9766
+    #     free and 0.9480 pinned -- 2.9% apart, same sign.
+    _ins = sorted(l10s + [l10s[0] + _g[0] / 2])
+    _gi = [_ins[_k + 1] - _ins[_k] for _k in range(18)]
+    _li = _ground_hi([1.0 / x ** 2 for x in _gi])
+    _split_free = 0.9766
     _split_pin = math.sqrt(_li[0] / _phi[0])
-    _inv_ok = (abs(_split_pin - 1.0102) < 5e-4 and _split_pin > 1.0
-               and _split_free < 0.85 and len(_li) == 17)
+    _inv_ok = (abs(_split_pin - 0.9480) < 5e-4 and _split_pin < 1.0
+               and _split_free < 1.0 and len(_li) == 18)
     _pt_all = _pt_ok and _soft_ok and _end_ok and _inv_ok
     ok &= expect(_pt_all,
                  "the scale of the entire universe AS A POINT: it is the only one of the 18 rungs that is not the size of "
@@ -2008,17 +2012,19 @@ def main():
                  "forbids it and leaves a QUARTER wave leaning on the point, theta = pi/35 against pi/18, so 4x in "
                  "lambda and 2x in Om - and the uniform cap roughly DOUBLES, 11.4301 to 22.1994. (2) WHICH end you pin "
                  "is measurable, not a matter of taste: pinning the universe gives 0.5581 and pinning Planck gives "
-                 "0.2792, differing by 99.91%, where a uniform ladder could not tell them apart at all. (3) AND THE "
-                 "TWO READINGS MAKE OPPOSITE PREDICTIONS: inserting a rung inside the Planck->quark gap drops the "
-                 "softest rate to 0.7995 in the free reading and leaves it at 1.0102 in the pinned one",
+                 "0.2792, differing by 99.91%, where a uniform ladder could not tell them apart at all. (3) AND ON THE "
+                 "PHASE 40 FALSIFICATION TEST THE TWO READINGS COME CLOSE RATHER THAN APART: inserting a rung at the "
+                 "midpoint of the Planck->quark gap gives "
+                 "0.9766 free against 0.9480 pinned - both DOWN, 2.9% apart, NOT the opposite-sign pair Phase 42 claimed "
+                 "(the 0.7995/1.0102 pair is retracted in check 58)",
                  f"got boundary-not-rung {_pt_ok} ({len(_phi)} pinned rates, all positive, and {len(_phi)} = 17 = "
                  f"#gaps against {len(_free) - 1} free rates + 1 zero spent at {abs(_free[0]):.1e}; CV {_cv17:.4f} over "
                  f"17 gaps in either reading, {_cv16:.4f} over the 16-gap sub-ladder), "
                  f"softer-not-stiffer {_soft_ok} (Om_1 ratio {_r_soft:.4f} = {1 / _r_soft:.2f}x softer, top rate "
                  f"ratio {_r_top:.4f}, uniform cross-check {_r_uni:.4f} = {1 / _r_uni:.2f}x), which-end-is-the-point "
                  f"{_end_ok} (universe {_r_soft:.4f} against Planck {_r_lo:.4f}, ratio {_r_soft / _r_lo:.3f}), "
-                 f"inverted prediction {_inv_ok} (gap-split {_split_free:.4f} free against {_split_pin:.4f} pinned, "
-                 f"and {len(_li)} rates = 17 gaps after the insertion)",
+                 f"separated prediction {_inv_ok} (gap-split {_split_free:.4f} free against {_split_pin:.4f} pinned, "
+                 f"both below 1, and {len(_li)} rates = {len(_gi)} gaps after the insertion)",
                  "yes - and this is the sharpest thing in the file so far, because it turns a modelling choice into an "
                  "experiment. Treating the universe as a point is not cosmetic, but it is also not the counting "
                  "revision I expected: the rate count and the licensing statistic both HOLD at 17 and 0.9696, because a "
@@ -2026,19 +2032,167 @@ def main():
                  "rather than stiffer - "
                  "the opposite of the intuition that pinning something must stiffen it, and the explanation is the half "
                  "wave versus quarter wave. Pinning spends the rigid zero rather than adding a constraint, so nothing is "
-                 "lost. And then the last consequence: the Phase 40 falsification test I proposed does not merely probe "
-                 "the model, it DISCRIMINATES between the two readings, because they predict 0.7995 and 1.0102 for the "
-                 "same insertion - a sign flip, not a magnitude difference. So a single measurement of the softest rate "
-                 "after inserting one rung inside the Planck->quark gap would settle, on its own, whether the observable "
-                 "universe is a rung or a point. That is the whole point of the exercise: the reading was ambiguous, the "
-                 "prediction is not. A point still supplies no clock, so Omega remains external and the covariance "
+                 "lost. And then the last consequence: the Phase 40 falsification test does not merely probe the model, it "
+                 "SEPARATES the two readings by 2.9% at that position - and check 58 retracts the sign flip I reported, "
+                 "finds the bug that produced it, and turns up six discriminating gaps instead of one. A point still "
+                 "supplies no clock, so Omega remains external and the covariance "
                  "simply becomes exact - a point can be moved and rescaled freely, which is what the 61.44 decades and "
                  "B47 s 1e-12 invariance were already measuring without a name.")
 
 
+    # ------------------------------------------------------------------
+    # 58: THE INSERTION TEST RETRACTED, AND A BETTER ONE FOUND. Phases 40 and
+    #     42 both reported a "sign flip" - 0.7995 free against 1.0102 pinned -
+    #     and celebrated it as a single cheap experiment that would decide
+    #     rung-versus-point on its own. Both numbers are artifacts, and of two
+    #     DIFFERENT kinds, which is worse than one bug. Check 55 built 19 nodes
+    #     from the edge list [g0/2, g0, g1, ... g16]: it halved the first gap
+    #     but left the second at full length, so the ladder it solved spanned
+    #     69.33 decades instead of 61.44. Check 57 accumulated log-values
+    #     starting AT the midpoint, so l10s[0] -- Planck -- was never emitted
+    #     and the ladder LOST its smallest rung, spanning 53.54 decades. The
+    #     two branches were therefore never computed on the same ladder at all,
+    #     and their difference in span is exactly g0 = 15.79 decades. With one
+    #     correct 19-rung ladder both branches DROP, the claimed sign flip
+    #     disappears, and scanning the unscanned insertion POSITION finds a
+    #     crossover plus six gaps that genuinely do discriminate.
+    # ------------------------------------------------------------------
+    _names = ["Planck", "quark", "proton", "atom", "molecule", "virus", "ball",
+              "cell", "human", "neutron-star", "Earth", "Sun", "Kuiper-50AU",
+              "quasar-BLR", "galaxy-30kpc", "GA-50Mpc", "Laniakea", "universe"]
+
+    def _ins_at(_t, _k=0):
+        return sorted(l10s + [l10s[_k] + _t * _g[_k]])
+
+    def _free_at(_x):
+        _w = [1.0 / (_x[_m + 1] - _x[_m]) ** 2 for _m in range(len(_x) - 1)]
+        return math.sqrt(_tri(*_pdw(len(_x), _w))[1])
+
+    def _pin_at(_x):
+        _w = [1.0 / (_x[_m + 1] - _x[_m]) ** 2 for _m in range(len(_x) - 1)]
+        _n = len(_w)
+        _d = [_w[0]] + [_w[_m - 1] + _w[_m] for _m in range(1, _n - 1)] + [_w[_n - 2] + _w[_n - 1]]
+        return math.sqrt(_tri(_d, _w[:_n - 1])[0])
+
+    _bf, _bp = _free_at(l10s), _pin_at(l10s)
+    # (0) BOTH BUGS GATED, each reproducing its own historical number, and the
+    #     mismatch between them: the free ladder is 15.79 decades LONGER than
+    #     the pinned one, so "sign flip" compared two different ladders.
+    _e55 = [_g[0] / 2] + list(_g)
+    _acc, _i57 = l10s[0], []
+    for _v in (_g[0] / 2, _g[0] / 2) + tuple(_g[1:]):
+        _acc += _v
+        _i57.append(_acc)
+    _d57 = [_i57[_m + 1] - _i57[_m] for _m in range(17)]
+    _f55 = math.sqrt(_tri(*_pdw(19, [1.0 / v ** 2 for v in _e55]))[1]) / _bf
+    _p57 = math.sqrt(_ground_hi([1.0 / v ** 2 for v in _d57])[0]) / _bp
+    _s55, _s57 = sum(_e55), sum(_d57)
+    _bug_ok = (abs(_f55 - 0.7995) < 5e-4 and abs(_p57 - 1.0102) < 5e-4
+               and abs(_s55 - sum(_g) - _g[0] / 2) < 1e-9
+               and abs(_s57 - sum(_g) + _g[0] / 2) < 1e-9
+               and abs((_s55 - _s57) - _g[0]) < 1e-9
+               and not any(abs(v - l10s[0]) < 1e-12 for v in _i57))
+    # (1) CORRECTED: one 19-rung ladder, 18 gaps, Planck kept. BOTH branches
+    #     drop, 2.9% apart, and the sign flip is gone.
+    _good = _ins_at(0.5)
+    _gg = [_good[_m + 1] - _good[_m] for _m in range(18)]
+    _ff, _pf = _free_at(_good) / _bf, _pin_at(_good) / _bp
+    _mid_ok = (len(_good) == 19 and len(_gg) == 18
+               and any(abs(v - l10s[0]) < 1e-12 for v in _good)
+               and abs(_ff - 0.9766) < 5e-4 and abs(_pf - 0.9480) < 5e-4
+               and _ff < 1.0 and _pf < 1.0
+               and abs(100 * (_ff - _pf) / _ff - 2.9) < 0.2)
+    # (2) THE UNSCANNED FREE PARAMETER, NOW SCANNED: a CROSSOVER at
+    #     t = 0.3174, with the branches agreeing in sign at all 19 sampled
+    #     positions and the separation growing to 9.8% at t = 0.05.
+    _ts = (0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50,
+           0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95)
+    _scan = [(_t, _free_at(_ins_at(_t)) / _bf, _pin_at(_ins_at(_t)) / _bp) for _t in _ts]
+    _lo, _hi = 0.30, 0.35
+
+    def _dlt(_t):
+        return _free_at(_ins_at(_t)) / _bf - _pin_at(_ins_at(_t)) / _bp
+
+    for _ in range(50):
+        _m = 0.5 * (_lo + _hi)
+        if _dlt(_lo) * _dlt(_m) <= 0:
+            _hi = _m
+        else:
+            _lo = _m
+    _tc = 0.5 * (_lo + _hi)
+    _sep05 = 100 * (_scan[0][2] - _scan[0][1]) / _scan[0][1]
+    _cross_ok = (abs(_tc - 0.3174) < 5e-3 and _sep05 > 9.0
+                 and all((_f < 1.0) == (_p < 1.0) for _t, _f, _p in _scan))
+    # (3) TEN OF THE SEVENTEEN GAPS DISCRIMINATE AT THEIR MIDPOINTS, and the
+    #     decisive one is quasar-BLR -> galaxy-30kpc: the free branch predicts
+    #     0.9994, i.e. NO change at all, against the pinned branch's 1.0802.
+    _disc = []
+    for _k in range(17):
+        _f2, _p2 = _free_at(_ins_at(0.5, _k)) / _bf, _pin_at(_ins_at(0.5, _k)) / _bp
+        if (_f2 < 1.0) != (_p2 < 1.0):
+            _disc.append((_k + 1, _f2, _p2, 100 * abs(_f2 - _p2) / min(_f2, _p2)))
+    _best = max(_disc, key=lambda _r: _r[3])
+    _disc_ok = (len(_disc) == 10 and _best[0] == 14
+                and abs(_best[1] - 0.9994) < 5e-4 and abs(_best[2] - 1.0802) < 5e-4)
+    # (4) AND BY CONVEXITY the local stiffening of a split gap is MINIMAL at
+    #     the midpoint, exactly 8.00x, diverging to 401x at t = 0.05 - yet the
+    #     free branch's response is NOT monotone in it, because near t = 0 the
+    #     new rung nearly coincides with Planck and one enormous weight takes
+    #     over the softest mode. The two effects compete.
+    _mid_st = _g[0] ** 2 * (2 / (0.5 * _g[0]) ** 2)
+    _end_st = _g[0] ** 2 * (1 / (0.05 * _g[0]) ** 2 + 1 / (0.95 * _g[0]) ** 2)
+    _conv_ok = (abs(_mid_st - 8.0) < 1e-9 and abs(_end_st - 401.11) < 0.1
+                and _scan[0][1] < _scan[9][1])
+    _ins_all = _bug_ok and _mid_ok and _cross_ok and _disc_ok and _conv_ok
+    ok &= expect(_ins_all,
+                 "the insertion test is RETRACTED and a better one is put in its place. Phases 40 and 42 reported a sign "
+                 "flip - 0.7995 free against 1.0102 pinned - and treated it as a single cheap experiment that would "
+                 "settle rung-versus-point on its own. Both numbers are artifacts of two DIFFERENT mistakes, which is "
+                 "worse than one mistake. Check 55 built its 19 nodes from the edge list [g0/2, g0, g1, ... g16]: it "
+                 "halved the first gap and then left the second at full length, so the ladder it actually solved "
+                 "spanned 69.33 decades instead of 61.44. Check 57 accumulated log-values starting AT the midpoint, so "
+                 "Planck was never emitted and the ladder LOST its smallest rung, spanning 53.54 decades. The two "
+                 "branches were therefore never computed on the same ladder at all, and their spans differ by exactly "
+                 "g0 = 15.79 decades - so the sign flip was an artifact of comparing two different ladders, not of the "
+                 "physics. Put on ONE correct 19-rung ladder with 18 gaps and Planck kept, both branches DROP: 0.9766 "
+                 "free, 0.9480 pinned, 2.9% apart, same sign, at all 19 sampled positions. The test also had a free "
+                 "parameter nobody ever scanned - where in the gap the new rung goes - and scanning it finds a CROSSOVER "
+                 "at t = 0.3174, above which free sits above pinned and below which it sits below, with the separation "
+                 "growing to 9.8% at t = 0.05. The retraction is the useful part, because sweeping all 17 gaps at their "
+                 "midpoints finds TEN that discriminate rather than one, and one of them is decisive: quasar-BLR -> "
+                 "galaxy-30kpc, where the free branch predicts 0.9994 - no change at all - and the pinned branch "
+                 "predicts 1.0802, 8% faster. And by convexity the local stiffening of a split gap is MINIMAL at the "
+                 "midpoint, exactly 8.00x, diverging to 401x at t = 0.05, yet the free branch's response is NOT monotone "
+                 "in it: at t = 0.05 the new rung nearly coincides with Planck and its enormous single weight dominates "
+                 "the softest mode. The two effects compete",
+                 f"got the two bugs {_bug_ok} (check 55 reproduced {_f55:.4f} on a ladder spanning {_s55:.2f} decades; check "
+                 f"57 reproduced {_p57:.4f} on one spanning {_s57:.2f} with Planck absent; the two spans differ by exactly "
+                 f"g0 = {_g[0]:.2f} decades), corrected ladder {_mid_ok} (19 rungs, 18 gaps, free {_ff:.4f}, pinned "
+                 f"{_pf:.4f}, both down, {100 * (_ff - _pf) / _ff:.1f}% apart), crossover {_cross_ok} (t = {_tc:.4f}, "
+                 f"{_sep05:.1f}% separation at t = 0.05, no sign flip across 19 positions), discriminating gaps "
+                 f"{_disc_ok} ({len(_disc)} of 17: {', '.join(_names[_r[0] - 1] + ' -> ' + _names[_r[0]] for _r in _disc)}; "
+                 f"best is gap 14 at {_best[1]:.4f} against {_best[2]:.4f}, {_best[3]:.2f}% apart), convexity {_conv_ok} "
+                 f"(midpoint stiffening {_mid_st:.2f}x, {_end_st:.2f}x at t = 0.05, response non-monotone)",
+                 "yes - and the retraction is worth more than the claim it replaced. I announced one clean experiment "
+                 "that would decide the question by itself, and no such experiment exists at the position I tested. The "
+                 "failure had two independent causes, and the second is the one I would not have found by rechecking "
+                 "arithmetic: check 55 and check 57 did not disagree about a sign, they disagreed about a LADDER, one "
+                 "stretched by 7.90 decades and one missing its floor. Comparing a free spectrum to a pinned spectrum "
+                 "without checking that they came from the same input is a mistake no assertion would have caught, because "
+                 "both of my assertions were internally consistent - each number was reproducible from its own code. "
+                 "What makes the corrected result better rather than merely smaller is the sweep: the insertion position "
+                 "was an unscanned free parameter, and once scanned it yields TEN discriminating gaps instead of the one I "
+                 "claimed. The sharpest is quasar-BLR -> galaxy-30kpc, where the two readings predict 0.9994 against "
+                 "1.0802 - unchanged against 8% faster - which is about as clean a decision as this model will ever offer. "
+                 "Ten of the seventeen gaps work and seven do not, so the test is far less delicate than I implied when I "
+                 "called it knife-edge. So the recommendation inverts: do not insert in the Planck->quark gap, insert at "
+                 "the midpoint of quasar-BLR -> galaxy-30kpc. Two errors cancelling into a better experiment is not the "
+                 "usual outcome, and the only reason it happened is that every number here was written as an assertion "
+                 "that had to be reproduced, so the two bad ladders could not both have stayed hidden.")
+
     print()
     if ok:
-        print("RESULTS OF RECORD: 57 checks reproduced.")
+        print("RESULTS OF RECORD: 58 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
