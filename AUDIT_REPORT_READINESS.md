@@ -1240,6 +1240,60 @@ Gate (Phase 32): battery 19/19 green, `results_of_record.py` 46/46 exit 0,
 - Register: B43–B44 added (130 → 132), X42 added (41 → 42). Corrigendum
   105 → 106.
 
+## Phase 40 — a Laplacian model admitted, with two of its three headline claims false (2026-09-27)
+
+- Follows Phase 39. A graph-Laplacian oscillator model was offered as a way to
+  remove the mechanical `k` and `m`. It was **verified rather than endorsed**,
+  and the failures are the content.
+- **B45 (check 55)** — the derivation is sound and **exact where it was only
+  proportional**. The ladder is a path graph; its spectrum is closed-form
+  `λ_j = 2 − 2cos(πj/n)`, so `n²λ₂ → π²` and `ω_min → Ωπ/n` exactly. The
+  18-rung corpus has **17 distinct rates** from the chain alone, `ω_min/Ω =
+  0.17431`. The constant **carries the dimension** (`λ₂ ~ dπ²/L²`) — the missing
+  free parameter. But `k` and `m` are **consolidated, not eliminated**: `Ω`
+  plays `√(k/m)` and one undetermined coupling remains.
+- **B46 (check 55)** — **the corpus's own measured gap irregularity licenses the
+  relational length.** A uniform ladder has CV = 0; this one is recorded at
+  **CV 0.9696** (max/min 31.26). So `L = gap` is licensed by data while
+  `L = index` contradicts the corpus's own record; they differ by **25.22×** in
+  dynamic range. And **#rates = #gaps = 17** on either reading.
+- **B47 (check 55)** — **`w = 1/g²` is the unique unit-covariant weighting;
+  `w = 1/|Δs|` is inadmissible on symmetry alone.** `λ₂` is invariant to
+  3.0e-14 under `10^{±30}` rescaling; the linear weighting would move `ω_min`
+  by `10⁻¹⁵`, making the derived frequency encode the arbitrary choice of metre,
+  and is numerically degenerate besides (weight ratio 4.35e+45, above float64
+  resolution). Exponent 2 is then forced by the framework's own law with
+  `L = g`, and the **bottleneck coefficient is 1.0581, not 2**.
+- **X43 — two corrections and one sharpening.**
+  - **(a) FALSE:** "more relational structure gives more possible change." `K_n`
+    has Laplacian spectrum `{0, n}` **exactly** — one nonzero rate at n = 9,
+    n = 18, n = 100, at any size, against `n−1` for the path and 2 for the
+    star. **Connectivity destroys frequency diversity.** Structure *reduces*
+    possibility to fewer independent rates.
+  - **(b) FALSE:** the shadow adds no slow behaviour. `ω² = λ` and `ω² = λ + 2K`,
+    stable, with `+2K` **constant in ω²**, so the relative split is largest on
+    the **softest** mode (+117.5% vs +22.5%). It splits slow modes hardest. The
+    doubling of the mode count is **bookkeeping** — the dimension doubled.
+  - **(c) SHARPENED:** the combinatorial Laplacian is **scale-blind**, so the
+    framework as written cannot derive "smaller scale → more change". B46/B47
+    supply the missing weighting.
+  - **Prediction, falsifiable on the next sourced rung:** 2 modes below
+    `λ = 0.01`; inserting one rung inside the Planck→quark gap lowers `ω_min` by
+    a factor **0.7995** exactly.
+- **A fifth stale docstring number.** Check 31's code and want-string were
+  already correct (3.614 / 3.504 / 0.970 / 31.3) while the module docstring still
+  recorded the pre-extension values (4.095 / 3.926 / 0.959 / 31.0), stale since
+  the neutron-star and quasar rungs were added. **Re-derivation catches bad
+  numbers; only reading catches stale ones.**
+- Check 55's own first run failed **seven** sub-assertions, all mine: a matrix
+  diagonal read as if it were a spectrum, and four tolerances set tighter than
+  float64 resolution. All caught by strict expectations.
+- Register: B45–B47 added (132 → 135), X43 added (42 → 43). Corrigendum
+  106 → 107.
+
+Gate (Phase 40): battery 19/19 green, `results_of_record.py` 55/55 exit 0,
+`ruff --select F` clean, only intended changes staged.
+
 Gate (Phase 39): battery 19/19 green, `results_of_record.py` 54/54 exit 0,
 `ruff --select F` clean, only intended changes staged.
 

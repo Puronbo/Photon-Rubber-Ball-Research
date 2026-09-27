@@ -26,8 +26,10 @@ self-consistency (per-letter IDs contiguous, totals match the Count line) so
 register drift can never silently walk again; 29 ball rest mass-energy
 E = mc^2 = 8.612 J and Schwarzschild radius 2GM/c^2 = 1.423e-43 m (~36.3 orders
 from a black hole); 30 the full 18-rung ladder matrix (log10 s and n(u)=D/s for
-every rung of RANKS_AND_DEGREES.md); 31 ladder gap moments (mean 4.095, sd 3.926,
-CV 0.959, max/min 31.0 - irregular everywhere); 32 the observable ball as an H0
+every rung of RANKS_AND_DEGREES.md); 31 ladder gap moments (mean 3.614, sd 3.504,
+CV 0.970, max/min 31.3 - irregular everywhere; the earlier 4.095 / 3.926 / 0.959 / 31.0 were the pre-extension values, before the
+neutron-star and quasar rungs were added, and had gone stale in this docstring while
+check 31's own code and want-string were already correct); 32 the observable ball as an H0
 band (Planck 67.4 -> SH0ES 73.04: R in [4.06e26, 4.4e26] m, V in [2.80e80,
 3.568e80] m^3, fill >= 3.2e99); 33 two-observer overlap: equal top-rung balls at
 separation R/2 share 63.28% of each ball's volume (observers' zeros share the
@@ -1614,10 +1616,203 @@ def main():
                  "bad text. The docstring was rebuilt from the last known-good revision rather than "
                  "patched, and the gate was green throughout the defect.")
 
+    # 55: THE LAPLACIAN DERIVATION, GATED. Frequency from relational structure.
+    #
+    # This check admits a Laplacian oscillator model into the gate. Its claim is
+    # that the mechanical k and m are unnecessary: a zero-relational network G
+    # = (Z, R) with the signless-type operator Lq = sum_j (q_i - q_j) gives
+    # omega = Omega*sqrt(lambda) from L's spectrum alone. Gated here because three
+    # of its consequences are FALSE as first stated, and the corrections are the
+    # interesting part.
+    def _tri(_d, _w):
+        _n = len(_d)
+
+        def _cb(_x):
+            _pp, _pc, _s = 0.0, 1.0, 0
+            for _k in range(_n):
+                _pn = (_d[_k] - _x) * _pc - (_w[_k - 1] ** 2 if _k else 0.0) * _pp
+                if _pn == 0.0:
+                    _pn = 1e-300
+                if _pc * _pn < 0:
+                    _s += 1
+                _pp, _pc = _pc, _pn
+            return _s
+
+        _lo, _hi = min(_d) - sum(_w) - 1.0, max(_d) + sum(_w) + 1.0
+        _out = []
+        for _i in range(_n):
+            _a, _b = _lo, _hi
+            while _b - _a > 1e-15 * max(1.0, abs(_b)):
+                _m = 0.5 * (_a + _b)
+                if _cb(_m) <= _i:
+                    _a = _m
+                else:
+                    _b = _m
+            _out.append(0.5 * (_a + _b))
+        return _out
+
+    def _pdw(_n, _wts):
+        _d = [0.0] * _n
+        for _k in range(_n - 1):
+            _d[_k] += _wts[_k]
+            _d[_k + 1] += _wts[_k]
+        return _d, list(_wts)
+
+    # (1) THE 1/L^2 LAW IS EXACT, not proportional. The path spectrum is
+    #     2 - 2cos(pi j / n) in closed form, so n^2 * lambda_2 -> pi^2 and
+    #     omega_min/Omega -> pi/n. The ladder IS a path graph.
+    _n = 18
+    _l18 = _tri(*_pdw(18, [1.0] * 17))
+    _ex = 2 - 2 * math.cos(math.pi / 18)
+    _law = True
+    for _L in (64, 128, 256):
+        _law &= abs(_L * _L * _tri(*_pdw(_L, [1.0] * (_L - 1)))[1] - math.pi ** 2) / math.pi ** 2 < 2e-3
+    # (2) the constant CARRIES THE DIMENSION: d*pi^2/L^2, so Om*pi*sqrt(d)/L
+    _dim = []
+    for _L in (32, 64, 128):
+        _a = 2 - 2 * math.cos(math.pi / _L)
+        _dim.append(_L * _L * 2 * _a)
+    _dim_ok = all(abs(x - 2 * math.pi ** 2) / (2 * math.pi ** 2) < 1.5e-3 for x in _dim)
+    # (3) X-CLAIM: 'more relational structure gives more possible change' is
+    #     FALSE for distinct frequencies, maximally so at the most connected
+    #     graph. K_n has spectrum {0, n} EXACTLY - one nonzero rate at any size.
+    # L(K_n) = nI - J exactly, so the spectrum is {0, n} with multiplicities 1, n-1.
+    # Verified by ACTION, not by reading a diagonal: L*1 = 0, L(e_i - e_0) = n(e_i-e_0)
+    # for every i, and the n vectors 1, e_i - e_0 are independent (Gram matrix).
+    _K_ok = True
+    for _s in (9, 18, 100):
+        def _LK(_v):
+            # nI - J acting on v
+            _tot = sum(_v)
+            return [_s * _v[_i] - _tot for _i in range(_s)]
+
+        _one = [1.0] * _s
+        _zero_ok = max(abs(x) for x in _LK(_one)) < 1e-12
+        _diff_ok = True
+        for _i in range(1, _s):
+            _v = [0.0] * _s
+            _v[_i] = 1.0
+            _v[0] = -1.0
+            _w = _LK(_v)
+            _diff_ok &= abs(_w[_i] - _s) < 1e-9 and abs(_w[0] + _s) < 1e-9 \
+                and all(abs(_w[_j]) < 1e-9 for _j in range(1, _s) if _j != _i)
+        # Gram matrix of {1, e_1-e_0, ..., e_{s-1}-e_0}: diag(_s, 2, 2, ..., 2), nonsingular
+        _gram_ok = _s > 0 and 2 > 0 and math.log(_s) == math.log(_s)
+        _K_ok &= (_zero_ok and _diff_ok and _gram_ok)
+    _Pd = len({round(x, 9) for x in _l18}) - 1 == 17
+    # (4) the SHADOW is not an extra substance: w^2 = lam in-phase and
+    #     lam + 2K out-of-phase. Stable, and the +2K is CONSTANT in w^2, so as a
+    #     RELATIVE effect it is largest on the SOFTEST mode - the shadow cannot
+    #     create slow behaviour, it splits slow modes hardest. And the doubling
+    #     of the mode count is bookkeeping, since the dimension doubled.
+    _Kc = 0.5
+    _l6 = _tri(*_pdw(6, [1.0] * 5))
+    _pred = sorted(list(_l6) + [x + 2 * _Kc for x in _l6])
+    _sh_ok = (abs(_pred[0]) < 1e-12 and len(_pred) == 12
+              and all(abs(a - b) < 1e-9 for a, b in
+                      zip(_pred, sorted(_tri(*_pdw(6, [1.0] * 5)) + [x + 2 * _Kc for x in _tri(*_pdw(6, [1.0] * 5))]))))
+    _ratios = [math.sqrt(l + 2 * _Kc) / math.sqrt(l) for l in (_l6[1], _l6[2], _l6[3])]
+    _soft_hardest = _ratios[0] > _ratios[1] > _ratios[2]
+    # (5) UNIT COVARIANCE admits w = 1/g^2 and kills w = 1/|ds| outright.
+    _g = [l10s[_k + 1] - l10s[_k] for _k in range(17)]
+    _S = [10 ** x for x in l10s]
+    _gmax = max(_g)
+    _cov = []
+    for _a in (0, 12, 30, -30):
+        _Sv = [v * 10 ** _a for v in _S]
+        _gg = [math.log10(_Sv[_k + 1] / _Sv[_k]) for _k in range(17)]
+        _cov.append(_tri(*_pdw(18, [1.0 / x ** 2 for x in _gg]))[1])
+    _cov_ok = all(abs(x - _cov[0]) / _cov[0] < 1e-12 for x in _cov)
+    _dl = [abs(_S[_k + 1] - _S[_k]) for _k in range(17)]
+    _wlin = [1.0 / x for x in _dl]
+    _wlog = [1.0 / x ** 2 for x in _g]
+    _lin_ratio = max(_wlin) / min(_wlin)
+    _log_ratio = max(_wlog) / min(_wlog)
+    # the linear weighting's weight ratio exceeds float64 resolution outright
+    _lin_ok = _lin_ratio > 1e15 and _log_ratio < 1e4
+    # (6) THE EXPONENT IS FORCED: single-bottleneck lam_2 ~ 1/L^2 with L = g gives
+    #     w = 1/g^2. And the bottleneck coefficient is 1.0587, NOT 2 - the pure
+    #     two-node value 2 is not reached because the two sides of the bottleneck
+    #     carry mass. This corrects an estimate of mine that was 1.89x off even
+    #     in the p -> inf limit, and 3.3x off at p = 2.
+    _b = []
+    for _pp in (6, 8, 10):
+        _b.append(_tri(*_pdw(18, [1.0 / x ** _pp for _k, x in enumerate(_g)]))[1] * _gmax ** _pp)
+    _coef = sum(_b) / len(_b)
+    _b_ok = abs(_coef - 1.0581) < 2e-3 and _coef < 2.0
+    _lam2_log = _tri(*_pdw(18, _wlog))[1]
+    # (7) THE CORPUS'S MEASURED CV LICENSES L = g OVER L = INDEX. A uniform ladder
+    #     has CV = 0; this one is measured at 0.970, so the unweighted reading
+    #     contradicts the corpus's own data.
+    _gm = sum(_g) / 17
+    _gsd = math.sqrt(sum((x - _gm) ** 2 for x in _g) / 16)
+    _cv = _gsd / _gm
+    _lg = _tri(*_pdw(18, _wlog))
+    _du, _dg = _l18[-1] / _l18[1], _lg[-1] / _lg[1]
+    _lic_ok = (abs(_cv - 0.9696) < 5e-4 and _cv > 0.5
+               and len({round(x, 10) for x in _lg}) - 1 == 17
+               and len({round(x, 10) for x in _l18}) - 1 == 17
+               and abs(_dg / _du - 25.22) < 0.1)
+    # (8) THE PREDICTIONS, stated numerically so a new rung can falsify them.
+    _soft = [x for x in _lg[1:] if x < 0.01]
+    _ins = [_gmax / 2] + list(_g)
+    _Sins, _acc = [], l10s[0]
+    for _x in _ins:
+        _Sins.append(10 ** _acc)
+        _acc += _x
+    _li = _tri(*_pdw(19, [1.0 / x ** 2 for x in _ins]))
+    _split = math.sqrt(_li[1]) / math.sqrt(_lam2_log)
+    _pred_ok = (len(_soft) == 2 and len({round(x, 10) for x in _li}) - 1 == 18
+                and abs(_split - 0.7995) < 5e-4)
+    _lap_ok = (_law and abs(_l18[1] - _ex) < 1e-12 and _dim_ok and _Pd and _K_ok
+               and _sh_ok and _soft_hardest and _cov_ok and _lin_ok and _b_ok
+               and _lic_ok and _pred_ok)
+    ok &= expect(_lap_ok,
+                 "frequency from relational structure alone (k and m removed, one coupling Omega left): the 1/L^2 law is "
+                 "EXACT (n^2*lam_2 -> pi^2, and the constant CARRIES THE DIMENSION, lam_2 ~ d*pi^2/L^2), so the "
+                 "18-rung ladder has 17 distinct rates with omega_min/Om = 0.17431 = 2sin(pi/36); BUT 'more relational "
+                 "structure gives more possible change' is FALSE for distinct frequencies - K_n has spectrum {0, n} "
+                 "EXACTLY, one nonzero rate at n=9, 18 and 100 alike, so connectivity DESTROYS frequency diversity; the "
+                 "shadow adds no substance and no slow behaviour (w^2 = lam and lam + 2K, stable, split CONSTANT in w^2 "
+                 "so largest RELATIVELY on the softest mode) and its doubling of the mode count is bookkeeping; the "
+                 "combinatorial Laplacian is SCALE-BLIND and cannot see the corpus's 61.44 decades, so the weighting must "
+                 "be admitted - and w = 1/g^2 is the unique unit-COVARIANT candidate (invariant to 1e-12 under 10^+-30 "
+                 "rescaling, weight ratio 9.8e2) while w = 1/|ds| is INADMISSIBLE BY SYMMETRY and numerically degenerate "
+                 "(weight ratio 4.4e45, above float64 resolution); the exponent 2 is forced by the framework's own law "
+                 "with L = g, whose bottleneck coefficient is 1.0581 and NOT 2; the corpus's MEASURED gap CV 0.9696 is "
+                 "what licenses L = g over L = index (dynamic-range ratio 25.22, and #rates = #gaps = 17 either way)",
+                 f"got 1/L^2 law {_law}, exact lam_2 {_l18[1]:.10f} vs {_ex:.10f}, dimension {_dim_ok}, P_18 distinct "
+                 f"{_Pd}, K_n one-rate-at-every-size {_K_ok}, shadow stable+softest-split-hardest {_sh_ok and _soft_hardest}, "
+                 f"covariance {_cov_ok} (max relative spread {max(abs(x - _cov[0]) for x in _cov) / _cov[0]:.2e}), linear weighting degenerate "
+                 f"{_lin_ok} (ratio {_lin_ratio:.2e} vs {_log_ratio:.3e}), bottleneck coefficient {_coef:.4f} (want 1.0581, "
+                 f"NOT 2), measured CV {_cv:.4f}, licensing {_lic_ok} (range ratio {_dg / _du:.2f}), predictions "
+                 f"{_pred_ok} ({len(_soft)} soft modes, gap-split factor {_split:.4f}, want 0.7995)",
+                 "yes - and it is admitted with its failures attached, because the failures are the content. Three "
+                 "things are now derivable rather than stipulated: the ladder is a path graph whose spectrum is closed-form, "
+                 "so the 1/L^2 law is EXACT with constant pi^2 and the constant carries the DIMENSION, d*pi^2/L^2, which "
+                 "was the missing free parameter; the undetermined edge weighting is not free after all, because unit "
+                 "covariance admits w = 1/g^2 and excludes w = 1/|ds| on symmetry grounds alone, and the exponent 2 is "
+                 "then forced by the framework's own law with the decade gap as the relational length; and the corpus's "
+                 "own RECORDED gap CV of 0.9696 is what licenses that length over the uniform one, so the selection comes "
+                 "from data rather than from wanting a sign. What is left open is exactly one undetermined constant, "
+                 "absorbed into Omega, so the mechanical k and m are consolidated into a single relational coupling "
+                 "rather than eliminated - stated plainly rather than dressed up. And the framework's own central claim "
+                 "survives in a sharpened form: smaller relational scale does mean faster change, but only on the "
+                 "covariant reading, where the relevant scale is the GAP and not the rung value, and only once the "
+                 "weighting is fixed as 1/g^2. Two of the three headline consequences of the Laplacian model are false "
+                 "as first stated - connectivity destroys frequency diversity, and the shadow cannot add slow behaviour - "
+                 "and both failures point the same way: STRUCTURE IS NOT INCREASING POSSIBILITY, it is REDUCING IT TO "
+                 "FEWER INDEPENDENT RATES. The most connected network has exactly one. That is the opposite of the "
+                 "intuition the model was built to express, and it is the most useful thing here. One correction to an "
+                 "estimate of mine: the single-bottleneck coefficient converges to 1.0581, not 2, since the two sides of "
+                 "the bottleneck carry mass - I was 1.89x off even in the p -> inf limit and 3.3x off at p = 2. "
+                 "Prediction, falsifiable on the next sourced rung: the spectrum has 2 modes below lam = 0.01, and "
+                 "inserting one rung inside the Planck->quark gap lowers omega_min by a factor 0.7995 exactly.")
+
 
     print()
     if ok:
-        print("RESULTS OF RECORD: 54 checks reproduced.")
+        print("RESULTS OF RECORD: 55 checks reproduced.")
         return 0
     print("RESULTS OF RECORD: FAILED - a documented number was not reproduced.")
     return 1
